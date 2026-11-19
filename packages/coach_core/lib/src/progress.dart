@@ -61,6 +61,9 @@ class ProgressState {
   final Map<String, int> yearOverrides = {};
   String? lastNotion;
 
+  /// Réglages de l'interface (thème…).
+  final Map<String, String> settings = {};
+
   static const maxBox = 5;
 
   double mastery(String notionId) => (boxes[notionId] ?? 0) / maxBox;
@@ -115,6 +118,7 @@ class ProgressState {
         'coursesRead': coursesRead.toList(),
         'yearOverrides': yearOverrides,
         'lastNotion': lastNotion,
+        'settings': settings,
       };
 
   String encode() => const JsonEncoder.withIndent(' ').convert(toJson());
@@ -129,6 +133,7 @@ class ProgressState {
     s.coursesRead.addAll([for (final c in (j['coursesRead'] as List? ?? const [])) c as String]);
     (j['yearOverrides'] as Map<String, dynamic>? ?? const {}).forEach((k, v) => s.yearOverrides[k] = v as int);
     s.lastNotion = j['lastNotion'] as String?;
+    (j['settings'] as Map<String, dynamic>? ?? const {}).forEach((k, v) => s.settings[k] = '$v');
     return s;
   }
 

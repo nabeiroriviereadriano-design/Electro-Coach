@@ -129,6 +129,7 @@ List<Issue> validate(Library lib, {int seeds = 50}) {
     }
     // Tirages : chaque corrigé doit se calculer, chaque modèle se remplir.
     final seen = <String>{};
+    final flagged = <String>{};
     for (var s = 0; s < seeds; s++) {
       try {
         final inst = generate(x, s);
@@ -156,7 +157,9 @@ List<Issue> validate(Library lib, {int seeds = 50}) {
         for (final q in x.questions.where((q) => q.kind != 'choice')) {
           final shown = formatExpected(q, inst.expected[q.id]!);
           final v = check(q, inst.expected[q.id]!, shown);
-          if (!v.correct) issues.add(Issue(w, 'question ${q.id} : la réponse affichée « $shown » serait refusée (tirage $s)'));
+          if (!v.correct && flagged.add('refus-${q.id}')) {
+            issues.add(Issue(w, 'question ${q.id} : la réponse affichée « $shown » serait refusée (tirage $s)'));
+          }
         }
         seen.add(inst.env.entries.map((e) => '${e.key}=${e.value}').join(';'));
       } on Object catch (e) {

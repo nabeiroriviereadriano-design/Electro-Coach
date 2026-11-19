@@ -267,7 +267,7 @@ List<_Tok> _tokenize(String src, bool user) {
         i++;
       }
       // « j4 », « j2,5 » : unité imaginaire suivie d'un nombre → j × nombre
-      if ((c == 'j' || c == 'i') && i + 1 < s.length && (_isDigit(s[i + 1]) || s[i + 1] == ',' || s[i + 1] == '.')) {
+      if ((c == 'j' || c == 'i') && start + 1 < s.length && (_isDigit(s[start + 1]) || ((s[start + 1] == ',' || s[start + 1] == '.') && start + 2 < s.length && _isDigit(s[start + 2])))) {
         out.add(_Tok(_T.ident, c, start));
         i = start + 1;
         continue;

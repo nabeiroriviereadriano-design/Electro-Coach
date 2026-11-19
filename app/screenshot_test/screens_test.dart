@@ -54,10 +54,10 @@ void main() {
     return shot(t, '06-exercice-corrige', phone, ExerciseScreen(exercise: ex, seed: 5), s, before: (t) async {
       await t.enterText(find.byType(TextField).at(0), formatExpected(ex.questions[0], inst.expected['q1']!));
       await t.enterText(find.byType(TextField).at(1), '1 + j');
-      await t.ensureVisible(find.text('Valider ma réponse'));
+      await reveal(t, find.text('Valider ma réponse'));
       await t.tap(find.text('Valider ma réponse'));
       await t.pumpAndSettle();
-      await t.ensureVisible(find.text('Voir le corrigé'));
+      await reveal(t, find.text('Voir le corrigé'));
       await t.tap(find.text('Voir le corrigé'));
     });
   });

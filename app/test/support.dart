@@ -4,6 +4,7 @@ import 'package:electro_coach/state/app_state.dart';
 import 'package:electro_coach/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 /// État de l'application sur le vrai contenu, progression en mémoire.
 Future<AppState> realState() async {
@@ -51,4 +52,11 @@ Future<void> loadFonts() async {
       await l.load();
     }
   }
+}
+
+/// Fait défiler la page principale jusqu'à rendre [f] visible (listes paresseuses).
+Future<void> reveal(WidgetTester t, Finder f) async {
+  final list = find.descendant(of: find.byType(ListView), matching: find.byType(Scrollable)).first;
+  await t.scrollUntilVisible(f, 200, scrollable: list, maxScrolls: 80);
+  await t.pumpAndSettle();
 }

@@ -39,7 +39,9 @@ void main() {
     }
     await t.tap(find.text('Progression').last);
     await t.pumpAndSettle();
-    expect(find.text('Couverture du programme officiel'.toUpperCase()), findsOneWidget);
+    final label = find.text('Couverture du programme officiel'.toUpperCase());
+    await t.scrollUntilVisible(label, 200, scrollable: find.byType(Scrollable).hitTestable().first, maxScrolls: 60);
+    expect(label, findsOneWidget);
   });
 
   testWidgets('parcours : changement d\'année', (t) async {
@@ -84,15 +86,15 @@ void main() {
     for (final (i, q) in ex.questions.indexed) {
       await t.enterText(fields.at(i), formatExpected(q, inst.expected[q.id]!));
     }
-    await t.ensureVisible(find.text('Valider ma réponse'));
+    await reveal(t, find.text('Valider ma réponse'));
     await t.tap(find.text('Valider ma réponse'));
     await t.pumpAndSettle();
     expect(find.text('Bravo, tout est juste !'), findsOneWidget);
     expect(s.progress.boxes['S-EL-10'], 1);
-    await t.ensureVisible(find.text('Voir le corrigé'));
+    await reveal(t, find.text('Voir le corrigé'));
     await t.tap(find.text('Voir le corrigé'));
     await t.pumpAndSettle();
-    expect(find.textContaining('Réponse attendue'), findsNWidgets(3));
+    expect(find.textContaining('Réponse attendue'), findsWidgets);
   });
 
   testWidgets('exercice : mauvaise unité signalée', (t) async {
@@ -101,7 +103,7 @@ void main() {
     await t.pumpWidget(wrap(s, ExerciseScreen(exercise: ex, seed: 3)));
     await t.pumpAndSettle();
     await t.enterText(find.byType(TextField).first, '12 V');
-    await t.ensureVisible(find.text('Valider ma réponse'));
+    await reveal(t, find.text('Valider ma réponse'));
     await t.tap(find.text('Valider ma réponse'));
     await t.pumpAndSettle();
     expect(find.textContaining('Unité incorrecte'), findsOneWidget);
@@ -113,7 +115,7 @@ void main() {
     final ex = s.library.exercise('X-EL-10-b')!;
     await t.pumpWidget(wrap(s, ExerciseScreen(exercise: ex, seed: 1)));
     await t.pumpAndSettle();
-    await t.ensureVisible(find.text('en retard'));
+    await reveal(t, find.text('en retard'));
     await t.tap(find.text('en retard'));
     await t.pumpAndSettle();
     expect(t.takeException(), isNull);

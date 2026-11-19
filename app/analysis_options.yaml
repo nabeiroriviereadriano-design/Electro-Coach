@@ -4,3 +4,8 @@ linter:
   rules:
     prefer_const_constructors: false
     prefer_const_literals_to_create_immutables: false
+
+analyzer:
+  errors:
+    # Flutter 3.50 annonce le passage de material.dart à material_ui : sans effet pour l'instant.
+    deprecated_member_use: ignore

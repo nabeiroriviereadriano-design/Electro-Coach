@@ -193,6 +193,8 @@ class Question {
     this.choices = const [],
     this.correct,
     this.polar = false,
+    this.base = 10,
+    this.correctExpr,
   });
 
   final String id;
@@ -214,7 +216,14 @@ class Question {
   /// Pour « complex » : afficher la réponse attendue en polaire.
   final bool polar;
 
-  static const kinds = {'numeric', 'complex', 'choice'};
+  /// Pour « base » : entier à écrire en base 2 ou 16.
+  final int base;
+
+  /// Pour un QCM dont la bonne proposition dépend du tirage : expression qui
+  /// donne son indice (ex. « 1 - lt(a, 0) »).
+  final String? correctExpr;
+
+  static const kinds = {'numeric', 'complex', 'choice', 'base'};
 
   factory Question.fromJson(Map<String, dynamic> j) => Question(
         id: j['id'] as String,
@@ -227,6 +236,8 @@ class Question {
         choices: _strs(j['choices']),
         correct: j['correct'] as int?,
         polar: (j['polar'] ?? false) as bool,
+        base: (j['base'] ?? 10) as int,
+        correctExpr: j['correctExpr'] as String?,
       );
 }
 

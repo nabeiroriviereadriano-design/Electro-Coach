@@ -1,0 +1,1694 @@
+{
+ "id": "maths-calcul-numeration",
+ "courses": [
+  {
+   "id": "C-CN-01",
+   "notions": [
+    "M-CN-01"
+   ],
+   "title": "Fractions : signe, réduction et opérations",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Une **fraction** $\\dfrac{a}{b}$ (avec $b \\neq 0$) a un **numérateur** $a$ et un **dénominateur** $b$. Un entier $n$ est la fraction $\\dfrac{n}{1}$."
+    },
+    {
+     "type": "text",
+     "text": "- Signe : $\\dfrac{-a}{b} = \\dfrac{a}{-b} = -\\dfrac{a}{b}$.\\n- Une fraction est **nulle** si et seulement si son numérateur est nul.\\n- **Réduire** une fraction : diviser numérateur et dénominateur par un même nombre non nul."
+    },
+    {
+     "type": "formula",
+     "tex": "\\frac{a}{b} = \\frac{c}{d} \\iff ad = bc",
+     "title": "Égalité (produits en croix)"
+    },
+    {
+     "type": "formula",
+     "tex": "\\frac{a}{b} + \\frac{c}{d} = \\frac{ad + bc}{bd} \\qquad \\frac{a}{b}\\times\\frac{c}{d} = \\frac{ac}{bd} \\qquad \\frac{a/b}{c/d} = \\frac{a}{b}\\times\\frac{d}{c}",
+     "title": "Opérations"
+    },
+    {
+     "type": "method",
+     "text": "1. Mettre les fractions au **même dénominateur** (le plus petit multiple commun si possible).\n2. Ajouter les numérateurs.\n3. Réduire le résultat.",
+     "title": "Méthode : somme de fractions"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : $\\dfrac{2}{3} + \\dfrac{1}{4} = \\dfrac{8}{12} + \\dfrac{3}{12} = \\dfrac{11}{12}$."
+    },
+    {
+     "type": "warning",
+     "text": "On n'ajoute jamais les dénominateurs : $\\dfrac{1}{2} + \\dfrac{1}{3} \\neq \\dfrac{2}{5}$.",
+     "title": ""
+    },
+    {
+     "type": "tip",
+     "text": "En électrotechnique, on retrouve ces calculs dans les associations : deux résistances en parallèle donnent $\\dfrac{1}{R} = \\dfrac{1}{R_1} + \\dfrac{1}{R_2}$.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-CN-02",
+   "notions": [
+    "M-CN-02"
+   ],
+   "title": "Puissances et écriture scientifique",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "a^m \\times a^n = a^{m+n} \\qquad \\frac{a^m}{a^n} = a^{m-n} \\qquad (a^m)^n = a^{mn} \\qquad a^{-n} = \\frac{1}{a^n}",
+     "title": "Règles de calcul"
+    },
+    {
+     "type": "text",
+     "text": "L'**écriture scientifique** d'un nombre est $a \\times 10^n$ avec $1 \\leqslant |a| < 10$ et $n$ entier : $0{,}00047 = 4{,}7 \\times 10^{-4}$."
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Préfixe",
+       "Symbole",
+       "Puissance"
+      ],
+      [
+       "giga",
+       "G",
+       "$10^{9}$"
+      ],
+      [
+       "méga",
+       "M",
+       "$10^{6}$"
+      ],
+      [
+       "kilo",
+       "k",
+       "$10^{3}$"
+      ],
+      [
+       "milli",
+       "m",
+       "$10^{-3}$"
+      ],
+      [
+       "micro",
+       "µ",
+       "$10^{-6}$"
+      ],
+      [
+       "nano",
+       "n",
+       "$10^{-9}$"
+      ],
+      [
+       "pico",
+       "p",
+       "$10^{-12}$"
+      ]
+     ]
+    },
+    {
+     "type": "method",
+     "text": "Pour simplifier $\\dfrac{(a\\times10^m)(b\\times10^n)}{c\\times10^p}$ : calculer $\\dfrac{ab}{c}$ d'un côté, $10^{m+n-p}$ de l'autre, puis remettre en écriture scientifique.",
+     "title": "Méthode"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : $\\dfrac{(3 \\times 10^{2})(4 \\times 10^{-5})}{2 \\times 10^{-1}} = 6 \\times 10^{-2}$."
+    },
+    {
+     "type": "warning",
+     "text": "$10^{-3} \\times 10^{-3} = 10^{-6}$ (on additionne les exposants), et non $10^{9}$.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-CN-03",
+   "notions": [
+    "M-CN-03"
+   ],
+   "title": "Proportions et pourcentages",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "p = \\frac{n}{N}",
+     "title": "Proportion d'une sous-population"
+    },
+    {
+     "type": "text",
+     "text": "Une proportion s'exprime en pourcentage : $p = 0{,}35 = 35\\ \\%$. Le **pour mille** ‰ vaut un millième : $3\\ ‰ = 0{,}003$."
+    },
+    {
+     "type": "text",
+     "text": "**Pourcentages « parallèles »** : deux sous-populations disjointes d'une même population ont des pourcentages qui s'ajoutent (30 % de moteurs + 20 % de pompes = 50 % des machines)."
+    },
+    {
+     "type": "formula",
+     "tex": "p(A \\text{ et } B) = p_A \\times p_{B \\text{ dans } A}",
+     "title": "Pourcentage de pourcentage"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : 40 % des pièces viennent de l'atelier A, et 5 % des pièces de A sont défectueuses. Les pièces défectueuses venant de A représentent $0{,}40 \\times 0{,}05 = 0{,}02 = 2\\ \\%$ du total."
+    },
+    {
+     "type": "method",
+     "text": "Toujours se demander : **pourcentage de quoi ?** On ne peut ajouter deux pourcentages que s'ils portent sur la même population de référence.",
+     "title": "Méthode"
+    },
+    {
+     "type": "warning",
+     "text": "5 % de 40 % ne font pas 45 % : on multiplie les proportions, on ne les additionne pas.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-CN-04",
+   "notions": [
+    "M-CN-04"
+   ],
+   "title": "Taux d'évolution",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "t = \\frac{V_1 - V_0}{V_0} \\qquad V_1 = V_0\\,(1 + t)",
+     "title": "Taux d'évolution et coefficient multiplicateur"
+    },
+    {
+     "type": "text",
+     "text": "$V_1 - V_0$ est la **variation absolue** (dans l'unité de la grandeur), $t$ la **variation relative** (sans unité, souvent en %)."
+    },
+    {
+     "type": "text",
+     "text": "Un pourcentage peut exprimer une **proportion** (part d'un tout) ou une **évolution** (variation entre deux dates) : lire la phrase pour savoir lequel."
+    },
+    {
+     "type": "method",
+     "text": "Augmenter de $x$ % revient à multiplier par $1 + \\dfrac{x}{100}$ ; diminuer de $x$ % revient à multiplier par $1 - \\dfrac{x}{100}$.",
+     "title": "Méthode"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : la consommation d'un atelier passe de 12 000 kWh à 13 500 kWh : $t = \\dfrac{1500}{12\\,000} = 0{,}125$, soit une hausse de 12,5 %."
+    },
+    {
+     "type": "warning",
+     "text": "Le taux se calcule toujours par rapport à la valeur de **départ** $V_0$.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-CN-05",
+   "notions": [
+    "M-CN-05"
+   ],
+   "title": "Évolutions successives, taux moyen, taux réciproque",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "1 + T = (1 + t_1)(1 + t_2)\\cdots(1 + t_n)",
+     "title": "Taux global"
+    },
+    {
+     "type": "formula",
+     "tex": "t_m = (1 + T)^{1/n} - 1",
+     "title": "Taux moyen sur n périodes"
+    },
+    {
+     "type": "formula",
+     "tex": "t' = \\frac{1}{1 + t} - 1",
+     "title": "Taux réciproque (pour revenir à la valeur de départ)"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : +10 % puis +20 % donnent $1{,}1 \\times 1{,}2 = 1{,}32$, soit +32 % (et non +30 %)."
+    },
+    {
+     "type": "warning",
+     "text": "Deux hausses de 50 % ne doublent pas un prix (+125 %). Une hausse de 50 % suivie d'une baisse de 50 % n'est pas neutre : $1{,}5 \\times 0{,}5 = 0{,}75$, soit −25 %.",
+     "title": ""
+    },
+    {
+     "type": "method",
+     "text": "Toujours travailler avec les **coefficients multiplicateurs**, jamais en additionnant les pourcentages.",
+     "title": "Méthode"
+    }
+   ]
+  },
+  {
+   "id": "C-CN-06",
+   "notions": [
+    "M-CN-06"
+   ],
+   "title": "Indice simple en base 100",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "I = 100 \\times \\frac{V}{V_0}",
+     "title": "Indice de V par rapport à la date de référence"
+    },
+    {
+     "type": "text",
+     "text": "L'indice vaut 100 à la date de référence. Un indice de 118 signifie une hausse de 18 % depuis cette date ; un indice de 92, une baisse de 8 %."
+    },
+    {
+     "type": "formula",
+     "tex": "t = \\frac{I - 100}{100}",
+     "title": "De l'indice au taux d'évolution (depuis la référence)"
+    },
+    {
+     "type": "method",
+     "text": "Entre deux dates quelconques : $t = \\dfrac{I_2}{I_1} - 1$ (on ne soustrait pas les indices).",
+     "title": "Méthode"
+    },
+    {
+     "type": "text",
+     "text": "Le calcul d'un indice synthétique (indice des prix…) est hors programme."
+    }
+   ]
+  },
+  {
+   "id": "C-CN-07",
+   "notions": [
+    "M-CN-07"
+   ],
+   "title": "Numération : bases 2, 10, 16",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Dans une écriture **positionnelle**, chaque chiffre est multiplié par une puissance de la base selon sa position. Base 10 : chiffres 0 à 9 ; base 2 (binaire) : 0 et 1 ; base 16 (hexadécimal) : 0 à 9 puis A = 10, …, F = 15."
+    },
+    {
+     "type": "tex",
+     "tex": "1011_2 = 1\\times2^3 + 0\\times2^2 + 1\\times2^1 + 1\\times2^0 = 11"
+    },
+    {
+     "type": "tex",
+     "tex": "2\\mathrm{F}_{16} = 2\\times16 + 15 = 47"
+    },
+    {
+     "type": "method",
+     "text": "Décimal → binaire : divisions successives par 2, puis lire les **restes de bas en haut**. Binaire → hexadécimal : regrouper les bits par 4 en partant de la droite (1011 1110 = BE).",
+     "title": "Méthode : conversions"
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Décimal",
+       "Binaire",
+       "Hexadécimal"
+      ],
+      [
+       "9",
+       "1001",
+       "9"
+      ],
+      [
+       "10",
+       "1010",
+       "A"
+      ],
+      [
+       "15",
+       "1111",
+       "F"
+      ],
+      [
+       "16",
+       "1 0000",
+       "10"
+      ],
+      [
+       "255",
+       "1111 1111",
+       "FF"
+      ]
+     ]
+    },
+    {
+     "type": "tip",
+     "text": "La base 2 est celle des circuits numériques (un bit = 0 ou 1), la base 16 en est une écriture compacte (un chiffre = 4 bits), la base 60 sert pour les heures et les angles.",
+     "title": ""
+    },
+    {
+     "type": "text",
+     "text": "Le codage binaire des entiers négatifs et des réels est hors programme ; les codes BCD et Gray peuvent être évoqués."
+    }
+   ]
+  },
+  {
+   "id": "C-CN-08",
+   "notions": [
+    "M-CN-08"
+   ],
+   "title": "Addition en binaire",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "On additionne colonne par colonne, de droite à gauche, comme en décimal, avec les règles :"
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Opération",
+       "Résultat",
+       "Retenue"
+      ],
+      [
+       "0 + 0",
+       "0",
+       "0"
+      ],
+      [
+       "0 + 1",
+       "1",
+       "0"
+      ],
+      [
+       "1 + 1",
+       "0",
+       "1"
+      ],
+      [
+       "1 + 1 + 1",
+       "1",
+       "1"
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "tex": "\\begin{array}{r} 1011 \\\\ +\\ 0110 \\\\ \\hline 10001 \\end{array}"
+    },
+    {
+     "type": "text",
+     "text": "Vérification en décimal : 11 + 6 = 17 = 10001₂."
+    },
+    {
+     "type": "method",
+     "text": "Toujours vérifier une addition binaire en convertissant les deux termes et le résultat en décimal.",
+     "title": "Méthode"
+    },
+    {
+     "type": "warning",
+     "text": "Sur un octet (8 bits), le plus grand nombre est 1111 1111 = 255 : une somme qui dépasse 255 ne tient plus sur 8 bits.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-CN-09",
+   "notions": [
+    "M-CN-09"
+   ],
+   "title": "Système romain et repères historiques",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Le système romain est **additif** : I = 1, V = 5, X = 10, L = 50, C = 100, D = 500, M = 1000. Un symbole placé avant un symbole plus grand se **soustrait** : IV = 4, IX = 9, XL = 40, XC = 90, CD = 400, CM = 900."
+    },
+    {
+     "type": "text",
+     "text": "Exemples : MCMXCIV = 1000 + 900 + 90 + 4 = 1994 ; MMXXVII = 2027."
+    },
+    {
+     "type": "text",
+     "text": "Ce système ne permet pas de calculer facilement : il n'a pas de zéro ni de valeur de position. Le système décimal positionnel, venu d'Inde par les savants arabes, s'est imposé en Europe au Moyen Âge."
+    },
+    {
+     "type": "text",
+     "text": "Le système décimal est régulier à l'écrit mais irrégulier à l'oral en français (soixante-dix, quatre-vingts)."
+    },
+    {
+     "type": "tip",
+     "text": "Critères de divisibilité utiles : par 2 (dernier chiffre pair), par 3 (somme des chiffres divisible par 3), par 5 (finit par 0 ou 5), par 4 (deux derniers chiffres divisibles par 4).",
+     "title": ""
+    }
+   ]
+  }
+ ],
+ "examples": [],
+ "exercises": [
+  {
+   "id": "X-CN-01-a",
+   "notions": [
+    "M-CN-01"
+   ],
+   "title": "Somme de deux fractions",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "a": {
+     "unit": "",
+     "min": 1,
+     "max": 9,
+     "step": 1
+    },
+    "b": {
+     "unit": "",
+     "min": 2,
+     "max": 9,
+     "step": 1
+    },
+    "c": {
+     "unit": "",
+     "min": 1,
+     "max": 9,
+     "step": 1
+    },
+    "d": {
+     "unit": "",
+     "min": 2,
+     "max": 9,
+     "step": 1
+    }
+   },
+   "vars": {},
+   "constraints": [
+    "b != d"
+   ],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Calculer $S = \\dfrac{[[a]]}{[[b]]} + \\dfrac{[[c]]}{[[d]]}$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Donne $S$ (fraction comme 7/12 ou valeur décimale).",
+     "answer": "a/b + c/d",
+     "unit": "",
+     "tolerance": 0.002,
+     "sig": 5
+    }
+   ],
+   "hint": "Mets les deux fractions sur le dénominateur commun b × d.",
+   "method": "a/b + c/d = (ad + bc)/(bd), puis on réduit.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$S = \\dfrac{[[a]] \\times [[d]] + [[c]] \\times [[b]]}{[[b]] \\times [[d]]} = \\dfrac{[[=a*d+c*b:6]]}{[[=b*d:6]]} \\approx$ [[=a/b+c/d:4]]."
+    }
+   ]
+  },
+  {
+   "id": "X-CN-01-b",
+   "notions": [
+    "M-CN-01"
+   ],
+   "title": "Produit, quotient et fraction nulle",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "a": {
+     "unit": "",
+     "min": 1,
+     "max": 9,
+     "step": 1
+    },
+    "b": {
+     "unit": "",
+     "min": 2,
+     "max": 9,
+     "step": 1
+    },
+    "c": {
+     "unit": "",
+     "min": 1,
+     "max": 9,
+     "step": 1
+    },
+    "d": {
+     "unit": "",
+     "min": 2,
+     "max": 9,
+     "step": 1
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On donne $A = \\dfrac{[[a]]}{[[b]]}$ et $B = \\dfrac{[[c]]}{[[d]]}$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Calculer $A \\times B$.",
+     "answer": "(a*c)/(b*d)",
+     "unit": "",
+     "tolerance": 0.002,
+     "sig": 5
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Calculer $\\dfrac{A}{B}$.",
+     "answer": "(a*d)/(b*c)",
+     "unit": "",
+     "tolerance": 0.002,
+     "sig": 5
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Pour quelle valeur de $x$ la fraction $\\dfrac{x - [[a]]}{x + [[b]]}$ est-elle nulle ?",
+     "choices": [
+      "$x = [[a]]$",
+      "$x = -[[b]]$",
+      "$x = 0$"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Diviser par une fraction, c'est multiplier par son inverse.",
+   "method": "(a/b)(c/d) = ac/(bd) ; (a/b)/(c/d) = (a/b)(d/c). Une fraction est nulle quand son numérateur est nul.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$A \\times B = \\dfrac{[[=a*c:6]]}{[[=b*d:6]]} \\approx$ [[=a*c/(b*d):4]] ; $\\dfrac{A}{B} = \\dfrac{[[=a*d:6]]}{[[=b*c:6]]} \\approx$ [[=a*d/(b*c):4]]."
+    },
+    {
+     "type": "text",
+     "text": "Le numérateur $x - [[a]]$ s'annule pour $x = [[a]]$ (le dénominateur vaut alors [[=a+b:6]], non nul)."
+    }
+   ]
+  },
+  {
+   "id": "X-CN-02-a",
+   "notions": [
+    "M-CN-02"
+   ],
+   "title": "Calcul avec des puissances de 10",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "a": {
+     "unit": "",
+     "values": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      8
+     ]
+    },
+    "b": {
+     "unit": "",
+     "values": [
+      1.5,
+      2,
+      2.5,
+      3,
+      4
+     ]
+    },
+    "m": {
+     "unit": "",
+     "min": -6,
+     "max": 6,
+     "step": 1
+    },
+    "n": {
+     "unit": "",
+     "min": -6,
+     "max": 6,
+     "step": 1
+    },
+    "p": {
+     "unit": "",
+     "min": -4,
+     "max": 4,
+     "step": 1
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On donne $X = \\dfrac{([[a]] \\times 10^{[[m]]}) \\times ([[b]] \\times 10^{[[n]]})}{2 \\times 10^{[[p]]}}$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Calculer $X$ (écriture scientifique acceptée, ex. 3e-4).",
+     "answer": "a*b/2*10^(m+n-p)",
+     "unit": "",
+     "tolerance": 0.005,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Quel est l'exposant de 10 obtenu en regroupant les puissances (m + n − p) ?",
+     "answer": "m+n-p",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 6
+    }
+   ],
+   "hint": "Regroupe les nombres d'un côté et les puissances de 10 de l'autre.",
+   "method": "10^m × 10^n / 10^p = 10^(m+n−p).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\dfrac{[[a]] \\times [[b]]}{2} =$ [[=a*b/2]] et $10^{[[m]] + ([[n]]) - ([[p]])} = 10^{[[=m+n-p:6]]}$, donc $X =$ [[=a*b/2*10^(m+n-p):3]]."
+    }
+   ]
+  },
+  {
+   "id": "X-CN-02-b",
+   "notions": [
+    "M-CN-02"
+   ],
+   "title": "Préfixes et écriture scientifique",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "v": {
+     "unit": "",
+     "values": [
+      4.7,
+      2.2,
+      3.3,
+      6.8,
+      1.5
+     ]
+    },
+    "k": {
+     "unit": "",
+     "values": [
+      0,
+      1,
+      2
+     ]
+    }
+   },
+   "vars": {
+    "pf": "10^(3*k)"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une résistance vaut $R = [[v]] \\times 10^{[[=3*k:6]]}\\ \\Omega$ et un condensateur $C = [[v]]\\ \\mu\\mathrm{F}$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Donner $R$ en ohms.",
+     "answer": "v*pf",
+     "unit": "Ω",
+     "tolerance": 0.005,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Donner $C$ en farads (ex. 4,7e-6).",
+     "answer": "v*1e-6",
+     "unit": "F",
+     "tolerance": 0.005,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Calculer le produit $R \\times C$ en secondes.",
+     "answer": "v*pf*v*1e-6",
+     "unit": "s",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "µ = 10⁻⁶, k = 10³, M = 10⁶.",
+   "method": "On remplace chaque préfixe par la puissance de 10 correspondante, puis on applique les règles des exposants.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$R =$ [[=v*pf|Ω]], $C =$ [[=v*1e-6|F]], donc $RC =$ [[=v*pf*v*1e-6|s]]."
+    }
+   ]
+  },
+  {
+   "id": "X-CN-03-a",
+   "notions": [
+    "M-CN-03"
+   ],
+   "title": "Proportion d'une sous-population",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "N": {
+     "unit": "",
+     "values": [
+      80,
+      120,
+      150,
+      200,
+      250,
+      400
+     ]
+    },
+    "q": {
+     "unit": "",
+     "values": [
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3,
+      0.35,
+      0.4
+     ]
+    }
+   },
+   "vars": {
+    "n": "round(N*q)"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un atelier compte [[N]] moteurs, dont [[=n:6]] sont des moteurs asynchrones."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Quelle est la proportion de moteurs asynchrones, en % ?",
+     "answer": "100*n/N",
+     "unit": "%",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Combien de moteurs ne sont pas asynchrones ?",
+     "answer": "N - n",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 6
+    }
+   ],
+   "hint": "p = n / N, puis ×100 pour l'exprimer en %.",
+   "method": "Proportion = effectif de la sous-population / effectif total.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$p = \\dfrac{[[=n:6]]}{[[N]]} =$ [[=n/N:3]], soit [[=100*n/N:3]] %. Les autres : [[N]] − [[=n:6]] = [[=N-n:6]] moteurs."
+    }
+   ]
+  },
+  {
+   "id": "X-CN-03-b",
+   "notions": [
+    "M-CN-03"
+   ],
+   "title": "Pourcentage de pourcentage",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "pa": {
+     "unit": "",
+     "values": [
+      20,
+      30,
+      40,
+      50,
+      60
+     ]
+    },
+    "pd": {
+     "unit": "",
+     "values": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      10
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "[[pa]] % des pièces d'une usine sont fabriquées par l'atelier A. Parmi les pièces de l'atelier A, [[pd]] % sont défectueuses."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Quel pourcentage du total représentent les pièces défectueuses fabriquées par A ?",
+     "answer": "pa*pd/100",
+     "unit": "%",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Les pièces qui ne viennent pas de A représentent :",
+     "choices": [
+      "[[=100-pa]] % du total",
+      "[[=100-pd]] % du total",
+      "[[=100-pa-pd]] % du total"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "On multiplie les proportions : 0,pa × 0,pd.",
+   "method": "Proportion de A et défectueuses = (pa/100) × (pd/100).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\dfrac{[[pa]]}{100} \\times \\dfrac{[[pd]]}{100} =$ [[=pa*pd/10000:3]], soit [[=pa*pd/100:3]] % du total. Les pièces hors de A : 100 − [[pa]] = [[=100-pa]] %."
+    }
+   ]
+  },
+  {
+   "id": "X-CN-04-a",
+   "notions": [
+    "M-CN-04"
+   ],
+   "title": "Taux d'évolution d'une consommation",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "V0": {
+     "unit": "",
+     "values": [
+      8000,
+      10000,
+      12000,
+      15000,
+      20000
+     ]
+    },
+    "t": {
+     "unit": "",
+     "values": [
+      -15,
+      -10,
+      -8,
+      -5,
+      4,
+      6,
+      12.5,
+      20
+     ]
+    }
+   },
+   "vars": {
+    "V1": "V0*(1+t/100)"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "La consommation électrique d'un atelier passe de [[V0]] kWh à [[=V1:5]] kWh."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Calculer la variation absolue (en kWh).",
+     "answer": "V1 - V0",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 4
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Calculer le taux d'évolution, en %.",
+     "answer": "100*(V1-V0)/V0",
+     "unit": "%",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "t = (V₁ − V₀) / V₀.",
+   "method": "Variation absolue = V₁ − V₀ ; variation relative = (V₁ − V₀)/V₀.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Variation absolue : [[=V1:5]] − [[V0]] = [[=V1-V0:4]] kWh. Taux : $\\dfrac{[[=V1-V0:4]]}{[[V0]]} =$ [[=(V1-V0)/V0:3]], soit [[=100*(V1-V0)/V0:3]] %."
+    }
+   ]
+  },
+  {
+   "id": "X-CN-04-b",
+   "notions": [
+    "M-CN-04"
+   ],
+   "title": "Appliquer un pourcentage d'évolution",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "V0": {
+     "unit": "",
+     "values": [
+      150,
+      240,
+      480,
+      1200,
+      2500
+     ]
+    },
+    "t": {
+     "unit": "",
+     "values": [
+      5,
+      8,
+      12,
+      15,
+      20,
+      25
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un contrat d'énergie coûte [[V0]] € par mois. Le prix augmente de [[t]] %."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Nouveau prix mensuel (en €) ?",
+     "answer": "V0*(1+t/100)",
+     "unit": "",
+     "tolerance": 0.005,
+     "sig": 4
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Coefficient multiplicateur associé ?",
+     "answer": "1+t/100",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 4
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Le pourcentage « [[t]] % » exprime ici :",
+     "choices": [
+      "une évolution",
+      "une proportion",
+      "un indice"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Augmenter de t % revient à multiplier par 1 + t/100.",
+   "method": "V₁ = V₀ × (1 + t/100).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$V_1 = [[V0]] \\times$ [[=1+t/100:4]] = [[=V0*(1+t/100):4]] €. C'est une évolution (variation entre deux dates)."
+    }
+   ]
+  },
+  {
+   "id": "X-CN-05-a",
+   "notions": [
+    "M-CN-05"
+   ],
+   "title": "Deux évolutions successives",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "t1": {
+     "unit": "",
+     "values": [
+      -20,
+      -10,
+      5,
+      10,
+      15,
+      20,
+      30,
+      50
+     ]
+    },
+    "t2": {
+     "unit": "",
+     "values": [
+      -30,
+      -20,
+      -10,
+      10,
+      20,
+      25,
+      50
+     ]
+    }
+   },
+   "vars": {
+    "T": "(1+t1/100)*(1+t2/100) - 1"
+   },
+   "constraints": [
+    "abs(T) > 0.005"
+   ],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Le prix du cuivre évolue de [[t1]] % une année, puis de [[t2]] % l'année suivante."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Taux global sur les deux ans, en % ?",
+     "answer": "100*T",
+     "unit": "%",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Taux moyen annuel, en % ?",
+     "answer": "100*((1+T)^(1/2) - 1)",
+     "unit": "%",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Quelle évolution, en %, ramènerait le prix à sa valeur de départ ?",
+     "answer": "100*(1/(1+T) - 1)",
+     "unit": "%",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Multiplie les coefficients multiplicateurs.",
+   "method": "1 + T = (1 + t₁)(1 + t₂) ; taux moyen = (1 + T)^(1/2) − 1 ; taux réciproque = 1/(1 + T) − 1.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$1 + T =$ [[=1+t1/100:4]] × [[=1+t2/100:4]] = [[=1+T:4]], donc $T =$ [[=100*T:3]] %."
+    },
+    {
+     "type": "text",
+     "text": "Taux moyen : [[=1+T:4]]$^{1/2} - 1 =$ [[=100*((1+T)^(1/2)-1):3]] %. Taux réciproque : $\\dfrac{1}{[[=1+T:4]]} - 1 =$ [[=100*(1/(1+T)-1):3]] %."
+    }
+   ]
+  },
+  {
+   "id": "X-CN-05-b",
+   "notions": [
+    "M-CN-05"
+   ],
+   "title": "Piège des pourcentages",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "t": {
+     "unit": "",
+     "values": [
+      10,
+      20,
+      25,
+      40,
+      50
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un prix augmente de [[t]] %, puis baisse de [[t]] %."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Évolution globale, en % ?",
+     "answer": "100*((1+t/100)*(1-t/100) - 1)",
+     "unit": "%",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Le prix final est :",
+     "choices": [
+      "inférieur au prix de départ",
+      "égal au prix de départ",
+      "supérieur au prix de départ"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "(1 + t)(1 − t) = 1 − t².",
+   "method": "Coefficient global : (1 + t/100)(1 − t/100).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$(1 + [[=t/100]])(1 - [[=t/100]]) =$ [[=(1+t/100)*(1-t/100):4]], soit [[=100*((1+t/100)*(1-t/100)-1):3]] % : le prix a baissé."
+    }
+   ]
+  },
+  {
+   "id": "X-CN-06-a",
+   "notions": [
+    "M-CN-06"
+   ],
+   "title": "Lire un indice base 100",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "I1": {
+     "unit": "",
+     "values": [
+      104,
+      108,
+      112,
+      118,
+      125,
+      96,
+      92
+     ]
+    },
+    "I2": {
+     "unit": "",
+     "values": [
+      110,
+      115,
+      120,
+      130,
+      135,
+      140
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [
+    "I2 != I1"
+   ],
+   "statement": [
+    {
+     "type": "text",
+     "text": "L'indice du prix du kWh (base 100 en 2020) vaut [[I1]] en 2023 et [[I2]] en 2025."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Évolution du prix entre 2020 et 2023, en % ?",
+     "answer": "I1 - 100",
+     "unit": "%",
+     "tolerance": 0.001,
+     "sig": 6
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Évolution du prix entre 2023 et 2025, en % ?",
+     "answer": "100*(I2/I1 - 1)",
+     "unit": "%",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Entre deux dates quelconques, on divise les indices.",
+   "method": "Depuis la référence : t = (I − 100)/100. Entre deux dates : t = I₂/I₁ − 1.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "2020 → 2023 : [[I1]] − 100 = [[=I1-100]] %. 2023 → 2025 : $\\dfrac{[[I2]]}{[[I1]]} - 1 =$ [[=100*(I2/I1-1):3]] % (et non [[=I2-I1]] %)."
+    }
+   ]
+  },
+  {
+   "id": "X-CN-06-b",
+   "notions": [
+    "M-CN-06"
+   ],
+   "title": "Calculer un indice",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "V0": {
+     "unit": "",
+     "values": [
+      0.15,
+      0.18,
+      0.2,
+      0.25
+     ]
+    },
+    "r": {
+     "unit": "",
+     "values": [
+      0.9,
+      1.05,
+      1.1,
+      1.2,
+      1.35,
+      1.5
+     ]
+    }
+   },
+   "vars": {
+    "V": "V0*r"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Le kWh coûtait [[V0]] € en 2020 (année de référence) et coûte [[=V:3]] € aujourd'hui."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Indice du prix aujourd'hui (base 100 en 2020) ?",
+     "answer": "100*V/V0",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Évolution correspondante, en % ?",
+     "answer": "100*V/V0 - 100",
+     "unit": "%",
+     "tolerance": 0.02,
+     "sig": 3
+    }
+   ],
+   "hint": "I = 100 × V / V₀.",
+   "method": "I = 100 × V/V₀ ; évolution = I − 100 (en %).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$I = 100 \\times \\dfrac{[[=V:3]]}{[[V0]]} =$ [[=100*V/V0:4]], soit une évolution de [[=100*V/V0-100:3]] %."
+    }
+   ]
+  },
+  {
+   "id": "X-CN-07-a",
+   "notions": [
+    "M-CN-07"
+   ],
+   "title": "Conversions décimal, binaire, hexadécimal",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "n": {
+     "unit": "",
+     "min": 5,
+     "max": 255,
+     "step": 1
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On considère l'entier décimal $N = [[n]]$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "base",
+     "prompt": "Écrire $N$ en binaire.",
+     "answer": "n",
+     "base": 2
+    },
+    {
+     "id": "q2",
+     "kind": "base",
+     "prompt": "Écrire $N$ en hexadécimal.",
+     "answer": "n",
+     "base": 16
+    }
+   ],
+   "hint": "Divisions successives par 2 ; pour l'hexadécimal, regroupe les bits par 4 en partant de la droite.",
+   "method": "Lire les restes des divisions par 2 de bas en haut ; 4 bits = 1 chiffre hexadécimal.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$[[n]] =$ [[=n|bin]]$_2$ = [[=n|hex]]$_{16}$."
+    }
+   ]
+  },
+  {
+   "id": "X-CN-07-b",
+   "notions": [
+    "M-CN-07"
+   ],
+   "title": "Du binaire et de l'hexadécimal vers le décimal",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "a": {
+     "unit": "",
+     "min": 9,
+     "max": 250,
+     "step": 1
+    },
+    "b": {
+     "unit": "",
+     "min": 16,
+     "max": 4000,
+     "step": 1
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On donne $A =$ [[=a|bin]]$_2$ et $B =$ [[=b|hex]]$_{16}$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Valeur décimale de $A$ ?",
+     "answer": "a",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 6
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Valeur décimale de $B$ ?",
+     "answer": "b",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 6
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Combien de chiffres hexadécimaux faut-il pour écrire un octet ?",
+     "choices": [
+      "2",
+      "4",
+      "8"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Chaque chiffre est multiplié par une puissance de la base selon sa position (de droite à gauche : base⁰, base¹…).",
+   "method": "A = Σ bit × 2^position ; B = Σ chiffre × 16^position (A = 10 … F = 15).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$A =$ [[a]] et $B =$ [[b]]. Un octet = 8 bits = 2 groupes de 4 bits, donc 2 chiffres hexadécimaux."
+    }
+   ]
+  },
+  {
+   "id": "X-CN-08-a",
+   "notions": [
+    "M-CN-08"
+   ],
+   "title": "Addition de deux octets",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "a": {
+     "unit": "",
+     "min": 3,
+     "max": 120,
+     "step": 1
+    },
+    "b": {
+     "unit": "",
+     "min": 3,
+     "max": 120,
+     "step": 1
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Effectuer en binaire l'addition [[=a|bin]] + [[=b|bin]]."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "base",
+     "prompt": "Résultat en binaire ?",
+     "answer": "a + b",
+     "base": 2
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Vérification : valeur décimale du résultat ?",
+     "answer": "a + b",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 6
+    }
+   ],
+   "hint": "1 + 1 = 10 : on pose 0 et on retient 1.",
+   "method": "Additionner colonne par colonne de droite à gauche avec les retenues, puis vérifier en décimal.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "[[=a|bin]]₂ = [[a]] et [[=b|bin]]₂ = [[b]] ; [[a]] + [[b]] = [[=a+b]] = [[=a+b|bin]]₂."
+    }
+   ]
+  },
+  {
+   "id": "X-CN-08-b",
+   "notions": [
+    "M-CN-08"
+   ],
+   "title": "Dépassement sur un octet",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "a": {
+     "unit": "",
+     "min": 130,
+     "max": 250,
+     "step": 1
+    },
+    "b": {
+     "unit": "",
+     "min": 130,
+     "max": 250,
+     "step": 1
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un microcontrôleur additionne deux octets : [[=a|bin]] et [[=b|bin]]."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "base",
+     "prompt": "Résultat exact en binaire ?",
+     "answer": "a + b",
+     "base": 2
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Ce résultat tient-il sur 8 bits ?",
+     "choices": [
+      "Non, il faut 9 bits",
+      "Oui",
+      "Oui, il faut seulement 7 bits"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Le plus grand nombre sur 8 bits est 1111 1111 = 255.",
+   "method": "Convertir pour vérifier : si la somme dépasse 255, un 9e bit (retenue) est nécessaire.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "[[a]] + [[b]] = [[=a+b]] = [[=a+b|bin]]₂ : [[=a+b]] > 255, il faut 9 bits."
+    }
+   ]
+  },
+  {
+   "id": "X-CN-09-a",
+   "notions": [
+    "M-CN-09"
+   ],
+   "title": "Lire des nombres romains",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Le système romain : I = 1, V = 5, X = 10, L = 50, C = 100, D = 500, M = 1000."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "MCMXCIV vaut :",
+     "choices": [
+      "1994",
+      "2194",
+      "1996"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "XLIX vaut :",
+     "choices": [
+      "49",
+      "51",
+      "69"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "2027 s'écrit :",
+     "choices": [
+      "MMXXVII",
+      "MMXXIIV",
+      "MMXVVII"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Un symbole placé avant un symbole plus grand se soustrait.",
+   "method": "Lire de gauche à droite en regroupant les paires soustractives (CM = 900, XC = 90, IV = 4).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "MCMXCIV = 1000 + 900 + 90 + 4 = 1994 ; XLIX = 40 + 9 = 49 ; 2027 = MM + XX + VII = MMXXVII."
+    }
+   ]
+  },
+  {
+   "id": "X-CN-09-b",
+   "notions": [
+    "M-CN-09"
+   ],
+   "title": "Repères sur les systèmes de numération",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Pourquoi le système romain se prête-t-il mal au calcul ?",
+     "choices": [
+      "Il n'a ni zéro ni valeur de position",
+      "Il n'utilise que des lettres majuscules",
+      "Il ne permet pas d'écrire de grands nombres"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "La base 60 sert encore aujourd'hui pour :",
+     "choices": [
+      "les heures et les angles",
+      "les adresses mémoire",
+      "les tensions électriques"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Un nombre est divisible par 3 si :",
+     "choices": [
+      "la somme de ses chiffres est divisible par 3",
+      "il se termine par 3",
+      "ses deux derniers chiffres forment un multiple de 3"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Pense à ce qui rend la base 10 pratique pour poser une opération.",
+   "method": "Un système positionnel avec zéro permet de poser les opérations colonne par colonne.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Sans zéro ni position, on ne peut pas aligner les unités, dizaines… La base 60 (sexagésimale) sert pour les minutes, secondes et degrés d'angle. Critère de divisibilité par 3 : somme des chiffres."
+    }
+   ]
+  }
+ ]
+}

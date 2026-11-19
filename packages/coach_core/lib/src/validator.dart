@@ -119,7 +119,7 @@ List<Issue> validate(Library lib, {int seeds = 50}) {
       if (!Question.kinds.contains(q.kind)) issues.add(Issue(w, 'question ${q.id} : type inconnu ${q.kind}'));
       if (q.kind == 'choice') {
         if (q.choices.length < 2) issues.add(Issue(w, 'question ${q.id} : moins de 2 propositions'));
-        if (q.correct == null || q.correct! < 0 || q.correct! >= q.choices.length) {
+        if (q.correctExpr == null && (q.correct == null || q.correct! < 0 || q.correct! >= q.choices.length)) {
           issues.add(Issue(w, 'question ${q.id} : bonne proposition invalide'));
         }
         if (q.choices.toSet().length != q.choices.length) issues.add(Issue(w, 'question ${q.id} : propositions en double'));
@@ -226,7 +226,8 @@ String report(Library lib, List<Issue> issues) {
     b.writeln('  ${s.label.padRight(24)} ${cov.count(s)}');
   }
   b.writeln('  Inventaire à vérifier     ${cov.inventoryToCheck}');
-  b.writeln('Couverture : ${(cov.ratio * 100).floor()} %');
+  b.writeln('Contenu écrit (cours + ≥ 2 exercices) : ${(cov.integratedRatio * 100).floor()} %');
+  b.writeln('Couverture vérifiée : ${(cov.ratio * 100).floor()} %');
   b.writeln('Erreurs : ${errs.length} · alertes : ${warns.length}');
   for (final i in [...errs, ...warns]) {
     b.writeln('  $i');

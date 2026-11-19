@@ -55,13 +55,15 @@ class ProgressScreen extends StatelessWidget {
       AppCard(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Row(children: [
-            ProgressRing(value: cov.ratio, size: 86, label: '${(cov.ratio * 100).floor()} %'),
-            const SizedBox(width: 16),
+            ProgressRing(value: cov.integratedRatio, size: 86, label: '${(cov.integratedRatio * 100).floor()} %', caption: 'écrit'),
+            const SizedBox(width: 12),
+            ProgressRing(value: cov.ratio, size: 86, label: '${(cov.ratio * 100).floor()} %', caption: 'vérifié'),
+            const SizedBox(width: 14),
             Expanded(
               child: Text(
-                'Part des ${cov.total} notions au programme dont le cours et les exercices sont écrits et vérifiés. '
-                'Ce chiffre n\'atteint jamais 100 % tant qu\'une notion reste incomplète ou à vérifier.',
-                style: TextStyle(color: n.mid, fontSize: 13, height: 1.4),
+                'Sur ${cov.total} notions au programme : part dont le cours et au moins 2 exercices sont écrits, '
+                'puis part relue et déclarée conforme. Jamais 100 % tant qu\'il reste une notion incomplète ou à vérifier.',
+                style: TextStyle(color: n.mid, fontSize: 12.5, height: 1.4),
               ),
             ),
           ]),

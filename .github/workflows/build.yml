@@ -176,7 +176,9 @@ jobs:
           if (-not (Test-Path "$dir\ElectroCoach.exe")) { Write-Error "Installation échouée"; exit 1 }
           Write-Host "Installé dans $dir"
           # mise à jour comme la fait l'application : installateur silencieux + relance
-          Start-Process -FilePath $setup.FullName -ArgumentList '/SILENT','/SUPPRESSMSGBOXES','/NORESTART','/CLOSEAPPLICATIONS','/RELAUNCH=1' -Wait
+          # (WaitForExit et non -Wait : -Wait attendrait aussi l'appli relancée)
+          $upd = Start-Process -FilePath $setup.FullName -ArgumentList '/SILENT','/SUPPRESSMSGBOXES','/NORESTART','/CLOSEAPPLICATIONS','/RELAUNCH=1' -PassThru
+          if (-not $upd.WaitForExit(180000)) { Write-Error "L'installateur de mise à jour ne s'est pas terminé"; exit 1 }
           Start-Sleep -Seconds 8
           $p = Get-Process -Name ElectroCoach -ErrorAction SilentlyContinue
           if (-not $p) { Write-Error "L'application n'a pas été relancée après la mise à jour"; exit 1 }

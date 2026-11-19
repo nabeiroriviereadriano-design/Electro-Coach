@@ -237,7 +237,11 @@ class _QuestionCard extends StatelessWidget {
           enableSuggestions: false,
           style: const TextStyle(fontFamily: kFontMono, fontSize: 16),
           decoration: InputDecoration(
-            hintText: q.kind == 'complex' ? 'ex. 3 + j4  ou  5∠53°' : (q.unit.isEmpty ? 'ta réponse' : 'ex. 12,5 ${q.unit}'),
+            hintText: switch (q.kind) {
+              'complex' => 'ex. 3 + j4  ou  5∠53°',
+              'base' => q.base == 2 ? 'ex. 101101' : 'ex. 3F',
+              _ => q.unit.isEmpty ? 'ta réponse' : 'ex. 12,5 ${q.unit}',
+            },
             suffixText: q.unit.isEmpty ? null : q.unit,
           ),
         ),

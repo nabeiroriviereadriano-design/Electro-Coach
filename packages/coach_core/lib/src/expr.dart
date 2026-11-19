@@ -150,6 +150,20 @@ final Map<String, Complex Function(List<Complex>)> functions = {
     final f = math.pow(10, d);
     return Complex((_real(a[0], 'round') * f).roundToDouble() / f);
   },
+  // comparaisons (1 si vrai, 0 sinon) : bonne réponse calculée d'un QCM
+  'gt': (a) {
+    if (a.length != 2) throw ExprError('gt attend 2 arguments');
+    return Complex(_real(a[0], 'gt') > _real(a[1], 'gt') ? 1 : 0);
+  },
+  'lt': (a) {
+    if (a.length != 2) throw ExprError('lt attend 2 arguments');
+    return Complex(_real(a[0], 'lt') < _real(a[1], 'lt') ? 1 : 0);
+  },
+  'eq': (a) {
+    if (a.length != 2) throw ExprError('eq attend 2 arguments');
+    final x = _real(a[0], 'eq'), y = _real(a[1], 'eq');
+    return Complex((x - y).abs() <= 1e-9 * math.max(1.0, math.max(x.abs(), y.abs())) ? 1 : 0);
+  },
   // binomiale : C(n, k)
   'C': (a) {
     if (a.length != 2) throw ExprError('C attend 2 arguments');

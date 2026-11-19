@@ -1,0 +1,1476 @@
+{
+ "id": "maths-nombres-complexes",
+ "courses": [
+  {
+   "id": "C-NC-02",
+   "notions": [
+    "M-NC-02"
+   ],
+   "title": "Équation du second degré à coefficients réels",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "On résout $az^2 + bz + c = 0$ ($a \\neq 0$, $a$, $b$, $c$ réels) à l'aide du **discriminant** $\\Delta = b^2 - 4ac$."
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Signe de $\\Delta$",
+       "Solutions"
+      ],
+      [
+       "$\\Delta > 0$",
+       "deux réelles : $z = \\dfrac{-b \\pm \\sqrt{\\Delta}}{2a}$"
+      ],
+      [
+       "$\\Delta = 0$",
+       "une réelle double : $z = -\\dfrac{b}{2a}$"
+      ],
+      [
+       "$\\Delta < 0$",
+       "deux complexes conjuguées : $z = \\dfrac{-b \\pm j\\sqrt{-\\Delta}}{2a}$"
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "text": "Exemple : $z^2 + 2z + 5 = 0$ : $\\Delta = 4 - 20 = -16$, $\\sqrt{-\\Delta} = 4$, donc $z = -1 \\pm 2j$."
+    },
+    {
+     "type": "tip",
+     "text": "C'est exactement l'**équation caractéristique** des équations différentielles du second ordre (circuit RLC) : un discriminant négatif donne un régime oscillant amorti.",
+     "title": ""
+    },
+    {
+     "type": "warning",
+     "text": "Quand $\\Delta < 0$, on écrit $j\\sqrt{-\\Delta}$ et non $\\sqrt{\\Delta}$ : la racine carrée d'un nombre négatif n'existe pas dans $\\mathbb{R}$.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-NC-03",
+   "notions": [
+    "M-NC-03"
+   ],
+   "title": "Représentation géométrique d'un complexe",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Dans un repère orthonormé, le complexe $z = a + jb$ est représenté par le **point** $M(a\\,;b)$ ou par le **vecteur** $\\overrightarrow{OM}$. On dit que $z$ est l'**affixe** de $M$."
+    },
+    {
+     "type": "text",
+     "text": "L'axe des abscisses porte les réels (axe réel), l'axe des ordonnées les imaginaires purs (axe imaginaire)."
+    },
+    {
+     "type": "formula",
+     "tex": "z_{\\overrightarrow{AB}} = z_B - z_A \\qquad AB = |z_B - z_A|",
+     "title": "Vecteur et distance"
+    },
+    {
+     "type": "text",
+     "text": "- L'ensemble des points d'affixe $z$ tels que $\\mathrm{Re}(z) = k$ est la **droite verticale** $x = k$.\\n- L'ensemble des points tels que $\\mathrm{Im}(z) = k$ est la **droite horizontale** $y = k$."
+    },
+    {
+     "type": "tip",
+     "text": "En électrotechnique, ce plan est celui des **vecteurs de Fresnel** : la partie réelle et la partie imaginaire d'une impédance se lisent directement sur le dessin (résistance horizontale, réactance verticale).",
+     "title": ""
+    },
+    {
+     "type": "warning",
+     "text": "Le point image de $3 - 2j$ est $(3\\,;-2)$ : la partie imaginaire est $-2$, pas $-2j$.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-NC-05",
+   "notions": [
+    "M-NC-05"
+   ],
+   "title": "Ensembles de points : cercles et demi-droites",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Soit $A$ le point d'affixe $a$ et $k$ un réel."
+    },
+    {
+     "type": "formula",
+     "tex": "|z - a| = k \\iff AM = k",
+     "title": "Module"
+    },
+    {
+     "type": "text",
+     "text": "L'ensemble des points $M$ tels que $|z - a| = k$ ($k > 0$) est le **cercle de centre $A$ et de rayon $k$**."
+    },
+    {
+     "type": "formula",
+     "tex": "\\arg(z - a) = \\theta \\iff (\\vec{u}, \\overrightarrow{AM}) = \\theta",
+     "title": "Argument"
+    },
+    {
+     "type": "text",
+     "text": "L'ensemble des points $M \\neq A$ tels que $\\arg(z - a) = \\theta$ est la **demi-droite** d'origine $A$ (exclue) qui fait l'angle $\\theta$ avec l'axe des réels."
+    },
+    {
+     "type": "method",
+     "text": "1. Écrire la condition sous la forme $|z - a| = k$ ou $\\arg(z - a) = \\theta$ (attention au signe : $|z + 2 - j| = |z - (-2 + j)|$).\\n2. Lire le centre ou l'origine $A$, puis le rayon ou l'angle.",
+     "title": "Méthode"
+    },
+    {
+     "type": "warning",
+     "text": "$|z + 3| = 2$ est le cercle de centre $-3$ (point $(-3\\,;0)$), pas de centre $3$.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-NC-06",
+   "notions": [
+    "M-NC-06"
+   ],
+   "title": "Transformations d'écritures complexes",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Ce paragraphe complète le module ; son contenu exact reste **à vérifier sur le texte intégral** de l'arrêté du 4 juin 2013."
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Écriture",
+       "Effet sur le point d'affixe $z$"
+      ],
+      [
+       "$z \\mapsto z + b$",
+       "translation de vecteur d'affixe $b$"
+      ],
+      [
+       "$z \\mapsto kz$ ($k$ réel > 0)",
+       "homothétie de centre O, rapport $k$"
+      ],
+      [
+       "$z \\mapsto e^{j\\theta} z$",
+       "rotation de centre O, d'angle $\\theta$"
+      ],
+      [
+       "$z \\mapsto j z$",
+       "rotation de $+90°$"
+      ],
+      [
+       "$z \\mapsto \\dfrac{1}{z}$",
+       "module inversé, argument opposé"
+      ]
+     ]
+    },
+    {
+     "type": "formula",
+     "tex": "\\left|\\frac{1}{z}\\right| = \\frac{1}{|z|} \\qquad \\arg\\frac{1}{z} = -\\arg z",
+     "title": "Inverse"
+    },
+    {
+     "type": "tip",
+     "text": "Multiplier un courant par $jL\\omega$ (bobine) le fait tourner de 90° dans le plan de Fresnel : la tension est en avance de 90° sur le courant. Les diagrammes de Nyquist utilisent l'inverse $1/z$.",
+     "title": ""
+    },
+    {
+     "type": "method",
+     "text": "Pour l'image par $z \\mapsto az$ avec $a = r e^{j\\theta}$ : multiplier le module par $r$ et ajouter $\\theta$ à l'argument.",
+     "title": "Méthode"
+    }
+   ]
+  },
+  {
+   "id": "C-NC-07",
+   "notions": [
+    "M-NC-07"
+   ],
+   "title": "Représentation de Fresnel et nombres complexes",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "À la grandeur sinusoïdale $u(t) = U\\sqrt{2}\\sin(\\omega t + \\varphi)$ on associe :"
+    },
+    {
+     "type": "text",
+     "text": "- le **vecteur de Fresnel** de longueur $U$ (valeur efficace) faisant l'angle $\\varphi$ avec l'axe de référence ;\\n- le **complexe** $\\underline{U} = U e^{j\\varphi} = U(\\cos\\varphi + j\\sin\\varphi)$."
+    },
+    {
+     "type": "formula",
+     "tex": "u_1 + u_2 \\;\\longleftrightarrow\\; \\underline{U_1} + \\underline{U_2}",
+     "title": "Somme de grandeurs de même fréquence"
+    },
+    {
+     "type": "method",
+     "text": "1. Écrire chaque grandeur sous forme complexe (module = valeur efficace, argument = phase).\n2. Additionner en forme **algébrique**.\n3. Revenir au module et à l'argument : $U = |\\underline{U}|$, $\\varphi = \\arg \\underline{U}$.",
+     "title": "Méthode : additionner deux tensions sinusoïdales"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : $U_1 = 100\\angle 0°$ et $U_2 = 100\\angle 90°$ donnent $\\underline{U} = 100 + 100j$, soit $U = 141\\ \\mathrm{V}$ et $\\varphi = 45°$."
+    },
+    {
+     "type": "warning",
+     "text": "Les valeurs efficaces ne s'additionnent pas (sauf si les grandeurs sont en phase) : 100 V + 100 V déphasés de 90° donnent 141 V.",
+     "title": ""
+    },
+    {
+     "type": "tip",
+     "text": "La loi des mailles s'écrit avec les complexes (ou les vecteurs de Fresnel), jamais avec les seules valeurs efficaces.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-NC-08",
+   "notions": [
+    "M-NC-08"
+   ],
+   "title": "Dériver et intégrer avec les complexes ; arctangente",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "\\frac{d}{dt}\\left(e^{j\\omega t}\\right) = j\\omega\\,e^{j\\omega t} \\qquad \\int e^{j\\omega t}\\,dt = \\frac{1}{j\\omega}\\,e^{j\\omega t}",
+     "title": "Dérivée et primitive"
+    },
+    {
+     "type": "text",
+     "text": "En notation complexe, **dériver revient à multiplier par $j\\omega$** et **intégrer revient à diviser par $j\\omega$**. Multiplier par $j$ fait tourner de $+90°$, diviser par $j$ de $-90°$."
+    },
+    {
+     "type": "formula",
+     "tex": "u_L = L\\frac{di}{dt} \\Rightarrow \\underline{U_L} = jL\\omega\\,\\underline{I} \\qquad i_C = C\\frac{du}{dt} \\Rightarrow \\underline{I_C} = jC\\omega\\,\\underline{U}",
+     "title": "Application aux dipôles"
+    },
+    {
+     "type": "formula",
+     "tex": "\\arg(a + jb) = \\arctan\\frac{b}{a} \\ \\ (a > 0) \\qquad \\arg(a + jb) = \\arctan\\frac{b}{a} \\pm \\pi \\ \\ (a < 0)",
+     "title": "Argument et arctangente"
+    },
+    {
+     "type": "warning",
+     "text": "La calculatrice donne $\\arctan(b/a)$ entre $-90°$ et $+90°$ : si $a < 0$, il faut corriger de $\\pm 180°$.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-NC-09",
+   "notions": [
+    "M-NC-09"
+   ],
+   "title": "Polynômes et fractions rationnelles en jω",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Les impédances et les fonctions de transfert s'écrivent comme des polynômes ou des fractions de la variable $j\\omega$, à coefficients réels."
+    },
+    {
+     "type": "formula",
+     "tex": "\\underline{Z} = R + jL\\omega + \\frac{1}{jC\\omega} \\qquad \\underline{H}(j\\omega) = \\frac{1}{1 + j\\omega\\tau}",
+     "title": "Exemples"
+    },
+    {
+     "type": "formula",
+     "tex": "\\left|\\frac{N}{D}\\right| = \\frac{|N|}{|D|} \\qquad \\arg\\frac{N}{D} = \\arg N - \\arg D",
+     "title": "Module et argument d'un quotient"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : pour $\\underline{H} = \\dfrac{1}{1 + j\\omega\\tau}$ : $|\\underline{H}| = \\dfrac{1}{\\sqrt{1 + \\omega^2\\tau^2}}$ et $\\arg \\underline{H} = -\\arctan(\\omega\\tau)$."
+    },
+    {
+     "type": "method",
+     "text": "Pour mettre $\\dfrac{1}{jC\\omega}$ sous forme algébrique : multiplier haut et bas par $j$ : $\\dfrac{1}{jC\\omega} = -\\dfrac{j}{C\\omega}$.",
+     "title": "Méthode"
+    },
+    {
+     "type": "tip",
+     "text": "Limites : quand $\\omega \\to 0$, $\\underline{H} \\to 1$ ; quand $\\omega \\to +\\infty$, $|\\underline{H}| \\to 0$ (filtre passe-bas).",
+     "title": ""
+    }
+   ]
+  }
+ ],
+ "examples": [],
+ "exercises": [
+  {
+   "id": "X-NC-03-a",
+   "notions": [
+    "M-NC-03"
+   ],
+   "title": "Point image et vecteur",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "a": {
+     "unit": "",
+     "values": [
+      -9,
+      -8,
+      -7,
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ]
+    },
+    "b": {
+     "unit": "",
+     "values": [
+      -9,
+      -8,
+      -7,
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ]
+    },
+    "c": {
+     "unit": "",
+     "values": [
+      -9,
+      -8,
+      -7,
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ]
+    },
+    "d": {
+     "unit": "",
+     "values": [
+      -9,
+      -8,
+      -7,
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ]
+    }
+   },
+   "vars": {
+    "zA": "a + j*b",
+    "zB": "c + j*d"
+   },
+   "constraints": [
+    "abs(zB - zA) > 0"
+   ],
+   "statement": [
+    {
+     "type": "text",
+     "text": "$A$ a pour affixe $z_A = [[a]] + j([[b]])$ et $B$ a pour affixe $z_B = [[c]] + j([[d]])$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Ordonnée du point $A$ ?",
+     "answer": "b",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 6
+    },
+    {
+     "id": "q2",
+     "kind": "complex",
+     "prompt": "Affixe du vecteur $\\overrightarrow{AB}$ ?",
+     "answer": "zB - zA",
+     "tolerance": 0.001,
+     "sig": 3,
+     "polar": false
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Distance $AB$ ?",
+     "answer": "abs(zB - zA)",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Affixe de AB = z_B − z_A ; distance = module.",
+   "method": "Le point image de a + jb est (a ; b). z_AB = z_B − z_A et AB = |z_B − z_A|.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$A([[a]]\\,;[[b]])$. $z_B - z_A =$ [[=zB-zA]], donc $AB = \\sqrt{([[=c-a]])^2 + ([[=d-b]])^2} \\approx$ [[=abs(zB-zA):3]]."
+    }
+   ]
+  },
+  {
+   "id": "X-NC-03-b",
+   "notions": [
+    "M-NC-03"
+   ],
+   "title": "Ensembles Re(z) = k et Im(z) = k",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "k": {
+     "unit": "",
+     "values": [
+      -9,
+      -8,
+      -7,
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On cherche l'ensemble des points $M$ d'affixe $z$ du plan complexe."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "L'ensemble des points tels que $\\mathrm{Re}(z) = [[k]]$ est :",
+     "choices": [
+      "la droite verticale d'équation $x = [[k]]$",
+      "la droite horizontale d'équation $y = [[k]]$",
+      "le cercle de centre O et de rayon [[=abs(k)]]"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "L'ensemble des points tels que $\\mathrm{Im}(z) = [[k]]$ est :",
+     "choices": [
+      "la droite horizontale d'équation $y = [[k]]$",
+      "la droite verticale d'équation $x = [[k]]$",
+      "la droite d'équation $y = [[k]]x$"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Re(z) est l'abscisse, Im(z) est l'ordonnée.",
+   "method": "Re(z) = k fixe l'abscisse (droite verticale) ; Im(z) = k fixe l'ordonnée (droite horizontale).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Re(z) = [[k]] : tous les points d'abscisse [[k]], droite verticale. Im(z) = [[k]] : tous les points d'ordonnée [[k]], droite horizontale."
+    }
+   ]
+  },
+  {
+   "id": "X-NC-05-a",
+   "notions": [
+    "M-NC-05"
+   ],
+   "title": "Reconnaître un cercle",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "a": {
+     "unit": "",
+     "values": [
+      -9,
+      -8,
+      -7,
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ]
+    },
+    "b": {
+     "unit": "",
+     "values": [
+      -9,
+      -8,
+      -7,
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ]
+    },
+    "k": {
+     "unit": "",
+     "min": 1,
+     "max": 6,
+     "step": 1
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On considère l'ensemble $\\mathcal{E}$ des points $M$ d'affixe $z$ tels que $|z - ([[a]] + [[b]]j)| = [[k]]$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "$\\mathcal{E}$ est :",
+     "choices": [
+      "le cercle de centre $([[a]]\\,;[[b]])$ et de rayon [[k]]",
+      "le cercle de centre $([[=-a]]\\,;[[=-b]])$ et de rayon [[k]]",
+      "la demi-droite d'origine $([[a]]\\,;[[b]])$"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Distance du point $O$ au centre de $\\mathcal{E}$ ?",
+     "answer": "sqrt(a^2 + b^2)",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Le point $O$ appartient-il à $\\mathcal{E}$ ?",
+     "choices": [
+      "Oui",
+      "Non"
+     ],
+     "correct": 0,
+     "correctExpr": "1 - (eq(sqrt(a^2 + b^2), k))"
+    }
+   ],
+   "hint": "|z − a| = k : tous les points à la distance k du point d'affixe a.",
+   "method": "|z − a| = AM : c'est un cercle de centre A et de rayon k.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Le centre est le point d'affixe [[a]] + [[b]]j, le rayon [[k]]. $OA = \\sqrt{[[=a^2]] + [[=b^2]]} \\approx$ [[=sqrt(a^2+b^2):3]]."
+    }
+   ]
+  },
+  {
+   "id": "X-NC-05-b",
+   "notions": [
+    "M-NC-05"
+   ],
+   "title": "Demi-droite d'argument donné",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "a": {
+     "unit": "",
+     "values": [
+      -9,
+      -8,
+      -7,
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ]
+    },
+    "t": {
+     "unit": "",
+     "values": [
+      30,
+      45,
+      60,
+      90,
+      120,
+      135,
+      -45,
+      -90
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "$\\mathcal{D}$ est l'ensemble des points $M$ d'affixe $z \\neq [[a]]$ tels que $\\arg(z - [[a]]) = [[t]]°$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "$\\mathcal{D}$ est :",
+     "choices": [
+      "une demi-droite d'origine le point $([[a]]\\,;0)$, privée de ce point",
+      "un cercle de centre $([[a]]\\,;0)$",
+      "une droite passant par l'origine"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "complex",
+     "prompt": "Affixe du point de $\\mathcal{D}$ situé à la distance 2 de son origine ?",
+     "answer": "a + 2*exp(j*rad(t))",
+     "tolerance": 0.01,
+     "sig": 3,
+     "polar": false
+    }
+   ],
+   "hint": "z − a = r e^{jθ} avec r > 0.",
+   "method": "Les points de 𝒟 s'écrivent z = a + r e^{jθ}, r > 0 : on part du point d'affixe a dans la direction θ.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Avec $r = 2$ : $z = [[a]] + 2e^{j\\,[[t]]°} \\approx$ [[=a+2*exp(j*rad(t)):3]]."
+    }
+   ]
+  },
+  {
+   "id": "X-NC-06-a",
+   "notions": [
+    "M-NC-06"
+   ],
+   "title": "Translation et rotation",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "a": {
+     "unit": "",
+     "values": [
+      -9,
+      -8,
+      -7,
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ]
+    },
+    "b": {
+     "unit": "",
+     "values": [
+      -9,
+      -8,
+      -7,
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ]
+    },
+    "c": {
+     "unit": "",
+     "values": [
+      -9,
+      -8,
+      -7,
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ]
+    },
+    "d": {
+     "unit": "",
+     "values": [
+      -9,
+      -8,
+      -7,
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ]
+    }
+   },
+   "vars": {
+    "z": "a + j*b",
+    "w": "c + j*d"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Soit $z = [[a]] + j([[b]])$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "complex",
+     "prompt": "Image de $z$ par la translation $z \\mapsto z + ([[c]] + [[d]]j)$ ?",
+     "answer": "z + w",
+     "tolerance": 0.001,
+     "sig": 3,
+     "polar": false
+    },
+    {
+     "id": "q2",
+     "kind": "complex",
+     "prompt": "Image de $z$ par la rotation de $+90°$ ($z \\mapsto jz$) ?",
+     "answer": "j*z",
+     "tolerance": 0.001,
+     "sig": 3,
+     "polar": false
+    }
+   ],
+   "hint": "j × (a + jb) = −b + ja.",
+   "method": "z ↦ z + b ajoute le vecteur b ; z ↦ jz fait tourner de 90° autour de O.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$z + w =$ [[=z+w]] ; $jz = j([[a]] + [[b]]j) =$ [[=j*z]]."
+    }
+   ]
+  },
+  {
+   "id": "X-NC-06-b",
+   "notions": [
+    "M-NC-06"
+   ],
+   "title": "Inverse d'un complexe",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "r": {
+     "unit": "",
+     "values": [
+      2,
+      4,
+      5,
+      10,
+      20
+     ]
+    },
+    "t": {
+     "unit": "",
+     "values": [
+      30,
+      45,
+      60,
+      -30,
+      -60,
+      120
+     ]
+    }
+   },
+   "vars": {
+    "z": "r*exp(j*rad(t))"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Soit $z = [[r]]\\,e^{j\\,[[t]]°}$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Module de $\\dfrac{1}{z}$ ?",
+     "answer": "1/r",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Argument de $\\dfrac{1}{z}$, en degrés ?",
+     "answer": "-t",
+     "unit": "°",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "complex",
+     "prompt": "$\\dfrac{1}{z}$ sous forme algébrique ?",
+     "answer": "1/z",
+     "tolerance": 0.02,
+     "sig": 3,
+     "polar": false
+    }
+   ],
+   "hint": "|1/z| = 1/|z| et arg(1/z) = −arg z.",
+   "method": "Inverser revient à inverser le module et à changer le signe de l'argument.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\left|\\dfrac{1}{z}\\right| = \\dfrac{1}{[[r]]} =$ [[=1/r:3]] ; argument [[=-t]]° ; $\\dfrac{1}{z} \\approx$ [[=1/z:3]]."
+    }
+   ]
+  },
+  {
+   "id": "X-NC-07-a",
+   "notions": [
+    "M-NC-07"
+   ],
+   "title": "Somme de deux tensions sinusoïdales",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "U1": {
+     "unit": "",
+     "values": [
+      50,
+      100,
+      120,
+      150,
+      230
+     ]
+    },
+    "U2": {
+     "unit": "",
+     "values": [
+      30,
+      50,
+      80,
+      100
+     ]
+    },
+    "ph": {
+     "unit": "",
+     "values": [
+      30,
+      45,
+      60,
+      90,
+      -30,
+      -60,
+      -90,
+      120
+     ]
+    }
+   },
+   "vars": {
+    "S": "U1 + U2*exp(j*rad(ph))"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "$u_1(t) = [[U1]]\\sqrt{2}\\sin(\\omega t)$ et $u_2(t) = [[U2]]\\sqrt{2}\\sin(\\omega t + [[ph]]°)$ ont la même pulsation. On cherche $u = u_1 + u_2$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "complex",
+     "prompt": "Complexe associé $\\underline{U} = \\underline{U_1} + \\underline{U_2}$ (forme algébrique) ?",
+     "answer": "S",
+     "tolerance": 0.02,
+     "sig": 3,
+     "polar": false
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Valeur efficace $U$ de $u$ ?",
+     "answer": "abs(S)",
+     "unit": "V",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Phase de $u$, en degrés ?",
+     "answer": "deg(arg(S))",
+     "unit": "°",
+     "tolerance": 0.02,
+     "sig": 3
+    }
+   ],
+   "hint": "U₂ = U₂(cos φ + j sin φ), puis on ajoute U₁ (réel).",
+   "method": "Associer à chaque tension U e^{jφ}, additionner en forme algébrique, puis revenir au module et à l'argument.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\underline{U_2} = [[U2]](\\cos [[ph]]° + j\\sin [[ph]]°) \\approx$ [[=U2*exp(j*rad(ph)):3]] ; $\\underline{U} \\approx$ [[=S:3]]."
+    },
+    {
+     "type": "text",
+     "text": "$U = |\\underline{U}| \\approx$ [[=abs(S):3|V]] et $\\varphi \\approx$ [[=deg(arg(S)):3]]°."
+    }
+   ]
+  },
+  {
+   "id": "X-NC-07-b",
+   "notions": [
+    "M-NC-07"
+   ],
+   "title": "Du complexe à l'expression temporelle",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "a": {
+     "unit": "",
+     "values": [
+      30,
+      40,
+      60,
+      80,
+      100,
+      120
+     ]
+    },
+    "b": {
+     "unit": "",
+     "values": [
+      -80,
+      -60,
+      -40,
+      40,
+      60,
+      80,
+      90
+     ]
+    }
+   },
+   "vars": {
+    "U": "a + j*b"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Le complexe associé à une tension est $\\underline{U} = [[a]] + j([[b]])$ (en volts, valeur efficace)."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Valeur efficace $U$ ?",
+     "answer": "abs(U)",
+     "unit": "V",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Phase $\\varphi$ en degrés ?",
+     "answer": "deg(arg(U))",
+     "unit": "°",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Valeur maximale de $u(t)$ ?",
+     "answer": "sqrt(2)*abs(U)",
+     "unit": "V",
+     "tolerance": 0.02,
+     "sig": 3
+    }
+   ],
+   "hint": "Module = valeur efficace ; argument = phase ; valeur max = U√2.",
+   "method": "u(t) = U√2 sin(ωt + φ) avec U = |U| et φ = arg U.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$U \\approx$ [[=abs(U):3|V]], $\\varphi \\approx$ [[=deg(arg(U)):3]]°, $U_{max} = U\\sqrt{2} \\approx$ [[=sqrt(2)*abs(U):3|V]]."
+    }
+   ]
+  },
+  {
+   "id": "X-NC-08-a",
+   "notions": [
+    "M-NC-08"
+   ],
+   "title": "Tension aux bornes d'une bobine",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "I": {
+     "unit": "",
+     "values": [
+      0.5,
+      1,
+      2,
+      2.5,
+      4
+     ]
+    },
+    "ph": {
+     "unit": "",
+     "values": [
+      0,
+      30,
+      -30,
+      45,
+      -60
+     ]
+    },
+    "L": {
+     "unit": "H",
+     "values": [
+      0.05,
+      0.1,
+      0.2,
+      0.3
+     ]
+    },
+    "f": {
+     "unit": "",
+     "values": [
+      50
+     ]
+    }
+   },
+   "vars": {
+    "w": "2*pi*f",
+    "Ic": "I*exp(j*rad(ph))",
+    "UL": "j*L*w*Ic"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une bobine parfaite $L =$ [[L]] est traversée par un courant de complexe associé $\\underline{I} = [[I]]\\angle [[ph]]°$ (A, efficace), à 50 Hz."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Module de $\\underline{U_L}$ ?",
+     "answer": "abs(UL)",
+     "unit": "V",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Phase de $\\underline{U_L}$, en degrés ?",
+     "answer": "ph + 90",
+     "unit": "°",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Par rapport au courant, la tension aux bornes de la bobine est :",
+     "choices": [
+      "en avance de 90°",
+      "en retard de 90°",
+      "en phase"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Dériver revient à multiplier par jω : U_L = jLω I.",
+   "method": "|U_L| = Lω|I| ; arg U_L = arg I + 90°.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$L\\omega =$ [[=L*w:3|Ω]], donc $U_L =$ [[=abs(UL):3|V]] et sa phase vaut [[ph]] + 90 = [[=ph+90]]° : avance de 90° sur le courant."
+    }
+   ]
+  },
+  {
+   "id": "X-NC-08-b",
+   "notions": [
+    "M-NC-08"
+   ],
+   "title": "Argument et quadrant",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "a": {
+     "unit": "",
+     "values": [
+      -9,
+      -8,
+      -7,
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ]
+    },
+    "b": {
+     "unit": "",
+     "values": [
+      -9,
+      -8,
+      -7,
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ]
+    }
+   },
+   "vars": {
+    "z": "a + j*b"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Soit $z = [[a]] + j([[b]])$. La calculatrice donne $\\arctan\\left(\\dfrac{[[b]]}{[[a]]}\\right) \\approx [[=deg(atan(b/a)):3]]°$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Argument de $z$ en degrés (entre −180° et 180°) ?",
+     "answer": "deg(arg(z))",
+     "unit": "°",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Faut-il corriger le résultat de la calculatrice de ±180° ?",
+     "choices": [
+      "Oui",
+      "Non"
+     ],
+     "correct": 0,
+     "correctExpr": "1 - (lt(a, 0))"
+    }
+   ],
+   "hint": "Si la partie réelle est négative, il faut ajouter ou retrancher 180°.",
+   "method": "arg(a + jb) = arctan(b/a) si a > 0 ; sinon arctan(b/a) ± 180°.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Ici $a = [[a]]$ : l'argument vaut [[=deg(arg(z)):4]]°."
+    }
+   ]
+  },
+  {
+   "id": "X-NC-09-a",
+   "notions": [
+    "M-NC-09"
+   ],
+   "title": "Fonction de transfert d'un filtre passe-bas",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "tau": {
+     "unit": "",
+     "values": [
+      0.001,
+      0.002,
+      0.005,
+      0.01
+     ]
+    },
+    "f": {
+     "unit": "",
+     "values": [
+      10,
+      20,
+      50,
+      100,
+      200,
+      500
+     ]
+    }
+   },
+   "vars": {
+    "w": "2*pi*f",
+    "H": "1/(1 + j*w*tau)"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On donne $\\underline{H}(j\\omega) = \\dfrac{1}{1 + j\\omega\\tau}$ avec $\\tau =$ [[tau]] s, et $f =$ [[f]] Hz."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Calculer $\\omega\\tau$.",
+     "answer": "w*tau",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Module $|\\underline{H}|$ ?",
+     "answer": "abs(H)",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Argument de $\\underline{H}$ en degrés ?",
+     "answer": "deg(arg(H))",
+     "unit": "°",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "|H| = 1/√(1 + ω²τ²) et arg H = −arctan(ωτ).",
+   "method": "Module d'un quotient = quotient des modules ; argument = arg N − arg D.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\omega\\tau =$ [[=w*tau:3]] ; $|\\underline{H}| = \\dfrac{1}{\\sqrt{1 + [[=(w*tau)^2:3]]}} \\approx$ [[=abs(H):3]] ; $\\arg \\underline{H} = -\\arctan([[=w*tau:3]]) \\approx$ [[=deg(arg(H)):3]]°."
+    }
+   ]
+  },
+  {
+   "id": "X-NC-09-b",
+   "notions": [
+    "M-NC-09"
+   ],
+   "title": "Impédance complexe d'un RLC série",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "R": {
+     "unit": "Ω",
+     "values": [
+      10,
+      20,
+      33,
+      47
+     ]
+    },
+    "L": {
+     "unit": "H",
+     "values": [
+      0.05,
+      0.1,
+      0.2
+     ]
+    },
+    "C": {
+     "unit": "F",
+     "values": [
+      4.7e-05,
+      0.0001,
+      0.00022
+     ]
+    }
+   },
+   "vars": {
+    "w": "2*pi*50",
+    "Z": "R + j*L*w + 1/(j*C*w)"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "$\\underline{Z} = R + jL\\omega + \\dfrac{1}{jC\\omega}$ avec $R =$ [[R]], $L =$ [[L]], $C =$ [[C]] et $f = 50$ Hz."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Partie imaginaire de $\\dfrac{1}{jC\\omega}$ (en Ω) ?",
+     "answer": "-1/(C*w)",
+     "unit": "",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "complex",
+     "prompt": "$\\underline{Z}$ sous forme algébrique (en Ω) ?",
+     "answer": "Z",
+     "tolerance": 0.02,
+     "sig": 3,
+     "polar": false
+    }
+   ],
+   "hint": "1/(jCω) = −j/(Cω).",
+   "method": "Mettre chaque terme sous forme algébrique puis additionner parties réelles et imaginaires.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\dfrac{1}{jC\\omega} = -\\dfrac{j}{C\\omega} \\approx$ [[=1/(j*C*w):3]] ; $jL\\omega \\approx$ [[=j*L*w:3]] ; donc $\\underline{Z} \\approx$ [[=Z:3]] Ω."
+    }
+   ]
+  }
+ ]
+}

@@ -1,1 +1,7 @@
-{ "packs": ["packs/demo-complexes-impedances.json"] }
+{
+ "packs": [
+  "packs/demo-complexes-impedances.json",
+  "packs/maths-calcul-numeration.json",
+  "packs/maths-nombres-complexes.json"
+ ]
+}

@@ -51,7 +51,9 @@ ExerciseInstance generate(Exercise ex, int seed, {int maxTries = 200}) {
       final expected = <String, Complex>{};
       for (final q in ex.questions) {
         if (q.kind == 'choice') {
-          expected[q.id] = Complex((q.correct ?? -1).toDouble());
+          final idx = q.correctExpr != null ? parseExpr(q.correctExpr!).eval(env).re.round() : (q.correct ?? -1);
+          if (idx < 0 || idx >= q.choices.length) throw ExprError('bonne proposition hors liste pour ${q.id}');
+          expected[q.id] = Complex(idx.toDouble());
         } else {
           final v = parseExpr(q.answer ?? '').eval(env);
           if (!v.isFinite) throw ExprError('réponse non finie pour ${q.id}');
@@ -151,6 +153,8 @@ String _renderOne(Match m, Map<String, Complex> env, Map<String, String> units) 
     final polar = opts.remove('polar');
     final noUnit = opts.remove('nu');
     final value = parseExpr(src).eval(env);
+    if (opts.remove('bin')) return value.re.round().toRadixString(2);
+    if (opts.remove('hex')) return value.re.round().toRadixString(16).toUpperCase();
     var unit = opts.isNotEmpty ? opts.first : '';
     if (!computed && unit.isEmpty && !noUnit) unit = units[src] ?? '';
     if (noUnit) unit = '';
@@ -179,13 +183,33 @@ Verdict check(Question q, Complex expected, String input) {
     final ok = i != null && i == expected.re.round();
     return Verdict(ok, ok ? 'Bonne réponse.' : 'Ce n\'est pas la bonne proposition.');
   }
+  if (q.kind == 'base') {
+    final digits = raw.replaceAll(RegExp(r'[\s\u202f\u00a0]'), '').replaceFirst(RegExp(r'^0[xXbB]'), '').replaceFirst(RegExp(r'[hH₂]$'), '');
+    final v = int.tryParse(digits, radix: q.base);
+    if (v == null) {
+      return Verdict(false, q.base == 2 ? 'Écris uniquement des 0 et des 1.' : 'Écris un nombre hexadécimal (chiffres 0–9 et lettres A–F).');
+    }
+    final ok = v == expected.re.round();
+    return Verdict(ok, ok ? 'Bonne réponse.' : 'Ce n\'est pas la valeur attendue.', value: Complex(v.toDouble()));
+  }
   final split = splitUnit(raw, q.unit.isEmpty ? null : q.unit);
   if (split == null) return Verdict(false, 'Unité incorrecte : l\'unité attendue est « ${q.unit} ».');
   Complex v;
   try {
     v = parseExpr(split.numberPart, userInput: true).eval(const {});
   } on ExprError catch (e) {
-    return Verdict(false, 'Saisie illisible : ${e.message}.');
+    // sans unité demandée, on tolère une unité écrite à la fin (« 1500 kWh », « 12 € »)
+    final stripped = q.unit.isEmpty ? split.numberPart.replaceFirst(RegExp(r'\s*[A-Za-zΩµ°€%/²³]+\s*$'), '') : '';
+    Complex? retry;
+    if (stripped.isNotEmpty && stripped != split.numberPart && !RegExp(r'[ji]\s*$').hasMatch(split.numberPart)) {
+      try {
+        retry = parseExpr(stripped, userInput: true).eval(const {});
+      } on ExprError {
+        retry = null;
+      }
+    }
+    if (retry == null) return Verdict(false, 'Saisie illisible : ${e.message}.');
+    v = retry;
   }
   if (!v.isFinite) return Verdict(false, 'Saisie illisible.');
   v = v.scale(split.factor);
@@ -218,6 +242,7 @@ String formatExpected(Question q, Complex v) {
     final i = v.re.round();
     return i >= 0 && i < q.choices.length ? q.choices[i] : '?';
   }
+  if (q.kind == 'base') return v.re.round().toRadixString(q.base).toUpperCase();
   if (q.kind == 'complex') return formatComplex(v, sig: q.sig, polar: q.polar, unit: q.unit);
   return q.unit.isEmpty ? formatNumber(v.re, sig: q.sig) : formatEng(v.re, q.unit, sig: q.sig);
 }

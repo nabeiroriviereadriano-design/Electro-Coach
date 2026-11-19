@@ -51,6 +51,15 @@ class CoverageReport {
     return r > 0.99 ? 0.99 : r;
   }
 
+  /// Part des notions dont le cours et au moins 2 exercices sont écrits
+  /// (vérifiés ou non). Plafonnée à 99 % tant qu'il manque quelque chose.
+  double get integratedRatio {
+    if (total == 0) return 0;
+    final n = count(CoverageState.integrated) + count(CoverageState.conform);
+    final r = n / total;
+    return n < total && r > 0.99 ? 0.99 : r;
+  }
+
   CoverageReport only(bool Function(Notion) keep) => CoverageReport([for (final i in items) if (keep(i.notion)) i]);
 }
 

@@ -65,11 +65,18 @@ Name: "{userdesktop}\{#AppName}"; Filename: "{app}\{#AppExe}"; Tasks: desktopico
 
 [Run]
 Filename: "{app}\{#AppExe}"; Description: "{cm:LaunchProgram,{#AppName}}"; Flags: nowait postinstall skipifsilent
+; mise à jour lancée par l'application (/RELAUNCH=1) : la rouvrir à la fin
+Filename: "{app}\{#AppExe}"; Flags: nowait; Check: ShouldRelaunch
 
 [UninstallDelete]
 Type: filesandordirs; Name: "{app}"
 
 [Code]
+function ShouldRelaunch: Boolean;
+begin
+  Result := ExpandConstant('{param:RELAUNCH|0}') = '1';
+end;
+
 // À la désinstallation : proposer d'effacer aussi la progression stockée sur ce PC.
 procedure CurUninstallStepChanged(CurUninstallStep: TUninstallStep);
 var

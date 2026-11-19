@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../state/app_state.dart';
 import '../theme.dart';
 import '../widgets/common.dart';
+import '../widgets/update_banner.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -48,6 +49,34 @@ class SettingsScreen extends StatelessWidget {
             Icon(Icons.chevron_right, color: n.mid),
           ]),
         ),
+        const SectionLabel('Mises à jour'),
+        if (!s.updater.supported)
+          Text('Les mises à jour automatiques concernent Windows et Android.', style: TextStyle(color: n.mid, fontSize: 13))
+        else ...[
+          UpdateBanner(updater: s.updater, showIdle: true),
+          AppCard(
+            padding: const EdgeInsets.fromLTRB(16, 6, 8, 6),
+            child: Row(children: [
+              Expanded(
+                child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                  const Text('Mises à jour automatiques'),
+                  Text('Vérifie GitHub au démarrage et télécharge la nouvelle version (empreinte SHA-256 contrôlée).',
+                      style: TextStyle(color: n.mid, fontSize: 12.5)),
+                ]),
+              ),
+              Switch(value: s.autoUpdate, onChanged: s.setAutoUpdate),
+            ]),
+          ),
+          const SizedBox(height: 10),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: OutlinedButton.icon(
+              onPressed: s.checkForUpdates,
+              icon: const Icon(Icons.refresh, size: 18),
+              label: const Text('Rechercher une mise à jour'),
+            ),
+          ),
+        ],
         const SectionLabel('Données'),
         AppCard(
           onTap: () async {

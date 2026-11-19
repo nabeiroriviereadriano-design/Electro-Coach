@@ -175,6 +175,14 @@ jobs:
           $dir = "$env:LOCALAPPDATA\Programs\Electro Coach"
           if (-not (Test-Path "$dir\ElectroCoach.exe")) { Write-Error "Installation échouée"; exit 1 }
           Write-Host "Installé dans $dir"
+          # mise à jour comme la fait l'application : installateur silencieux + relance
+          Start-Process -FilePath $setup.FullName -ArgumentList '/SILENT','/SUPPRESSMSGBOXES','/NORESTART','/CLOSEAPPLICATIONS','/RELAUNCH=1' -Wait
+          Start-Sleep -Seconds 8
+          $p = Get-Process -Name ElectroCoach -ErrorAction SilentlyContinue
+          if (-not $p) { Write-Error "L'application n'a pas été relancée après la mise à jour"; exit 1 }
+          Write-Host "Mise à jour + relance : OK (PID $($p.Id))"
+          $p | Stop-Process -Force
+          Start-Sleep -Seconds 2
           Start-Process -FilePath "$dir\unins000.exe" -ArgumentList '/VERYSILENT','/SUPPRESSMSGBOXES','/NORESTART' -Wait
           Start-Sleep -Seconds 3
           if (Test-Path "$dir\ElectroCoach.exe") { Write-Error "Désinstallation incomplète"; exit 1 }
@@ -206,7 +214,11 @@ jobs:
             echo "La release v$V existe déjà : rien à publier (augmentez la version dans app/pubspec.yaml)."
             exit 0
           fi
+          # nouveautés de cette version (section « ## $V » de CHANGELOG.md)
+          awk -v v="## $V" '$0==v{f=1;next} /^## /{f=0} f' CHANGELOG.md > changes.md
           cat > notes.md <<NOTES
+          $(cat changes.md)
+
           ## Téléchargements
 
           | Plateforme | Fichier |
@@ -220,5 +232,8 @@ jobs:
           Mise à jour : installez la nouvelle version par-dessus l'ancienne, votre progression est conservée.
           NOTES
           sed -i 's/^          //' notes.md
-          gh release create "v$V" out/android-apk/* out/windows-installer/* \
-            --prerelease --target "$GITHUB_SHA" --title "BTS Électro Coach $V" --notes-file notes.md
+          (cd out/android-apk && sha256sum *) > SHA256SUMS.txt
+          (cd out/windows-installer && sha256sum *) >> SHA256SUMS.txt
+          cat SHA256SUMS.txt
+          gh release create "v$V" out/android-apk/* out/windows-installer/* SHA256SUMS.txt \
+            --target "$GITHUB_SHA" --title "BTS Électro Coach $V" --notes-file notes.md

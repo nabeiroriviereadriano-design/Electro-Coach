@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../state/app_state.dart';
 import '../theme.dart';
 import '../widgets/common.dart';
+import '../widgets/update_banner.dart';
 import 'notion_screen.dart';
 import 'settings_screen.dart';
 import 'subjects_screen.dart';
@@ -34,6 +35,7 @@ class HomeScreen extends StatelessWidget {
         ),
       ]),
       const SizedBox(height: 14),
+      UpdateBanner(updater: s.updater),
       AppCard(
         child: Row(children: [
           ProgressRing(value: mastery, size: 112, caption: s.year == 1 ? 'maîtrise\n1re année' : 'maîtrise\n2e année'),

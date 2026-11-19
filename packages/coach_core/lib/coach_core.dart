@@ -9,4 +9,5 @@ export 'src/generator.dart';
 export 'src/models.dart';
 export 'src/progress.dart';
 export 'src/units.dart';
+export 'src/update.dart';
 export 'src/validator.dart';

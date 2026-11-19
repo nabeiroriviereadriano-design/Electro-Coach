@@ -8,7 +8,8 @@ import 'package:flutter_test/flutter_test.dart';
 
 /// État de l'application sur le vrai contenu, progression en mémoire.
 Future<AppState> realState() async {
-  final s = AppState(store: MemoryProgressStore(), reader: (p) => File('assets/content/$p').readAsString());
+  final s = AppState(
+      store: MemoryProgressStore(), reader: (p) => File('assets/content/$p').readAsString(), checkUpdates: false);
   await s.init();
   if (s.fatalError != null) throw StateError(s.fatalError!);
   return s;

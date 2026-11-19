@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
@@ -5,6 +6,8 @@ import 'package:coach_core/coach_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:path_provider/path_provider.dart';
+
+import '../services/updater.dart';
 
 /// Lieu de sauvegarde de la progression (fichier local, rien en ligne).
 abstract class ProgressStore {
@@ -56,12 +59,17 @@ typedef AssetReader = Future<String> Function(String path);
 Future<String> bundleReader(String path) => rootBundle.loadString('assets/content/$path');
 
 class AppState extends ChangeNotifier {
-  AppState({ProgressStore? store, AssetReader? reader})
+  AppState({ProgressStore? store, AssetReader? reader, Updater? updater, this.checkUpdates = true})
       : _store = store,
-        _reader = reader ?? bundleReader;
+        _reader = reader ?? bundleReader,
+        updater = updater ?? Updater(currentVersion: version);
 
   ProgressStore? _store;
   final AssetReader _reader;
+
+  /// Mises à jour depuis GitHub.
+  final Updater updater;
+  final bool checkUpdates;
 
   late Library library;
   late Parcours parcours;
@@ -90,11 +98,35 @@ class AppState extends ChangeNotifier {
         ..addAll(progress.yearOverrides);
       themeMode = progress.settings['theme'] == 'light' ? ThemeMode.light : ThemeMode.dark;
       ready = true;
+      if (checkUpdates) unawaited(_autoCheck());
     } catch (e, st) {
       fatalError = '$e';
       debugPrint('$e\n$st');
     }
     notifyListeners();
+  }
+
+  /// Mises à jour automatiques activées (réglage, oui par défaut).
+  bool get autoUpdate => progress.settings['autoUpdate'] != 'off';
+
+  Future<void> setAutoUpdate(bool on) async {
+    progress.settings['autoUpdate'] = on ? 'on' : 'off';
+    await _save();
+    if (on) unawaited(checkForUpdates());
+  }
+
+  /// Vérification au démarrage, au plus toutes les 6 heures.
+  Future<void> _autoCheck() async {
+    if (!autoUpdate || !updater.supported) return;
+    final last = DateTime.tryParse(progress.settings['lastUpdateCheck'] ?? '');
+    if (last != null && DateTime.now().difference(last) < const Duration(hours: 6)) return;
+    await checkForUpdates();
+  }
+
+  Future<void> checkForUpdates() async {
+    progress.settings['lastUpdateCheck'] = DateTime.now().toIso8601String();
+    await _save();
+    await updater.check(autoDownload: autoUpdate);
   }
 
   Future<void> _save() async {

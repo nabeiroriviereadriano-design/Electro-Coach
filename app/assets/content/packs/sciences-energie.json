@@ -1,0 +1,2822 @@
+{
+ "id": "sciences-energie",
+ "courses": [
+  {
+   "id": "C-FE-01",
+   "notions": [
+    "S-FE-01"
+   ],
+   "title": "Énergie cinétique",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "E_c = \\frac{1}{2}mv^2 \\qquad E_c = \\frac{1}{2}J\\Omega^2",
+     "title": "Translation et rotation"
+    },
+    {
+     "type": "text",
+     "text": "$m$ en kg, $v$ en m/s, $J$ (moment d'inertie) en kg·m², $\\Omega$ en rad/s, $E_c$ en joules."
+    },
+    {
+     "type": "text",
+     "text": "Exemple : un volant d'inertie de $J = 2$ kg·m² tournant à 1500 tr/min ($\\Omega = 157$ rad/s) stocke $E_c = \\frac12 \\times 2 \\times 157^2 \\approx 24{,}7$ kJ."
+    },
+    {
+     "type": "tip",
+     "text": "C'est cette énergie que doit absorber la résistance de freinage d'un variateur quand on arrête une machine.",
+     "title": ""
+    },
+    {
+     "type": "warning",
+     "text": "L'énergie cinétique varie comme le **carré** de la vitesse : doubler la vitesse multiplie l'énergie par 4.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-FE-02",
+   "notions": [
+    "S-FE-02"
+   ],
+   "title": "Énergies potentielles",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Forme",
+       "Expression",
+       "Exemple"
+      ],
+      [
+       "pesanteur",
+       "$E_p = mgh$",
+       "eau d'un barrage"
+      ],
+      [
+       "élastique",
+       "$E_p = \\frac12 kx^2$",
+       "ressort de disjoncteur"
+      ],
+      [
+       "électrostatique",
+       "$E = \\frac12 CU^2$",
+       "condensateur chargé"
+      ],
+      [
+       "de pression",
+       "$E = p\\,V$",
+       "air comprimé"
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "text": "$g \\approx 9{,}81$ m/s², $h$ en m, $k$ en N/m, $x$ en m, $C$ en F, $U$ en V, $p$ en Pa, $V$ en m³."
+    },
+    {
+     "type": "text",
+     "text": "Exemple : 1000 m³ d'eau (1 000 000 kg) à 100 m de hauteur stockent $E_p = 10^6 \\times 9{,}81 \\times 100 \\approx 9{,}8 \\times 10^8$ J, soit 273 kWh."
+    },
+    {
+     "type": "tip",
+     "text": "Une station de transfert d'énergie par pompage (STEP) stocke l'électricité sous forme d'énergie potentielle de pesanteur.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-FE-03",
+   "notions": [
+    "S-FE-03"
+   ],
+   "title": "Énergie électromagnétique",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Une bobine parcourue par un courant stocke de l'énergie dans son **champ magnétique** ; un condensateur chargé, dans son **champ électrique**. La lumière et les ondes radio transportent de l'énergie électromagnétique."
+    },
+    {
+     "type": "formula",
+     "tex": "W_L = \\frac{1}{2}LI^2 \\qquad W_C = \\frac{1}{2}CU^2",
+     "title": "Énergies stockées"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : une bobine de 0,5 H parcourue par 10 A stocke $\\frac12 \\times 0{,}5 \\times 100 = 25$ J."
+    },
+    {
+     "type": "warning",
+     "text": "À l'ouverture d'un circuit inductif, cette énergie se libère brutalement (étincelle, surtension) : d'où les diodes de roue libre.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-FE-04",
+   "notions": [
+    "S-FE-04"
+   ],
+   "title": "Température et capteurs de température",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "T(\\mathrm{K}) = \\theta(^\\circ\\mathrm{C}) + 273{,}15",
+     "title": "Kelvin et Celsius"
+    },
+    {
+     "type": "text",
+     "text": "Une **variation** de température a la même valeur en K et en °C."
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Capteur",
+       "Principe",
+       "Usage"
+      ],
+      [
+       "Pt100",
+       "résistance de platine (100 Ω à 0 °C, ≈ 0,385 Ω/°C)",
+       "mesure précise −200 à 600 °C"
+      ],
+      [
+       "thermocouple",
+       "tension créée à la jonction de deux métaux",
+       "hautes températures (fours)"
+      ],
+      [
+       "thermistance CTN",
+       "résistance qui diminue quand θ augmente",
+       "protection des moteurs"
+      ]
+     ]
+    },
+    {
+     "type": "formula",
+     "tex": "R(\\theta) = R_0(1 + a\\theta)",
+     "title": "Pt100 (a ≈ 3,85 × 10⁻³ /°C)"
+    },
+    {
+     "type": "tip",
+     "text": "Tester un capteur : mesurer sa résistance à une température connue (glace fondante 0 °C) et comparer à la table constructeur.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-FE-05",
+   "notions": [
+    "S-FE-05"
+   ],
+   "title": "Énergie interne",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "La température est liée à l'**agitation microscopique** des particules qui constituent la matière : plus elles s'agitent, plus la température est élevée."
+    },
+    {
+     "type": "text",
+     "text": "L'**énergie interne** $U$ d'un système regroupe les énergies microscopiques. Quand un système reçoit de l'énergie (chaleur ou travail) sans fournir de travail, son énergie interne augmente : il s'échauffe ou change d'état."
+    },
+    {
+     "type": "text",
+     "text": "Exemple : l'effet Joule dans un câble fournit de l'énergie au métal ; son énergie interne augmente, il chauffe."
+    },
+    {
+     "type": "tip",
+     "text": "Une batterie de stockage de chaleur (ballon d'eau chaude) stocke de l'énergie sous forme d'énergie interne.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-FE-06",
+   "notions": [
+    "S-FE-06"
+   ],
+   "title": "Variation d'énergie interne d'un solide ou d'un liquide",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "\\Delta U = m\\,c\\,\\Delta\\theta",
+     "title": "Variation de température"
+    },
+    {
+     "type": "formula",
+     "tex": "\\Delta U = m\\,L",
+     "title": "Changement d'état à pression constante"
+    },
+    {
+     "type": "text",
+     "text": "$c$ : capacité thermique massique (J·kg⁻¹·K⁻¹) ; $L$ : chaleur latente (J/kg). Eau : $c = 4180$ J·kg⁻¹·K⁻¹ ; fusion de la glace $L_f = 334$ kJ/kg ; vaporisation $L_v = 2260$ kJ/kg."
+    },
+    {
+     "type": "text",
+     "text": "Exemple : chauffer 200 L d'eau de 15 °C à 60 °C : $\\Delta U = 200 \\times 4180 \\times 45 \\approx 37{,}6$ MJ ≈ 10,5 kWh."
+    },
+    {
+     "type": "method",
+     "text": "1. Convertir le volume d'eau en masse (1 L ≈ 1 kg).\n2. Calculer $\\Delta U$.\n3. Durée de chauffe : $t = \\Delta U / P$ (en tenant compte du rendement).",
+     "title": "Méthode : chauffe-eau"
+    }
+   ]
+  },
+  {
+   "id": "C-SE-01",
+   "notions": [
+    "S-SE-01"
+   ],
+   "title": "Sources d'énergie",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Une **source** d'énergie est une ressource naturelle (soleil, vent, uranium, pétrole…) ; une **forme** d'énergie est la manière dont elle se présente (cinétique, thermique, électrique…)."
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Type",
+       "Exemples"
+      ],
+      [
+       "renouvelables",
+       "solaire, éolien, hydraulique, biomasse, géothermie"
+      ],
+      [
+       "fossiles",
+       "charbon, pétrole, gaz naturel"
+      ],
+      [
+       "nucléaire",
+       "fission de l'uranium"
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "text": "Une source **renouvelable** se reconstitue à l'échelle humaine ; les sources fossiles et l'uranium sont en quantité limitée."
+    },
+    {
+     "type": "tip",
+     "text": "L'électricité n'est pas une source mais une forme d'énergie (un vecteur) produite à partir des sources.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-SE-02",
+   "notions": [
+    "S-SE-02"
+   ],
+   "title": "Facteur de charge",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "F_c = \\frac{E_{produite}}{P_{nominale} \\times \\Delta t}",
+     "title": "Facteur de charge"
+    },
+    {
+     "type": "text",
+     "text": "Il compare l'énergie réellement produite à celle qu'aurait fournie l'installation à pleine puissance sur la même durée. Ordres de grandeur en France : nucléaire ≈ 70 %, éolien terrestre ≈ 23 %, solaire photovoltaïque ≈ 14 %."
+    },
+    {
+     "type": "text",
+     "text": "Exemple : une éolienne de 3 MW, facteur de charge 25 %, produit sur un an $3 \\times 8760 \\times 0{,}25 \\approx 6570$ MWh."
+    },
+    {
+     "type": "method",
+     "text": "Pour dimensionner : $P_{nominale} = \\dfrac{E_{souhaitée}}{F_c \\times \\Delta t}$ (une année = 8760 h).",
+     "title": "Dimensionner une installation"
+    }
+   ]
+  },
+  {
+   "id": "C-SE-03",
+   "notions": [
+    "S-SE-03"
+   ],
+   "title": "Lire des données de production",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Les bilans de production (RTE pour la France) donnent l'énergie produite par filière, en TWh, et la part de chaque filière dans le mix électrique."
+    },
+    {
+     "type": "text",
+     "text": "Ordres de grandeur pour la France ces dernières années : production totale de l'ordre de 450 à 500 TWh par an, dont une majorité d'origine nucléaire, puis hydraulique, éolien, gaz et solaire."
+    },
+    {
+     "type": "method",
+     "text": "Part d'une filière = énergie de la filière / énergie totale. Pour comparer deux années, utiliser un taux d'évolution.",
+     "title": "Méthode"
+    },
+    {
+     "type": "warning",
+     "text": "Ne pas confondre **puissance installée** (GW) et **énergie produite** (TWh) : une filière peut avoir beaucoup de puissance installée et peu de production si son facteur de charge est faible.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-TF-01",
+   "notions": [
+    "S-TR-01"
+   ],
+   "title": "Conservation de l'énergie, travail et chaleur",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "L'énergie d'un système **isolé** se conserve : elle peut changer de forme, mais pas apparaître ni disparaître."
+    },
+    {
+     "type": "formula",
+     "tex": "\\Delta E = W + Q",
+     "title": "Bilan pour un système fermé"
+    },
+    {
+     "type": "text",
+     "text": "Un système échange de l'énergie avec l'extérieur uniquement de deux façons : par **travail** $W$ (mécanique ou électrique) et par **transfert thermique** (chaleur) $Q$. Comptés positivement s'ils sont reçus."
+    },
+    {
+     "type": "tip",
+     "text": "Dans un moteur électrique, le travail électrique reçu devient du travail mécanique fourni et de la chaleur cédée (les pertes).",
+     "title": ""
+    },
+    {
+     "type": "warning",
+     "text": "« Chaleur » et « température » sont différentes : la chaleur est un transfert d'énergie, la température une grandeur d'état.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-TF-02",
+   "notions": [
+    "S-TR-02"
+   ],
+   "title": "Les trois modes de transfert thermique",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Mode",
+       "Principe",
+       "Exemple"
+      ],
+      [
+       "conduction",
+       "de proche en proche dans la matière, sans déplacement de matière",
+       "chaleur qui traverse un mur, un radiateur de transistor"
+      ],
+      [
+       "convection",
+       "par déplacement d'un fluide (air, eau)",
+       "ventilation d'un moteur, convecteur électrique"
+      ],
+      [
+       "rayonnement",
+       "par ondes électromagnétiques (infrarouge), même dans le vide",
+       "soleil, radiant, caméra thermique"
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "text": "Le transfert se fait toujours spontanément du corps **chaud** vers le corps **froid**."
+    },
+    {
+     "type": "tip",
+     "text": "Un dissipateur à ailettes augmente la surface d'échange : il améliore la convection.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-TF-03",
+   "notions": [
+    "S-TR-03"
+   ],
+   "title": "Flux thermique à travers une paroi",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "\\Phi = \\frac{\\theta_1 - \\theta_2}{R_{th}} \\qquad R_{th} = \\frac{e}{\\lambda S}",
+     "title": "Paroi plane"
+    },
+    {
+     "type": "text",
+     "text": "$\\Phi$ en W, $R_{th}$ résistance thermique en K/W, $e$ épaisseur en m, $\\lambda$ conductivité thermique en W·m⁻¹·K⁻¹, $S$ surface en m²."
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Matériau",
+       "λ (W·m⁻¹·K⁻¹)"
+      ],
+      [
+       "cuivre",
+       "≈ 390"
+      ],
+      [
+       "acier",
+       "≈ 50"
+      ],
+      [
+       "béton",
+       "≈ 1,7"
+      ],
+      [
+       "laine de verre",
+       "≈ 0,04"
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "text": "Plusieurs couches en série : les résistances thermiques s'**ajoutent**, comme des résistances électriques."
+    },
+    {
+     "type": "tip",
+     "text": "Analogie électrique : $\\Phi$ ↔ courant, écart de température ↔ tension, $R_{th}$ ↔ résistance.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-TF-04",
+   "notions": [
+    "S-TR-04"
+   ],
+   "title": "Rayonnement et caméra thermique",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Tout corps émet un rayonnement qui dépend de sa température : plus il est chaud, plus il rayonne, et plus ce rayonnement se décale vers les courtes longueurs d'onde."
+    },
+    {
+     "type": "formula",
+     "tex": "P = \\varepsilon\\,\\sigma\\,S\\,T^4",
+     "title": "Puissance rayonnée (σ = 5,67 × 10⁻⁸ W·m⁻²·K⁻⁴)"
+    },
+    {
+     "type": "text",
+     "text": "La **caméra thermique** mesure le rayonnement infrarouge et le convertit en image de températures. Elle repère en maintenance les points chauds : connexion desserrée, phase surchargée, roulement qui chauffe."
+    },
+    {
+     "type": "warning",
+     "text": "L'émissivité $\\varepsilon$ dépend de la surface : un métal brillant réfléchit et paraît plus froid qu'il ne l'est. Il faut régler l'émissivité sur la caméra.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-TF-05",
+   "notions": [
+    "S-TR-05"
+   ],
+   "title": "Conversions et chaîne énergétique",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Conversion",
+       "Convertisseur"
+      ],
+      [
+       "électrique → mécanique",
+       "moteur"
+      ],
+      [
+       "mécanique → électrique",
+       "alternateur, génératrice"
+      ],
+      [
+       "rayonnante → électrique",
+       "cellule photovoltaïque"
+      ],
+      [
+       "chimique ↔ électrique",
+       "pile, accumulateur"
+      ],
+      [
+       "électrique → thermique",
+       "résistance chauffante"
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "text": "Une **chaîne énergétique** représente le chemin de l'énergie : réservoir ou source → convertisseurs → utilisation, avec à chaque étape des pertes (souvent thermiques)."
+    },
+    {
+     "type": "text",
+     "text": "Exemple : barrage → énergie potentielle → turbine (mécanique) → alternateur (électrique) → réseau → moteur (mécanique) → pompe."
+    },
+    {
+     "type": "method",
+     "text": "Dessiner une boîte par convertisseur, une flèche par transfert, et indiquer sous chaque flèche la forme d'énergie.",
+     "title": "Méthode"
+    }
+   ]
+  },
+  {
+   "id": "C-TF-06",
+   "notions": [
+    "S-TR-06"
+   ],
+   "title": "Énergie transférée, convertie, stockée",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Toute conversion fait passer l'énergie d'une forme **potentielle** (stockée : chimique, de pesanteur, électrostatique…) à une forme **cinétique** (mouvement, courant…), ou l'inverse."
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Réservoir",
+       "Énergie stockée (ordre de grandeur)"
+      ],
+      [
+       "batterie de smartphone",
+       "≈ 50 kJ (15 Wh)"
+      ],
+      [
+       "batterie de voiture électrique",
+       "≈ 200 MJ (60 kWh)"
+      ],
+      [
+       "1 L d'essence",
+       "≈ 32 MJ"
+      ],
+      [
+       "supercondensateur 3000 F, 2,7 V",
+       "≈ 11 kJ"
+      ]
+     ]
+    },
+    {
+     "type": "tip",
+     "text": "On mesure une énergie électrique avec un compteur (kWh) ou en intégrant la puissance mesurée par un analyseur.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-TF-07",
+   "notions": [
+    "S-TR-07"
+   ],
+   "title": "Bilan énergétique, rendement et COP",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "\\eta = \\frac{P_{utile}}{P_{absorbée}} = \\frac{W_{utile}}{W_{absorbée}} < 1",
+     "title": "Rendement"
+    },
+    {
+     "type": "formula",
+     "tex": "\\eta_{total} = \\eta_1 \\times \\eta_2 \\times \\dots",
+     "title": "Convertisseurs en cascade"
+    },
+    {
+     "type": "formula",
+     "tex": "COP = \\frac{Q_{utile}}{W_{électrique}}",
+     "title": "Coefficient de performance (pompe à chaleur)"
+    },
+    {
+     "type": "text",
+     "text": "Une pompe à chaleur a un COP supérieur à 1 (souvent 3 à 4) : elle prélève de la chaleur gratuite à l'extérieur et ne consomme que l'énergie du compresseur."
+    },
+    {
+     "type": "formula",
+     "tex": "t = \\frac{E_{stockée}}{P_{consommée}}",
+     "title": "Autonomie"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : moteur η = 0,9 entraînant une pompe η = 0,7 : rendement global 0,63."
+    }
+   ]
+  },
+  {
+   "id": "C-TF-08",
+   "notions": [
+    "S-TR-08"
+   ],
+   "title": "Puissance",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "P = \\frac{E}{\\Delta t}",
+     "title": "Puissance moyenne"
+    },
+    {
+     "type": "formula",
+     "tex": "P = F\\,v \\qquad P = C\\,\\Omega \\qquad P = U\\,I \\qquad P = \\Delta p\\,Q_v",
+     "title": "Effort × mouvement"
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Système",
+       "Puissance"
+      ],
+      [
+       "LED",
+       "≈ 1 W"
+      ],
+      [
+       "radiateur",
+       "1 à 2 kW"
+      ],
+      [
+       "moteur industriel",
+       "1 kW à 1 MW"
+      ],
+      [
+       "TGV",
+       "≈ 9 MW"
+      ],
+      [
+       "réacteur nucléaire",
+       "≈ 1 GW"
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "text": "Exemple : un moteur qui fournit un couple de 50 N·m à 1450 tr/min délivre $P = 50 \\times 2\\pi \\times 1450/60 \\approx 7{,}6$ kW."
+    },
+    {
+     "type": "warning",
+     "text": "Le kWh est une énergie (1 kWh = 3,6 MJ), le kW une puissance.",
+     "title": ""
+    }
+   ]
+  }
+ ],
+ "examples": [],
+ "exercises": [
+  {
+   "id": "X-FE-01-a",
+   "notions": [
+    "S-FE-01"
+   ],
+   "title": "Énergie cinétique d'un chariot",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "m": {
+     "unit": "",
+     "values": [
+      200,
+      500,
+      1000,
+      1500
+     ]
+    },
+    "v": {
+     "unit": "",
+     "values": [
+      0.5,
+      1,
+      2,
+      3
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un chariot de [[m]] kg roule à [[v]] m/s."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Énergie cinétique (J) ?",
+     "answer": "0.5*m*v^2",
+     "unit": "J",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Énergie si la vitesse double (J) ?",
+     "answer": "2*m*v^2",
+     "unit": "J",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Ec = ½ m v².",
+   "method": "Appliquer la formule ; le carré de la vitesse multiplie par 4.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$E_c = \\frac12 \\times [[m]] \\times [[v]]^2 =$ [[=0.5*m*v^2|J]] ; à vitesse double : [[=2*m*v^2|J]]."
+    }
+   ]
+  },
+  {
+   "id": "X-FE-01-b",
+   "notions": [
+    "S-FE-01"
+   ],
+   "title": "Volant d'inertie",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "J": {
+     "unit": "",
+     "values": [
+      0.5,
+      1,
+      2,
+      5
+     ]
+    },
+    "n": {
+     "unit": "",
+     "values": [
+      1000,
+      1500,
+      3000
+     ]
+    }
+   },
+   "vars": {
+    "W": "2*pi*n/60"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un rotor de moment d'inertie $J =$ [[J]] kg·m² tourne à [[n]] tr/min."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Vitesse angulaire (rad/s) ?",
+     "answer": "W",
+     "unit": "rad/s",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Énergie cinétique (J) ?",
+     "answer": "0.5*J*W^2",
+     "unit": "J",
+     "tolerance": 0.02,
+     "sig": 3
+    }
+   ],
+   "hint": "Ω = 2πn/60.",
+   "method": "Ec = ½ J Ω².",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\Omega \\approx$ [[=W:3|rad/s]] ; $E_c \\approx$ [[=0.5*J*W^2:3|J]]."
+    }
+   ]
+  },
+  {
+   "id": "X-FE-02-a",
+   "notions": [
+    "S-FE-02"
+   ],
+   "title": "Énergie potentielle d'une retenue d'eau",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "V": {
+     "unit": "",
+     "values": [
+      100,
+      500,
+      1000,
+      5000
+     ]
+    },
+    "h": {
+     "unit": "",
+     "values": [
+      20,
+      50,
+      100,
+      300
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un réservoir contient [[V]] m³ d'eau à [[h]] m au-dessus d'une turbine ($\\rho = 1000$ kg/m³, $g = 9{,}81$ m/s²)."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Énergie potentielle (J) ?",
+     "answer": "V*1000*9.81*h",
+     "unit": "J",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "En kWh ?",
+     "answer": "V*1000*9.81*h/3.6e6",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Ep = m g h avec m = ρV.",
+   "method": "Calculer la masse, puis Ep ; 1 kWh = 3,6 MJ.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$E_p = [[=V*1000]] \\times 9{,}81 \\times [[h]] \\approx$ [[=V*1000*9.81*h|J]], soit [[=V*1000*9.81*h/3.6e6:3]] kWh."
+    }
+   ]
+  },
+  {
+   "id": "X-FE-02-b",
+   "notions": [
+    "S-FE-02"
+   ],
+   "title": "Énergie d'un condensateur et d'un ressort",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "C": {
+     "unit": "F",
+     "values": [
+      0.0001,
+      0.00047,
+      0.001,
+      0.0022
+     ]
+    },
+    "U": {
+     "unit": "",
+     "values": [
+      50,
+      100,
+      400
+     ]
+    },
+    "k": {
+     "unit": "",
+     "values": [
+      500,
+      1000,
+      2000
+     ]
+    },
+    "x": {
+     "unit": "",
+     "values": [
+      0.01,
+      0.02,
+      0.05
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un condensateur de [[C]] est chargé sous [[U]] V. Le ressort d'armement d'un disjoncteur ($k =$ [[k]] N/m) est comprimé de [[x]] m."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Énergie du condensateur (J) ?",
+     "answer": "0.5*C*U^2",
+     "unit": "J",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Énergie du ressort (J) ?",
+     "answer": "0.5*k*x^2",
+     "unit": "J",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "½CU² et ½kx².",
+   "method": "Énergies potentielles électrostatique et élastique.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Condensateur : [[=0.5*C*U^2:3|J]] ; ressort : [[=0.5*k*x^2:3|J]]."
+    }
+   ]
+  },
+  {
+   "id": "X-FE-03-a",
+   "notions": [
+    "S-FE-03"
+   ],
+   "title": "Énergie stockée dans une bobine",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "L": {
+     "unit": "",
+     "values": [
+      0.01,
+      0.1,
+      0.5,
+      2
+     ]
+    },
+    "I": {
+     "unit": "",
+     "values": [
+      1,
+      5,
+      10,
+      20
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une bobine de [[L]] H est parcourue par [[I]] A."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Énergie magnétique stockée (J) ?",
+     "answer": "0.5*L*I^2",
+     "unit": "J",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "À l'ouverture brutale du circuit, cette énergie :",
+     "choices": [
+      "se libère (arc, surtension)",
+      "disparaît sans effet",
+      "reste stockée"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "W = ½ L I².",
+   "method": "L'énergie électromagnétique ne peut pas disparaître instantanément.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$W = \\frac12 \\times [[L]] \\times [[I]]^2 =$ [[=0.5*L*I^2:3|J]] ; elle se dissipe dans un arc : d'où la diode de roue libre."
+    }
+   ]
+  },
+  {
+   "id": "X-FE-03-b",
+   "notions": [
+    "S-FE-03"
+   ],
+   "title": "Comparer deux réservoirs",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "C": {
+     "unit": "",
+     "values": [
+      1,
+      10,
+      100
+     ]
+    },
+    "U": {
+     "unit": "",
+     "values": [
+      2.7
+     ]
+    },
+    "L": {
+     "unit": "",
+     "values": [
+      0.5,
+      1
+     ]
+    },
+    "I": {
+     "unit": "",
+     "values": [
+      10,
+      50
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On compare un supercondensateur de [[C]] F sous 2,7 V et une bobine de [[L]] H parcourue par [[I]] A."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Énergie du supercondensateur (J) ?",
+     "answer": "0.5*C*2.7^2",
+     "unit": "J",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Énergie de la bobine (J) ?",
+     "answer": "0.5*L*I^2",
+     "unit": "J",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "½CU² et ½LI².",
+   "method": "Calculer les deux énergies.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Supercondensateur : [[=0.5*C*7.29:3|J]] ; bobine : [[=0.5*L*I^2:3|J]]."
+    }
+   ]
+  },
+  {
+   "id": "X-FE-04-a",
+   "notions": [
+    "S-FE-04"
+   ],
+   "title": "Conversions de température",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "t": {
+     "unit": "",
+     "values": [
+      -20,
+      0,
+      25,
+      80,
+      150
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un moteur fonctionne à [[t]] °C."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Température en kelvins ?",
+     "answer": "t + 273.15",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 5
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Si la température augmente de 40 °C, de combien augmente-t-elle en kelvins ?",
+     "answer": "40",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    }
+   ],
+   "hint": "T = θ + 273,15 ; une variation est la même dans les deux échelles.",
+   "method": "Ajouter 273,15.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "[[t]] °C = [[=t+273.15:5]] K ; +40 °C = +40 K."
+    }
+   ]
+  },
+  {
+   "id": "X-FE-04-b",
+   "notions": [
+    "S-FE-04"
+   ],
+   "title": "Capteur Pt100",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "t": {
+     "unit": "",
+     "values": [
+      20,
+      50,
+      100,
+      150,
+      200
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une sonde Pt100 vérifie $R = 100(1 + 3{,}85 \\times 10^{-3}\\,\\theta)$ (Ω, θ en °C)."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Résistance à [[t]] °C (Ω) ?",
+     "answer": "100*(1 + 3.85e-3*t)",
+     "unit": "Ω",
+     "tolerance": 0.005,
+     "sig": 4
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Température si on mesure [[=100*(1+3.85e-3*(t+10)):4]] Ω (°C) ?",
+     "answer": "t + 10",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Inverser : θ = (R/100 − 1)/3,85 × 10⁻³.",
+   "method": "Loi affine de la sonde.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$R([[t]]) =$ [[=100*(1+3.85e-3*t):4|Ω]] ; la mesure correspond à [[=t+10]] °C."
+    }
+   ]
+  },
+  {
+   "id": "X-FE-05-a",
+   "notions": [
+    "S-FE-05"
+   ],
+   "title": "Interprétation microscopique",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Quand la température d'un câble augmente :",
+     "choices": [
+      "l'agitation de ses particules augmente",
+      "ses particules s'immobilisent",
+      "sa masse augmente"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Un corps qui reçoit de la chaleur sans fournir de travail :",
+     "choices": [
+      "voit son énergie interne augmenter",
+      "voit son énergie interne diminuer",
+      "garde la même énergie interne"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "L'effet Joule dans une résistance :",
+     "choices": [
+      "augmente l'énergie interne de la résistance",
+      "refroidit la résistance",
+      "crée de la masse"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Température ↔ agitation microscopique.",
+   "method": "L'énergie reçue est stockée sous forme d'énergie interne.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Plus de température = plus d'agitation ; l'énergie reçue augmente l'énergie interne (échauffement)."
+    }
+   ]
+  },
+  {
+   "id": "X-FE-05-b",
+   "notions": [
+    "S-FE-05"
+   ],
+   "title": "Énergie reçue par effet Joule",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "R": {
+     "unit": "",
+     "values": [
+      10,
+      22,
+      47
+     ]
+    },
+    "I": {
+     "unit": "",
+     "values": [
+      1,
+      2,
+      3
+     ]
+    },
+    "t": {
+     "unit": "",
+     "values": [
+      60,
+      300,
+      600
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une résistance de [[R]] Ω est parcourue par [[I]] A pendant [[t]] s."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Énergie reçue, donc augmentation de l'énergie interne si rien n'est cédé (J) ?",
+     "answer": "R*I^2*t",
+     "unit": "J",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "W = R I² t.",
+   "method": "Toute l'énergie électrique est convertie en énergie interne.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$W = [[R]] \\times [[I]]^2 \\times [[t]] =$ [[=R*I^2*t|J]]."
+    }
+   ]
+  },
+  {
+   "id": "X-FE-06-a",
+   "notions": [
+    "S-FE-06"
+   ],
+   "title": "Chauffe-eau",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "V": {
+     "unit": "",
+     "values": [
+      100,
+      150,
+      200,
+      300
+     ]
+    },
+    "t1": {
+     "unit": "",
+     "values": [
+      10,
+      15
+     ]
+    },
+    "t2": {
+     "unit": "",
+     "values": [
+      55,
+      60,
+      65
+     ]
+    },
+    "P": {
+     "unit": "",
+     "values": [
+      1500,
+      2000,
+      3000
+     ]
+    }
+   },
+   "vars": {
+    "Q": "V*4180*(t2 - t1)"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un chauffe-eau de [[V]] L chauffe l'eau de [[t1]] °C à [[t2]] °C avec une résistance de [[P]] W ($c = 4180$ J·kg⁻¹·K⁻¹, 1 L ≈ 1 kg, pertes négligées)."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Énergie nécessaire (J) ?",
+     "answer": "Q",
+     "unit": "J",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Énergie en kWh ?",
+     "answer": "Q/3.6e6",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Durée de chauffe (h) ?",
+     "answer": "Q/P/3600",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "ΔU = m c Δθ puis t = ΔU/P.",
+   "method": "Masse = volume, puis énergie, puis durée.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\Delta U = [[V]] \\times 4180 \\times [[=t2-t1]] \\approx$ [[=Q:3|J]] = [[=Q/3.6e6:3]] kWh ; durée [[=Q/P/3600:3]] h."
+    }
+   ]
+  },
+  {
+   "id": "X-FE-06-b",
+   "notions": [
+    "S-FE-06"
+   ],
+   "title": "Fusion de la glace",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "m": {
+     "unit": "",
+     "values": [
+      1,
+      2,
+      5,
+      10
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On fait fondre [[m]] kg de glace à 0 °C ($L_f = 334$ kJ/kg), puis on chauffe l'eau obtenue jusqu'à 20 °C."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Énergie pour la fusion (J) ?",
+     "answer": "m*334e3",
+     "unit": "J",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Énergie totale (J) ?",
+     "answer": "m*334e3 + m*4180*20",
+     "unit": "J",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "ΔU = m L puis m c Δθ.",
+   "method": "Additionner l'énergie du changement d'état et celle de l'échauffement.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Fusion : [[=m*334e3|J]] ; échauffement : [[=m*4180*20|J]] ; total : [[=m*334e3+m*4180*20:3|J]]."
+    }
+   ]
+  },
+  {
+   "id": "X-SE-01-a",
+   "notions": [
+    "S-SE-01"
+   ],
+   "title": "Classer les sources",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Le vent est :",
+     "choices": [
+      "une source renouvelable",
+      "une source fossile",
+      "une forme d'énergie stockée"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Le gaz naturel est :",
+     "choices": [
+      "une source fossile",
+      "une source renouvelable",
+      "une source nucléaire"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "L'électricité est :",
+     "choices": [
+      "une forme d'énergie (un vecteur)",
+      "une source primaire",
+      "une source fossile"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Une source est une ressource naturelle.",
+   "method": "Distinguer source et forme.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Vent : renouvelable ; gaz : fossile ; l'électricité est une forme d'énergie produite à partir de sources."
+    }
+   ]
+  },
+  {
+   "id": "X-SE-01-b",
+   "notions": [
+    "S-SE-01"
+   ],
+   "title": "Source ou forme ?",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "L'énergie cinétique du vent est :",
+     "choices": [
+      "une forme d'énergie",
+      "une source fossile",
+      "un convertisseur"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Le soleil est :",
+     "choices": [
+      "une source d'énergie renouvelable",
+      "une forme d'énergie",
+      "un vecteur"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "L'uranium est :",
+     "choices": [
+      "la source de l'énergie nucléaire",
+      "une source renouvelable",
+      "une forme d'énergie mécanique"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Forme = manière dont l'énergie se présente.",
+   "method": "Source : où l'on prélève ; forme : comment elle se présente.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Le vent transporte une énergie cinétique (forme) ; le soleil est une source renouvelable ; l'uranium est une source non renouvelable."
+    }
+   ]
+  },
+  {
+   "id": "X-SE-02-a",
+   "notions": [
+    "S-SE-02"
+   ],
+   "title": "Production d'une éolienne",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "Pn": {
+     "unit": "",
+     "values": [
+      2,
+      3,
+      4.5,
+      6
+     ]
+    },
+    "Fc": {
+     "unit": "",
+     "values": [
+      0.2,
+      0.25,
+      0.3,
+      0.4
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une éolienne de [[Pn]] MW a un facteur de charge de [[Fc]]."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Énergie produite en un an (MWh) ?",
+     "answer": "Pn*8760*Fc",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Nombre d'heures équivalentes à pleine puissance par an ?",
+     "answer": "8760*Fc",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "E = Fc × Pn × 8760 h.",
+   "method": "Facteur de charge × énergie maximale possible.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$E = [[Fc]] \\times [[Pn]] \\times 8760 \\approx$ [[=Pn*8760*Fc:4]] MWh, soit [[=8760*Fc:4]] h équivalentes."
+    }
+   ]
+  },
+  {
+   "id": "X-SE-02-b",
+   "notions": [
+    "S-SE-02"
+   ],
+   "title": "Dimensionner une centrale solaire",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "E": {
+     "unit": "",
+     "values": [
+      100,
+      500,
+      1000
+     ]
+    },
+    "Fc": {
+     "unit": "",
+     "values": [
+      0.12,
+      0.14,
+      0.16
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On veut produire [[E]] MWh par an avec du photovoltaïque de facteur de charge [[Fc]]."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Puissance crête à installer (kW) ?",
+     "answer": "E*1000/(Fc*8760)",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "P = E/(Fc × 8760).",
+   "method": "Inverser la définition du facteur de charge.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$P = \\dfrac{[[E]] \\times 1000}{[[Fc]] \\times 8760} \\approx$ [[=E*1000/(Fc*8760):3]] kW."
+    }
+   ]
+  },
+  {
+   "id": "X-SE-03-a",
+   "notions": [
+    "S-SE-03"
+   ],
+   "title": "Part d'une filière",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "N": {
+     "unit": "",
+     "values": [
+      320,
+      340,
+      360
+     ]
+    },
+    "T": {
+     "unit": "",
+     "values": [
+      460,
+      480,
+      500
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une année, la production totale vaut [[T]] TWh dont [[N]] TWh d'origine nucléaire."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Part du nucléaire, en % ?",
+     "answer": "100*N/T",
+     "unit": "%",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Le TWh mesure :",
+     "choices": [
+      "une énergie",
+      "une puissance",
+      "un rendement"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Part = filière/total.",
+   "method": "Proportion exprimée en pourcentage.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Part : [[=100*N/T:3]] % ; le TWh est une énergie (10¹² Wh)."
+    }
+   ]
+  },
+  {
+   "id": "X-SE-03-b",
+   "notions": [
+    "S-SE-03"
+   ],
+   "title": "Puissance installée et production",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "Pi": {
+     "unit": "",
+     "values": [
+      20,
+      25,
+      30
+     ]
+    },
+    "E": {
+     "unit": "",
+     "values": [
+      40,
+      50,
+      60
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une filière a une puissance installée de [[Pi]] GW et a produit [[E]] TWh dans l'année."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Facteur de charge moyen ?",
+     "answer": "E*1000/(Pi*8760)",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "E max = P × 8760 h ; 1 TWh = 1000 GWh.",
+   "method": "Fc = E produite / (P × 8760).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$F_c = \\dfrac{[[E]] \\times 1000}{[[Pi]] \\times 8760} \\approx$ [[=E*1000/(Pi*8760):3]]."
+    }
+   ]
+  },
+  {
+   "id": "X-TF-01-a",
+   "notions": [
+    "S-TR-01"
+   ],
+   "title": "Bilan énergétique d'un moteur",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "Pa": {
+     "unit": "",
+     "values": [
+      2000,
+      5000,
+      10000
+     ]
+    },
+    "eta": {
+     "unit": "",
+     "values": [
+      0.8,
+      0.85,
+      0.9
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un moteur reçoit [[Pa]] W électriques et fournit [[=eta*Pa]] W mécaniques."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Puissance cédée sous forme de chaleur (W) ?",
+     "answer": "Pa*(1 - eta)",
+     "unit": "W",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Les deux modes d'échange d'énergie avec l'extérieur sont :",
+     "choices": [
+      "le travail et la chaleur",
+      "la masse et le volume",
+      "la tension et le courant"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Conservation : reçu = fourni + pertes.",
+   "method": "Bilan : Pa = Pu + pertes.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Pertes : [[Pa]] − [[=eta*Pa]] = [[=Pa*(1-eta)|W]] cédés sous forme de chaleur."
+    }
+   ]
+  },
+  {
+   "id": "X-TF-01-b",
+   "notions": [
+    "S-TR-01"
+   ],
+   "title": "Conservation de l'énergie",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "W": {
+     "unit": "",
+     "values": [
+      500,
+      1000,
+      2000
+     ]
+    },
+    "Q": {
+     "unit": "",
+     "values": [
+      -200,
+      -400,
+      100
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un système reçoit un travail de [[W]] J et échange une chaleur $Q = [[Q]]$ J (positive si reçue)."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Variation de son énergie (J) ?",
+     "answer": "W + Q",
+     "unit": "J",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "ΔE = W + Q.",
+   "method": "Additionner les énergies reçues (négatives si cédées).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\Delta E = [[W]] + ([[Q]]) = [[=W+Q]]$ J."
+    }
+   ]
+  },
+  {
+   "id": "X-TF-02-a",
+   "notions": [
+    "S-TR-02"
+   ],
+   "title": "Identifier le mode de transfert",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "La ventilation d'un moteur refroidit ses ailettes par :",
+     "choices": [
+      "convection",
+      "rayonnement",
+      "conduction seule"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "La chaleur du soleil nous parvient par :",
+     "choices": [
+      "rayonnement",
+      "convection",
+      "conduction"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "La chaleur d'un transistor passe dans son dissipateur par :",
+     "choices": [
+      "conduction",
+      "rayonnement uniquement",
+      "convection dans le métal"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Convection : fluide en mouvement.",
+   "method": "Associer chaque situation à son mode.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Ventilation : convection ; soleil : rayonnement ; transistor → dissipateur : conduction."
+    }
+   ]
+  },
+  {
+   "id": "X-TF-02-b",
+   "notions": [
+    "S-TR-02"
+   ],
+   "title": "Sens du transfert",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "t1": {
+     "unit": "",
+     "values": [
+      20,
+      40,
+      60
+     ]
+    },
+    "t2": {
+     "unit": "",
+     "values": [
+      5,
+      80,
+      100
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [
+    "t1 != t2"
+   ],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Deux corps à [[t1]] °C et [[t2]] °C sont mis en contact."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Le corps à [[t1]] °C reçoit-il de la chaleur ?",
+     "choices": [
+      "Oui",
+      "Non"
+     ],
+     "correct": 0,
+     "correctExpr": "1 - (lt(t1, t2))"
+    }
+   ],
+   "hint": "Du chaud vers le froid.",
+   "method": "Le transfert spontané va du plus chaud au plus froid.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "La chaleur va du corps le plus chaud vers le plus froid."
+    }
+   ]
+  },
+  {
+   "id": "X-TF-03-a",
+   "notions": [
+    "S-TR-03"
+   ],
+   "title": "Pertes à travers un mur",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "e": {
+     "unit": "",
+     "values": [
+      0.1,
+      0.2,
+      0.3
+     ]
+    },
+    "lam": {
+     "unit": "",
+     "values": [
+      0.04,
+      0.7,
+      1.7
+     ]
+    },
+    "S": {
+     "unit": "",
+     "values": [
+      10,
+      20,
+      30
+     ]
+    },
+    "dt": {
+     "unit": "",
+     "values": [
+      10,
+      15,
+      20
+     ]
+    }
+   },
+   "vars": {
+    "Rth": "e/(lam*S)"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une paroi d'épaisseur [[e]] m, de conductivité λ = [[lam]] W·m⁻¹·K⁻¹ et de surface [[S]] m² sépare deux milieux dont les températures diffèrent de [[dt]] °C."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Résistance thermique (K/W) ?",
+     "answer": "Rth",
+     "unit": "",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Flux thermique (W) ?",
+     "answer": "dt/Rth",
+     "unit": "W",
+     "tolerance": 0.02,
+     "sig": 3
+    }
+   ],
+   "hint": "Rth = e/(λS) ; Φ = Δθ/Rth.",
+   "method": "Analogie électrique.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$R_{th} \\approx$ [[=Rth:3]] K/W ; $\\Phi \\approx$ [[=dt/Rth:3|W]]."
+    }
+   ]
+  },
+  {
+   "id": "X-TF-03-b",
+   "notions": [
+    "S-TR-03"
+   ],
+   "title": "Isolant en série",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "R1": {
+     "unit": "",
+     "values": [
+      0.01,
+      0.02
+     ]
+    },
+    "R2": {
+     "unit": "",
+     "values": [
+      0.1,
+      0.2,
+      0.5
+     ]
+    },
+    "dt": {
+     "unit": "",
+     "values": [
+      20,
+      30
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un mur (Rth = [[R1]] K/W) est doublé d'un isolant (Rth = [[R2]] K/W). Écart de température : [[dt]] °C."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Flux sans isolant (W) ?",
+     "answer": "dt/R1",
+     "unit": "W",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Flux avec isolant (W) ?",
+     "answer": "dt/(R1 + R2)",
+     "unit": "W",
+     "tolerance": 0.02,
+     "sig": 3
+    }
+   ],
+   "hint": "Résistances thermiques en série : elles s'ajoutent.",
+   "method": "Φ = Δθ/(R₁ + R₂).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Sans isolant : [[=dt/R1:3|W]] ; avec : [[=dt/(R1+R2):3|W]]."
+    }
+   ]
+  },
+  {
+   "id": "X-TF-04-a",
+   "notions": [
+    "S-TR-04"
+   ],
+   "title": "Puissance rayonnée et température",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "T1": {
+     "unit": "",
+     "values": [
+      300,
+      350
+     ]
+    },
+    "k": {
+     "unit": "",
+     "values": [
+      1.1,
+      1.2,
+      1.5
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "La température absolue d'une connexion passe de [[T1]] K à [[=T1*k:3]] K (P ∝ T⁴)."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Facteur multiplicatif de la puissance rayonnée ?",
+     "answer": "k^4",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "P proportionnelle à T⁴.",
+   "method": "(T₂/T₁)⁴.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\left(\\dfrac{T_2}{T_1}\\right)^4 = [[k]]^4 \\approx$ [[=k^4:3]]."
+    }
+   ]
+  },
+  {
+   "id": "X-TF-04-b",
+   "notions": [
+    "S-TR-04"
+   ],
+   "title": "Caméra thermique en maintenance",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Une borne de disjoncteur apparaît beaucoup plus chaude que les autres :",
+     "choices": [
+      "connexion desserrée ou surcharge possible",
+      "fonctionnement normal",
+      "défaut de la caméra"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Un métal brillant paraît plus froid qu'il ne l'est car :",
+     "choices": [
+      "son émissivité est faible",
+      "il conduit mal la chaleur",
+      "il est toujours froid"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "La caméra thermique détecte :",
+     "choices": [
+      "le rayonnement infrarouge",
+      "le courant électrique",
+      "le champ magnétique"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Point chaud = pertes localisées.",
+   "method": "Interpréter une thermographie.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Point chaud : mauvais contact ou surcharge ; émissivité faible des surfaces brillantes ; mesure de l'infrarouge."
+    }
+   ]
+  },
+  {
+   "id": "X-TF-05-a",
+   "notions": [
+    "S-TR-05"
+   ],
+   "title": "Chaîne énergétique d'une centrale hydraulique",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "La turbine convertit :",
+     "choices": [
+      "l'énergie de l'eau en énergie mécanique",
+      "l'énergie électrique en mécanique",
+      "la chaleur en électricité"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "L'alternateur convertit :",
+     "choices": [
+      "l'énergie mécanique en électrique",
+      "l'électrique en mécanique",
+      "la chimique en électrique"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Une cellule photovoltaïque convertit :",
+     "choices": [
+      "l'énergie rayonnante en électrique",
+      "la thermique en mécanique",
+      "l'électrique en chimique"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Repère les formes d'énergie à l'entrée et à la sortie.",
+   "method": "Chaque convertisseur : énergie d'entrée → énergie de sortie (+ pertes).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Turbine : hydraulique → mécanique ; alternateur : mécanique → électrique ; PV : rayonnante → électrique."
+    }
+   ]
+  },
+  {
+   "id": "X-TF-05-b",
+   "notions": [
+    "S-TR-05"
+   ],
+   "title": "Conversion électrochimique",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Pendant la charge d'une batterie :",
+     "choices": [
+      "l'énergie électrique devient chimique",
+      "l'énergie chimique devient électrique",
+      "l'énergie devient mécanique"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Une résistance chauffante réalise une conversion :",
+     "choices": [
+      "électrothermique",
+      "électromécanique",
+      "photoélectrique"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Charge = stockage.",
+   "method": "Identifier les formes d'énergie.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Charge : électrique → chimique ; radiateur : électrothermique."
+    }
+   ]
+  },
+  {
+   "id": "X-TF-06-a",
+   "notions": [
+    "S-TR-06"
+   ],
+   "title": "Comparer des réservoirs d'énergie",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "Wh": {
+     "unit": "",
+     "values": [
+      15,
+      50,
+      60000
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une batterie stocke [[Wh]] Wh."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Énergie en joules ?",
+     "answer": "Wh*3600",
+     "unit": "J",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Équivalent en litres d'essence (32 MJ/L) ?",
+     "answer": "Wh*3600/32e6",
+     "unit": "",
+     "tolerance": 0.02,
+     "sig": 3
+    }
+   ],
+   "hint": "1 Wh = 3600 J.",
+   "method": "Convertir en joules puis comparer.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "[[Wh]] Wh = [[=Wh*3600|J]], soit [[=Wh*3600/32e6:3]] L d'essence."
+    }
+   ]
+  },
+  {
+   "id": "X-TF-06-b",
+   "notions": [
+    "S-TR-06"
+   ],
+   "title": "Énergie mesurée",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "P": {
+     "unit": "",
+     "values": [
+      500,
+      1200,
+      3000
+     ]
+    },
+    "t": {
+     "unit": "",
+     "values": [
+      0.5,
+      2,
+      8
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un appareil absorbe [[P]] W pendant [[t]] h."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Énergie consommée (kWh) ?",
+     "answer": "P*t/1000",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "En joules ?",
+     "answer": "P*t*3600",
+     "unit": "J",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "W = P × t.",
+   "method": "Énergie = puissance × durée.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$W = [[P]] \\times [[t]] =$ [[=P*t:4]] Wh = [[=P*t/1000:3]] kWh = [[=P*t*3600|J]]."
+    }
+   ]
+  },
+  {
+   "id": "X-TF-07-a",
+   "notions": [
+    "S-TR-07"
+   ],
+   "title": "Rendement d'une chaîne",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "e1": {
+     "unit": "",
+     "values": [
+      0.95,
+      0.97
+     ]
+    },
+    "e2": {
+     "unit": "",
+     "values": [
+      0.85,
+      0.9,
+      0.92
+     ]
+    },
+    "e3": {
+     "unit": "",
+     "values": [
+      0.6,
+      0.7,
+      0.75
+     ]
+    },
+    "Pa": {
+     "unit": "",
+     "values": [
+      5000,
+      10000
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Variateur (η = [[e1]]), moteur (η = [[e2]]) et pompe (η = [[e3]]) sont en cascade ; le variateur absorbe [[Pa]] W."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Rendement global ?",
+     "answer": "e1*e2*e3",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Puissance hydraulique utile (W) ?",
+     "answer": "Pa*e1*e2*e3",
+     "unit": "W",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Les rendements se multiplient.",
+   "method": "η = η₁ η₂ η₃.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\eta = [[e1]] \\times [[e2]] \\times [[e3]] \\approx$ [[=e1*e2*e3:3]] ; $P_u \\approx$ [[=Pa*e1*e2*e3:3|W]]."
+    }
+   ]
+  },
+  {
+   "id": "X-TF-07-b",
+   "notions": [
+    "S-TR-07"
+   ],
+   "title": "COP et autonomie",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "Q": {
+     "unit": "",
+     "values": [
+      6000,
+      8000,
+      10000
+     ]
+    },
+    "We": {
+     "unit": "",
+     "values": [
+      2000,
+      2500
+     ]
+    },
+    "E": {
+     "unit": "",
+     "values": [
+      50,
+      75
+     ]
+    },
+    "Pc": {
+     "unit": "",
+     "values": [
+      10,
+      15,
+      20
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une pompe à chaleur fournit [[Q]] W de chauffage pour [[We]] W électriques. Une voiture électrique a une batterie de [[E]] kWh et consomme [[Pc]] kW en moyenne."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "COP de la pompe à chaleur ?",
+     "answer": "Q/We",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Autonomie de la voiture (h) ?",
+     "answer": "E/Pc",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "COP = chaleur utile / électricité ; autonomie = énergie / puissance.",
+   "method": "Définitions du COP et de l'autonomie.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "COP = [[=Q/We:3]] ; autonomie = [[=E/Pc:3]] h."
+    }
+   ]
+  },
+  {
+   "id": "X-TF-08-a",
+   "notions": [
+    "S-TR-08"
+   ],
+   "title": "Puissance mécanique d'un moteur",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "C": {
+     "unit": "",
+     "values": [
+      10,
+      25,
+      50,
+      100
+     ]
+    },
+    "n": {
+     "unit": "",
+     "values": [
+      1450,
+      2900,
+      960
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un moteur fournit un couple de [[C]] N·m à [[n]] tr/min."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Puissance mécanique (W) ?",
+     "answer": "C*2*pi*n/60",
+     "unit": "W",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "P = C Ω avec Ω = 2πn/60.",
+   "method": "Effort (couple) × mouvement (vitesse angulaire).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$P = [[C]] \\times \\dfrac{2\\pi \\times [[n]]}{60} \\approx$ [[=C*2*pi*n/60:3|W]]."
+    }
+   ]
+  },
+  {
+   "id": "X-TF-08-b",
+   "notions": [
+    "S-TR-08"
+   ],
+   "title": "Puissance et énergie",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "F": {
+     "unit": "",
+     "values": [
+      200,
+      500,
+      1000
+     ]
+    },
+    "v": {
+     "unit": "",
+     "values": [
+      0.5,
+      1,
+      2
+     ]
+    },
+    "t": {
+     "unit": "",
+     "values": [
+      10,
+      60
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un convoyeur exerce une force de [[F]] N à la vitesse de [[v]] m/s pendant [[t]] s."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Puissance (W) ?",
+     "answer": "F*v",
+     "unit": "W",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Énergie fournie (J) ?",
+     "answer": "F*v*t",
+     "unit": "J",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "P = F v ; E = P t.",
+   "method": "Effort × mouvement, puis puissance × durée.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$P = [[F]] \\times [[v]] =$ [[=F*v|W]] ; $E =$ [[=F*v*t|J]]."
+    }
+   ]
+  }
+ ]
+}

@@ -5,6 +5,8 @@
   "packs/maths-nombres-complexes.json",
   "packs/maths-vectoriel-fonctions.json",
   "packs/maths-fourier-integrales-equadiff.json",
-  "packs/maths-probabilites-algorithmique.json"
+  "packs/maths-probabilites-algorithmique.json",
+  "packs/sciences-demarche-incertitudes.json",
+  "packs/sciences-energie.json"
  ]
 }

@@ -1,0 +1,1591 @@
+{
+ "id": "sciences-demarche-incertitudes",
+ "courses": [
+  {
+   "id": "C-DE-01",
+   "notions": [
+    "S-DE-01"
+   ],
+   "title": "S'approprier une situation",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Avant toute mesure ou tout calcul, il faut **comprendre la problématique** : que cherche-t-on, avec quelles données, dans quel contexte industriel ?"
+    },
+    {
+     "type": "text",
+     "text": "- Rechercher, extraire et organiser l'information utile (documentation constructeur, plaque signalétique, schéma).\n- Adopter une attitude critique vis-à-vis des sources.\n- Connaître le vocabulaire, les symboles et les unités."
+    },
+    {
+     "type": "method",
+     "text": "1. Reformuler la question en une phrase.\n2. Lister les grandeurs connues avec leurs unités.\n3. Repérer la grandeur cherchée et son unité.\n4. Identifier les lois physiques qui relient ces grandeurs.",
+     "title": "Méthode : s'approprier un problème"
+    },
+    {
+     "type": "tip",
+     "text": "Une plaque signalétique de moteur donne déjà la puissance utile, la tension, le courant, le facteur de puissance et la vitesse nominale : c'est souvent la première source d'information.",
+     "title": ""
+    },
+    {
+     "type": "warning",
+     "text": "Confondre puissance absorbée et puissance utile est l'erreur la plus fréquente à la lecture d'une plaque.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-DE-02",
+   "notions": [
+    "S-DE-02"
+   ],
+   "title": "Analyser et raisonner",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Analyser, c'est **choisir une démarche** : formuler une hypothèse, choisir un protocole ou un dispositif de mesure, compléter un schéma, mobiliser les lois connues."
+    },
+    {
+     "type": "text",
+     "text": "Exemple : pour vérifier qu'un moteur est surchargé, on peut mesurer le courant absorbé (pince ampèremétrique) et le comparer au courant nominal de la plaque."
+    },
+    {
+     "type": "method",
+     "text": "Pour choisir un appareil : grandeur à mesurer (tension, courant, puissance), type de signal (continu, alternatif, déformé), calibre, sécurité (catégorie de mesure).",
+     "title": "Choisir un dispositif de mesure"
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Grandeur",
+       "Appareil",
+       "Branchement"
+      ],
+      [
+       "Tension",
+       "voltmètre",
+       "en dérivation"
+      ],
+      [
+       "Courant",
+       "ampèremètre / pince",
+       "en série / autour d'un conducteur"
+      ],
+      [
+       "Puissance",
+       "wattmètre / analyseur",
+       "circuit courant en série, circuit tension en dérivation"
+      ]
+     ]
+    },
+    {
+     "type": "tip",
+     "text": "Proposer une stratégie, c'est aussi prévoir un ordre de grandeur du résultat attendu.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-DE-03",
+   "notions": [
+    "S-DE-03"
+   ],
+   "title": "Réaliser une mesure (protocoles et relevés)",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Réaliser, c'est mettre en œuvre un protocole : organiser le poste, régler les appareils, effectuer les relevés, en respectant les **règles de sécurité**."
+    },
+    {
+     "type": "text",
+     "text": "Dans l'application, cette compétence se travaille sur des **relevés fournis** et des protocoles commentés : la manipulation réelle se fait en TP."
+    },
+    {
+     "type": "method",
+     "text": "1. Vérifier les calibres avant la mise sous tension.\n2. Noter chaque relevé avec son unité et l'incertitude de l'appareil.\n3. Faire plusieurs mesures si la grandeur fluctue.\n4. Mettre hors tension avant toute modification du montage.",
+     "title": "Bonnes pratiques"
+    },
+    {
+     "type": "warning",
+     "text": "Ne jamais brancher un ampèremètre en dérivation : il court-circuite le dipôle et peut être détruit.",
+     "title": ""
+    },
+    {
+     "type": "tip",
+     "text": "Choisir le mode du multimètre selon le signal : DC, AC ou AC+DC (TRMS) pour un signal déformé.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-DE-04",
+   "notions": [
+    "S-DE-04"
+   ],
+   "title": "Valider : exploiter et critiquer un résultat",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Valider, c'est **exploiter** les mesures (tracer une courbe, calculer une grandeur), **interpréter** et confronter le résultat à une loi, une valeur de référence ou une hypothèse."
+    },
+    {
+     "type": "method",
+     "text": "1. Le résultat a-t-il la bonne unité et un ordre de grandeur plausible ?\n2. Est-il compatible avec la valeur attendue compte tenu des incertitudes ?\n3. Sinon : chercher une erreur (calibre, branchement, modèle inadapté).",
+     "title": "Méthode : valider"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : on mesure 236 V pour une tension nominale de 230 V ± 10 % : la mesure est conforme."
+    },
+    {
+     "type": "tip",
+     "text": "Tracer les points expérimentaux et la loi théorique sur le même graphe permet de valider (ou d'infirmer) un modèle d'un coup d'œil.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-DE-05",
+   "notions": [
+    "S-DE-05"
+   ],
+   "title": "Communiquer",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Communiquer, c'est **rendre compte** d'une étude par écrit ou à l'oral : présenter la démarche, les résultats et la conclusion, avec un vocabulaire précis."
+    },
+    {
+     "type": "text",
+     "text": "Un compte rendu contient : l'objectif, le schéma du montage, le protocole, les relevés (tableau avec unités), l'exploitation (courbes, calculs), la conclusion argumentée."
+    },
+    {
+     "type": "method",
+     "text": "Une conclusion répond à la question posée, cite la valeur obtenue avec son incertitude et la compare à la référence.",
+     "title": "Rédiger une conclusion"
+    },
+    {
+     "type": "warning",
+     "text": "Un résultat sans unité ou sans comparaison à l'attendu n'est pas une conclusion.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-DE-06",
+   "notions": [
+    "S-DE-06"
+   ],
+   "title": "Être autonome, faire preuve d'initiative",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "L'autonomie consiste à **élaborer sa démarche**, faire des choix argumentés, organiser son travail et **traiter les incidents** (mesure aberrante, appareil défaillant)."
+    },
+    {
+     "type": "method",
+     "text": "Face à une mesure inattendue : vérifier le branchement et le calibre, refaire la mesure, changer d'appareil, puis seulement remettre en cause le modèle.",
+     "title": "Traiter un incident de mesure"
+    },
+    {
+     "type": "tip",
+     "text": "Planifier : estimer le temps de chaque étape et commencer par les mesures indispensables à la conclusion.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-DE-07",
+   "notions": [
+    "S-DE-07"
+   ],
+   "title": "Grandeurs, unités et conversions",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Grandeur",
+       "Symbole",
+       "Unité SI"
+      ],
+      [
+       "Intensité",
+       "$I$",
+       "ampère (A)"
+      ],
+      [
+       "Tension",
+       "$U$",
+       "volt (V)"
+      ],
+      [
+       "Résistance",
+       "$R$",
+       "ohm (Ω)"
+      ],
+      [
+       "Puissance",
+       "$P$",
+       "watt (W)"
+      ],
+      [
+       "Énergie",
+       "$W$",
+       "joule (J)"
+      ],
+      [
+       "Fréquence",
+       "$f$",
+       "hertz (Hz)"
+      ],
+      [
+       "Température",
+       "$T$",
+       "kelvin (K)"
+      ],
+      [
+       "Pression",
+       "$p$",
+       "pascal (Pa)"
+      ]
+     ]
+    },
+    {
+     "type": "formula",
+     "tex": "1\\ \\mathrm{kWh} = 3{,}6 \\times 10^6\\ \\mathrm{J} \\qquad 1\\ \\mathrm{bar} = 10^5\\ \\mathrm{Pa} \\qquad 1\\ \\mathrm{h} = 3600\\ \\mathrm{s}",
+     "title": "Conversions utiles"
+    },
+    {
+     "type": "method",
+     "text": "Convertir toutes les données en unités SI **avant** de calculer, puis exprimer le résultat avec un préfixe adapté.",
+     "title": "Méthode"
+    },
+    {
+     "type": "warning",
+     "text": "Une vitesse de rotation en tr/min doit être convertie en rad/s pour les calculs de puissance : $\\Omega = \\dfrac{2\\pi n}{60}$.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-IN-01",
+   "notions": [
+    "S-IN-01"
+   ],
+   "title": "Sources d'erreurs",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Toute mesure est entachée d'erreur. Les sources principales :"
+    },
+    {
+     "type": "text",
+     "text": "- **la variabilité du phénomène** (une tension secteur fluctue) ;\n- **l'opérateur** (lecture, positionnement, choix du calibre) ;\n- **l'instrument** (précision donnée par le constructeur, résolution) ;\n- **la méthode** (montage amont ou aval, résistance interne de l'appareil)."
+    },
+    {
+     "type": "text",
+     "text": "On distingue les erreurs **aléatoires** (qui varient d'une mesure à l'autre) et **systématiques** (même décalage à chaque mesure, comme un offset non corrigé)."
+    },
+    {
+     "type": "tip",
+     "text": "Répéter la mesure réduit l'effet des erreurs aléatoires, pas celui des erreurs systématiques.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-IN-02",
+   "notions": [
+    "S-IN-02"
+   ],
+   "title": "Évaluer une incertitude",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "u(\\overline{x}) = \\frac{s}{\\sqrt{n}}",
+     "title": "Incertitude de répétabilité (n mesures, écart type s)"
+    },
+    {
+     "type": "text",
+     "text": "Pour une **mesure unique** avec un appareil, l'incertitude se déduit de la précision constructeur, par exemple « ± (0,5 % de la lecture + 2 digits »)."
+    },
+    {
+     "type": "formula",
+     "tex": "u = \\sqrt{u_1^2 + u_2^2 + \\dots}",
+     "title": "Plusieurs sources indépendantes (formule fournie)"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : 10 mesures d'écart type 0,4 V : $u = 0{,}4/\\sqrt{10} \\approx 0{,}13$ V."
+    },
+    {
+     "type": "method",
+     "text": "Comparer le poids des différentes sources : souvent une seule domine, et c'est sur elle qu'il faut agir.",
+     "title": "Hiérarchiser les sources"
+    }
+   ]
+  },
+  {
+   "id": "C-IN-03",
+   "notions": [
+    "S-IN-03"
+   ],
+   "title": "Exprimer un résultat de mesure",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "x = \\overline{x} \\pm U \\quad \\text{(unité, niveau de confiance)}",
+     "title": "Écriture du résultat"
+    },
+    {
+     "type": "text",
+     "text": "$U$ est l'**incertitude élargie** ($U = k\\,u$, souvent $k = 2$ pour un niveau de confiance de 95 %). On garde 1 ou 2 chiffres significatifs pour $U$, et on arrondit $\\overline{x}$ au même rang."
+    },
+    {
+     "type": "formula",
+     "tex": "\\frac{U}{|\\overline{x}|}",
+     "title": "Précision relative"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : $R = 47{,}3 \\pm 0{,}5\\ \\Omega$ (95 %) ; précision relative ≈ 1,1 %."
+    },
+    {
+     "type": "method",
+     "text": "Comparer à une valeur de référence : le résultat est compatible si la référence est dans l'intervalle $[\\overline{x} - U\\,;\\overline{x} + U]$.",
+     "title": "Comparer à une référence"
+    },
+    {
+     "type": "warning",
+     "text": "Écrire $47{,}2841 \\pm 0{,}5$ n'a pas de sens : trop de chiffres.",
+     "title": ""
+    }
+   ]
+  }
+ ],
+ "examples": [],
+ "exercises": [
+  {
+   "id": "X-DE-01-a",
+   "notions": [
+    "S-DE-01"
+   ],
+   "title": "Lire une plaque signalétique",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "Pu": {
+     "unit": "",
+     "values": [
+      1.5,
+      3,
+      5.5,
+      7.5,
+      11
+     ]
+    },
+    "U": {
+     "unit": "",
+     "values": [
+      400
+     ]
+    },
+    "I": {
+     "unit": "",
+     "values": [
+      3.5,
+      6.5,
+      11,
+      15,
+      21
+     ]
+    },
+    "fp": {
+     "unit": "",
+     "values": [
+      0.8,
+      0.82,
+      0.85
+     ]
+    },
+    "n": {
+     "unit": "",
+     "values": [
+      1440,
+      1455,
+      2900
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Plaque d'un moteur asynchrone : [[Pu]] kW ; 400 V ; [[I]] A ; cos φ = [[fp]] ; [[n]] tr/min."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "La puissance indiquée ([[Pu]] kW) est :",
+     "choices": [
+      "la puissance utile mécanique",
+      "la puissance absorbée électrique",
+      "la puissance réactive"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Puissance absorbée au point nominal, $P_a = \\sqrt3\\,UI\\cos\\varphi$ (kW) ?",
+     "answer": "sqrt(3)*400*I*fp/1000",
+     "unit": "",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "La grandeur cherchée « rendement » est sans unité et vaut :",
+     "choices": [
+      "$P_u/P_a$",
+      "$P_a/P_u$",
+      "$P_a - P_u$"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Sur une plaque de moteur, la puissance est toujours la puissance utile.",
+   "method": "Repérer chaque grandeur et son unité, puis relier par les lois connues.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$P_a = \\sqrt3 \\times 400 \\times [[I]] \\times [[fp]] \\approx$ [[=sqrt(3)*400*I*fp/1000:3]] kW ; rendement $= P_u/P_a$."
+    }
+   ]
+  },
+  {
+   "id": "X-DE-01-b",
+   "notions": [
+    "S-DE-01"
+   ],
+   "title": "Identifier données et inconnue",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "« Calculer l'énergie consommée en 8 h par un radiateur de 2 kW » : la grandeur cherchée est",
+     "choices": [
+      "une énergie, en kWh ou en J",
+      "une puissance, en W",
+      "une durée, en h"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "La loi à utiliser est :",
+     "choices": [
+      "$W = P \\times t$",
+      "$P = U \\times I$",
+      "$U = R \\times I$"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Résultat (kWh) ?",
+     "answer": "16",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    }
+   ],
+   "hint": "Énergie = puissance × durée.",
+   "method": "Reformuler, lister les données, identifier la loi.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$W = 2\\ \\mathrm{kW} \\times 8\\ \\mathrm{h} = 16$ kWh."
+    }
+   ]
+  },
+  {
+   "id": "X-DE-02-a",
+   "notions": [
+    "S-DE-02"
+   ],
+   "title": "Choisir un appareil de mesure",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Pour mesurer le courant d'un moteur sans ouvrir le circuit :",
+     "choices": [
+      "une pince ampèremétrique",
+      "un voltmètre en série",
+      "un ohmmètre"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Un voltmètre se branche :",
+     "choices": [
+      "en dérivation",
+      "en série",
+      "à la place du dipôle"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Pour mesurer la valeur efficace d'un courant déformé :",
+     "choices": [
+      "un appareil TRMS en mode AC+DC",
+      "un appareil en mode DC",
+      "un appareil à valeur moyenne"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Le courant se mesure en série ou par induction (pince).",
+   "method": "Grandeur, type de signal, branchement, sécurité.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Pince ampèremétrique (sans ouvrir le circuit), voltmètre en dérivation, TRMS pour un signal non sinusoïdal."
+    }
+   ]
+  },
+  {
+   "id": "X-DE-02-b",
+   "notions": [
+    "S-DE-02"
+   ],
+   "title": "Formuler une hypothèse",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "In": {
+     "unit": "",
+     "values": [
+      10,
+      15,
+      20
+     ]
+    },
+    "k": {
+     "unit": "",
+     "values": [
+      1.15,
+      1.25,
+      1.4
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un moteur de courant nominal [[In]] A chauffe anormalement. On mesure un courant de [[=In*k:3]] A."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Hypothèse la plus plausible :",
+     "choices": [
+      "le moteur est en surcharge",
+      "le moteur est à vide",
+      "la mesure est forcément fausse"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Dépassement du courant nominal, en % ?",
+     "answer": "100*(k - 1)",
+     "unit": "%",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Compare le courant mesuré au courant nominal.",
+   "method": "Hypothèse cohérente avec les observations, puis vérification par une mesure.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Le courant dépasse de [[=100*(k-1):3]] % la valeur nominale : surcharge probable (à confirmer en mesurant le couple de la charge)."
+    }
+   ]
+  },
+  {
+   "id": "X-DE-03-a",
+   "notions": [
+    "S-DE-03"
+   ],
+   "title": "Sécurité et calibres",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Avant de mettre un montage sous tension, on vérifie d'abord :",
+     "choices": [
+      "les branchements et les calibres",
+      "la couleur des fils",
+      "l'heure de la mesure"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Pour modifier un montage :",
+     "choices": [
+      "on le met hors tension",
+      "on garde la tension pour gagner du temps",
+      "on débranche seulement l'ampèremètre"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "On ne connaît pas l'ordre de grandeur d'un courant : on choisit",
+     "choices": [
+      "le plus grand calibre, puis on descend",
+      "le plus petit calibre",
+      "n'importe quel calibre"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Commencer par le calibre le plus élevé protège l'appareil.",
+   "method": "Règles de sécurité et de bon usage des appareils.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Vérification avant mise sous tension, hors tension pour modifier, calibre le plus élevé d'abord."
+    }
+   ]
+  },
+  {
+   "id": "X-DE-03-b",
+   "notions": [
+    "S-DE-03"
+   ],
+   "title": "Exploiter un relevé fourni",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "U1": {
+     "unit": "",
+     "values": [
+      2,
+      4
+     ]
+    },
+    "I1": {
+     "unit": "",
+     "values": [
+      0.1,
+      0.2
+     ]
+    },
+    "R": {
+     "unit": "",
+     "values": [
+      20,
+      33,
+      47
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Relevés sur un dipôle : (U ; I) = ([[U1]] V ; [[=U1/R:3]] A), ([[=2*U1]] V ; [[=2*U1/R:3]] A), ([[=3*U1]] V ; [[=3*U1/R:3]] A)."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Ce dipôle se comporte comme :",
+     "choices": [
+      "une résistance (loi d'Ohm)",
+      "une diode",
+      "une source de tension"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Valeur de sa résistance (Ω) ?",
+     "answer": "R",
+     "unit": "Ω",
+     "tolerance": 0.02,
+     "sig": 3
+    }
+   ],
+   "hint": "U/I est-il constant ?",
+   "method": "Calculer U/I pour chaque point.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "U/I ≈ [[R]] Ω pour les trois points : résistance de [[R]] Ω."
+    }
+   ]
+  },
+  {
+   "id": "X-DE-04-a",
+   "notions": [
+    "S-DE-04"
+   ],
+   "title": "Comparer à une valeur nominale",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "Um": {
+     "unit": "",
+     "values": [
+      218,
+      226,
+      236,
+      244,
+      256
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On mesure [[Um]] V sur une prise. La tension nominale est 230 V avec une tolérance de +10 % / −10 %."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Écart relatif à 230 V, en % ?",
+     "answer": "100*(Um - 230)/230",
+     "unit": "%",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "La tension est-elle dans la tolérance ?",
+     "choices": [
+      "Oui",
+      "Non"
+     ],
+     "correct": 0,
+     "correctExpr": "1 - (gt(Um, 207)*lt(Um, 253))"
+    }
+   ],
+   "hint": "Plage tolérée : 207 V à 253 V.",
+   "method": "Calculer l'écart relatif et le comparer à la tolérance.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Écart : [[=100*(Um-230)/230:3]] % ; plage 207–253 V."
+    }
+   ]
+  },
+  {
+   "id": "X-DE-04-b",
+   "notions": [
+    "S-DE-04"
+   ],
+   "title": "Valider une loi par des mesures",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "k": {
+     "unit": "",
+     "values": [
+      0.5,
+      1,
+      2
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On relève la puissance dissipée par une résistance : P = [[=k*4]] W pour I = 2 A, [[=k*16]] W pour 4 A, [[=k*36]] W pour 6 A."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Ces mesures sont compatibles avec la loi :",
+     "choices": [
+      "$P = RI^2$",
+      "$P = RI$",
+      "$P = R/I$"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Valeur de $R$ (Ω) ?",
+     "answer": "k",
+     "unit": "Ω",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Quand I double, P est multipliée par 4.",
+   "method": "Calculer P/I² pour chaque point.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "P/I² = [[k]] Ω pour chaque point : la loi $P = RI^2$ est validée avec $R = [[k]]\\ \\Omega$."
+    }
+   ]
+  },
+  {
+   "id": "X-DE-05-a",
+   "notions": [
+    "S-DE-05"
+   ],
+   "title": "Rédiger une conclusion",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "La meilleure conclusion d'une mesure de rendement :",
+     "choices": [
+      "« Le rendement mesuré vaut 0,86 ± 0,02, conforme à la valeur constructeur de 0,87. »",
+      "« On a trouvé 0,86. »",
+      "« Le moteur marche bien. »"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Un tableau de relevés doit comporter :",
+     "choices": [
+      "les grandeurs et leurs unités en en-tête",
+      "uniquement des nombres",
+      "les calculs intermédiaires à la place des mesures"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Une conclusion répond à la question, avec valeur, incertitude et comparaison.",
+   "method": "Objectif, résultat chiffré avec unité et incertitude, comparaison, réponse.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "La conclusion complète donne la valeur, l'incertitude et la comparaison à la référence."
+    }
+   ]
+  },
+  {
+   "id": "X-DE-05-b",
+   "notions": [
+    "S-DE-05"
+   ],
+   "title": "Présenter un résultat",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "P": {
+     "unit": "",
+     "values": [
+      1234.6,
+      2567.2,
+      987.4
+     ]
+    },
+    "U": {
+     "unit": "",
+     "values": [
+      20,
+      50
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une puissance mesurée vaut [[P:5]] W avec une incertitude de [[U]] W."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Écriture correcte du résultat :",
+     "choices": [
+      "[[=round(P/10)*10:4]] ± [[U]] W",
+      "[[P:5]] ± [[U]] W",
+      "[[P:5]] W"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "L'incertitude fixe le nombre de chiffres à garder.",
+   "method": "Arrondir la valeur au rang de l'incertitude.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Avec une incertitude de [[U]] W, on arrondit à la dizaine : [[=round(P/10)*10:4]] ± [[U]] W."
+    }
+   ]
+  },
+  {
+   "id": "X-DE-06-a",
+   "notions": [
+    "S-DE-06"
+   ],
+   "title": "Traiter un incident de mesure",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Un ampèremètre affiche 0 alors que la lampe s'allume. On commence par :",
+     "choices": [
+      "vérifier le calibre et le fusible de l'appareil",
+      "conclure que la lampe ne consomme rien",
+      "changer de lampe"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Une mesure isolée est très différente des autres :",
+     "choices": [
+      "on la refait avant de l'exclure",
+      "on la garde telle quelle",
+      "on recommence tout le TP"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Une lampe allumée consomme forcément du courant.",
+   "method": "Remettre en cause l'appareil et le branchement avant le modèle.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Un fusible d'ampèremètre grillé ou un mauvais calibre explique la lecture nulle ; une mesure aberrante se vérifie avant d'être écartée."
+    }
+   ]
+  },
+  {
+   "id": "X-DE-06-b",
+   "notions": [
+    "S-DE-06"
+   ],
+   "title": "Organiser son travail",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Avec peu de temps, on réalise d'abord :",
+     "choices": [
+      "les mesures indispensables à la conclusion",
+      "les mesures les plus faciles",
+      "la mise en page du compte rendu"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Faire un choix argumenté, c'est :",
+     "choices": [
+      "justifier l'appareil ou la méthode retenue",
+      "prendre la méthode du voisin",
+      "tirer au sort"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Prioriser.",
+   "method": "Planifier et justifier ses choix.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "On priorise ce qui permet de répondre à la question et on justifie chaque choix."
+    }
+   ]
+  },
+  {
+   "id": "X-DE-07-a",
+   "notions": [
+    "S-DE-07"
+   ],
+   "title": "Conversions d'unités",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "W": {
+     "unit": "",
+     "values": [
+      1.5,
+      2,
+      5,
+      12
+     ]
+    },
+    "p": {
+     "unit": "",
+     "values": [
+      2,
+      4,
+      6
+     ]
+    },
+    "n": {
+     "unit": "",
+     "values": [
+      750,
+      1500,
+      3000
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Conversions d'unités."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "[[W]] kWh en joules ?",
+     "answer": "W*3.6e6",
+     "unit": "J",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "[[p]] bar en pascals ?",
+     "answer": "p*1e5",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "[[n]] tr/min en rad/s ?",
+     "answer": "2*pi*n/60",
+     "unit": "rad/s",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "1 kWh = 3,6 MJ ; 1 bar = 10⁵ Pa ; Ω = 2πn/60.",
+   "method": "Remplacer chaque unité par sa valeur en unités SI.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "[[W]] kWh = [[=W*3.6e6|J]] ; [[p]] bar = [[=p*1e5]] Pa ; [[n]] tr/min = [[=2*pi*n/60:3|rad/s]]."
+    }
+   ]
+  },
+  {
+   "id": "X-DE-07-b",
+   "notions": [
+    "S-DE-07"
+   ],
+   "title": "Unités des grandeurs électriques",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "L'unité de la puissance réactive est :",
+     "choices": [
+      "le var",
+      "le watt",
+      "le joule"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "L'unité SI de la température est :",
+     "choices": [
+      "le kelvin",
+      "le degré Celsius",
+      "le degré Fahrenheit"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Le symbole µ signifie :",
+     "choices": [
+      "$10^{-6}$",
+      "$10^{-3}$",
+      "$10^{6}$"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "P en W, Q en var, S en VA.",
+   "method": "Connaître symboles, unités et préfixes.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Q en var ; température en kelvin ; µ = 10⁻⁶."
+    }
+   ]
+  },
+  {
+   "id": "X-IN-01-a",
+   "notions": [
+    "S-IN-01"
+   ],
+   "title": "Identifier une source d'erreur",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Un capteur affiche toujours 0,3 °C de trop :",
+     "choices": [
+      "erreur systématique",
+      "erreur aléatoire",
+      "pas d'erreur"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Les lectures d'une tension secteur fluctuent de quelques volts :",
+     "choices": [
+      "variabilité du phénomène",
+      "erreur de branchement",
+      "erreur de calibre"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Répéter la mesure permet de réduire :",
+     "choices": [
+      "l'effet des erreurs aléatoires",
+      "les erreurs systématiques",
+      "toutes les erreurs"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Systématique : même décalage à chaque mesure.",
+   "method": "Classer la source : phénomène, opérateur, instrument, méthode.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Décalage constant → systématique ; fluctuation → variabilité ; la répétition réduit l'aléatoire."
+    }
+   ]
+  },
+  {
+   "id": "X-IN-01-b",
+   "notions": [
+    "S-IN-01"
+   ],
+   "title": "Erreur due à l'appareil",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "R": {
+     "unit": "",
+     "values": [
+      100000.0,
+      1000000.0
+     ]
+    },
+    "Rv": {
+     "unit": "",
+     "values": [
+      1000000.0,
+      10000000.0
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [
+    "Rv > R"
+   ],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On mesure la tension aux bornes d'une résistance de [[=R|Ω]] avec un voltmètre de résistance interne [[=Rv|Ω]]. La résistance équivalente vue est $\\dfrac{R R_V}{R + R_V}$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Résistance équivalente (Ω) ?",
+     "answer": "R*Rv/(R + Rv)",
+     "unit": "Ω",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Écart relatif par rapport à R, en % ?",
+     "answer": "100*(R - R*Rv/(R+Rv))/R",
+     "unit": "%",
+     "tolerance": 0.02,
+     "sig": 3
+    }
+   ],
+   "hint": "Le voltmètre est en parallèle sur R.",
+   "method": "L'appareil modifie le circuit : erreur de méthode.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$R_{eq} \\approx$ [[=R*Rv/(R+Rv):3|Ω]], soit un écart de [[=100*(R-R*Rv/(R+Rv))/R:3]] %."
+    }
+   ]
+  },
+  {
+   "id": "X-IN-02-a",
+   "notions": [
+    "S-IN-02"
+   ],
+   "title": "Incertitude de répétabilité",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "s": {
+     "unit": "",
+     "values": [
+      0.2,
+      0.4,
+      0.5,
+      1
+     ]
+    },
+    "n": {
+     "unit": "",
+     "values": [
+      4,
+      9,
+      10,
+      16,
+      25
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On réalise [[n]] mesures d'une tension ; leur écart type expérimental vaut $s =$ [[s]] V."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Incertitude-type sur la moyenne (V) ?",
+     "answer": "s/sqrt(n)",
+     "unit": "V",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Incertitude élargie à 95 % ($k = 2$) (V) ?",
+     "answer": "2*s/sqrt(n)",
+     "unit": "V",
+     "tolerance": 0.02,
+     "sig": 3
+    }
+   ],
+   "hint": "u = s/√n.",
+   "method": "L'incertitude de répétabilité diminue comme 1/√n.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$u = \\dfrac{[[s]]}{\\sqrt{[[n]]}} \\approx$ [[=s/sqrt(n):3|V]] ; $U = 2u \\approx$ [[=2*s/sqrt(n):3|V]]."
+    }
+   ]
+  },
+  {
+   "id": "X-IN-02-b",
+   "notions": [
+    "S-IN-02"
+   ],
+   "title": "Précision constructeur et sources multiples",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "L": {
+     "unit": "",
+     "values": [
+      12.34,
+      23.45,
+      230.1
+     ]
+    },
+    "pc": {
+     "unit": "",
+     "values": [
+      0.5,
+      1
+     ]
+    },
+    "d": {
+     "unit": "",
+     "values": [
+      0.01,
+      0.1
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un voltmètre indique [[L]] V ; sa précision vaut ± ([[pc]] % de la lecture + 2 × [[d]] V)."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Incertitude de l'appareil (V) ?",
+     "answer": "pc/100*L + 2*d",
+     "unit": "V",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "En combinant avec une incertitude de lecture indépendante de 0,05 V : $u = \\sqrt{u_1^2 + u_2^2}$ (V) ?",
+     "answer": "sqrt((pc/100*L + 2*d)^2 + 0.05^2)",
+     "unit": "V",
+     "tolerance": 0.02,
+     "sig": 3
+    }
+   ],
+   "hint": "Calcule chaque terme puis applique la somme quadratique.",
+   "method": "u₁ = (précision % × lecture) + digits ; u = √(u₁² + u₂²).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$u_1 = [[=pc/100]] \\times [[L]] + [[=2*d]] \\approx$ [[=pc/100*L+2*d:3|V]] ; $u \\approx$ [[=sqrt((pc/100*L+2*d)^2+0.05^2):3|V]]."
+    }
+   ]
+  },
+  {
+   "id": "X-IN-03-a",
+   "notions": [
+    "S-IN-03"
+   ],
+   "title": "Écrire et comparer un résultat",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "m": {
+     "unit": "",
+     "values": [
+      46.2,
+      47.6,
+      48.3,
+      49.1
+     ]
+    },
+    "U": {
+     "unit": "",
+     "values": [
+      0.5,
+      1
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On mesure $R = [[m]] \\pm [[U]]\\ \\Omega$ (95 %). La valeur nominale est 47 Ω."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Précision relative, en % ?",
+     "answer": "100*U/m",
+     "unit": "%",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "La mesure est-elle compatible avec 47 Ω ?",
+     "choices": [
+      "Oui",
+      "Non"
+     ],
+     "correct": 0,
+     "correctExpr": "1 - (lt(abs(m - 47), U + 1e-9))"
+    }
+   ],
+   "hint": "47 est-il dans l'intervalle [m − U ; m + U] ?",
+   "method": "Comparer la référence à l'intervalle de mesure.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Précision relative : [[=100*U/m:2]] % ; intervalle [[[=m-U:3]] ; [[=m+U:3]]] Ω."
+    }
+   ]
+  },
+  {
+   "id": "X-IN-03-b",
+   "notions": [
+    "S-IN-03"
+   ],
+   "title": "Chiffres significatifs",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Avec une incertitude de 0,02 A, on écrit l'intensité 1,23456 A :",
+     "choices": [
+      "1,23 ± 0,02 A",
+      "1,23456 ± 0,02 A",
+      "1 ± 0,02 A"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Écriture scientifique de 0,000 47 F :",
+     "choices": [
+      "$4{,}7 \\times 10^{-4}$ F",
+      "$47 \\times 10^{-5}$ F",
+      "$0{,}47 \\times 10^{-3}$ F"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Le dernier chiffre gardé est au rang de l'incertitude.",
+   "method": "Arrondir la valeur au rang de l'incertitude ; écriture scientifique avec un seul chiffre avant la virgule.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "1,23 ± 0,02 A ; 4,7 × 10⁻⁴ F."
+    }
+   ]
+  }
+ ]
+}

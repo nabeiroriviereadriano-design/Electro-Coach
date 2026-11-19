@@ -89,8 +89,15 @@ void main() {
     await reveal(t, find.text('Valider ma réponse'));
     await t.tap(find.text('Valider ma réponse'));
     await t.pumpAndSettle();
-    expect(find.text('Bravo, tout est juste !'), findsOneWidget);
+    final messages = [
+      for (final w in t.widgetList<Text>(find.byType(Text)))
+        if ((w.data ?? '').contains('réponse') || (w.data ?? '').contains('attendue') || (w.data ?? '').contains('Unité')) w.data
+    ];
+    final typed = [for (final w in t.widgetList<TextField>(find.byType(TextField))) w.controller?.text];
+    expect(s.progress.attempts['X-EL-10-a']?.last.correct, isTrue, reason: 'saisies $typed → $messages');
     expect(s.progress.boxes['S-EL-10'], 1);
+    await reveal(t, find.text('Bravo, tout est juste !'));
+    expect(find.text('Bravo, tout est juste !'), findsOneWidget);
     await reveal(t, find.text('Voir le corrigé'));
     await t.tap(find.text('Voir le corrigé'));
     await t.pumpAndSettle();

@@ -78,6 +78,7 @@ extension NThemeX on BuildContext {
 const kFontBody = 'Inter';
 const kFontDot = 'Doto';
 const kFontMono = 'JetBrainsMono';
+const kFontFallback = ['DejaVuMath'];
 
 ThemeData buildTheme(Brightness b) {
   final n = b == Brightness.dark ? NTheme.dark : NTheme.light;
@@ -85,6 +86,7 @@ ThemeData buildTheme(Brightness b) {
     brightness: b,
     useMaterial3: true,
     fontFamily: kFontBody,
+    fontFamilyFallback: kFontFallback,
     colorScheme: ColorScheme(
       brightness: b,
       primary: n.fg,

@@ -32,9 +32,10 @@ Future<void> loadFonts() async {
     await l.load();
   }
 
-  await load('Inter', [for (final f in ['Regular', 'Medium', 'SemiBold', 'Italic']) 'assets/fonts/Inter-$f.ttf']);
+  await load('Inter', [for (final f in ['Regular', 'Medium', 'SemiBold', 'Italic', 'SemiBoldItalic']) 'assets/fonts/Inter-$f.ttf']);
   await load('Doto', ['assets/fonts/Doto-Bold.ttf', 'assets/fonts/Doto-Black.ttf']);
   await load('JetBrainsMono', ['assets/fonts/JetBrainsMono-Regular.ttf']);
+  await load('DejaVuMath', ['assets/fonts/DejaVuSans-Math.ttf']);
   final manifest = await AssetManifest.loadFromAssetBundle(rootBundle);
   final byFamily = <String, List<String>>{};
   for (final a in manifest.listAssets()) {

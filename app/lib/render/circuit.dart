@@ -22,9 +22,12 @@ class CircuitView extends StatelessWidget {
     final source = (block.data['source'] ?? 'ac') as String;
     final caption = (block.data['caption'] ?? '') as String;
     return Column(children: [
-      AspectRatio(
-        aspectRatio: kind == 'parallel' ? 1.6 : 2.4,
-        child: CustomPaint(painter: _CircuitPainter(parts, kind, source, n.fg, NColors.red, n.mid)),
+      ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 520),
+        child: AspectRatio(
+          aspectRatio: kind == 'parallel' ? 1.6 : 2.4,
+          child: CustomPaint(painter: _CircuitPainter(parts, kind, source, n.fg, NColors.red, n.mid)),
+        ),
       ),
       if (caption.isNotEmpty)
         Padding(
@@ -52,14 +55,15 @@ class _CircuitPainter extends CustomPainter {
       ..strokeWidth = 2
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round;
-    final left = size.width * 0.12, right = size.width * 0.92;
-    final top = size.height * 0.22, bottom = size.height * 0.85;
+    final left = size.width * 0.16, right = size.width * 0.92;
+    final top = size.height * 0.3, bottom = size.height * 0.88;
     final midY = (top + bottom) / 2;
     // source à gauche
     _source(canvas, Offset(left, midY), math.min(size.height * 0.16, 22));
     canvas.drawLine(Offset(left, top), Offset(left, midY - 22), wire);
     canvas.drawLine(Offset(left, midY + 22), Offset(left, bottom), wire);
-    _text(canvas, source == 'ac' ? 'u(t)' : 'U', Offset(left - 14, midY), mid, align: TextAlign.right);
+    _text(canvas, source == 'ac' ? 'u(t)' : 'U', Offset(left - math.min(size.height * 0.16, 22) - 6, midY), mid,
+        align: TextAlign.right);
 
     if (kind == 'parallel') {
       canvas.drawLine(Offset(left, top), Offset(right, top), wire);
@@ -89,7 +93,7 @@ class _CircuitPainter extends CustomPainter {
       final c = Offset(left + slot * (i + 0.5), top);
       canvas.drawLine(Offset(x, top), Offset(c.dx - len / 2, top), wire);
       _component(canvas, parts[i].type, c, len);
-      _text(canvas, parts[i].label, Offset(c.dx, top - 26), fg, align: TextAlign.center);
+      _text(canvas, parts[i].label, Offset(c.dx, top - len * 0.4 - 12), fg, align: TextAlign.center);
       x = c.dx + len / 2;
     }
     canvas.drawLine(Offset(x, top), Offset(right, top), wire);

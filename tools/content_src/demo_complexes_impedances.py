@@ -93,10 +93,11 @@ courses = [
              "parts": [{"type": "R", "label": "R"}, {"type": "L", "label": "L"}, {"type": "C", "label": "C"}],
              "caption": "Circuit RLC série alimenté par une tension sinusoïdale u(t)"},
             F(r"\underline{Z} = R + j\left(L\omega - \frac{1}{C\omega}\right)", "RLC série"),
-            F(r"Z = \sqrt{R^2 + \left(L\omega - \frac{1}{C\omega}\right)^2} \qquad \tan\varphi = \frac{L\omega - \frac{1}{C\omega}}{R}", "Module et déphasage"),
+            F(r"Z = \sqrt{R^2 + \left(L\omega - \frac{1}{C\omega}\right)^2}", "Module"),
+            F(r"\tan\varphi = \frac{L\omega - \frac{1}{C\omega}}{R}", "Déphasage de u par rapport à i"),
             T("Si $L\\omega > \\frac{1}{C\\omega}$, $\\varphi > 0$ : le circuit est **inductif** (le courant est en retard sur la tension). Sinon il est **capacitif**."),
             {"type": "plot", "var": "t", "from": 0, "to": 0.04, "xLabel": "t (s)", "yLabel": "",
-             "title": "Circuit inductif : i(t) en retard de φ = 40° sur u(t)",
+             "title": "Circuit inductif : i(t) en retard de 40° sur u(t)",
              "curves": [
                  {"expr": "325*sin(100*pi*t)", "label": "u(t) (V)"},
                  {"expr": "200*sin(100*pi*t - rad(40))", "label": "i(t) (×0,01 A)"},

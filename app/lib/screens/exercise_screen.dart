@@ -270,7 +270,7 @@ class _QuestionCard extends StatelessWidget {
         if (reveal)
           Padding(
             padding: const EdgeInsets.only(top: 6),
-            child: Text('Réponse attendue : ${formatExpected(q, inst.expected[q.id]!)}',
+            child: Text('Réponse attendue : ${inst.render(formatExpected(q, inst.expected[q.id]!))}',
                 style: const TextStyle(fontFamily: kFontMono, fontSize: 13)),
           ),
       ]),

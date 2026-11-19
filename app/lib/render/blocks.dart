@@ -140,10 +140,10 @@ class _TableView extends StatelessWidget {
     final rows = [for (final row in (block.data['rows'] as List? ?? const [])) [for (final c in row as List) '$c']];
     if (rows.isEmpty) return const SizedBox.shrink();
     final cols = rows.map((r) => r.length).reduce((a, b) => a > b ? a : b);
-    return SingleChildScrollView(
+    return LayoutBuilder(builder: (context, box) => SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: ConstrainedBox(
-        constraints: BoxConstraints(minWidth: MediaQuery.sizeOf(context).width - 40),
+        constraints: BoxConstraints(minWidth: box.maxWidth),
         child: Container(
           decoration: BoxDecoration(borderRadius: BorderRadius.circular(16), border: Border.all(color: n.line)),
           clipBehavior: Clip.antiAlias,
@@ -169,6 +169,6 @@ class _TableView extends StatelessWidget {
           ),
         ),
       ),
-    );
+    ));
   }
 }

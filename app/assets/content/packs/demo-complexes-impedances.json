@@ -196,8 +196,13 @@
     },
     {
      "type": "formula",
-     "tex": "Z = \\sqrt{R^2 + \\left(L\\omega - \\frac{1}{C\\omega}\\right)^2} \\qquad \\tan\\varphi = \\frac{L\\omega - \\frac{1}{C\\omega}}{R}",
-     "title": "Module et déphasage"
+     "tex": "Z = \\sqrt{R^2 + \\left(L\\omega - \\frac{1}{C\\omega}\\right)^2}",
+     "title": "Module"
+    },
+    {
+     "type": "formula",
+     "tex": "\\tan\\varphi = \\frac{L\\omega - \\frac{1}{C\\omega}}{R}",
+     "title": "Déphasage de u par rapport à i"
     },
     {
      "type": "text",
@@ -210,7 +215,7 @@
      "to": 0.04,
      "xLabel": "t (s)",
      "yLabel": "",
-     "title": "Circuit inductif : i(t) en retard de φ = 40° sur u(t)",
+     "title": "Circuit inductif : i(t) en retard de 40° sur u(t)",
      "curves": [
       {
        "expr": "325*sin(100*pi*t)",

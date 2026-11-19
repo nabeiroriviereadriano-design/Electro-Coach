@@ -50,6 +50,10 @@ flutter:
     - family: JetBrainsMono
       fonts:
         - asset: assets/fonts/JetBrainsMono-Regular.ttf
+    # symboles mathématiques absents d'Inter (∠…) : police de secours
+    - family: DejaVuMath
+      fonts:
+        - asset: assets/fonts/DejaVuSans-Math.ttf
 
 flutter_launcher_icons:
   android: true

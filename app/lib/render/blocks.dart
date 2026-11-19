@@ -119,8 +119,10 @@ class _Boxed extends StatelessWidget {
         Row(children: [
           Icon(icon, size: 16, color: color),
           const SizedBox(width: 8),
-          Text(title.toUpperCase(),
-              style: TextStyle(fontSize: 11.5, letterSpacing: 1.2, fontWeight: FontWeight.w600, color: color)),
+          Flexible(
+            child: Text(title.toUpperCase(),
+                style: TextStyle(fontSize: 11.5, letterSpacing: 1.2, fontWeight: FontWeight.w600, color: color)),
+          ),
         ]),
         const SizedBox(height: 8),
         child,

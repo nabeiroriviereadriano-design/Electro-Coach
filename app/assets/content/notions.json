@@ -1,0 +1,2992 @@
+{
+ "source": "Classeur de couverture BTS Électro Coach",
+ "notions": [
+  {
+   "id": "M-CN-01",
+   "subject": "Mathématiques",
+   "domain": "Calcul et numération",
+   "chapter": "Calcul",
+   "title": "Fractions : signe, nullité, réduction, opérations",
+   "year": 1,
+   "status": "Non développé",
+   "skills": "Reconnaître une fraction et changer son signe ; caractériser les fractions nulles ; réduire une fraction ; opérer sur des fractions (somme, produit, quotient, inverse)",
+   "formulas": "a/b + c/d = (ad + bc)/bd ; a/b = c/d ⇔ ad = bc",
+   "prerequisites": [],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Calcul et numération",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-CN-02",
+   "subject": "Mathématiques",
+   "domain": "Calcul et numération",
+   "chapter": "Calcul",
+   "title": "Puissances et écriture scientifique",
+   "year": 1,
+   "status": "Non développé",
+   "skills": "Calculer produit et quotient de deux puissances ; simplifier une fraction de décimaux écrits en notation scientifique",
+   "formulas": "aᵐ·aⁿ = aᵐ⁺ⁿ ; aᵐ/aⁿ = aᵐ⁻ⁿ ; préfixes k, M, m, µ, n",
+   "prerequisites": [
+    "M-CN-01"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Calcul et numération",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-CN-03",
+   "subject": "Mathématiques",
+   "domain": "Calcul et numération",
+   "chapter": "Calcul",
+   "title": "Proportions et pourcentages",
+   "year": 1,
+   "status": "Non développé",
+   "skills": "Relier effectifs et proportion ; associer proportion et pourcentage par une règle de trois ; donner un sens à la somme ou différence de pourcentages d'une même population ; traduire un pourcentage de pourcentage ; distinguer % et ‰",
+   "formulas": "p = n/N ; p(A∩B) = pA × pB|A",
+   "prerequisites": [
+    "M-CN-01"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Calcul et numération",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-CN-04",
+   "subject": "Mathématiques",
+   "domain": "Calcul et numération",
+   "chapter": "Évolution",
+   "title": "Taux d'évolution, variation absolue et relative",
+   "year": 1,
+   "status": "Non développé",
+   "skills": "Distinguer un pourcentage de proportion d'un pourcentage d'évolution ; calculer une évolution en % et exprimer une évolution en %",
+   "formulas": "t = (V₁ − V₀)/V₀ ; coefficient multiplicateur 1 + t",
+   "prerequisites": [
+    "M-CN-03"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Calcul et numération",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-CN-05",
+   "subject": "Mathématiques",
+   "domain": "Calcul et numération",
+   "chapter": "Évolution",
+   "title": "Évolutions successives, taux global, taux moyen, taux réciproque",
+   "year": 1,
+   "status": "Non développé",
+   "skills": "Déterminer le taux global et le taux moyen de deux taux successifs ; déterminer le taux réciproque",
+   "formulas": "1 + T = (1 + t₁)(1 + t₂) ; taux moyen = (1 + T)^(1/n) − 1 ; réciproque = 1/(1 + t) − 1",
+   "prerequisites": [
+    "M-CN-04"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Calcul et numération",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-CN-06",
+   "subject": "Mathématiques",
+   "domain": "Calcul et numération",
+   "chapter": "Évolution",
+   "title": "Indice simple en base 100",
+   "year": 1,
+   "status": "Non développé",
+   "skills": "Passer de l'indice au taux d'évolution et inversement",
+   "formulas": "I = 100 × V/V₀",
+   "prerequisites": [
+    "M-CN-04"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Calcul et numération",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-CN-07",
+   "subject": "Mathématiques",
+   "domain": "Calcul et numération",
+   "chapter": "Numération",
+   "title": "Systèmes positionnels : bases 2, 10, 16 (et 60)",
+   "year": 1,
+   "status": "Non développé",
+   "skills": "Comprendre l'intérêt des bases 2, 16, 10 et 60 ; réaliser des conversions simples décimal ↔ binaire ↔ hexadécimal",
+   "formulas": "Divisions successives par la base ; regroupement de 4 bits = 1 chiffre hexa",
+   "prerequisites": [],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Calcul et numération",
+   "inventoryChecked": true,
+   "remark": "Les codes BCD et Gray peuvent être évoqués"
+  },
+  {
+   "id": "M-CN-08",
+   "subject": "Mathématiques",
+   "domain": "Calcul et numération",
+   "chapter": "Numération",
+   "title": "Addition en binaire (un octet au plus)",
+   "year": 1,
+   "status": "Non développé",
+   "skills": "Additionner en binaire sur des exemples simples",
+   "formulas": "Retenue : 1 + 1 = 10₂",
+   "prerequisites": [
+    "M-CN-07"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Calcul et numération",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-CN-09",
+   "subject": "Mathématiques",
+   "domain": "Calcul et numération",
+   "chapter": "Numération",
+   "title": "Système romain et repères historiques",
+   "year": 1,
+   "status": "Non développé",
+   "skills": "Coder des entiers ne dépassant pas 4000 ; acquérir des repères culturels, historiques et scientifiques",
+   "formulas": "",
+   "prerequisites": [],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Calcul et numération",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-CN-X1",
+   "subject": "Mathématiques",
+   "domain": "Calcul et numération",
+   "chapter": "Numération",
+   "title": "Codage binaire des entiers négatifs et des réels",
+   "year": null,
+   "status": "Hors programme",
+   "skills": "",
+   "formulas": "",
+   "prerequisites": [],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Calcul et numération",
+   "inventoryChecked": true,
+   "remark": "Exclu par le module"
+  },
+  {
+   "id": "M-CN-X2",
+   "subject": "Mathématiques",
+   "domain": "Calcul et numération",
+   "chapter": "Évolution",
+   "title": "Calcul d'un indice synthétique (type indice des prix)",
+   "year": null,
+   "status": "Hors programme",
+   "skills": "",
+   "formulas": "",
+   "prerequisites": [],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Calcul et numération",
+   "inventoryChecked": true,
+   "remark": "Exclu par le module"
+  },
+  {
+   "id": "M-NC-01",
+   "subject": "Mathématiques",
+   "domain": "Nombres complexes",
+   "chapter": "Forme algébrique",
+   "title": "Écriture a + jb ; égalité, conjugué, somme, produit, quotient",
+   "year": 1,
+   "status": "Non développé",
+   "skills": "Effectuer des calculs algébriques sur les complexes, à la main et à la calculatrice",
+   "formulas": "j² = −1 ; z̄ = a − jb ; 1/z = z̄/|z|²",
+   "prerequisites": [
+    "M-CN-01"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Nombres complexes",
+   "inventoryChecked": true,
+   "remark": "Notation j en contexte technologique"
+  },
+  {
+   "id": "M-NC-02",
+   "subject": "Mathématiques",
+   "domain": "Nombres complexes",
+   "chapter": "Forme algébrique",
+   "title": "Équation du second degré à coefficients réels",
+   "year": 1,
+   "status": "Non développé",
+   "skills": "Résoudre une équation du second degré à coefficients réels (racines complexes si Δ < 0)",
+   "formulas": "Δ = b² − 4ac ; Δ < 0 : z = (−b ± j√−Δ)/2a",
+   "prerequisites": [
+    "M-NC-01"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Nombres complexes",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-NC-03",
+   "subject": "Mathématiques",
+   "domain": "Nombres complexes",
+   "chapter": "Représentation géométrique",
+   "title": "Point image, vecteur image, affixe ; ensembles Re(z) ou Im(z) donnés",
+   "year": 1,
+   "status": "Non développé",
+   "skills": "Représenter un complexe par un point ou un vecteur ; déterminer et construire l'ensemble des points dont l'affixe a une partie réelle ou imaginaire donnée",
+   "formulas": "",
+   "prerequisites": [
+    "M-NC-01"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Nombres complexes",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-NC-04",
+   "subject": "Mathématiques",
+   "domain": "Nombres complexes",
+   "chapter": "Formes trigonométrique et exponentielle",
+   "title": "Module, argument ; formes r(cos θ + j sin θ) et r·e^(jθ)",
+   "year": 1,
+   "status": "Non développé",
+   "skills": "Passer de la forme trigonométrique à la forme algébrique et inversement ; choisir la forme adaptée ; calcul simple à la main et à la calculatrice",
+   "formulas": "|z| = √(a² + b²) ; cos θ = a/|z|, sin θ = b/|z| ; e^(jθ)·e^(jθ') = e^(j(θ+θ'))",
+   "prerequisites": [
+    "M-NC-01",
+    "M-FV-01"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Nombres complexes",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-NC-05",
+   "subject": "Mathématiques",
+   "domain": "Nombres complexes",
+   "chapter": "Ensembles de points",
+   "title": "Ensembles |z − a| = k et arg(z − a) = k",
+   "year": 1,
+   "status": "Non développé",
+   "skills": "Déterminer et construire ces ensembles de points",
+   "formulas": "Cercle de centre A, rayon k ; demi-droite d'origine A",
+   "prerequisites": [
+    "M-NC-03",
+    "M-NC-04"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Nombres complexes",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-NC-06",
+   "subject": "Mathématiques",
+   "domain": "Nombres complexes",
+   "chapter": "Suite du module",
+   "title": "Paragraphes du module après « ensembles de points » (dont un éventuel paragraphe « Transformations » z ↦ z + b, az, 1/z)",
+   "year": 1,
+   "status": "Non développé",
+   "skills": "À relever sur le texte intégral",
+   "formulas": "",
+   "prerequisites": [
+    "M-NC-05"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Nombres complexes",
+   "inventoryChecked": false,
+   "remark": "Passage non lisible dans la source consultée ; aucune exclusion n'est prévue pour le BTS ET, donc tout le module est au programme"
+  },
+  {
+   "id": "M-NC-07",
+   "subject": "Mathématiques",
+   "domain": "Nombres complexes",
+   "chapter": "Liens propres au BTS ET",
+   "title": "Représentation de Fresnel (lien avec le calcul vectoriel)",
+   "year": 1,
+   "status": "Non développé",
+   "skills": "Associer un complexe à un vecteur de Fresnel et l'utiliser pour additionner des grandeurs sinusoïdales",
+   "formulas": "u(t) = U√2 sin(ωt + φ) ↔ U = U·e^(jφ)",
+   "prerequisites": [
+    "M-NC-04",
+    "M-CV-01"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), organisation des études – maths",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-NC-08",
+   "subject": "Mathématiques",
+   "domain": "Nombres complexes",
+   "chapter": "Liens propres au BTS ET",
+   "title": "Dérivation et intégration temporelle de e^(jωt) ; arctangente et argument",
+   "year": 1,
+   "status": "Non développé",
+   "skills": "Dériver et intégrer e^(jωt) ; exprimer un argument avec arctan",
+   "formulas": "d/dt ↔ × jω ; ∫ dt ↔ ÷ jω ; arg(a + jb) = arctan(b/a) si a > 0",
+   "prerequisites": [
+    "M-NC-04",
+    "M-FM-01"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), organisation des études – maths",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-NC-09",
+   "subject": "Mathématiques",
+   "domain": "Nombres complexes",
+   "chapter": "Liens propres au BTS ET",
+   "title": "Polynômes et fractions rationnelles à coefficients complexes",
+   "year": 1,
+   "status": "Non développé",
+   "skills": "Calculer avec des polynômes et fractions rationnelles en jω (impédances, transmittances)",
+   "formulas": "Z = R + jLω ; H(jω) = 1/(1 + jωτ)",
+   "prerequisites": [
+    "M-NC-01",
+    "M-FV-09"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), organisation des études – maths",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-CV-01",
+   "subject": "Mathématiques",
+   "domain": "Calcul vectoriel",
+   "chapter": "Décomposition",
+   "title": "Décomposition d'un vecteur dans une base du plan ou de l'espace",
+   "year": 1,
+   "status": "Non développé",
+   "skills": "Décomposer un vecteur dans une base et exploiter la décomposition (vitesse, force)",
+   "formulas": "u = x·i + y·j (+ z·k)",
+   "prerequisites": [],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Calcul vectoriel",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-CV-02",
+   "subject": "Mathématiques",
+   "domain": "Calcul vectoriel",
+   "chapter": "Produit scalaire",
+   "title": "Trois expressions du produit scalaire",
+   "year": 1,
+   "status": "Non développé",
+   "skills": "Choisir l'expression adaptée (projection, normes et angle, coordonnées) ; calculer un angle ou une longueur ; appliquer au travail et à la puissance d'une force",
+   "formulas": "u·v = ‖u‖‖v‖cos θ = xx' + yy' (+ zz') ; W = F·AB",
+   "prerequisites": [
+    "M-CV-01"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Calcul vectoriel",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-CV-X1",
+   "subject": "Mathématiques",
+   "domain": "Calcul vectoriel",
+   "chapter": "Barycentre",
+   "title": "Barycentre de deux points pondérés, barycentre partiel",
+   "year": null,
+   "status": "Hors programme",
+   "skills": "",
+   "formulas": "",
+   "prerequisites": [],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Calcul vectoriel ; Référentiel BTS ET (arrêté du 21/02/2020 mod.), organisation des études – maths",
+   "inventoryChecked": true,
+   "remark": "Exclu pour le BTS ET"
+  },
+  {
+   "id": "M-CV-X2",
+   "subject": "Mathématiques",
+   "domain": "Calcul vectoriel",
+   "chapter": "Produit vectoriel",
+   "title": "Produit vectoriel, aire, moment d'une force",
+   "year": null,
+   "status": "Hors programme",
+   "skills": "",
+   "formulas": "",
+   "prerequisites": [],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Calcul vectoriel ; Référentiel BTS ET (arrêté du 21/02/2020 mod.), organisation des études – maths",
+   "inventoryChecked": true,
+   "remark": "Exclu pour le BTS ET"
+  },
+  {
+   "id": "M-FV-01",
+   "subject": "Mathématiques",
+   "domain": "Fonctions d'une variable réelle",
+   "chapter": "Fonctions de référence",
+   "title": "Affines, second degré, ln, exp, racine carrée, sin, cos",
+   "year": 1,
+   "status": "Non développé",
+   "skills": "Représenter une fonction de référence et exploiter sa courbe pour retrouver ses propriétés",
+   "formulas": "",
+   "prerequisites": [
+    "M-CN-02"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Fonctions d'une variable réelle",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-FV-02",
+   "subject": "Mathématiques",
+   "domain": "Fonctions d'une variable réelle",
+   "chapter": "Liens propres au BTS ET",
+   "title": "Fonctions affines et offset d'une mesure",
+   "year": 1,
+   "status": "Non développé",
+   "skills": "Modéliser une mesure par une fonction affine et interpréter l'offset (ordonnée à l'origine)",
+   "formulas": "y = a·x + b",
+   "prerequisites": [
+    "M-FV-01"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), organisation des études – maths",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-FV-03",
+   "subject": "Mathématiques",
+   "domain": "Fonctions d'une variable réelle",
+   "chapter": "Liens propres au BTS ET",
+   "title": "Logarithme décimal et échelles logarithmiques",
+   "year": 1,
+   "status": "Non développé",
+   "skills": "Utiliser log₁₀ et lire ou tracer sur une échelle logarithmique",
+   "formulas": "log(ab) = log a + log b ; décibel : G = 20·log|H|",
+   "prerequisites": [
+    "M-FV-01"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), organisation des études – maths",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-FV-04",
+   "subject": "Mathématiques",
+   "domain": "Fonctions d'une variable réelle",
+   "chapter": "Dérivation",
+   "title": "Dérivées des fonctions de référence et opérations ; uⁿ, ln u, eᵘ",
+   "year": 1,
+   "status": "Non développé",
+   "skills": "Calculer une dérivée à la main dans les cas simples, au calcul formel sinon ; interpréter graphiquement le nombre dérivé",
+   "formulas": "(uv)' = u'v + uv' ; (u/v)' = (u'v − uv')/v² ; (eᵘ)' = u'eᵘ ; (ln u)' = u'/u",
+   "prerequisites": [
+    "M-FV-01"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Fonctions d'une variable réelle",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-FV-05",
+   "subject": "Mathématiques",
+   "domain": "Fonctions d'une variable réelle",
+   "chapter": "Dérivation",
+   "title": "Étude des variations, extremum, signe, nombre de solutions de f(x) = k",
+   "year": 1,
+   "status": "Non développé",
+   "skills": "Étudier les variations d'une fonction simple ; exploiter un tableau de variations",
+   "formulas": "Signe de f' ⇒ sens de variation",
+   "prerequisites": [
+    "M-FV-04"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Fonctions d'une variable réelle",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-FV-06",
+   "subject": "Mathématiques",
+   "domain": "Fonctions d'une variable réelle",
+   "chapter": "Dérivation",
+   "title": "Résolution approchée de f(x) = k (balayage, dichotomie, Newton)",
+   "year": 1,
+   "status": "Non développé",
+   "skills": "Résoudre explicitement les cas simples, sinon de façon approchée ; mettre en œuvre au moins un algorithme",
+   "formulas": "Newton : xₙ₊₁ = xₙ − f(xₙ)/f'(xₙ)",
+   "prerequisites": [
+    "M-FV-05",
+    "M-AL-02"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Fonctions d'une variable réelle",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-FV-07",
+   "subject": "Mathématiques",
+   "domain": "Fonctions d'une variable réelle",
+   "chapter": "Limites",
+   "title": "Asymptotes parallèles aux axes, limite infinie à l'infini, asymptote oblique",
+   "year": 1,
+   "status": "Non développé",
+   "skills": "Interpréter une courbe en termes de limite et une asymptote en termes de limite",
+   "formulas": "y = ax + b asymptote si f(x) − (ax + b) → 0",
+   "prerequisites": [
+    "M-FV-01"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Fonctions d'une variable réelle",
+   "inventoryChecked": true,
+   "remark": "L'asymptote oblique n'est pas exclue pour le BTS ET"
+  },
+  {
+   "id": "M-FV-08",
+   "subject": "Mathématiques",
+   "domain": "Fonctions d'une variable réelle",
+   "chapter": "Limites",
+   "title": "Limites et opérations (uⁿ, ln u, eᵘ)",
+   "year": 1,
+   "status": "Non développé",
+   "skills": "Déterminer la limite d'une fonction simple (somme, produit, inverse)",
+   "formulas": "Croissances comparées usuelles",
+   "prerequisites": [
+    "M-FV-07"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Fonctions d'une variable réelle",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-FV-09",
+   "subject": "Mathématiques",
+   "domain": "Fonctions d'une variable réelle",
+   "chapter": "Liens propres au BTS ET",
+   "title": "Polynômes et fractions rationnelles étendus à ℂ ; limite d'une fraction rationnelle à coefficients complexes",
+   "year": 1,
+   "status": "Non développé",
+   "skills": "Calculer la limite d'une fraction rationnelle en ω (variable réelle) à coefficients complexes",
+   "formulas": "lim de H(jω) quand ω → 0 ou ω → +∞",
+   "prerequisites": [
+    "M-NC-01",
+    "M-FV-08"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), organisation des études – maths",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-FV-X1",
+   "subject": "Mathématiques",
+   "domain": "Fonctions d'une variable réelle",
+   "chapter": "Approximation locale",
+   "title": "Développement limité en 0, tangente par DL (« étude locale »)",
+   "year": null,
+   "status": "Hors programme",
+   "skills": "",
+   "formulas": "",
+   "prerequisites": [],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Fonctions d'une variable réelle ; Référentiel BTS ET (arrêté du 21/02/2020 mod.), organisation des études – maths",
+   "inventoryChecked": true,
+   "remark": "Exclu pour le BTS ET"
+  },
+  {
+   "id": "M-FV-X2",
+   "subject": "Mathématiques",
+   "domain": "Fonctions d'une variable réelle",
+   "chapter": "Courbes paramétrées",
+   "title": "Courbes paramétrées (« arcs paramétrés »)",
+   "year": null,
+   "status": "Hors programme",
+   "skills": "",
+   "formulas": "",
+   "prerequisites": [],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Fonctions d'une variable réelle ; Référentiel BTS ET (arrêté du 21/02/2020 mod.), organisation des études – maths",
+   "inventoryChecked": true,
+   "remark": "Exclu pour le BTS ET"
+  },
+  {
+   "id": "M-FM-01",
+   "subject": "Mathématiques",
+   "domain": "Fonctions d'une variable réelle et modélisation",
+   "chapter": "Fonctions de référence",
+   "title": "Fonctions tangente et arctangente",
+   "year": 1,
+   "status": "Non développé",
+   "skills": "Représenter tan et arctan",
+   "formulas": "arctan : ℝ → ]−π/2 ; π/2[",
+   "prerequisites": [
+    "M-FV-01"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Fonctions d'une variable réelle et modélisation du signal",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-FM-02",
+   "subject": "Mathématiques",
+   "domain": "Fonctions d'une variable réelle et modélisation",
+   "chapter": "Compléments",
+   "title": "Fonctions paires, impaires, périodiques ; fonctions x ↦ f(ax + b)",
+   "year": 1,
+   "status": "Non développé",
+   "skills": "Déduire périodicité et parité d'une courbe ; représenter une fonction simple ayant ces propriétés",
+   "formulas": "f(−x) = f(x) ; f(−x) = −f(x) ; f(x + T) = f(x)",
+   "prerequisites": [
+    "M-FV-01"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Fonctions d'une variable réelle et modélisation du signal",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-FM-03",
+   "subject": "Mathématiques",
+   "domain": "Fonctions d'une variable réelle et modélisation",
+   "chapter": "Calculs de dérivées",
+   "title": "Dérivées de tan, arctan, cos(ωt + φ), sin(ωt + φ), arctan(u(x))",
+   "year": 1,
+   "status": "Non développé",
+   "skills": "Étudier les variations d'une fonction simple ; étudier sur des exemples les limites de arctan(u(x))",
+   "formulas": "(arctan u)' = u'/(1 + u²) ; (sin(ωt + φ))' = ω cos(ωt + φ)",
+   "prerequisites": [
+    "M-FV-04",
+    "M-FM-01"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Fonctions d'une variable réelle et modélisation du signal",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-FM-04",
+   "subject": "Mathématiques",
+   "domain": "Fonctions d'une variable réelle et modélisation",
+   "chapter": "Fonctions rationnelles",
+   "title": "Décomposition en éléments simples (forme donnée)",
+   "year": 1,
+   "status": "Non développé",
+   "skills": "Effectuer la décomposition à la main dans les cas simples, au calcul formel sinon",
+   "formulas": "Identification des coefficients",
+   "prerequisites": [
+    "M-CN-01",
+    "M-FV-09"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Fonctions d'une variable réelle et modélisation du signal",
+   "inventoryChecked": true,
+   "remark": "Aucun résultat théorique ; la forme de la décomposition est donnée"
+  },
+  {
+   "id": "M-FM-X1",
+   "subject": "Mathématiques",
+   "domain": "Fonctions d'une variable réelle et modélisation",
+   "chapter": "Approximation globale",
+   "title": "Approximation globale d'une fonction sur un intervalle",
+   "year": null,
+   "status": "Hors programme",
+   "skills": "",
+   "formulas": "",
+   "prerequisites": [],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Fonctions d'une variable réelle et modélisation du signal ; Référentiel BTS ET (arrêté du 21/02/2020 mod.), organisation des études – maths",
+   "inventoryChecked": true,
+   "remark": "Exclu pour le BTS ET"
+  },
+  {
+   "id": "M-SF-01",
+   "subject": "Mathématiques",
+   "domain": "Séries de Fourier",
+   "chapter": "Séries numériques",
+   "title": "Séries géométriques et séries de Riemann ; notation Σ",
+   "year": 2,
+   "status": "Non développé",
+   "skills": "Reconnaître une série géométrique et sa condition de convergence ; connaître la condition de convergence d'une série de Riemann (admise)",
+   "formulas": "Σqⁿ = 1/(1 − q) si |q| < 1 ; Σ1/n^α converge ⇔ α > 1",
+   "prerequisites": [
+    "M-FV-08"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Séries de Fourier",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-SF-02",
+   "subject": "Mathématiques",
+   "domain": "Séries de Fourier",
+   "chapter": "Fonctions périodiques",
+   "title": "Fonctions T-périodiques continues par morceaux",
+   "year": 2,
+   "status": "Non développé",
+   "skills": "Représenter graphiquement ; déterminer périodicité, parité et expression sur une période à partir d'une représentation affine par morceaux",
+   "formulas": "",
+   "prerequisites": [
+    "M-FM-02"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Séries de Fourier",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-SF-03",
+   "subject": "Mathématiques",
+   "domain": "Séries de Fourier",
+   "chapter": "Coefficients de Fourier",
+   "title": "Calcul des coefficients a₀, aₙ, bₙ (créneau à la main, rampe en complément)",
+   "year": 2,
+   "status": "Non développé",
+   "skills": "Calculer les coefficients à la main pour un créneau, au calcul formel dans tous les cas",
+   "formulas": "a₀ = (1/T)∫f ; aₙ = (2/T)∫f·cos(nωt) ; bₙ = (2/T)∫f·sin(nωt)",
+   "prerequisites": [
+    "M-SF-02",
+    "M-CI-02",
+    "M-CI-06"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Séries de Fourier",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-SF-04",
+   "subject": "Mathématiques",
+   "domain": "Séries de Fourier",
+   "chapter": "Coefficients de Fourier",
+   "title": "Cas d'une fonction paire ou impaire",
+   "year": 2,
+   "status": "Non développé",
+   "skills": "Exploiter la parité pour simplifier le calcul",
+   "formulas": "f paire ⇒ bₙ = 0 ; f impaire ⇒ a₀ = aₙ = 0",
+   "prerequisites": [
+    "M-SF-03"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Séries de Fourier",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-SF-05",
+   "subject": "Mathématiques",
+   "domain": "Séries de Fourier",
+   "chapter": "Convergence",
+   "title": "Sommes partielles et conditions de Dirichlet (visualisation)",
+   "year": 2,
+   "status": "Non développé",
+   "skills": "Représenter une somme partielle au logiciel et la comparer à la fonction ; identifier le développement d'une fonction donnée",
+   "formulas": "",
+   "prerequisites": [
+    "M-SF-03",
+    "M-AL-04"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Séries de Fourier",
+   "inventoryChecked": true,
+   "remark": "Sans aucune théorie : les conditions sont toujours remplies dans les cas étudiés"
+  },
+  {
+   "id": "M-SF-06",
+   "subject": "Mathématiques",
+   "domain": "Séries de Fourier",
+   "chapter": "Formule de Parseval",
+   "title": "Formule de Parseval et valeur efficace ; spectre",
+   "year": 2,
+   "status": "Non développé",
+   "skills": "Calculer et comparer la moyenne du carré de f et sa valeur approchée par les coefficients ; relier à la valeur efficace",
+   "formulas": "F²eff = a₀² + ½Σ(aₙ² + bₙ²)",
+   "prerequisites": [
+    "M-SF-03",
+    "M-CI-05"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Séries de Fourier",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-SF-X1",
+   "subject": "Mathématiques",
+   "domain": "Séries de Fourier",
+   "chapter": "Convergence",
+   "title": "Toute étude théorique de la convergence",
+   "year": null,
+   "status": "Hors programme",
+   "skills": "",
+   "formulas": "",
+   "prerequisites": [],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Séries de Fourier ; Référentiel BTS ET (arrêté du 21/02/2020 mod.), organisation des études – maths",
+   "inventoryChecked": true,
+   "remark": "Exclu pour le BTS ET"
+  },
+  {
+   "id": "M-CI-01",
+   "subject": "Mathématiques",
+   "domain": "Calcul intégral",
+   "chapter": "Primitives",
+   "title": "Primitives des fonctions de référence ; formes u'uⁿ, u'/u, u'eᵘ ; cos(ωt + φ), sin(ωt + φ)",
+   "year": 2,
+   "status": "Non développé",
+   "skills": "Déterminer des primitives à la main dans les cas simples, au calcul formel sinon",
+   "formulas": "∫u'uⁿ = uⁿ⁺¹/(n + 1) ; ∫u'/u = ln u (u > 0) ; ∫cos(ωt + φ) = sin(ωt + φ)/ω",
+   "prerequisites": [
+    "M-FV-04",
+    "M-FM-03"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Calcul intégral",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-CI-02",
+   "subject": "Mathématiques",
+   "domain": "Calcul intégral",
+   "chapter": "Intégration",
+   "title": "Intégrale F(b) − F(a) ; Chasles, linéarité, positivité",
+   "year": 2,
+   "status": "Non développé",
+   "skills": "Calculer une intégrale à la main dans les cas simples, au calcul formel sinon",
+   "formulas": "∫ₐᵇ f = F(b) − F(a)",
+   "prerequisites": [
+    "M-CI-01"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Calcul intégral",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-CI-03",
+   "subject": "Mathématiques",
+   "domain": "Calcul intégral",
+   "chapter": "Calcul d'aires",
+   "title": "Aire du domaine a ≤ x ≤ b, f(x) ≤ y ≤ g(x)",
+   "year": 2,
+   "status": "Non développé",
+   "skills": "Déterminer l'aire entre deux courbes",
+   "formulas": "A = ∫ₐᵇ (g − f)",
+   "prerequisites": [
+    "M-CI-02"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Calcul intégral",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-CI-04",
+   "subject": "Mathématiques",
+   "domain": "Calcul intégral",
+   "chapter": "Calcul d'aires",
+   "title": "Algorithmes d'approximation d'une intégrale (point-milieu, trapèzes, Monte-Carlo)",
+   "year": 2,
+   "status": "Non développé",
+   "skills": "Mettre en œuvre un algorithme d'approximation",
+   "formulas": "Trapèzes : h·[f(a) + f(b)]/2 + h·Σf(xᵢ)",
+   "prerequisites": [
+    "M-CI-02",
+    "M-AL-02"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Calcul intégral",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-CI-05",
+   "subject": "Mathématiques",
+   "domain": "Calcul intégral",
+   "chapter": "Valeur moyenne",
+   "title": "Valeur moyenne d'une fonction ; valeur efficace (applications)",
+   "year": 2,
+   "status": "Non développé",
+   "skills": "Déterminer et interpréter une valeur moyenne (transfert énergétique, valeur efficace, centre et moment d'inertie)",
+   "formulas": "⟨f⟩ = 1/(b − a)·∫ₐᵇ f ; Feff = √(1/T·∫f²)",
+   "prerequisites": [
+    "M-CI-02"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Calcul intégral",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-CI-06",
+   "subject": "Mathématiques",
+   "domain": "Calcul intégral",
+   "chapter": "Intégration par parties",
+   "title": "Formule d'intégration par parties",
+   "year": 2,
+   "status": "Non développé",
+   "skills": "Calculer une intégrale par parties",
+   "formulas": "∫uv' = [uv] − ∫u'v",
+   "prerequisites": [
+    "M-CI-02"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Calcul intégral",
+   "inventoryChecked": true,
+   "remark": "Non exclue pour le BTS ET"
+  },
+  {
+   "id": "M-ED-01",
+   "subject": "Mathématiques",
+   "domain": "Équations différentielles",
+   "chapter": "Premier ordre",
+   "title": "ay' + by = c(t) à coefficients constants",
+   "year": 2,
+   "status": "Non développé",
+   "skills": "Représenter la famille des solutions au logiciel ; résoudre (à la main cas simples) ; trouver la solution vérifiant une condition initiale",
+   "formulas": "y = C·e^(−bt/a) + yₚ ; τ = a/b",
+   "prerequisites": [
+    "M-FV-04",
+    "M-CI-01"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Équations différentielles",
+   "inventoryChecked": true,
+   "remark": "Indications fournies pour la solution particulière ; exemples : refroidissement, charge RC"
+  },
+  {
+   "id": "M-ED-02",
+   "subject": "Mathématiques",
+   "domain": "Équations différentielles",
+   "chapter": "Premier ordre",
+   "title": "Méthode d'Euler (résolution approchée)",
+   "year": 2,
+   "status": "Non développé",
+   "skills": "Mettre en œuvre la méthode d'Euler sur un exemple",
+   "formulas": "yₙ₊₁ = yₙ + h·y'ₙ",
+   "prerequisites": [
+    "M-ED-01",
+    "M-AL-02"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Équations différentielles",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-ED-03",
+   "subject": "Mathématiques",
+   "domain": "Équations différentielles",
+   "chapter": "Premier ordre",
+   "title": "Équations non linéaires à variables séparables (exemples simples)",
+   "year": 2,
+   "status": "Non exigible",
+   "skills": "Pas d'attendu : exemples simples possibles",
+   "formulas": "",
+   "prerequisites": [
+    "M-ED-01"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Équations différentielles",
+   "inventoryChecked": true,
+   "remark": "Non exigible : contenu facultatif"
+  },
+  {
+   "id": "M-ED-04",
+   "subject": "Mathématiques",
+   "domain": "Équations différentielles",
+   "chapter": "Nombres complexes",
+   "title": "Équation caractéristique (forme algébrique, second degré)",
+   "year": 2,
+   "status": "Non développé",
+   "skills": "Résoudre une équation du second degré à coefficients réels",
+   "formulas": "ar² + br + c = 0",
+   "prerequisites": [
+    "M-NC-02"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Équations différentielles",
+   "inventoryChecked": true,
+   "remark": "Le paragraphe n'est pas exclu pour le BTS ET"
+  },
+  {
+   "id": "M-ED-05",
+   "subject": "Mathématiques",
+   "domain": "Équations différentielles",
+   "chapter": "Second ordre",
+   "title": "ay'' + by' + cy = d(t), d polynôme, exponentielle, cos ou sin",
+   "year": 2,
+   "status": "Non développé",
+   "skills": "Représenter la famille des solutions ; résoudre (à la main cas simples) ; trouver la solution vérifiant des conditions initiales",
+   "formulas": "Δ > 0 : C₁e^(r₁t) + C₂e^(r₂t) ; Δ = 0 : (C₁ + C₂t)e^(rt) ; Δ < 0 : e^(αt)(C₁cos βt + C₂sin βt)",
+   "prerequisites": [
+    "M-ED-04",
+    "M-ED-01"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Équations différentielles",
+   "inventoryChecked": true,
+   "remark": "Exemple type : circuit RLC"
+  },
+  {
+   "id": "M-P1-01",
+   "subject": "Mathématiques",
+   "domain": "Probabilités 1",
+   "chapter": "Conditionnement",
+   "title": "Probabilité conditionnelle P_A(B), arbres et tableaux",
+   "year": 2,
+   "status": "Non développé",
+   "skills": "Construire et exploiter un arbre ou un tableau ; calculer une probabilité à partir d'une partition",
+   "formulas": "P_A(B) = P(A∩B)/P(A)",
+   "prerequisites": [
+    "M-CN-03"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Probabilités 1",
+   "inventoryChecked": true,
+   "remark": "Formule des probabilités totales non attendue, mais sa mise en œuvre l'est"
+  },
+  {
+   "id": "M-P1-02",
+   "subject": "Mathématiques",
+   "domain": "Probabilités 1",
+   "chapter": "Conditionnement",
+   "title": "Indépendance de deux événements",
+   "year": 2,
+   "status": "Non développé",
+   "skills": "Utiliser ou justifier l'indépendance",
+   "formulas": "P(A∩B) = P(A)·P(B)",
+   "prerequisites": [
+    "M-P1-01"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Probabilités 1",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-P1-03",
+   "subject": "Mathématiques",
+   "domain": "Probabilités 1",
+   "chapter": "Loi binomiale",
+   "title": "Schéma de Bernoulli et loi binomiale",
+   "year": 2,
+   "status": "Non développé",
+   "skills": "Simuler un schéma de Bernoulli ; reconnaître une situation binomiale ; représenter la loi ; calculer à la calculatrice ou au logiciel",
+   "formulas": "X ~ B(n, p)",
+   "prerequisites": [
+    "M-P1-01"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Probabilités 1",
+   "inventoryChecked": true,
+   "remark": "Expression explicite de la loi non attendue"
+  },
+  {
+   "id": "M-P1-04",
+   "subject": "Mathématiques",
+   "domain": "Probabilités 1",
+   "chapter": "Loi binomiale",
+   "title": "Espérance, variance, écart type de la loi binomiale",
+   "year": 2,
+   "status": "Non développé",
+   "skills": "Interpréter espérance et écart type sur un grand nombre de répétitions",
+   "formulas": "E = np ; V = np(1 − p)",
+   "prerequisites": [
+    "M-P1-03"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Probabilités 1",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-P1-05",
+   "subject": "Mathématiques",
+   "domain": "Probabilités 1",
+   "chapter": "Lois à densité",
+   "title": "Loi uniforme sur [a, b] : densité, répartition, espérance, variance",
+   "year": 2,
+   "status": "Non développé",
+   "skills": "Concevoir et exploiter une simulation ; interpréter les paramètres",
+   "formulas": "E = (a + b)/2 ; V = (b − a)²/12",
+   "prerequisites": [
+    "M-CI-02"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Probabilités 1",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-P1-06",
+   "subject": "Mathématiques",
+   "domain": "Probabilités 1",
+   "chapter": "Lois à densité",
+   "title": "Loi normale N(μ, σ)",
+   "year": 2,
+   "status": "Non développé",
+   "skills": "Calculer une probabilité à la calculatrice ou au tableur ; connaître P(μ − kσ ≤ X ≤ μ + kσ) pour k = 1, 2, 3",
+   "formulas": "≈ 0,68 ; 0,95 ; 0,997",
+   "prerequisites": [
+    "M-P1-05"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Probabilités 1",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-P1-07",
+   "subject": "Mathématiques",
+   "domain": "Probabilités 1",
+   "chapter": "Combinaisons",
+   "title": "Espérance et variance de aX + b, X + Y, X − Y (indépendantes)",
+   "year": 2,
+   "status": "Non développé",
+   "skills": "Déterminer les paramètres de ces lois",
+   "formulas": "E(aX + b) = aE(X) + b ; V(X ± Y) = V(X) + V(Y)",
+   "prerequisites": [
+    "M-P1-04"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Probabilités 1",
+   "inventoryChecked": false,
+   "remark": "Rattachement à Probabilités 1 ou Probabilités 2 à vérifier"
+  },
+  {
+   "id": "M-P1-08",
+   "subject": "Mathématiques",
+   "domain": "Probabilités 1",
+   "chapter": "Combinaisons",
+   "title": "Théorème de la limite centrée (admis)",
+   "year": 2,
+   "status": "Non développé",
+   "skills": "Déterminer les paramètres de la loi normale associée à une moyenne",
+   "formulas": "X̄ ≈ N(μ, σ/√n)",
+   "prerequisites": [
+    "M-P1-06",
+    "M-P1-07"
+   ],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Probabilités 1",
+   "inventoryChecked": false,
+   "remark": "Rattachement à Probabilités 1 ou Probabilités 2 à vérifier"
+  },
+  {
+   "id": "M-P1-X1",
+   "subject": "Mathématiques",
+   "domain": "Probabilités 1",
+   "chapter": "Approximation",
+   "title": "Approximation d'une loi binomiale par une loi normale",
+   "year": null,
+   "status": "Hors programme",
+   "skills": "",
+   "formulas": "",
+   "prerequisites": [],
+   "reference": "Arrêté du 4 juin 2013, annexe I – module Probabilités 1 ; Référentiel BTS ET (arrêté du 21/02/2020 mod.), organisation des études – maths",
+   "inventoryChecked": true,
+   "remark": "Exclu pour le BTS ET"
+  },
+  {
+   "id": "M-AL-01",
+   "subject": "Mathématiques",
+   "domain": "Éléments d'algorithmique et de programmation",
+   "chapter": "Algorithmique",
+   "title": "Variables et types (scalaires, chaînes, listes), expressions, affectation",
+   "year": 2,
+   "status": "Non développé",
+   "skills": "Choisir le type d'une variable ; suivre l'état de la mémoire pendant l'exécution",
+   "formulas": "",
+   "prerequisites": [],
+   "reference": "Module Éléments d'algorithmique et de programmation (postérieur à 2013)",
+   "inventoryChecked": true,
+   "remark": "Langage non imposé par le module"
+  },
+  {
+   "id": "M-AL-02",
+   "subject": "Mathématiques",
+   "domain": "Éléments d'algorithmique et de programmation",
+   "chapter": "Programmation",
+   "title": "Instructions conditionnelles, boucles bornées et non bornées",
+   "year": 2,
+   "status": "Non développé",
+   "skills": "Programmer une instruction conditionnelle, une boucle bornée, une boucle non bornée",
+   "formulas": "if / for / while",
+   "prerequisites": [
+    "M-AL-01"
+   ],
+   "reference": "Module Éléments d'algorithmique et de programmation (postérieur à 2013)",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-AL-03",
+   "subject": "Mathématiques",
+   "domain": "Éléments d'algorithmique et de programmation",
+   "chapter": "Programmation",
+   "title": "Fonctions : arguments et valeurs renvoyées",
+   "year": 2,
+   "status": "Non développé",
+   "skills": "Programmer des fonctions simples ; comprendre ou modifier un programme plus complexe",
+   "formulas": "def f(x): return …",
+   "prerequisites": [
+    "M-AL-02"
+   ],
+   "reference": "Module Éléments d'algorithmique et de programmation (postérieur à 2013)",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-AL-04",
+   "subject": "Mathématiques",
+   "domain": "Éléments d'algorithmique et de programmation",
+   "chapter": "Programmation",
+   "title": "Environnement, bibliothèques (dont une graphique), documentation, vérification",
+   "year": 2,
+   "status": "Non développé",
+   "skills": "Utiliser quelques bibliothèques dont une pour les graphiques ; spécifier et documenter ; vérifier et contrôler",
+   "formulas": "",
+   "prerequisites": [
+    "M-AL-03"
+   ],
+   "reference": "Module Éléments d'algorithmique et de programmation (postérieur à 2013)",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-AL-05",
+   "subject": "Mathématiques",
+   "domain": "Éléments d'algorithmique et de programmation",
+   "chapter": "Bases de données",
+   "title": "SGBD, tables, clés, import tableur, requêtes SQL",
+   "year": 2,
+   "status": "Non développé",
+   "skills": "Manipuler une base existante liée à la spécialité ; importer un fichier tableur ; produire des requêtes avec opérateurs booléens",
+   "formulas": "SELECT … FROM … WHERE … ORDER BY ; jointures symétriques",
+   "prerequisites": [
+    "M-AL-01"
+   ],
+   "reference": "Module Éléments d'algorithmique et de programmation (postérieur à 2013)",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-AL-X1",
+   "subject": "Mathématiques",
+   "domain": "Éléments d'algorithmique et de programmation",
+   "chapter": "Algorithmique",
+   "title": "Récursivité",
+   "year": null,
+   "status": "Non exigible",
+   "skills": "",
+   "formulas": "",
+   "prerequisites": [],
+   "reference": "Module Éléments d'algorithmique et de programmation",
+   "inventoryChecked": true,
+   "remark": "Non exigible"
+  },
+  {
+   "id": "M-AL-X2",
+   "subject": "Mathématiques",
+   "domain": "Éléments d'algorithmique et de programmation",
+   "chapter": "Bases de données",
+   "title": "Algèbre relationnelle, création de bases",
+   "year": null,
+   "status": "Hors programme",
+   "skills": "",
+   "formulas": "",
+   "prerequisites": [],
+   "reference": "Module Éléments d'algorithmique et de programmation",
+   "inventoryChecked": true,
+   "remark": "Hors programme"
+  },
+  {
+   "id": "M-TR-01",
+   "subject": "Mathématiques",
+   "domain": "Compétences mathématiques transversales",
+   "chapter": "Bloc Mathématiques (U3)",
+   "title": "S'informer, chercher, modéliser, calculer, analyser la pertinence d'un résultat",
+   "year": 1,
+   "status": "Non développé",
+   "skills": "Maîtriser les connaissances du programme ; employer des sources d'information ; trouver et mettre en œuvre une stratégie ; utiliser les savoir-faire du programme ; analyser la pertinence d'un résultat",
+   "formulas": "",
+   "prerequisites": [],
+   "reference": "Référentiel BTS ET, tableau de synthèse – bloc Mathématiques ; arrêté du 4 juin 2013, annexe II",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "M-TR-02",
+   "subject": "Mathématiques",
+   "domain": "Compétences mathématiques transversales",
+   "chapter": "Outils numériques",
+   "title": "Calculatrice, calcul formel, tableur, logiciel de programmation",
+   "year": 1,
+   "status": "Non développé",
+   "skills": "Utiliser les outils numériques à bon escient ; au moins un exercice par situation de CCF se fait avec un logiciel ou une calculatrice",
+   "formulas": "",
+   "prerequisites": [],
+   "reference": "Référentiel BTS ET, définition de l'épreuve E3",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-DE-01",
+   "subject": "Sciences appliquées",
+   "domain": "Démarche expérimentale",
+   "chapter": "Compétences",
+   "title": "S'approprier",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Comprendre la problématique ; adopter une attitude critique ; rechercher, extraire et organiser l'information ; connaître vocabulaire, symboles et unités",
+   "formulas": "",
+   "prerequisites": [],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – compétences de la démarche expérimentale",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-DE-02",
+   "subject": "Sciences appliquées",
+   "domain": "Démarche expérimentale",
+   "chapter": "Compétences",
+   "title": "Analyser et raisonner",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Choisir un protocole ou un dispositif ; représenter ou compléter un schéma ; formuler une hypothèse ; proposer une stratégie ; mobiliser des connaissances",
+   "formulas": "",
+   "prerequisites": [
+    "S-DE-01"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – compétences de la démarche expérimentale",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-DE-03",
+   "subject": "Sciences appliquées",
+   "domain": "Démarche expérimentale",
+   "chapter": "Compétences",
+   "title": "Réaliser",
+   "year": null,
+   "status": "Périmètre à arbitrer",
+   "skills": "Organiser le poste de travail ; régler le matériel ; mettre en œuvre un protocole ; effectuer des relevés ; respecter les règles de sécurité ; connaître le matériel et ses limites",
+   "formulas": "",
+   "prerequisites": [
+    "S-DE-02"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – compétences de la démarche expérimentale",
+   "inventoryChecked": true,
+   "remark": "Manipulation réelle impossible dans l'appli : à traiter par protocoles et relevés fournis (voir onglet Points à arbitrer)"
+  },
+  {
+   "id": "S-DE-04",
+   "subject": "Sciences appliquées",
+   "domain": "Démarche expérimentale",
+   "chapter": "Compétences",
+   "title": "Valider",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Critiquer un résultat, un protocole ou une mesure ; exploiter et interpréter ; valider ou infirmer une hypothèse ou une loi ; utiliser symboles et unités adéquats",
+   "formulas": "",
+   "prerequisites": [
+    "S-DE-03",
+    "S-IN-03"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – compétences de la démarche expérimentale",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-DE-05",
+   "subject": "Sciences appliquées",
+   "domain": "Démarche expérimentale",
+   "chapter": "Compétences",
+   "title": "Communiquer",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Rendre compte ; présenter et formuler une conclusion ; expliquer, représenter, argumenter, commenter",
+   "formulas": "",
+   "prerequisites": [
+    "S-DE-04"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – compétences de la démarche expérimentale",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-DE-06",
+   "subject": "Sciences appliquées",
+   "domain": "Démarche expérimentale",
+   "chapter": "Compétences",
+   "title": "Être autonome, faire preuve d'initiative",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Élaborer une démarche et faire des choix ; organiser son travail ; traiter les incidents",
+   "formulas": "",
+   "prerequisites": [],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – compétences de la démarche expérimentale",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-DE-07",
+   "subject": "Sciences appliquées",
+   "domain": "Démarche expérimentale",
+   "chapter": "Grandeurs",
+   "title": "Grandeurs physiques, symboles et unités SI ; conversions",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Connaître symboles et unités ; utiliser les unités adéquates ; convertir",
+   "formulas": "Unités SI de base ; kWh = 3,6 MJ",
+   "prerequisites": [
+    "M-CN-02"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – compétences S'approprier et Valider",
+   "inventoryChecked": true,
+   "remark": "Notion transversale tirée des compétences S'approprier et Valider"
+  },
+  {
+   "id": "S-IN-01",
+   "subject": "Sciences appliquées",
+   "domain": "Mesures et incertitudes",
+   "chapter": "Erreurs",
+   "title": "Sources d'erreurs d'une mesure",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Identifier les sources d'erreurs (variabilité du phénomène, opérateur, instruments)",
+   "formulas": "",
+   "prerequisites": [
+    "S-DE-03"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – erreurs et incertitudes",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-IN-02",
+   "subject": "Sciences appliquées",
+   "domain": "Mesures et incertitudes",
+   "chapter": "Incertitudes",
+   "title": "Incertitude de répétabilité, d'une mesure unique, à plusieurs sources",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Évaluer l'incertitude de chaque source et comparer leur poids ; estimer l'incertitude de répétabilité ou d'une mesure unique ; appliquer une formule fournie pour plusieurs sources",
+   "formulas": "u = s/√n (répétabilité) ; u = √(Σuᵢ²) si fournie",
+   "prerequisites": [
+    "M-P1-06"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – erreurs et incertitudes",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-IN-03",
+   "subject": "Sciences appliquées",
+   "domain": "Mesures et incertitudes",
+   "chapter": "Expression du résultat",
+   "title": "Chiffres significatifs, écriture scientifique, niveau de confiance, précision relative",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Exprimer un résultat avec son incertitude à un niveau de confiance ; évaluer la précision relative ; comparer à une valeur de référence ; sélectionner des mesures ; proposer des améliorations",
+   "formulas": "x = x̄ ± U ; précision relative U/|x̄|",
+   "prerequisites": [
+    "S-IN-02",
+    "M-CN-02"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – erreurs et incertitudes",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-FE-01",
+   "subject": "Sciences appliquées",
+   "domain": "Formes d'énergie",
+   "chapter": "Énergie mécanique",
+   "title": "Énergie cinétique",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Définir l'énergie cinétique d'un système",
+   "formulas": "Ec = ½mv² ; Ec = ½JΩ²",
+   "prerequisites": [
+    "S-DE-07"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Des formes d'énergie",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-FE-02",
+   "subject": "Sciences appliquées",
+   "domain": "Formes d'énergie",
+   "chapter": "Énergie potentielle",
+   "title": "Énergies potentielles de pesanteur, élastique, électrostatique, de pression",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Définir ces énergies potentielles",
+   "formulas": "Ep = mgh ; ½kx² ; ½CU² ; p·V",
+   "prerequisites": [
+    "S-FE-01"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Des formes d'énergie",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-FE-03",
+   "subject": "Sciences appliquées",
+   "domain": "Formes d'énergie",
+   "chapter": "Énergie électromagnétique",
+   "title": "Énergie électromagnétique",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Définir l'énergie électromagnétique",
+   "formulas": "",
+   "prerequisites": [],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Des formes d'énergie",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-FE-04",
+   "subject": "Sciences appliquées",
+   "domain": "Formes d'énergie",
+   "chapter": "Énergie interne",
+   "title": "Température : échelles, unités, capteurs industriels",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Utiliser les principales échelles de température ; nommer et tester des capteurs industriels de température",
+   "formulas": "T(K) = θ(°C) + 273,15",
+   "prerequisites": [
+    "S-DE-07"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Des formes d'énergie",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-FE-05",
+   "subject": "Sciences appliquées",
+   "domain": "Formes d'énergie",
+   "chapter": "Énergie interne",
+   "title": "Énergie interne d'un système",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Relier qualitativement température et agitation microscopique ; relier l'échauffement à l'énergie reçue et stockée",
+   "formulas": "",
+   "prerequisites": [
+    "S-FE-04"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Des formes d'énergie",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-FE-06",
+   "subject": "Sciences appliquées",
+   "domain": "Formes d'énergie",
+   "chapter": "Énergie interne",
+   "title": "Variation d'énergie interne d'un solide ou d'un liquide (température, changement d'état)",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Exprimer et calculer la variation d'énergie interne lors d'une variation de température ou d'un changement d'état à pression constante",
+   "formulas": "ΔU = m·c·Δθ ; ΔU = m·L",
+   "prerequisites": [
+    "S-FE-05"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Des formes d'énergie",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-SE-01",
+   "subject": "Sciences appliquées",
+   "domain": "Sources d'énergie",
+   "chapter": "Sources",
+   "title": "Sources renouvelables, fossiles, nucléaires ; sources et formes",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Distinguer sources et formes d'énergie ; définir et citer les sources",
+   "formulas": "",
+   "prerequisites": [
+    "S-FE-01"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Des sources d'énergie",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-SE-02",
+   "subject": "Sciences appliquées",
+   "domain": "Sources d'énergie",
+   "chapter": "Sources",
+   "title": "Facteur de charge",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Utiliser le facteur de charge pour dimensionner une installation",
+   "formulas": "Fc = E produite / (Pnom × durée)",
+   "prerequisites": [
+    "S-TR-08"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Des sources d'énergie",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-SE-03",
+   "subject": "Sciences appliquées",
+   "domain": "Sources d'énergie",
+   "chapter": "Sources",
+   "title": "Données de production nationale ou mondiale",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Interpréter des données de production d'énergie",
+   "formulas": "",
+   "prerequisites": [
+    "M-CN-03"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Des sources d'énergie",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-TR-01",
+   "subject": "Sciences appliquées",
+   "domain": "Modes de transfert d'énergie",
+   "chapter": "Conservation",
+   "title": "Conservation de l'énergie ; transferts par travail et chaleur",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Énoncer la conservation pour un système isolé ; savoir que l'énergie ne se transfère que par travail ou chaleur",
+   "formulas": "ΔE = W + Q",
+   "prerequisites": [
+    "S-FE-06"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Modes de transfert d'énergie",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-TR-02",
+   "subject": "Sciences appliquées",
+   "domain": "Modes de transfert d'énergie",
+   "chapter": "Transferts thermiques",
+   "title": "Conduction, convection, rayonnement",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Décrire qualitativement les trois modes avec des exemples",
+   "formulas": "",
+   "prerequisites": [
+    "S-TR-01"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Modes de transfert d'énergie",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-TR-03",
+   "subject": "Sciences appliquées",
+   "domain": "Modes de transfert d'énergie",
+   "chapter": "Transferts thermiques",
+   "title": "Flux thermique à travers une paroi",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Utiliser les caractéristiques thermiques des matériaux pour déterminer le flux à travers une paroi",
+   "formulas": "Φ = Δθ/Rth ; Rth = e/(λS)",
+   "prerequisites": [
+    "S-TR-02"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Modes de transfert d'énergie",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-TR-04",
+   "subject": "Sciences appliquées",
+   "domain": "Modes de transfert d'énergie",
+   "chapter": "Transferts thermiques",
+   "title": "Puissance rayonnée et température ; caméra thermique",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Relier puissance rayonnée et température ; expliquer et utiliser une caméra thermique",
+   "formulas": "",
+   "prerequisites": [
+    "S-TR-02"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Modes de transfert d'énergie",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-TR-05",
+   "subject": "Sciences appliquées",
+   "domain": "Modes de transfert d'énergie",
+   "chapter": "Conversions et stockage",
+   "title": "Conversions électromécanique, photoélectrique, électrochimique, électrothermique ; chaîne énergétique",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Identifier les conversions ; représenter une chaîne énergétique (formes, sources, convertisseurs)",
+   "formulas": "",
+   "prerequisites": [
+    "S-SE-01"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Modes de transfert d'énergie",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-TR-06",
+   "subject": "Sciences appliquées",
+   "domain": "Modes de transfert d'énergie",
+   "chapter": "Conversions et stockage",
+   "title": "Énergie transférée, convertie, stockée ; ordres de grandeur des réservoirs",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Évaluer ou mesurer une énergie ; comparer les ordres de grandeur stockés ; reconnaître la conversion potentielle ↔ cinétique",
+   "formulas": "",
+   "prerequisites": [
+    "S-TR-05"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Modes de transfert d'énergie",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-TR-07",
+   "subject": "Sciences appliquées",
+   "domain": "Modes de transfert d'énergie",
+   "chapter": "Conversions et stockage",
+   "title": "Bilan énergétique, rendement, COP, autonomie",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Appliquer la conservation à un bilan pour obtenir rendement ou COP ; estimer l'autonomie d'un système autonome",
+   "formulas": "η = Pu/Pa ; COP = Q/W",
+   "prerequisites": [
+    "S-TR-06"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Modes de transfert d'énergie",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-TR-08",
+   "subject": "Sciences appliquées",
+   "domain": "Modes de transfert d'énergie",
+   "chapter": "Puissance",
+   "title": "Puissance, énergie, durée ; produit effort × mouvement",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Utiliser P = E/Δt ; estimer et citer des ordres de grandeur ; expliquer qu'une puissance est le produit d'un effort et d'un mouvement",
+   "formulas": "P = E/Δt ; P = F·v = C·Ω = U·I = Δp·Qv",
+   "prerequisites": [
+    "S-TR-01"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Modes de transfert d'énergie",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-DY-01",
+   "subject": "Sciences appliquées",
+   "domain": "Comportement dynamique des systèmes linéaires",
+   "chapter": "Modélisation",
+   "title": "Équation d'un système à partir des lois physiques ; paramètres d'un premier ordre",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Écrire l'équation d'un système ; déterminer les paramètres intrinsèques d'un premier ordre stable à partir de son équation",
+   "formulas": "τ·dy/dt + y = K·u",
+   "prerequisites": [
+    "M-ED-01"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Comportement dynamique des systèmes linéaires",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-DY-02",
+   "subject": "Sciences appliquées",
+   "domain": "Comportement dynamique des systèmes linéaires",
+   "chapter": "Stabilité",
+   "title": "Stabilité ; régime permanent ; interprétation de la solution",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Définir la stabilité ; déterminer le régime permanent ; interpréter physiquement la solution",
+   "formulas": "",
+   "prerequisites": [
+    "S-DY-01"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Comportement dynamique des systèmes linéaires",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-DY-03",
+   "subject": "Sciences appliquées",
+   "domain": "Comportement dynamique des systèmes linéaires",
+   "chapter": "Régimes transitoire et permanent",
+   "title": "Réponse à un échelon ; temps de réponse à 5 %",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Distinguer les systèmes par leur réponse indicielle ; déterminer le temps de réponse à 5 %",
+   "formulas": "1er ordre : tr5% ≈ 3τ",
+   "prerequisites": [
+    "S-DY-02"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Comportement dynamique des systèmes linéaires",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-DY-04",
+   "subject": "Sciences appliquées",
+   "domain": "Comportement dynamique des systèmes linéaires",
+   "chapter": "Régimes transitoire et permanent",
+   "title": "Identification premier ordre et modèle de Broïda",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Déterminer les paramètres d'un premier ordre et d'un procédé de Broïda à partir d'un relevé",
+   "formulas": "H = K·e^(−Ts)/(1 + τs)",
+   "prerequisites": [
+    "S-DY-03"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Comportement dynamique des systèmes linéaires",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-DY-05",
+   "subject": "Sciences appliquées",
+   "domain": "Comportement dynamique des systèmes linéaires",
+   "chapter": "Caractéristique statique",
+   "title": "Caractéristique statique ; déplacement du point de fonctionnement",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Mesurer et exploiter la caractéristique statique ; mettre en évidence le déplacement du point de fonctionnement par une perturbation",
+   "formulas": "",
+   "prerequisites": [
+    "S-DY-02"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Comportement dynamique des systèmes linéaires",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-EL-01",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et électricité",
+   "chapter": "Lois de l'électricité",
+   "title": "Charge, courant, potentiel, tension, puissance instantanée",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Définir ces grandeurs ; mesurer tension et courant",
+   "formulas": "i = dq/dt ; p = u·i",
+   "prerequisites": [
+    "S-DE-07"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et électricité",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-EL-02",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et électricité",
+   "chapter": "Lois de l'électricité",
+   "title": "Conventions générateur et récepteur ; schémas normalisés",
+   "year": null,
+   "status": "Périmètre à arbitrer",
+   "skills": "Orienter tensions et courants ; utiliser les conventions ; lire et tracer un schéma normalisé ; câbler d'après un schéma",
+   "formulas": "",
+   "prerequisites": [
+    "S-EL-01"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et électricité",
+   "inventoryChecked": true,
+   "remark": "La capacité « câbler d'après un schéma » touche l'exclusion « cours de câblage » : proposer lecture de schéma seulement"
+  },
+  {
+   "id": "S-EL-03",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et électricité",
+   "chapter": "Lois de l'électricité",
+   "title": "Associations série et parallèle ; lois des mailles et des nœuds",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Identifier les associations ; appliquer les lois de Kirchhoff",
+   "formulas": "Σu = 0 dans une maille ; Σi entrants = Σi sortants",
+   "prerequisites": [
+    "S-EL-02"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et électricité",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-EL-04",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et électricité",
+   "chapter": "Lois de l'électricité",
+   "title": "Dipôles passifs R, L, C : résistivité, relations temporelles, associations, énergies",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Caractéristique passant par l'origine ; R = ρl/S ; relations u-i ; Req série/parallèle ; C en parallèle, L en série ; énergie dissipée ou stockée",
+   "formulas": "u = Ri ; i = C·du/dt ; u = L·di/dt ; W = ½CU² ; W = ½LI²",
+   "prerequisites": [
+    "S-EL-03",
+    "M-FV-04"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et électricité",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-EL-05",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et électricité",
+   "chapter": "Lois de l'électricité",
+   "title": "Dipôles actifs : sources idéales, modèle de Thévenin",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Utiliser sources de tension et de courant idéales ; modéliser une source réelle par Thévenin",
+   "formulas": "U = E − R·I",
+   "prerequisites": [
+    "S-EL-03"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et électricité",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-EL-06",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et électricité",
+   "chapter": "Lois de l'électricité",
+   "title": "Caractéristique d'un dipôle et point de fonctionnement",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Mesurer et interpréter une caractéristique ; déterminer le point de fonctionnement générateur-récepteur",
+   "formulas": "Intersection des caractéristiques",
+   "prerequisites": [
+    "S-EL-05",
+    "M-FV-02"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et électricité",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-EL-07",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et électricité",
+   "chapter": "Régimes périodiques",
+   "title": "Période, fréquence, valeurs maximale, moyenne, efficace ; multimètre",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Définir les grandeurs ; composante alternative de moyenne nulle + composante continue ; mesurer moyenne et efficace ; choisir calibre et mode (TRMS, AC, DC, AC+DC)",
+   "formulas": "f = 1/T ; ⟨u⟩ = 1/T·∫u ; U = √(⟨u²⟩)",
+   "prerequisites": [
+    "M-CI-05"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et électricité",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-EL-08",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et électricité",
+   "chapter": "Régime sinusoïdal",
+   "title": "Pulsation, amplitude, valeur efficace, phase, déphasage ; vecteur de Fresnel",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Définir les grandeurs ; écrire l'équation horaire ; tracer le vecteur de Fresnel",
+   "formulas": "u = U√2·sin(ωt + φ) ; ω = 2πf",
+   "prerequisites": [
+    "S-EL-07",
+    "M-NC-07"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et électricité",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-EL-09",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et électricité",
+   "chapter": "Régime sinusoïdal",
+   "title": "Lois des mailles et des nœuds en sinusoïdal (Fresnel, complexes)",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Appliquer les lois de Kirchhoff en sinusoïdal à l'aide de Fresnel",
+   "formulas": "U = Σ Uₖ (vectoriel / complexe)",
+   "prerequisites": [
+    "S-EL-08",
+    "S-EL-03"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et électricité",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-EL-10",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et électricité",
+   "chapter": "Régime sinusoïdal",
+   "title": "Impédances R, L, C ; impédance équivalente RL, LC, RLC série",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Connaître impédance et déphasage de R, L, C ; calculer l'impédance équivalente par Fresnel (RL série, LC série ou parallèle, RLC série)",
+   "formulas": "Z_L = jLω ; Z_C = 1/(jCω) ; Z = √(R² + (Lω − 1/Cω)²)",
+   "prerequisites": [
+    "S-EL-09",
+    "M-NC-09"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et électricité",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-EL-11",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et électricité",
+   "chapter": "Régime sinusoïdal",
+   "title": "Réseau triphasé équilibré ; couplages étoile et triangle",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Définir un réseau triphasé équilibré ; représenter et choisir le couplage",
+   "formulas": "U = V√3 ; J = I/√3 (triangle)",
+   "prerequisites": [
+    "S-EL-08"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et électricité",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-EL-12",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et électricité",
+   "chapter": "Charges polluantes",
+   "title": "Fondamental et harmoniques ; spectre ; reconnaître une charge polluante",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Décomposer un signal alternatif ; reconnaître une charge polluante par la forme ou le spectre du courant ; relever et interpréter un spectre",
+   "formulas": "",
+   "prerequisites": [
+    "S-EL-07",
+    "M-SF-03"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et électricité",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-EL-13",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et électricité",
+   "chapter": "Charges polluantes",
+   "title": "Parseval, taux de distorsion harmonique, courant dans le neutre",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Calculer un courant efficace par Parseval ; définir et calculer le THD ; expliquer le courant dans le neutre en triphasé",
+   "formulas": "I² = ΣIₙ² ; THD = √(Σₙ≥₂Iₙ²)/I₁",
+   "prerequisites": [
+    "S-EL-12",
+    "M-SF-06"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et électricité",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-EL-14",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et électricité",
+   "chapter": "Puissances électriques",
+   "title": "Puissances active, réactive, apparente ; facteur de puissance",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Puissance active portée par courants et tensions de même fréquence ; S = puissance active maximale ; fp = P/S ; expressions en continu, sinusoïdal, non sinusoïdal ; P et Q de R, L, C",
+   "formulas": "P = UI·cos φ ; Q = UI·sin φ ; S = UI ; triphasé : P = √3·UI·cos φ",
+   "prerequisites": [
+    "S-EL-10",
+    "S-EL-11"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et électricité",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-EL-15",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et électricité",
+   "chapter": "Puissances électriques",
+   "title": "Mesure de puissance et d'énergie ; bilan ; puissance déformante",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Mesurer puissance et énergie ; faire un bilan de puissance ; définir et interpréter la puissance déformante (analyseur)",
+   "formulas": "D² = S² − P² − Q²",
+   "prerequisites": [
+    "S-EL-14",
+    "S-EL-13"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et électricité",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-EM-01",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et électricité",
+   "chapter": "Électromagnétisme",
+   "title": "Champ électrique ; rigidité diélectrique",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Définir le champ électrique ; expliquer foudre et arcs par la rigidité diélectrique",
+   "formulas": "E = U/d (cas uniforme)",
+   "prerequisites": [
+    "S-EL-01"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et électricité – lois de l'électromagnétisme",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-EM-02",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et électricité",
+   "chapter": "Électromagnétisme",
+   "title": "Champ magnétique : sources, ordres de grandeur, lignes de champ",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Définir le champ ; citer des sources ; donner des ordres de grandeur ; représenter le champ ; le mettre en évidence expérimentalement",
+   "formulas": "",
+   "prerequisites": [
+    "M-CV-01"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et électricité – lois de l'électromagnétisme",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-EM-03",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et électricité",
+   "chapter": "Électromagnétisme",
+   "title": "Ferromagnétisme : cycle d'hystérésis, matériaux durs et doux, pertes fer",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Citer des matériaux ferromagnétiques ; définir champ rémanent et excitation coercitive ; distinguer durs et doux ; lire un cycle ; observer la saturation ; relier aux pertes fer",
+   "formulas": "",
+   "prerequisites": [
+    "S-EM-02"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et électricité – lois de l'électromagnétisme",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-EM-04",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et électricité",
+   "chapter": "Électromagnétisme",
+   "title": "Induction : loi de Faraday, loi de Lenz, courants de Foucault",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Mettre en évidence Faraday et les facteurs de la fem ; mettre en évidence Lenz ; expliquer les pertes par courants de Foucault",
+   "formulas": "e = −dΦ/dt",
+   "prerequisites": [
+    "S-EM-02",
+    "M-FV-04"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et électricité – lois de l'électromagnétisme",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-EM-05",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et électricité",
+   "chapter": "Électromagnétisme",
+   "title": "Repères historiques de l'électromagnétisme",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Donner des repères historiques",
+   "formulas": "",
+   "prerequisites": [],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et électricité – lois de l'électromagnétisme",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-MO-01",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et électricité",
+   "chapter": "Modulation de l'énergie électrique",
+   "title": "Fonctions de conversion, réversibilité, bilan d'un convertisseur parfait",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Définir les fonctions de conversion ; définir la réversibilité énergétique ; utiliser le bilan de puissance active d'un convertisseur parfait ; vocabulaire",
+   "formulas": "Pe = Ps (parfait)",
+   "prerequisites": [
+    "S-EL-14"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et électricité – modulation de l'énergie électrique",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-MO-02",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et électricité",
+   "chapter": "Modulation de l'énergie électrique",
+   "title": "Interrupteurs statiques ; diode",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Définir la fonction interrupteur ; distinguer interrupteurs non commandés, commandés à l'amorçage, entièrement commandés ; caractéristique de la diode ; réversibilités en tension et courant ; applications de la diode",
+   "formulas": "",
+   "prerequisites": [
+    "S-EL-06"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et électricité – modulation de l'énergie électrique",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-MO-03",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et électricité",
+   "chapter": "Modulation de l'énergie électrique",
+   "title": "Structure des convertisseurs : pont de Graëtz, hacheur série",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Reconnaître une structure sur schéma ; relier la non-réversibilité du pont de Graëtz et du hacheur série aux diodes",
+   "formulas": "Hacheur série : ⟨u⟩ = α·E",
+   "prerequisites": [
+    "S-MO-02"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et électricité – modulation de l'énergie électrique",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-MO-04",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et électricité",
+   "chapter": "Modulation de l'énergie électrique",
+   "title": "Analyse des signaux : ondulation, THD, harmoniques, signaux de commande",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Identifier signaux continus et alternatifs ; calculer taux d'ondulation et THD ; identifier les signaux de commande",
+   "formulas": "Taux d'ondulation = (Umax − Umin)/(2⟨u⟩)",
+   "prerequisites": [
+    "S-MO-03",
+    "S-EL-13"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et électricité – modulation de l'énergie électrique",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-MO-05",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et électricité",
+   "chapter": "Transformateurs",
+   "title": "Transformateur mono et triphasé : principe, rapport, plaque, pertes, essais",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Décrire le principe ; définir m = U₂₀/U₁ ; citer des usages ; lire une plaque ; identifier pertes cuivre et fer ; bilan par essais à vide et en court-circuit",
+   "formulas": "m = U₂₀/U₁ ; P₁₀ ≈ pertes fer ; P₁cc ≈ pertes cuivre",
+   "prerequisites": [
+    "S-EM-04",
+    "S-EL-14"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et électricité – modulation de l'énergie électrique",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-MO-06",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et électricité",
+   "chapter": "Transformateurs",
+   "title": "Modèle de Kapp ramené au secondaire ; chute de tension",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Construire le modèle de Kapp ; calculer la chute de tension, y compris par la formule approchée",
+   "formulas": "ΔU ≈ Rs·I₂·cos φ + Xs·I₂·sin φ",
+   "prerequisites": [
+    "S-MO-05",
+    "S-EL-10"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et électricité – modulation de l'énergie électrique",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-MO-07",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et électricité",
+   "chapter": "Transformateurs",
+   "title": "Couplages Y, D, Z ; indice horaire ; mise en parallèle",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Identifier les couplages ; interpréter l'indice horaire ; citer les conditions de mise en parallèle",
+   "formulas": "Indice horaire = déphasage / 30°",
+   "prerequisites": [
+    "S-MO-05",
+    "S-EL-11"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et électricité – modulation de l'énergie électrique",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-MO-08",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et électricité",
+   "chapter": "Association de convertisseurs",
+   "title": "Convertisseur statique + machine ; condensateur de bus ; résistance de freinage",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Décrire une association de convertisseurs ; expliquer le rôle du condensateur de bus et de la résistance de freinage ; dimensionner une résistance de freinage",
+   "formulas": "R = U²bus/Pfreinage",
+   "prerequisites": [
+    "S-MO-03",
+    "S-CV-01"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et électricité – modulation de l'énergie électrique",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-MO-09",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et électricité",
+   "chapter": "Lignes de distribution",
+   "title": "Modèle RL série d'une ligne ; transport en haute tension",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Utiliser le modèle RL série ; justifier le transport en haute tension",
+   "formulas": "Pertes = R·I² avec I = P/(U·cos φ)",
+   "prerequisites": [
+    "S-EL-10",
+    "S-EL-14"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et électricité – modulation de l'énergie électrique",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-QE-01",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et électricité",
+   "chapter": "Qualité de l'énergie électrique",
+   "title": "Enjeux et leviers d'amélioration du facteur de puissance",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Expliquer l'intérêt d'optimiser fp ; identifier les leviers (fondamental, harmoniques)",
+   "formulas": "",
+   "prerequisites": [
+    "S-EL-14"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et électricité – qualité de l'énergie électrique",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-QE-02",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et électricité",
+   "chapter": "Qualité de l'énergie électrique",
+   "title": "Compensation du réactif : batterie de condensateurs, machine synchrone",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Dimensionner une batterie de condensateurs ; régler expérimentalement le fp d'une machine synchrone par son courant d'excitation",
+   "formulas": "Qc = P(tan φ₁ − tan φ₂) ; C = Qc/(U²ω)",
+   "prerequisites": [
+    "S-QE-01"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et électricité – qualité de l'énergie électrique",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-QE-03",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et électricité",
+   "chapter": "Qualité de l'énergie électrique",
+   "title": "Filtrage des harmoniques : gabarit, accord LC, inductance de ligne, filtrage actif, couplages Dy et Yz",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Connaître le principe ; fixer le gabarit d'après le spectre ; accorder un filtre LC ; utiliser l'inductance de ligne ; décrire le filtrage actif ; proposer Dy ou Yz contre les rangs multiples de 3",
+   "formulas": "f₀ = 1/(2π√(LC))",
+   "prerequisites": [
+    "S-EL-13",
+    "S-MO-07"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et électricité – qualité de l'énergie électrique",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-QE-04",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et électricité",
+   "chapter": "Qualité de l'énergie électrique",
+   "title": "Filtrage en continu : bobine série, condensateur parallèle",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Comprendre que filtrer revient à supprimer les harmoniques ; citer la bobine série (courant) et le condensateur parallèle (tension)",
+   "formulas": "",
+   "prerequisites": [
+    "S-MO-04"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et électricité – qualité de l'énergie électrique",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-QE-05",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et électricité",
+   "chapter": "Qualité de l'énergie électrique",
+   "title": "Compatibilité électromagnétique (CEM)",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Définir CEM et susceptibilité ; rechercher une norme ; citer les sources (rayonnées, conduites, décharges électrostatiques) et leurs effets ; citer les protections",
+   "formulas": "",
+   "prerequisites": [
+    "S-EM-04"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et électricité – qualité de l'énergie électrique",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-ME-01",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et mécanique",
+   "chapter": "Mécanique du solide",
+   "title": "Cinématique en translation et rotation ; transformation de mouvement",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Définir position, vitesse, accélération ; dimensionner une transformation translation ↔ rotation",
+   "formulas": "v = R·Ω ; Ω = 2πn/60",
+   "prerequisites": [
+    "M-FV-04",
+    "M-CV-01"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et mécanique",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-ME-02",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et mécanique",
+   "chapter": "Mécanique du solide",
+   "title": "Forces et moment d'une force ; capteurs",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Représenter une action par une force ; calculer un moment ; connaître le principe des capteurs de position, vitesse, force, couple",
+   "formulas": "M = F·d",
+   "prerequisites": [
+    "M-CV-02"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et mécanique",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-ME-03",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et mécanique",
+   "chapter": "Mécanique du solide",
+   "title": "Caractéristique mécanique d'une charge (couple-vitesse)",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Relever la caractéristique couple-vitesse d'une charge",
+   "formulas": "",
+   "prerequisites": [
+    "S-ME-02"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et mécanique",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-ME-04",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et mécanique",
+   "chapter": "Mécanique du solide",
+   "title": "Principe fondamental de la dynamique (translation, rotation)",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Appliquer le PFD aux mouvements uniformes ou uniformément accélérés",
+   "formulas": "ΣF = m·a ; ΣC = J·dΩ/dt",
+   "prerequisites": [
+    "S-ME-01",
+    "S-ME-02"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et mécanique",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-ME-05",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et mécanique",
+   "chapter": "Mécanique du solide",
+   "title": "Énergie cinétique, potentielle, travail, énergie mécanique, puissance",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Utiliser Ec (translation, rotation) et Ep de pesanteur ; calculer le travail d'une force et d'un couple constants ; conservation de l'énergie mécanique ; puissance mécanique",
+   "formulas": "W = F·d ; W = C·θ ; P = C·Ω",
+   "prerequisites": [
+    "S-FE-01",
+    "S-FE-02",
+    "S-ME-04"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et mécanique",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-ME-06",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et mécanique",
+   "chapter": "Mécanique des fluides",
+   "title": "Généralités : pression, masse volumique, débits, puissance hydraulique ; capteurs",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Distinguer fluides compressibles et incompressibles ; pression (unités, absolue, relative) ; masse volumique ; relier vitesse, débit et section ; débit massique ; puissance hydraulique ; principe des capteurs de pression et de débit",
+   "formulas": "Qv = v·S ; Qm = ρ·Qv ; P = Δp·Qv",
+   "prerequisites": [
+    "S-DE-07"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et mécanique",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-ME-07",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et mécanique",
+   "chapter": "Mécanique des fluides",
+   "title": "Statique des fluides",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Énoncer et appliquer l'équation fondamentale de la statique des fluides",
+   "formulas": "p_B − p_A = ρg(z_A − z_B)",
+   "prerequisites": [
+    "S-ME-06"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et mécanique",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-ME-08",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et mécanique",
+   "chapter": "Mécanique des fluides",
+   "title": "Dynamique des fluides incompressibles : continuité, viscosité, pertes de charge, Bernoulli",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Appliquer l'équation de continuité ; mettre en évidence la viscosité ; expliquer les pertes de charge (simulation) ; appliquer Bernoulli sous forme énergétique pour dimensionner",
+   "formulas": "S₁v₁ = S₂v₂ ; p + ½ρv² + ρgz = cte (+ pertes)",
+   "prerequisites": [
+    "S-ME-07"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et mécanique",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-ME-09",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et mécanique",
+   "chapter": "Installations hydrauliques",
+   "title": "Pompes et turbines",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Connaître technologies et domaines d'application ; dimensionner une pompe ou une turbine",
+   "formulas": "P = ρ·g·Qv·H",
+   "prerequisites": [
+    "S-ME-08"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et mécanique",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-ME-10",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et mécanique",
+   "chapter": "Éoliennes",
+   "title": "Rendement d'une éolienne, loi de Betz",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Identifier les paramètres du rendement ; appliquer la loi de Betz pour dimensionner",
+   "formulas": "P_max = (16/27)·½ρSv³",
+   "prerequisites": [
+    "S-ME-08"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et mécanique",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-CH-01",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et chimie",
+   "chapter": "Électrochimie",
+   "title": "Piles, accumulateurs, pile à combustible",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Citer caractéristiques et évolutions technologiques ; expliquer le fonctionnement d'une pile, d'un accumulateur, d'une pile à combustible",
+   "formulas": "",
+   "prerequisites": [
+    "S-TR-05"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et chimie",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-CH-02",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et chimie",
+   "chapter": "Électrochimie",
+   "title": "Batterie d'accumulateurs : utilisation optimale, charge, décharge, autonomie",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Définir les conditions optimales d'utilisation ; associer charge et décharge à des conversions ; calculer l'autonomie",
+   "formulas": "E = U·Q (Wh = V × Ah) ; autonomie = E/P",
+   "prerequisites": [
+    "S-CH-01",
+    "S-TR-07"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et chimie",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-CH-03",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et chimie",
+   "chapter": "Combustion",
+   "title": "Combustion : énergie libérée, pouvoirs calorifiques, rendement, sécurité",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Associer réaction exothermique et baisse d'énergie chimique ; citer des carburants ; estimer l'énergie libérée ; utiliser les pouvoirs calorifiques pour un rendement ; citer dangers et prévention",
+   "formulas": "Q = m·PCI",
+   "prerequisites": [
+    "S-TR-07"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et chimie",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-RA-01",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et rayonnement",
+   "chapter": "Modélisation",
+   "title": "Onde électromagnétique et photon ; structure de l'onde",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Savoir qu'un rayonnement se modélise par une onde ou par des photons ; définir l'onde comme association des champs E et B ; relier le champ à la puissance de la source et à la distance",
+   "formulas": "",
+   "prerequisites": [
+    "S-EM-01",
+    "S-EM-02"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et rayonnement",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-RA-02",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et rayonnement",
+   "chapter": "Domaines spectraux",
+   "title": "UV, visible, IR, micro-ondes, ondes radio ; λ, c, f",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Identifier un domaine spectral sur une échelle ; utiliser la relation entre longueur d'onde, célérité et fréquence",
+   "formulas": "λ = c/f",
+   "prerequisites": [
+    "S-RA-01"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et rayonnement",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-RA-03",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et rayonnement",
+   "chapter": "Photon",
+   "title": "Énergie d'un photon ; raies spectrales",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Interpréter les échanges lumière-matière ; relier énergie du photon et fréquence pour interpréter les raies",
+   "formulas": "E = h·ν",
+   "prerequisites": [
+    "S-RA-02"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et rayonnement",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-RA-04",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et rayonnement",
+   "chapter": "Éclairage et sources",
+   "title": "Sources lumineuses, spectres, température de couleur, risques optiques",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Expliquer les principales sources ; distinguer spectres continus et de raies ; observer des spectres ; relier λmax et température ; citer les risques des rayonnements optiques artificiels",
+   "formulas": "λmax·T ≈ 2,9 × 10⁻³ m·K",
+   "prerequisites": [
+    "S-RA-03"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et rayonnement",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-RA-05",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et rayonnement",
+   "chapter": "Photométrie",
+   "title": "Watt, lumen, lux ; efficacité, IRC ; luxmètre",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Relier les unités photométriques aux sources, surfaces et sensibilité de l'œil ; exploiter les caractéristiques d'une source ; utiliser un luxmètre",
+   "formulas": "E (lx) = Φ (lm)/S (m²) ; efficacité = Φ/P",
+   "prerequisites": [
+    "S-RA-04"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et rayonnement",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-RA-06",
+   "subject": "Sciences appliquées",
+   "domain": "Énergie et rayonnement",
+   "chapter": "Énergie solaire",
+   "title": "Exploitation du solaire ; cellule photovoltaïque ; solarimètre",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Citer les modes d'exploitation ; mettre en œuvre une cellule photovoltaïque ; faire le bilan d'un panneau avec un solarimètre",
+   "formulas": "η = P_élec/(E_solaire·S)",
+   "prerequisites": [
+    "S-RA-03",
+    "S-EL-06"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Énergie et rayonnement",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-CV-01",
+   "subject": "Sciences appliquées",
+   "domain": "Convertisseurs électromécaniques",
+   "chapter": "Constitution",
+   "title": "Machines tournantes : interaction des champs, induit, inducteur, quatre quadrants, technologies",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Expliquer le fonctionnement par interaction de champs ; distinguer induit et inducteur ; moteur ou génératrice ; grandeurs d'entrée et de sortie ; quatre quadrants ; avantages et domaines des technologies",
+   "formulas": "",
+   "prerequisites": [
+    "S-EM-04",
+    "S-ME-04"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Les convertisseurs électromécaniques",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-CV-02",
+   "subject": "Sciences appliquées",
+   "domain": "Convertisseurs électromécaniques",
+   "chapter": "Grandeurs nominales",
+   "title": "Plaque signalétique",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Extraire les informations utiles d'une plaque signalétique",
+   "formulas": "",
+   "prerequisites": [
+    "S-CV-01"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Les convertisseurs électromécaniques",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-CV-03",
+   "subject": "Sciences appliquées",
+   "domain": "Convertisseurs électromécaniques",
+   "chapter": "Bilan de puissance",
+   "title": "Pertes, essais, rendement",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Identifier les pertes et leurs causes ; exploiter des essais ; établir un bilan et calculer le rendement",
+   "formulas": "η = Pu/Pa ; Pa = Pu + Σpertes",
+   "prerequisites": [
+    "S-CV-02",
+    "S-TR-07"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Les convertisseurs électromécaniques",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-CV-04",
+   "subject": "Sciences appliquées",
+   "domain": "Convertisseurs électromécaniques",
+   "chapter": "Machine à courant continu",
+   "title": "MCC à excitation indépendante constante",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Exploiter E = kΩ et Tem = kI pour les points de fonctionnement machine/charge",
+   "formulas": "E = k·Ω ; Tem = k·I ; U = E + R·I",
+   "prerequisites": [
+    "S-CV-03",
+    "S-ME-03"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Les convertisseurs électromécaniques",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-CV-05",
+   "subject": "Sciences appliquées",
+   "domain": "Convertisseurs électromécaniques",
+   "chapter": "Machine asynchrone",
+   "title": "Caractéristique mécanique, couple de démarrage, point de fonctionnement",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Utiliser la caractéristique mécanique pour déterminer couple de démarrage et point de fonctionnement en moteur ou génératrice",
+   "formulas": "ns = f/p ; g = (ns − n)/ns",
+   "prerequisites": [
+    "S-CV-03",
+    "S-EL-11"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Les convertisseurs électromécaniques",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-CV-06",
+   "subject": "Sciences appliquées",
+   "domain": "Convertisseurs électromécaniques",
+   "chapter": "Machine asynchrone",
+   "title": "Commande U/f constant, variateur, commande vectorielle",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Relever les caractéristiques à U/f constant ; déterminer le point de fonctionnement moteur/charge ; analyser les zones d'un variateur sur documents ; savoir qu'il existe la commande vectorielle",
+   "formulas": "U/f = constante",
+   "prerequisites": [
+    "S-CV-05",
+    "S-MO-08"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Les convertisseurs électromécaniques",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-PR-01",
+   "subject": "Sciences appliquées",
+   "domain": "Maîtrise des procédés",
+   "chapter": "Chaîne de mesure",
+   "title": "Capteur, transmetteur, signaux normalisés, conversion analogique-numérique",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Distinguer capteur et transmetteur ; signaux analogiques et numériques ; citer les signaux normalisés ; caractéristiques d'un CAN (bits, quantum, échantillonnage)",
+   "formulas": "4–20 mA ; 0–10 V ; q = pleine échelle/2ⁿ",
+   "prerequisites": [
+    "M-CN-07",
+    "S-EL-07"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Maîtrise des procédés",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-PR-02",
+   "subject": "Sciences appliquées",
+   "domain": "Maîtrise des procédés",
+   "chapter": "Chaîne de mesure",
+   "title": "Temps de réponse et précision d'un capteur",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Mesurer le temps de réponse ; exploiter la précision constructeur",
+   "formulas": "",
+   "prerequisites": [
+    "S-PR-01",
+    "S-IN-02"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Maîtrise des procédés",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-PR-03",
+   "subject": "Sciences appliquées",
+   "domain": "Maîtrise des procédés",
+   "chapter": "Régulation et asservissement",
+   "title": "Structure, schéma fonctionnel, chaîne ouverte et boucle fermée",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Connaître la structure ; identifier et décrire les éléments d'une boucle ; établir le schéma fonctionnel ; distinguer chaîne ouverte et boucle fermée ; placer les grandeurs ; citer des grandeurs régulées en électrotechnique",
+   "formulas": "ε = consigne − mesure",
+   "prerequisites": [
+    "S-PR-01"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Maîtrise des procédés",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-PR-04",
+   "subject": "Sciences appliquées",
+   "domain": "Maîtrise des procédés",
+   "chapter": "Critères de performance",
+   "title": "Stabilité, précision, rapidité, amortissement",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Citer les critères ; mesurer après un échelon de consigne l'écart statique, le temps de réponse à 5 % et le premier dépassement",
+   "formulas": "D₁ % = (ymax − y∞)/y∞",
+   "prerequisites": [
+    "S-PR-03",
+    "S-DY-03"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Maîtrise des procédés",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-PR-05",
+   "subject": "Sciences appliquées",
+   "domain": "Maîtrise des procédés",
+   "chapter": "Caractéristique des procédés",
+   "title": "Caractéristique statique, perturbation, réponse indicielle, Broïda",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Relever et exploiter la caractéristique statique ; mettre en évidence le déplacement du point de fonctionnement ; distinguer les comportements ; déterminer les paramètres intrinsèques (Broïda)",
+   "formulas": "",
+   "prerequisites": [
+    "S-DY-04",
+    "S-DY-05"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Maîtrise des procédés",
+   "inventoryChecked": true,
+   "remark": "Recoupe S-DY-04 et S-DY-05 : un cours commun est possible"
+  },
+  {
+   "id": "S-PR-06",
+   "subject": "Sciences appliquées",
+   "domain": "Maîtrise des procédés",
+   "chapter": "Régulation TOR",
+   "title": "Régulation tout ou rien à un ou deux seuils",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Mettre en œuvre une régulation TOR à un ou deux seuils",
+   "formulas": "Hystérésis = seuil haut − seuil bas",
+   "prerequisites": [
+    "S-PR-03"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Maîtrise des procédés",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-PR-07",
+   "subject": "Sciences appliquées",
+   "domain": "Maîtrise des procédés",
+   "chapter": "Régulation PID",
+   "title": "Actions P, I, D ; sens du régulateur ; réglage",
+   "year": null,
+   "status": "Non développé",
+   "skills": "Expliquer le rôle des actions ; déterminer le sens du régulateur ; mettre en évidence l'influence de P et I ; régler un PI ou PID par un protocole industriel",
+   "formulas": "u = Kp·(ε + 1/Ti·∫ε + Td·dε/dt)",
+   "prerequisites": [
+    "S-PR-04",
+    "S-PR-05",
+    "M-CI-02"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Maîtrise des procédés",
+   "inventoryChecked": true,
+   "remark": ""
+  },
+  {
+   "id": "S-PR-08",
+   "subject": "Sciences appliquées",
+   "domain": "Maîtrise des procédés",
+   "chapter": "Automate programmable",
+   "title": "Structure d'un automate dans une boucle de régulation",
+   "year": null,
+   "status": "Périmètre à arbitrer",
+   "skills": "Décrire la structure d'un automate en lien avec une boucle de régulation ou d'asservissement",
+   "formulas": "",
+   "prerequisites": [
+    "S-PR-03"
+   ],
+   "reference": "Référentiel BTS ET (arrêté du 21/02/2020 mod.), programme de physique-chimie – Maîtrise des procédés",
+   "inventoryChecked": true,
+   "remark": "Au programme officiel de physique-chimie, mais ton cahier des charges exclut les automates : à trancher"
+  }
+ ]
+}

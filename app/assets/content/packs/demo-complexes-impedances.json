@@ -1,0 +1,1123 @@
+{
+ "id": "demo-complexes-impedances",
+ "courses": [
+  {
+   "id": "C-NC-01",
+   "notions": [
+    "M-NC-01"
+   ],
+   "title": "Forme algébrique d'un nombre complexe",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "En électrotechnique, on note $j$ le nombre tel que $j^2 = -1$ (la lettre $i$ est réservée à l'intensité du courant)."
+    },
+    {
+     "type": "formula",
+     "tex": "j^2 = -1",
+     "title": "Définition"
+    },
+    {
+     "type": "text",
+     "text": "Un nombre complexe s'écrit sous **forme algébrique** $z = a + jb$, avec $a$ et $b$ réels :"
+    },
+    {
+     "type": "text",
+     "text": "- $a = \\mathrm{Re}(z)$ est la **partie réelle** ;\n- $b = \\mathrm{Im}(z)$ est la **partie imaginaire**."
+    },
+    {
+     "type": "text",
+     "text": "Deux complexes sont égaux si et seulement s'ils ont la même partie réelle **et** la même partie imaginaire."
+    },
+    {
+     "type": "formula",
+     "tex": "\\overline{z} = a - jb",
+     "title": "Conjugué"
+    },
+    {
+     "type": "text",
+     "text": "On calcule avec $j$ comme avec une lettre, puis on remplace $j^2$ par $-1$ :"
+    },
+    {
+     "type": "tex",
+     "tex": "(a+jb)(c+jd) = (ac - bd) + j(ad + bc)"
+    },
+    {
+     "type": "method",
+     "text": "Pour un quotient, on multiplie le numérateur et le dénominateur par le **conjugué du dénominateur** : le dénominateur devient le réel $c^2 + d^2$.",
+     "title": "Méthode : quotient"
+    },
+    {
+     "type": "tex",
+     "tex": "\\frac{a+jb}{c+jd} = \\frac{(a+jb)(c-jd)}{c^2+d^2}"
+    },
+    {
+     "type": "formula",
+     "tex": "z \\cdot \\overline{z} = a^2 + b^2",
+     "title": "À retenir"
+    },
+    {
+     "type": "warning",
+     "text": "Erreur fréquente : $(a+jb)^2 \\neq a^2 + b^2$. On développe : $(a+jb)^2 = a^2 - b^2 + 2jab$."
+    },
+    {
+     "type": "tip",
+     "text": "La calculatrice en mode complexe (souvent touche « i » ou « CMPLX ») donne directement le résultat : vérifie toujours ton calcul à la main avec elle."
+    }
+   ]
+  },
+  {
+   "id": "C-NC-04",
+   "notions": [
+    "M-NC-04"
+   ],
+   "title": "Module, argument, formes trigonométrique et exponentielle",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Le complexe $z = a + jb$ est représenté par le point $M(a\\,;b)$ ou le vecteur $\\overrightarrow{OM}$."
+    },
+    {
+     "type": "formula",
+     "tex": "|z| = \\sqrt{a^2 + b^2}",
+     "title": "Module"
+    },
+    {
+     "type": "text",
+     "text": "Un **argument** $\\theta$ de $z \\neq 0$ est une mesure de l'angle entre l'axe des réels et $\\overrightarrow{OM}$ :"
+    },
+    {
+     "type": "tex",
+     "tex": "\\cos\\theta = \\frac{a}{|z|} \\qquad \\sin\\theta = \\frac{b}{|z|}"
+    },
+    {
+     "type": "method",
+     "text": "Si $a > 0$ : $\\theta = \\arctan(b/a)$. Si $a < 0$ : $\\theta = \\arctan(b/a) + \\pi$ (ou $- \\pi$). Fais toujours un petit dessin pour vérifier le quadrant.",
+     "title": "Méthode : calcul de l'argument"
+    },
+    {
+     "type": "formula",
+     "tex": "z = |z|(\\cos\\theta + j\\sin\\theta) = |z|\\,e^{j\\theta}",
+     "title": "Formes trigonométrique et exponentielle"
+    },
+    {
+     "type": "text",
+     "text": "La forme exponentielle simplifie produits et quotients :"
+    },
+    {
+     "type": "tex",
+     "tex": "r_1 e^{j\\theta_1} \\times r_2 e^{j\\theta_2} = r_1 r_2\\, e^{j(\\theta_1+\\theta_2)}"
+    },
+    {
+     "type": "tex",
+     "tex": "\\frac{r_1 e^{j\\theta_1}}{r_2 e^{j\\theta_2}} = \\frac{r_1}{r_2}\\, e^{j(\\theta_1-\\theta_2)}"
+    },
+    {
+     "type": "tip",
+     "text": "En électrotechnique, on écrit souvent la forme polaire $z = r \\angle \\theta$ : c'est la même chose que $r\\,e^{j\\theta}$."
+    },
+    {
+     "type": "warning",
+     "text": "Vérifie l'unité d'angle de ta calculatrice (degrés ou radians) avant chaque calcul."
+    }
+   ]
+  },
+  {
+   "id": "C-EL-10",
+   "notions": [
+    "S-EL-10"
+   ],
+   "title": "Impédances en régime sinusoïdal",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "En régime sinusoïdal de pulsation $\\omega$, on associe à chaque dipôle une **impédance complexe** $\\underline{Z}$ telle que $\\underline{U} = \\underline{Z}\\,\\underline{I}$."
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Dipôle",
+       "Impédance complexe",
+       "Module $Z$",
+       "Déphasage $\\varphi_{u/i}$"
+      ],
+      [
+       "Résistance $R$",
+       "$R$",
+       "$R$",
+       "$0$"
+      ],
+      [
+       "Bobine $L$",
+       "$jL\\omega$",
+       "$L\\omega$",
+       "$+90°$"
+      ],
+      [
+       "Condensateur $C$",
+       "$\\dfrac{1}{jC\\omega}$",
+       "$\\dfrac{1}{C\\omega}$",
+       "$-90°$"
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "text": "Des dipôles **en série** ont la même intensité : leurs impédances s'additionnent."
+    },
+    {
+     "type": "circuit",
+     "kind": "series",
+     "source": "ac",
+     "parts": [
+      {
+       "type": "R",
+       "label": "R"
+      },
+      {
+       "type": "L",
+       "label": "L"
+      },
+      {
+       "type": "C",
+       "label": "C"
+      }
+     ],
+     "caption": "Circuit RLC série alimenté par une tension sinusoïdale u(t)"
+    },
+    {
+     "type": "formula",
+     "tex": "\\underline{Z} = R + j\\left(L\\omega - \\frac{1}{C\\omega}\\right)",
+     "title": "RLC série"
+    },
+    {
+     "type": "formula",
+     "tex": "Z = \\sqrt{R^2 + \\left(L\\omega - \\frac{1}{C\\omega}\\right)^2} \\qquad \\tan\\varphi = \\frac{L\\omega - \\frac{1}{C\\omega}}{R}",
+     "title": "Module et déphasage"
+    },
+    {
+     "type": "text",
+     "text": "Si $L\\omega > \\frac{1}{C\\omega}$, $\\varphi > 0$ : le circuit est **inductif** (le courant est en retard sur la tension). Sinon il est **capacitif**."
+    },
+    {
+     "type": "plot",
+     "var": "t",
+     "from": 0,
+     "to": 0.04,
+     "xLabel": "t (s)",
+     "yLabel": "",
+     "title": "Circuit inductif : i(t) en retard de φ = 40° sur u(t)",
+     "curves": [
+      {
+       "expr": "325*sin(100*pi*t)",
+       "label": "u(t) (V)"
+      },
+      {
+       "expr": "200*sin(100*pi*t - rad(40))",
+       "label": "i(t) (×0,01 A)"
+      }
+     ]
+    },
+    {
+     "type": "method",
+     "text": "1. Calculer $\\omega = 2\\pi f$.\n2. Calculer $L\\omega$ et $\\frac{1}{C\\omega}$.\n3. En déduire $Z$ puis $\\varphi$.\n4. $I = U / Z$ (valeurs efficaces).",
+     "title": "Méthode : RLC série"
+    },
+    {
+     "type": "warning",
+     "text": "Ne jamais additionner les modules : $Z \\neq R + L\\omega + \\frac{1}{C\\omega}$. On additionne les impédances **complexes**."
+    }
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "id": "E-NC-01",
+   "notions": [
+    "M-NC-01"
+   ],
+   "title": "Produit et quotient de deux complexes",
+   "validated": false,
+   "problem": [
+    {
+     "type": "text",
+     "text": "Soit $z_1 = 3 + 2j$ et $z_2 = 1 - j$. Calculer $z_1 z_2$ et $\\dfrac{z_1}{z_2}$."
+    }
+   ],
+   "solution": [
+    {
+     "type": "tex",
+     "tex": "z_1 z_2 = 3 - 3j + 2j - 2j^2 = 3 + 2 - j = 5 - j"
+    },
+    {
+     "type": "text",
+     "text": "Pour le quotient, on multiplie par le conjugué de $z_2$, soit $1 + j$ :"
+    },
+    {
+     "type": "tex",
+     "tex": "\\frac{z_1}{z_2} = \\frac{(3+2j)(1+j)}{(1-j)(1+j)} = \\frac{3 + 3j + 2j - 2}{1 + 1} = \\frac{1 + 5j}{2} = 0{,}5 + 2{,}5j"
+    }
+   ]
+  },
+  {
+   "id": "E-NC-04",
+   "notions": [
+    "M-NC-04"
+   ],
+   "title": "Passer de la forme algébrique à la forme exponentielle",
+   "validated": false,
+   "problem": [
+    {
+     "type": "text",
+     "text": "Écrire $z = -1 + j\\sqrt{3}$ sous forme exponentielle."
+    }
+   ],
+   "solution": [
+    {
+     "type": "tex",
+     "tex": "|z| = \\sqrt{(-1)^2 + (\\sqrt{3})^2} = \\sqrt{4} = 2"
+    },
+    {
+     "type": "tex",
+     "tex": "\\cos\\theta = -\\frac{1}{2},\\quad \\sin\\theta = \\frac{\\sqrt{3}}{2} \\;\\Rightarrow\\; \\theta = \\frac{2\\pi}{3}"
+    },
+    {
+     "type": "text",
+     "text": "Le point est dans le 2e quadrant ($a < 0$, $b > 0$) : l'angle est bien compris entre $\\pi/2$ et $\\pi$."
+    },
+    {
+     "type": "tex",
+     "tex": "z = 2\\,e^{j\\frac{2\\pi}{3}}"
+    }
+   ]
+  },
+  {
+   "id": "E-EL-10",
+   "notions": [
+    "S-EL-10"
+   ],
+   "title": "Impédance d'un circuit RLC série",
+   "validated": false,
+   "problem": [
+    {
+     "type": "text",
+     "text": "Un circuit RLC série ($R = 40\\ \\Omega$, $L = 0{,}2\\ \\mathrm{H}$, $C = 100\\ \\mu\\mathrm{F}$) est alimenté sous $U = 230\\ \\mathrm{V}$, $f = 50\\ \\mathrm{Hz}$. Calculer $Z$, $\\varphi$ et $I$."
+    }
+   ],
+   "solution": [
+    {
+     "type": "tex",
+     "tex": "\\omega = 2\\pi \\times 50 = 314{,}2\\ \\mathrm{rad/s}"
+    },
+    {
+     "type": "tex",
+     "tex": "L\\omega = 62{,}8\\ \\Omega \\qquad \\frac{1}{C\\omega} = \\frac{1}{100\\times10^{-6}\\times 314{,}2} = 31{,}8\\ \\Omega"
+    },
+    {
+     "type": "tex",
+     "tex": "Z = \\sqrt{40^2 + (62{,}8 - 31{,}8)^2} = \\sqrt{1600 + 961} = 50{,}6\\ \\Omega"
+    },
+    {
+     "type": "tex",
+     "tex": "\\tan\\varphi = \\frac{31{,}0}{40} \\Rightarrow \\varphi = 37{,}8°"
+    },
+    {
+     "type": "tex",
+     "tex": "I = \\frac{U}{Z} = \\frac{230}{50{,}6} = 4{,}55\\ \\mathrm{A}"
+    },
+    {
+     "type": "text",
+     "text": "$\\varphi > 0$ : le circuit est inductif, le courant est en retard de $37{,}8°$ sur la tension."
+    }
+   ]
+  }
+ ],
+ "exercises": [
+  {
+   "id": "X-NC-01-a",
+   "notions": [
+    "M-NC-01"
+   ],
+   "title": "Somme et produit",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "a": {
+     "values": [
+      -9,
+      -8,
+      -7,
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ]
+    },
+    "b": {
+     "values": [
+      -9,
+      -8,
+      -7,
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ]
+    },
+    "c": {
+     "values": [
+      -9,
+      -8,
+      -7,
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ]
+    },
+    "d": {
+     "values": [
+      -9,
+      -8,
+      -7,
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ]
+    }
+   },
+   "vars": {
+    "z1": "a + j*b",
+    "z2": "c + j*d"
+   },
+   "statement": [
+    {
+     "type": "text",
+     "text": "On donne $z_1 = [[a]] + j([[b]])$ et $z_2 = [[c]] + j([[d]])$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "complex",
+     "prompt": "Calculer $z_1 + z_2$ (forme algébrique, ex. 3+4j).",
+     "answer": "z1 + z2",
+     "tolerance": 0.001
+    },
+    {
+     "id": "q2",
+     "kind": "complex",
+     "prompt": "Calculer $z_1 \\times z_2$.",
+     "answer": "z1 * z2",
+     "tolerance": 0.001
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Quel est le conjugué de $z_1$ ?",
+     "choices": [
+      "[[a]] − j([[b]])",
+      "−[[a]] + j([[b]])",
+      "[[b]] + j([[a]])"
+     ],
+     "correct": 0
+    }
+   ],
+   "constraints": [
+    "abs(a) != abs(b)"
+   ],
+   "hint": "Développe le produit comme avec une lettre, puis remplace j² par −1.",
+   "method": "Somme : on ajoute les parties réelles entre elles et les parties imaginaires entre elles. Produit : (a+jb)(c+jd) = (ac − bd) + j(ad + bc).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Somme : $z_1 + z_2 =$ [[=z1+z2:4]]."
+    },
+    {
+     "type": "text",
+     "text": "Produit : ([[a]])×([[c]]) − ([[b]])×([[d]]) = [[=a*c-b*d:4]] pour la partie réelle, ([[a]])×([[d]]) + ([[b]])×([[c]]) = [[=a*d+b*c:4]] pour la partie imaginaire, donc $z_1 z_2 =$ [[=z1*z2:4]]."
+    },
+    {
+     "type": "text",
+     "text": "Le conjugué change le signe de la partie imaginaire : [[a]] − j([[b]])."
+    }
+   ]
+  },
+  {
+   "id": "X-NC-01-b",
+   "notions": [
+    "M-NC-01"
+   ],
+   "title": "Quotient de deux complexes",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "a": {
+     "values": [
+      -9,
+      -8,
+      -7,
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ]
+    },
+    "b": {
+     "values": [
+      -9,
+      -8,
+      -7,
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ]
+    },
+    "c": {
+     "min": 1,
+     "max": 5,
+     "step": 1
+    },
+    "d": {
+     "values": [
+      -4,
+      -3,
+      -2,
+      -1,
+      1,
+      2,
+      3,
+      4
+     ]
+    }
+   },
+   "vars": {
+    "z1": "a + j*b",
+    "z2": "c + j*d"
+   },
+   "statement": [
+    {
+     "type": "text",
+     "text": "On donne $z_1 = [[a]] + j([[b]])$ et $z_2 = [[c]] + j([[d]])$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Calculer $z_2 \\cdot \\overline{z_2}$.",
+     "answer": "c^2 + d^2",
+     "tolerance": 0.001
+    },
+    {
+     "id": "q2",
+     "kind": "complex",
+     "prompt": "Calculer $\\dfrac{z_1}{z_2}$ sous forme algébrique (3 chiffres significatifs suffisent).",
+     "answer": "z1 / z2",
+     "tolerance": 0.01
+    }
+   ],
+   "hint": "Multiplie le numérateur et le dénominateur par le conjugué de z₂.",
+   "method": "z₁/z₂ = z₁·conj(z₂) / (c² + d²).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$z_2 \\cdot \\overline{z_2} = c^2 + d^2 =$ [[=c^2+d^2]]."
+    },
+    {
+     "type": "text",
+     "text": "$z_1 \\cdot \\overline{z_2} =$ [[=z1*conj(z2):4]], donc $\\dfrac{z_1}{z_2} =$ [[=z1/z2:3]]."
+    }
+   ]
+  },
+  {
+   "id": "X-NC-02-a",
+   "notions": [
+    "M-NC-02"
+   ],
+   "title": "Équation du second degré à discriminant négatif",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "p": {
+     "min": -6,
+     "max": 6,
+     "step": 1
+    },
+    "q": {
+     "min": 1,
+     "max": 20,
+     "step": 1
+    }
+   },
+   "vars": {
+    "D": "p^2 - 4*q"
+   },
+   "constraints": [
+    "D < 0"
+   ],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Résoudre dans $\\mathbb{C}$ l'équation $z^2 + ([[p]])z + [[q]] = 0$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Calculer le discriminant $\\Delta$.",
+     "answer": "D",
+     "tolerance": 0.001
+    },
+    {
+     "id": "q2",
+     "kind": "complex",
+     "prompt": "Donner la solution de partie imaginaire positive.",
+     "answer": "(-p + j*sqrt(-D))/2",
+     "tolerance": 0.01
+    }
+   ],
+   "hint": "Si Δ < 0, les solutions sont (−b ± j√(−Δ)) / 2a.",
+   "method": "Δ = b² − 4ac. Si Δ < 0 : z = (−b ± j√(−Δ)) / (2a), deux solutions conjuguées.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\Delta = ([[p]])^2 - 4 \\times [[q]] =$ [[=D]] < 0."
+    },
+    {
+     "type": "text",
+     "text": "$\\sqrt{-\\Delta} \\approx$ [[=sqrt(-D):4]], donc $z = \\dfrac{-([[p]]) \\pm j\\sqrt{-\\Delta}}{2}$ : solutions [[=(-p+j*sqrt(-D))/2:3]] et [[=(-p-j*sqrt(-D))/2:3]]."
+    }
+   ]
+  },
+  {
+   "id": "X-NC-02-b",
+   "notions": [
+    "M-NC-02"
+   ],
+   "title": "Racines conjuguées",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "r": {
+     "min": -4,
+     "max": 4,
+     "step": 1
+    },
+    "s": {
+     "min": 1,
+     "max": 5,
+     "step": 1
+    }
+   },
+   "vars": {
+    "p": "-2*r",
+    "q": "r^2 + s^2"
+   },
+   "statement": [
+    {
+     "type": "text",
+     "text": "L'équation $z^2 + ([[=p]])z + [[=q]] = 0$ a pour solution $z_1 = [[r]] + [[s]]j$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "complex",
+     "prompt": "Donner l'autre solution $z_2$.",
+     "answer": "r - j*s",
+     "tolerance": 0.001
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Le discriminant de cette équation est :",
+     "choices": [
+      "négatif",
+      "nul",
+      "positif"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Une équation à coefficients réels qui a une solution complexe non réelle a aussi sa conjuguée pour solution.",
+   "method": "Les deux solutions sont conjuguées : z₂ = conj(z₁).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$z_2 = \\overline{z_1} =$ [[=r-j*s:3]]. Les solutions ne sont pas réelles, donc $\\Delta < 0$ (ici $\\Delta =$ [[=p^2-4*q]])."
+    }
+   ]
+  },
+  {
+   "id": "X-NC-04-a",
+   "notions": [
+    "M-NC-04"
+   ],
+   "title": "Module et argument",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "a": {
+     "values": [
+      -9,
+      -8,
+      -7,
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ]
+    },
+    "b": {
+     "values": [
+      -9,
+      -8,
+      -7,
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ]
+    }
+   },
+   "vars": {
+    "z": "a + j*b"
+   },
+   "statement": [
+    {
+     "type": "text",
+     "text": "Soit $z = [[a]] + j([[b]])$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Calculer le module $|z|$.",
+     "answer": "abs(z)",
+     "tolerance": 0.01
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Calculer un argument de $z$ en degrés, entre −180° et 180°.",
+     "answer": "deg(arg(z))",
+     "unit": "°",
+     "tolerance": 0.01
+    }
+   ],
+   "hint": "Place le point (a ; b) pour repérer le quadrant avant de calculer l'angle.",
+   "method": "|z| = √(a² + b²) ; cos θ = a/|z| et sin θ = b/|z|.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$|z| = \\sqrt{([[a]])^2 + ([[b]])^2} =$ [[=abs(z):4]]."
+    },
+    {
+     "type": "text",
+     "text": "Le point est dans le quadrant donné par les signes de $a$ et $b$ ; on trouve $\\theta \\approx$ [[=deg(arg(z)):4]]°."
+    }
+   ]
+  },
+  {
+   "id": "X-NC-04-b",
+   "notions": [
+    "M-NC-04"
+   ],
+   "title": "De la forme exponentielle à la forme algébrique",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "r": {
+     "min": 2,
+     "max": 12,
+     "step": 1
+    },
+    "th": {
+     "values": [
+      30,
+      45,
+      60,
+      120,
+      135,
+      150,
+      -30,
+      -45,
+      -60,
+      -120,
+      -135,
+      -150
+     ]
+    }
+   },
+   "vars": {
+    "z": "r*exp(j*rad(th))"
+   },
+   "statement": [
+    {
+     "type": "text",
+     "text": "Soit $z = [[r]]\\,e^{j\\,\\theta}$ avec $\\theta = [[th]]°$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "complex",
+     "prompt": "Écrire $z$ sous forme algébrique (3 chiffres significatifs).",
+     "answer": "z",
+     "tolerance": 0.01
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Calculer le module de $z^2$.",
+     "answer": "r^2",
+     "tolerance": 0.001
+    }
+   ],
+   "hint": "z = r(cos θ + j sin θ).",
+   "method": "Partie réelle r·cos θ, partie imaginaire r·sin θ. Le module d'un produit est le produit des modules.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$z = [[r]](\\cos\\theta + j\\sin\\theta) \\approx$ [[=z:3]]."
+    },
+    {
+     "type": "text",
+     "text": "$|z^2| = |z|^2 =$ [[=r^2]]."
+    }
+   ]
+  },
+  {
+   "id": "X-EL-10-a",
+   "notions": [
+    "S-EL-10"
+   ],
+   "title": "Circuit RLC série : impédance, déphasage, intensité",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "R": {
+     "values": [
+      10,
+      22,
+      33,
+      47,
+      68,
+      100
+     ],
+     "unit": "Ω"
+    },
+    "L": {
+     "values": [
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.3
+     ],
+     "unit": "H"
+    },
+    "C": {
+     "values": [
+      1e-05,
+      2.2e-05,
+      4.7e-05,
+      0.0001,
+      0.00022
+     ],
+     "unit": "F"
+    },
+    "U": {
+     "values": [
+      24,
+      48,
+      110,
+      230
+     ],
+     "unit": "V"
+    },
+    "f": {
+     "values": [
+      50,
+      60
+     ],
+     "unit": "Hz"
+    }
+   },
+   "vars": {
+    "w": "2*pi*f",
+    "XL": "L*w",
+    "XC": "1/(C*w)",
+    "Z": "sqrt(R^2 + (XL - XC)^2)",
+    "phi": "deg(atan((XL - XC)/R))",
+    "I": "U/Z"
+   },
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un circuit RLC série comprend $R =$ [[R]], $L =$ [[L]] et $C =$ [[C]]. Il est alimenté par une tension sinusoïdale de valeur efficace $U =$ [[U]] et de fréquence $f =$ [[f]]."
+    },
+    {
+     "type": "circuit",
+     "kind": "series",
+     "source": "ac",
+     "parts": [
+      {
+       "type": "R",
+       "label": "R"
+      },
+      {
+       "type": "L",
+       "label": "L"
+      },
+      {
+       "type": "C",
+       "label": "C"
+      }
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Calculer l'impédance $Z$ du circuit.",
+     "answer": "Z",
+     "unit": "Ω",
+     "tolerance": 0.02
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Calculer le déphasage $\\varphi$ de $u$ par rapport à $i$.",
+     "answer": "phi",
+     "unit": "°",
+     "tolerance": 0.02
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Calculer l'intensité efficace $I$.",
+     "answer": "I",
+     "unit": "A",
+     "tolerance": 0.02
+    }
+   ],
+   "hint": "Commence par ω = 2πf, puis calcule Lω et 1/(Cω) séparément.",
+   "method": "Z = √(R² + (Lω − 1/(Cω))²) ; tan φ = (Lω − 1/(Cω))/R ; I = U/Z.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\omega = 2\\pi f =$ [[=w:4|rad/s]]."
+    },
+    {
+     "type": "text",
+     "text": "$L\\omega =$ [[=XL:3|Ω]] et $\\dfrac{1}{C\\omega} =$ [[=XC:3|Ω]]."
+    },
+    {
+     "type": "text",
+     "text": "$Z =$ [[=Z:3|Ω]] ; $\\varphi =$ [[=phi:3]]° ; $I = U/Z =$ [[=I:3|A]]."
+    }
+   ]
+  },
+  {
+   "id": "X-EL-10-b",
+   "notions": [
+    "S-EL-10"
+   ],
+   "title": "Circuit RL série : nature et impédance complexe",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "R": {
+     "values": [
+      10,
+      15,
+      20,
+      30,
+      40,
+      50
+     ],
+     "unit": "Ω"
+    },
+    "L": {
+     "values": [
+      0.02,
+      0.05,
+      0.08,
+      0.1,
+      0.12
+     ],
+     "unit": "H"
+    },
+    "f": {
+     "values": [
+      50
+     ]
+    }
+   },
+   "vars": {
+    "w": "2*pi*f",
+    "Zc": "R + j*L*w"
+   },
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une bobine réelle est modélisée par une résistance $R =$ [[R]] en série avec une inductance $L =$ [[L]]. Fréquence : $f = 50$ Hz."
+    },
+    {
+     "type": "circuit",
+     "kind": "series",
+     "source": "ac",
+     "parts": [
+      {
+       "type": "R",
+       "label": "R"
+      },
+      {
+       "type": "L",
+       "label": "L"
+      }
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "complex",
+     "prompt": "Écrire l'impédance complexe $\\underline{Z}$ (forme algébrique, en ohms).",
+     "answer": "Zc",
+     "tolerance": 0.02
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Calculer son module $Z$.",
+     "answer": "abs(Zc)",
+     "unit": "Ω",
+     "tolerance": 0.02
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Le courant est, par rapport à la tension :",
+     "choices": [
+      "en retard",
+      "en avance",
+      "en phase"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "L'impédance d'une bobine est jLω.",
+   "method": "Z = R + jLω ; Z = √(R² + (Lω)²) ; une bobine fait retarder le courant.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$L\\omega =$ [[=L*w:3|Ω]], donc $\\underline{Z} =$ [[=Zc:3]] Ω."
+    },
+    {
+     "type": "text",
+     "text": "$Z = \\sqrt{R^2 + (L\\omega)^2} =$ [[=abs(Zc):3|Ω]]. Le circuit est inductif : le courant est en retard sur la tension."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,13 @@
+.dart_tool/
+build/
+.packages
+pubspec.lock
+*.log
+app/android/
+app/windows/
+app/ios/
+app/linux/
+app/macos/
+app/web/
+dist/
+__pycache__/

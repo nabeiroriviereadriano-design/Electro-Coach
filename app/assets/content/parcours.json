@@ -1,0 +1,24 @@
+{
+  "note": "Répartition par défaut des notions sans année officielle (physique-chimie, compétences transversales). Proposition à valider : modifiable dans Réglages > Répartition.",
+  "defaults": {
+    "Compétences mathématiques transversales": 1,
+    "Démarche expérimentale": 1,
+    "Mesures et incertitudes": 1,
+    "Formes d'énergie": 1,
+    "Sources d'énergie": 1,
+    "Modes de transfert d'énergie": 1,
+    "Énergie et électricité": 1,
+    "Énergie et électricité / Charges polluantes": 2,
+    "Énergie et électricité / Modulation de l'énergie électrique": 2,
+    "Énergie et électricité / Transformateurs": 2,
+    "Énergie et électricité / Association de convertisseurs": 2,
+    "Énergie et électricité / Lignes de distribution": 2,
+    "Énergie et électricité / Qualité de l'énergie électrique": 2,
+    "Énergie et mécanique": 1,
+    "Énergie et chimie": 1,
+    "Énergie et rayonnement": 1,
+    "Comportement dynamique des systèmes linéaires": 2,
+    "Convertisseurs électromécaniques": 2,
+    "Maîtrise des procédés": 2
+  }
+}

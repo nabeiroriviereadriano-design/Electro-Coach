@@ -4,6 +4,7 @@
   "packs/maths-calcul-numeration.json",
   "packs/maths-nombres-complexes.json",
   "packs/maths-vectoriel-fonctions.json",
-  "packs/maths-fourier-integrales-equadiff.json"
+  "packs/maths-fourier-integrales-equadiff.json",
+  "packs/maths-probabilites-algorithmique.json"
  ]
 }

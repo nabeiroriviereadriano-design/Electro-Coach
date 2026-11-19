@@ -1,0 +1,2487 @@
+{
+ "id": "maths-probabilites-algorithmique",
+ "courses": [
+  {
+   "id": "C-P1-01",
+   "notions": [
+    "M-P1-01"
+   ],
+   "title": "Probabilités conditionnelles",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "P_A(B) = \\frac{P(A \\cap B)}{P(A)} \\qquad P(A \\cap B) = P(A) \\times P_A(B)",
+     "title": "Définition (P(A) ≠ 0)"
+    },
+    {
+     "type": "text",
+     "text": "$P_A(B)$ se lit « probabilité de $B$ sachant $A$ ». Sur un **arbre pondéré**, on multiplie les probabilités le long d'un chemin, et on additionne les chemins qui mènent au même événement."
+    },
+    {
+     "type": "formula",
+     "tex": "P(B) = P(A)P_A(B) + P(\\overline{A})P_{\\overline{A}}(B)",
+     "title": "Avec une partition {A ; Ā}"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : 60 % des moteurs viennent du fournisseur A (2 % de défauts) et 40 % de B (5 % de défauts). $P(D) = 0{,}6 \\times 0{,}02 + 0{,}4 \\times 0{,}05 = 0{,}032$."
+    },
+    {
+     "type": "method",
+     "text": "1. Construire l'arbre (ou le tableau à double entrée).\n2. Repérer les chemins utiles.\n3. Pour une probabilité « inverse » $P_D(A)$, diviser $P(A \\cap D)$ par $P(D)$.",
+     "title": "Méthode"
+    },
+    {
+     "type": "tip",
+     "text": "Un arbre correctement construit vaut démonstration.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-P1-02",
+   "notions": [
+    "M-P1-02"
+   ],
+   "title": "Indépendance de deux événements",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "A \\text{ et } B \\text{ indépendants} \\iff P(A \\cap B) = P(A) \\times P(B)",
+     "title": "Définition"
+    },
+    {
+     "type": "text",
+     "text": "Si $P(A) \\neq 0$, cela revient à $P_A(B) = P(B)$ : savoir que $A$ est réalisé ne change pas la probabilité de $B$."
+    },
+    {
+     "type": "text",
+     "text": "Exemple : deux disjoncteurs fonctionnent indépendamment, de probabilités de panne 0,01 et 0,02 dans l'année. La probabilité que les deux tombent en panne vaut $0{,}01 \\times 0{,}02 = 0{,}0002$."
+    },
+    {
+     "type": "warning",
+     "text": "Ne pas confondre **indépendants** et **incompatibles** ($A \\cap B = \\emptyset$) : deux événements incompatibles de probabilités non nulles ne sont jamais indépendants.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-P1-03",
+   "notions": [
+    "M-P1-03"
+   ],
+   "title": "Loi binomiale",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Un **schéma de Bernoulli** répète $n$ fois, de façon **indépendante**, une épreuve à deux issues : succès (probabilité $p$) ou échec. Le nombre $X$ de succès suit la **loi binomiale** $\\mathcal{B}(n, p)$."
+    },
+    {
+     "type": "formula",
+     "tex": "P(X = k) = \\binom{n}{k}p^k(1-p)^{n-k}",
+     "title": "Probabilités (calculées à la calculatrice)"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : un lot de 20 fusibles, chacun défectueux avec la probabilité 0,05 indépendamment des autres : le nombre de défectueux suit $\\mathcal{B}(20\\,;0{,}05)$."
+    },
+    {
+     "type": "method",
+     "text": "Pour justifier une loi binomiale : identifier l'épreuve, le succès et sa probabilité $p$, le nombre $n$ de répétitions et l'indépendance.",
+     "title": "Justifier"
+    },
+    {
+     "type": "tip",
+     "text": "Calculatrice : « binomFdp » pour $P(X = k)$, « binomFRép » pour $P(X \\leqslant k)$.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-P1-04",
+   "notions": [
+    "M-P1-04"
+   ],
+   "title": "Espérance, variance et écart type de la loi binomiale",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "E(X) = np \\qquad V(X) = np(1-p) \\qquad \\sigma(X) = \\sqrt{np(1-p)}",
+     "title": "Paramètres (admis)"
+    },
+    {
+     "type": "text",
+     "text": "L'espérance est la valeur moyenne obtenue sur un très grand nombre de répétitions de l'expérience ; l'écart type mesure la dispersion autour de cette moyenne."
+    },
+    {
+     "type": "text",
+     "text": "Exemple : $\\mathcal{B}(200\\,;0{,}03)$ : en moyenne 6 pièces défectueuses par lot, écart type $\\sqrt{5{,}82} \\approx 2{,}4$."
+    },
+    {
+     "type": "tip",
+     "text": "Une simulation (tableur, Python) permet de vérifier ces formules expérimentalement.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-P1-05",
+   "notions": [
+    "M-P1-05"
+   ],
+   "title": "Loi uniforme sur un intervalle",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Une variable $X$ suit la loi **uniforme** sur $[a\\,;b]$ si sa densité vaut $\\dfrac{1}{b - a}$ sur $[a\\,;b]$ et 0 ailleurs : toutes les valeurs de l'intervalle sont « également probables »."
+    },
+    {
+     "type": "formula",
+     "tex": "P(c \\leqslant X \\leqslant d) = \\frac{d - c}{b - a} \\quad (a \\leqslant c \\leqslant d \\leqslant b)",
+     "title": "Probabilité"
+    },
+    {
+     "type": "formula",
+     "tex": "E(X) = \\frac{a + b}{2} \\qquad V(X) = \\frac{(b - a)^2}{12}",
+     "title": "Paramètres"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : l'instant d'arrivée d'un technicien est uniforme entre 8 h et 9 h. La probabilité qu'il arrive entre 8 h 15 et 8 h 30 vaut $15/60 = 0{,}25$."
+    },
+    {
+     "type": "tip",
+     "text": "En Python, `random.uniform(a, b)` simule cette loi.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-P1-06",
+   "notions": [
+    "M-P1-06"
+   ],
+   "title": "Loi normale",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "La loi normale $\\mathcal{N}(\\mu, \\sigma)$ modélise de nombreuses grandeurs mesurées (cotes usinées, valeurs de résistances…). Sa courbe en cloche est symétrique autour de $\\mu$."
+    },
+    {
+     "type": "plot",
+     "var": "x",
+     "from": -4,
+     "to": 4,
+     "title": "",
+     "xLabel": "",
+     "yLabel": "",
+     "samples": 240,
+     "curves": [
+      {
+       "expr": "exp(-(x^2)/2)/sqrt(2*pi)",
+       "label": "densité de N(0 ; 1)"
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Intervalle",
+       "Probabilité"
+      ],
+      [
+       "$[\\mu - \\sigma\\,;\\mu + \\sigma]$",
+       "$\\approx 0{,}683$"
+      ],
+      [
+       "$[\\mu - 2\\sigma\\,;\\mu + 2\\sigma]$",
+       "$\\approx 0{,}954$"
+      ],
+      [
+       "$[\\mu - 3\\sigma\\,;\\mu + 3\\sigma]$",
+       "$\\approx 0{,}997$"
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "text": "Les autres probabilités se calculent à la calculatrice (« normalFRép ») ou au tableur."
+    },
+    {
+     "type": "text",
+     "text": "Exemple : des résistances de 100 Ω ont des valeurs de loi $\\mathcal{N}(100\\,;2)$ : environ 95 % sont entre 96 et 104 Ω."
+    },
+    {
+     "type": "tip",
+     "text": "Utilisation : maîtrise statistique des procédés, tolérances de fabrication.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-P1-07",
+   "notions": [
+    "M-P1-07"
+   ],
+   "title": "Combinaisons de variables aléatoires",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Ce paragraphe relève peut-être du module Probabilités 2 : son appartenance au programme du BTS Électrotechnique reste **à vérifier**."
+    },
+    {
+     "type": "formula",
+     "tex": "E(aX + b) = aE(X) + b \\qquad V(aX + b) = a^2V(X)",
+     "title": "Transformation affine"
+    },
+    {
+     "type": "formula",
+     "tex": "E(X \\pm Y) = E(X) \\pm E(Y) \\qquad V(X \\pm Y) = V(X) + V(Y) \\;\\text{(X, Y indépendantes)}",
+     "title": "Somme et différence"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : deux résistances en série, indépendantes, d'écarts types 2 Ω et 1,5 Ω : écart type de la somme $\\sqrt{4 + 2{,}25} = 2{,}5$ Ω."
+    },
+    {
+     "type": "warning",
+     "text": "Les variances s'ajoutent, même pour une différence ; les écarts types, jamais.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-P1-08",
+   "notions": [
+    "M-P1-08"
+   ],
+   "title": "Théorème de la limite centrée",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Ce paragraphe relève peut-être du module Probabilités 2 : son appartenance au programme reste **à vérifier**."
+    },
+    {
+     "type": "text",
+     "text": "Si $X_1, \\dots, X_n$ sont indépendantes et de même loi (espérance $\\mu$, écart type $\\sigma$), alors pour $n$ grand :"
+    },
+    {
+     "type": "formula",
+     "tex": "\\overline{X} = \\frac{X_1 + \\dots + X_n}{n} \\;\\approx\\; \\mathcal{N}\\!\\left(\\mu,\\ \\frac{\\sigma}{\\sqrt n}\\right)",
+     "title": "Théorème (admis)"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : la moyenne de 25 mesures d'écart type 0,5 V suit approximativement une loi normale d'écart type $0{,}5/5 = 0{,}1$ V."
+    },
+    {
+     "type": "tip",
+     "text": "Moyenner plusieurs mesures réduit la dispersion d'un facteur $\\sqrt{n}$.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-AL-01",
+   "notions": [
+    "M-AL-01"
+   ],
+   "title": "Variables, types et affectation",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Un programme manipule des **variables** qui ont un **type** : entier (`int`), réel (`float`), chaîne de caractères (`str`), booléen (`bool`), liste (`list`)."
+    },
+    {
+     "type": "text",
+     "text": "En Python :\n- `R = 220`  (entier)\n- `U = 230.0`  (réel)\n- `nom = \"moteur\"`  (chaîne)\n- `mesures = [12.1, 12.3, 11.9]`  (liste)"
+    },
+    {
+     "type": "text",
+     "text": "L'**affectation** `x = x + 1` calcule d'abord le membre de droite avec l'ancienne valeur, puis range le résultat dans `x`."
+    },
+    {
+     "type": "method",
+     "text": "Pour suivre un algorithme, faire un **tableau d'états** : une colonne par variable, une ligne par instruction exécutée.",
+     "title": "Méthode : tableau d'états"
+    },
+    {
+     "type": "warning",
+     "text": "`5 / 2` donne `2.5` mais `5 // 2` donne `2` (division entière) en Python.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-AL-02",
+   "notions": [
+    "M-AL-02"
+   ],
+   "title": "Conditions et boucles",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "**Instruction conditionnelle** :\n- `if I > Imax:`\n-     `print(\"surintensité\")`\n- `else:`\n-     `print(\"normal\")`"
+    },
+    {
+     "type": "text",
+     "text": "**Boucle bornée** (nombre de tours connu) :\n- `for k in range(10):`\n-     `s = s + k`"
+    },
+    {
+     "type": "text",
+     "text": "**Boucle non bornée** (on répète tant qu'une condition est vraie) :\n- `while T > 40:`\n-     `T = T - 0.5`"
+    },
+    {
+     "type": "method",
+     "text": "Choisir `for` quand on connaît le nombre de répétitions, `while` quand on attend qu'une condition soit remplie.",
+     "title": "Choisir sa boucle"
+    },
+    {
+     "type": "warning",
+     "text": "Une boucle `while` dont la condition ne devient jamais fausse ne s'arrête pas : vérifier qu'une variable de la condition change à chaque tour.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-AL-03",
+   "notions": [
+    "M-AL-03"
+   ],
+   "title": "Fonctions",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Une **fonction** regroupe des instructions réutilisables. Elle reçoit des **arguments** et **renvoie** une valeur :"
+    },
+    {
+     "type": "text",
+     "text": "- `def puissance(U, I, phi):`\n-     `return U * I * cos(phi)`"
+    },
+    {
+     "type": "text",
+     "text": "Appel : `P = puissance(230, 10, 0.5)`."
+    },
+    {
+     "type": "method",
+     "text": "Écrire d'abord la **spécification** : ce que la fonction reçoit, ce qu'elle renvoie, puis tester sur un cas dont on connaît le résultat.",
+     "title": "Bien écrire une fonction"
+    },
+    {
+     "type": "tip",
+     "text": "La récursivité (fonction qui s'appelle elle-même) n'est pas exigible.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-AL-04",
+   "notions": [
+    "M-AL-04"
+   ],
+   "title": "Environnement, bibliothèques et vérification",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "On programme dans un **environnement** (éditeur + console Python, calculatrice programmable). Les **bibliothèques** apportent des fonctions toutes prêtes :"
+    },
+    {
+     "type": "text",
+     "text": "- `math` : `sqrt`, `cos`, `pi`…\n- `random` : tirages aléatoires\n- `matplotlib.pyplot` : tracer des courbes (`plot`, `show`)\n- `numpy` : calcul sur des tableaux de nombres"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : tracer $u(t) = 325\\sin(100\\pi t)$ :\n- `import numpy as np, matplotlib.pyplot as plt`\n- `t = np.linspace(0, 0.04, 400)`\n- `plt.plot(t, 325 * np.sin(100 * np.pi * t)); plt.show()`"
+    },
+    {
+     "type": "method",
+     "text": "Vérifier systématiquement : tester des cas simples, afficher les valeurs intermédiaires, comparer à un calcul à la main.",
+     "title": "Rigueur"
+    },
+    {
+     "type": "tip",
+     "text": "Documenter un programme : un commentaire `#` par étape importante.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-AL-05",
+   "notions": [
+    "M-AL-05"
+   ],
+   "title": "Bases de données et requêtes SQL",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Une **base de données** range les informations dans des **tables** (lignes = enregistrements, colonnes = attributs). Une **clé primaire** identifie chaque ligne ; une **clé étrangère** fait référence à la clé d'une autre table."
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "id",
+       "moteur",
+       "puissance_kW",
+       "atelier_id"
+      ],
+      [
+       "1",
+       "M1",
+       "5.5",
+       "2"
+      ],
+      [
+       "2",
+       "M2",
+       "11",
+       "1"
+      ],
+      [
+       "3",
+       "M3",
+       "2.2",
+       "2"
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "text": "Requêtes de base :\n- `SELECT moteur FROM moteurs WHERE puissance_kW > 5 ORDER BY puissance_kW;`\n- `SELECT * FROM moteurs WHERE atelier_id = 2 AND puissance_kW < 10;`"
+    },
+    {
+     "type": "text",
+     "text": "**Jointure** : `SELECT moteurs.moteur, ateliers.nom FROM moteurs JOIN ateliers ON moteurs.atelier_id = ateliers.id;`"
+    },
+    {
+     "type": "tip",
+     "text": "On peut créer une table en important un fichier de tableur (.csv).",
+     "title": ""
+    },
+    {
+     "type": "warning",
+     "text": "On travaille sur des bases existantes : la création de bases et l'algèbre relationnelle sont hors programme.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-TR-01",
+   "notions": [
+    "M-TR-01"
+   ],
+   "title": "Démarche mathématique",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Les compétences évaluées en mathématiques (épreuve E3) sont :"
+    },
+    {
+     "type": "text",
+     "text": "- **S'informer** : extraire les données utiles d'un énoncé, d'un tableau, d'un graphique ;\n- **Chercher** : choisir une stratégie, faire des essais, conjecturer ;\n- **Modéliser** : traduire une situation par une fonction, une équation, une loi de probabilité ;\n- **Raisonner, argumenter** ;\n- **Calculer, utiliser un algorithme ou un logiciel** ;\n- **Communiquer** : rédiger une réponse claire, avec unités."
+    },
+    {
+     "type": "method",
+     "text": "1. Relire la question et repérer ce qui est demandé.\n2. Noter les données et leurs unités.\n3. Choisir l'outil (formule, logiciel).\n4. Calculer.\n5. **Analyser la pertinence** : ordre de grandeur, signe, unité, cohérence avec la situation.",
+     "title": "Méthode : résoudre un problème"
+    },
+    {
+     "type": "warning",
+     "text": "Un résultat sans unité ou absurde physiquement (résistance négative, probabilité 1,3) doit faire reprendre le calcul.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-TR-02",
+   "notions": [
+    "M-TR-02"
+   ],
+   "title": "Outils numériques",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Au BTS, au moins un exercice de chaque situation d'évaluation se fait avec un **logiciel** ou la **calculatrice** :"
+    },
+    {
+     "type": "text",
+     "text": "- calculatrice en mode examen (graphique, calcul complexe, lois de probabilité) ;\n- **calcul formel** (dérivées, primitives, équations différentielles) : GeoGebra, Xcas ;\n- **tableur** : suites de valeurs, statistiques, méthode d'Euler ;\n- **Python** : algorithmes, simulations, tracés."
+    },
+    {
+     "type": "tip",
+     "text": "Le formulaire officiel a été supprimé : les formules utiles peuvent figurer dans le sujet.",
+     "title": ""
+    },
+    {
+     "type": "method",
+     "text": "Utiliser l'outil pour **vérifier** un calcul fait à la main, et l'inverse : une valeur obtenue au logiciel doit être cohérente avec un ordre de grandeur estimé.",
+     "title": "Méthode"
+    }
+   ]
+  }
+ ],
+ "examples": [],
+ "exercises": [
+  {
+   "id": "X-P1-01-a",
+   "notions": [
+    "M-P1-01"
+   ],
+   "title": "Arbre pondéré : deux fournisseurs",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "pA": {
+     "unit": "",
+     "values": [
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7
+     ]
+    },
+    "dA": {
+     "unit": "",
+     "values": [
+      0.01,
+      0.02,
+      0.03
+     ]
+    },
+    "dB": {
+     "unit": "",
+     "values": [
+      0.04,
+      0.05,
+      0.06,
+      0.08
+     ]
+    }
+   },
+   "vars": {
+    "pD": "pA*dA + (1-pA)*dB"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un stock de contacteurs vient pour [[=100*pA]] % du fournisseur A et pour le reste de B. Les taux de défaut sont [[=100*dA]] % chez A et [[=100*dB]] % chez B."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Probabilité qu'un contacteur soit défectueux ?",
+     "answer": "pD",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Sachant qu'il est défectueux, probabilité qu'il vienne de A ?",
+     "answer": "pA*dA/pD",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "P(D) = P(A)P_A(D) + P(B)P_B(D).",
+   "method": "Arbre pondéré puis P_D(A) = P(A ∩ D)/P(D).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$P(D) = [[pA]] \\times [[dA]] + [[=1-pA]] \\times [[dB]] =$ [[=pD:3]] ; $P_D(A) = \\dfrac{[[=pA*dA:3]]}{[[=pD:3]]} \\approx$ [[=pA*dA/pD:3]]."
+    }
+   ]
+  },
+  {
+   "id": "X-P1-01-b",
+   "notions": [
+    "M-P1-01"
+   ],
+   "title": "Tableau à double entrée",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "a": {
+     "unit": "",
+     "values": [
+      30,
+      40,
+      50
+     ]
+    },
+    "b": {
+     "unit": "",
+     "values": [
+      10,
+      20
+     ]
+    },
+    "c": {
+     "unit": "",
+     "values": [
+      15,
+      25,
+      35
+     ]
+    },
+    "d": {
+     "unit": "",
+     "values": [
+      5,
+      10,
+      15
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Sur un parc de moteurs : [[a]] asynchrones sans défaut, [[b]] asynchrones en défaut, [[c]] à courant continu sans défaut, [[d]] à courant continu en défaut. On choisit un moteur au hasard."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Probabilité qu'il soit en défaut ?",
+     "answer": "(b+d)/(a+b+c+d)",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Probabilité qu'il soit en défaut sachant qu'il est asynchrone ?",
+     "answer": "b/(a+b)",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "P_A(D) = effectif(A et D)/effectif(A).",
+   "method": "Lire les effectifs, diviser par l'effectif de référence.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$P(D) = \\dfrac{[[=b+d]]}{[[=a+b+c+d]]} \\approx$ [[=(b+d)/(a+b+c+d):3]] ; $P_{\\text{asynchrone}}(D) = \\dfrac{[[b]]}{[[=a+b]]} \\approx$ [[=b/(a+b):3]]."
+    }
+   ]
+  },
+  {
+   "id": "X-P1-02-a",
+   "notions": [
+    "M-P1-02"
+   ],
+   "title": "Pannes indépendantes",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "p": {
+     "unit": "",
+     "values": [
+      0.01,
+      0.02,
+      0.05,
+      0.1
+     ]
+    },
+    "q": {
+     "unit": "",
+     "values": [
+      0.02,
+      0.03,
+      0.05
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Deux pompes tombent en panne indépendamment, avec les probabilités [[p]] et [[q]] sur l'année."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Probabilité que les deux tombent en panne ?",
+     "answer": "p*q",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Probabilité qu'au moins une tombe en panne ?",
+     "answer": "1 - (1-p)*(1-q)",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Événement contraire de « au moins une » : « aucune ».",
+   "method": "Indépendance : P(A ∩ B) = P(A)P(B).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$P(A \\cap B) = [[p]] \\times [[q]] =$ [[=p*q:3]] ; au moins une : $1 - [[=1-p]] \\times [[=1-q]] \\approx$ [[=1-(1-p)*(1-q):3]]."
+    }
+   ]
+  },
+  {
+   "id": "X-P1-02-b",
+   "notions": [
+    "M-P1-02"
+   ],
+   "title": "Tester l'indépendance",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "pa": {
+     "unit": "",
+     "values": [
+      0.2,
+      0.4,
+      0.5
+     ]
+    },
+    "pb": {
+     "unit": "",
+     "values": [
+      0.3,
+      0.5,
+      0.6
+     ]
+    },
+    "k": {
+     "unit": "",
+     "values": [
+      0.8,
+      1,
+      1.25
+     ]
+    }
+   },
+   "vars": {
+    "pab": "pa*pb*k"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On a $P(A) = [[pa]]$, $P(B) = [[pb]]$ et $P(A \\cap B) = [[=pab:3]]$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "$P(A) \\times P(B)$ ?",
+     "answer": "pa*pb",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "$A$ et $B$ sont-ils indépendants ?",
+     "choices": [
+      "Oui",
+      "Non"
+     ],
+     "correct": 0,
+     "correctExpr": "1 - (eq(k, 1))"
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "$P_A(B)$ ?",
+     "answer": "pab/pa",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Compare P(A ∩ B) au produit P(A)P(B).",
+   "method": "Indépendance ⇔ P(A ∩ B) = P(A)P(B).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$P(A)P(B) =$ [[=pa*pb:3]] et $P(A \\cap B) =$ [[=pab:3]] ; $P_A(B) =$ [[=pab/pa:3]]."
+    }
+   ]
+  },
+  {
+   "id": "X-P1-03-a",
+   "notions": [
+    "M-P1-03"
+   ],
+   "title": "Fusibles défectueux",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "n": {
+     "unit": "",
+     "values": [
+      10,
+      15,
+      20
+     ]
+    },
+    "p": {
+     "unit": "",
+     "values": [
+      0.02,
+      0.05,
+      0.1
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un lot contient [[n]] fusibles ; chacun est défectueux avec la probabilité [[p]], indépendamment des autres. $X$ est le nombre de fusibles défectueux."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "$X$ suit la loi :",
+     "choices": [
+      "$\\mathcal{B}([[n]]\\,;[[p]])$",
+      "$\\mathcal{N}([[n]]\\,;[[p]])$",
+      "$\\mathcal{B}([[p]]\\,;[[n]])$"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "$P(X = 0)$ ?",
+     "answer": "(1-p)^n",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "$P(X \\geqslant 1)$ ?",
+     "answer": "1 - (1-p)^n",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "P(X = 0) = (1 − p)ⁿ.",
+   "method": "Schéma de Bernoulli : n épreuves indépendantes de même probabilité de succès p.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$X \\sim \\mathcal{B}([[n]]\\,;[[p]])$ ; $P(X = 0) = [[=1-p]]^{[[n]]} \\approx$ [[=(1-p)^n:3]] ; $P(X \\geqslant 1) \\approx$ [[=1-(1-p)^n:3]]."
+    }
+   ]
+  },
+  {
+   "id": "X-P1-03-b",
+   "notions": [
+    "M-P1-03"
+   ],
+   "title": "Probabilité binomiale",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "n": {
+     "unit": "",
+     "values": [
+      5,
+      8,
+      10
+     ]
+    },
+    "p": {
+     "unit": "",
+     "values": [
+      0.1,
+      0.2,
+      0.3
+     ]
+    },
+    "k": {
+     "unit": "",
+     "values": [
+      1,
+      2
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "$X \\sim \\mathcal{B}([[n]]\\,;[[p]])$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "$P(X = [[k]])$ ?",
+     "answer": "C(n, k)*p^k*(1-p)^(n-k)",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "P(X = k) = C(n, k) pᵏ (1 − p)ⁿ⁻ᵏ.",
+   "method": "Calculatrice : binomFdp(n, p, k).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$P(X = [[k]]) = \\binom{[[n]]}{[[k]]}([[p]])^{[[k]]}([[=1-p]])^{[[=n-k]]} \\approx$ [[=C(n,k)*p^k*(1-p)^(n-k):3]]."
+    }
+   ]
+  },
+  {
+   "id": "X-P1-04-a",
+   "notions": [
+    "M-P1-04"
+   ],
+   "title": "Espérance et écart type",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "n": {
+     "unit": "",
+     "values": [
+      50,
+      100,
+      200,
+      500
+     ]
+    },
+    "p": {
+     "unit": "",
+     "values": [
+      0.02,
+      0.05,
+      0.1
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Le nombre de pièces défectueuses par lot suit $\\mathcal{B}([[n]]\\,;[[p]])$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Espérance ?",
+     "answer": "n*p",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Écart type ?",
+     "answer": "sqrt(n*p*(1-p))",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "E = np ; σ = √(np(1 − p)).",
+   "method": "Appliquer les formules de la loi binomiale.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$E(X) =$ [[=n*p:3]] ; $\\sigma(X) = \\sqrt{[[=n*p*(1-p):3]]} \\approx$ [[=sqrt(n*p*(1-p)):3]]."
+    }
+   ]
+  },
+  {
+   "id": "X-P1-04-b",
+   "notions": [
+    "M-P1-04"
+   ],
+   "title": "Interpréter l'espérance",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "p": {
+     "unit": "",
+     "values": [
+      0.1,
+      0.2,
+      0.25
+     ]
+    },
+    "n": {
+     "unit": "",
+     "values": [
+      20,
+      40,
+      100
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un technicien réussit un dépannage du premier coup avec la probabilité [[=1-p]]. Il intervient [[n]] fois par mois, indépendamment."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Nombre moyen d'interventions ratées du premier coup par mois ?",
+     "answer": "n*p",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Cette espérance représente :",
+     "choices": [
+      "la moyenne obtenue sur un grand nombre de mois",
+      "le nombre exact chaque mois",
+      "le nombre maximal d'échecs"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Échec : probabilité p.",
+   "method": "E = np.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$E = [[n]] \\times [[p]] =$ [[=n*p:3]] : valeur moyenne sur un grand nombre de mois."
+    }
+   ]
+  },
+  {
+   "id": "X-P1-05-a",
+   "notions": [
+    "M-P1-05"
+   ],
+   "title": "Temps d'attente uniforme",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "b": {
+     "unit": "",
+     "values": [
+      30,
+      45,
+      60
+     ]
+    },
+    "c": {
+     "unit": "",
+     "values": [
+      5,
+      10
+     ]
+    },
+    "d": {
+     "unit": "",
+     "values": [
+      20,
+      25
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Le délai d'intervention d'un dépanneur (en min) suit la loi uniforme sur $[0\\,;[[b]]]$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Probabilité que le délai soit entre [[c]] et [[d]] min ?",
+     "answer": "(d-c)/b",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Délai moyen (min) ?",
+     "answer": "b/2",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Écart type (min) ?",
+     "answer": "b/sqrt(12)",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "P(c ≤ X ≤ d) = (d − c)/(b − a).",
+   "method": "Loi uniforme : probabilité proportionnelle à la longueur ; E = (a + b)/2 ; V = (b − a)²/12.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$P = \\dfrac{[[d]] - [[c]]}{[[b]]} \\approx$ [[=(d-c)/b:3]] ; $E = [[=b/2]]$ min ; $\\sigma = \\dfrac{[[b]]}{\\sqrt{12}} \\approx$ [[=b/sqrt(12):3]] min."
+    }
+   ]
+  },
+  {
+   "id": "X-P1-05-b",
+   "notions": [
+    "M-P1-05"
+   ],
+   "title": "Simulation d'une loi uniforme",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "a": {
+     "unit": "",
+     "values": [
+      0,
+      2,
+      5
+     ]
+    },
+    "L": {
+     "unit": "",
+     "values": [
+      2,
+      4,
+      10
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "En Python, `x = random.uniform([[a]], [[=a+L]])` tire un nombre au hasard."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Espérance de la valeur tirée ?",
+     "answer": "a + L/2",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Probabilité que la valeur dépasse [[=a+L/2]] ?",
+     "answer": "0.5",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Le milieu de l'intervalle coupe la probabilité en deux.",
+   "method": "E = (a + b)/2 ; P(X > milieu) = 1/2.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$E = [[=a+L/2]]$ ; $P(X > [[=a+L/2]]) = 0{,}5$."
+    }
+   ]
+  },
+  {
+   "id": "X-P1-06-a",
+   "notions": [
+    "M-P1-06"
+   ],
+   "title": "Tolérance de résistances",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "mu": {
+     "unit": "",
+     "values": [
+      100,
+      220,
+      470,
+      1000
+     ]
+    },
+    "s": {
+     "unit": "",
+     "values": [
+      1,
+      2,
+      5,
+      10
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [
+    "s < mu/20"
+   ],
+   "statement": [
+    {
+     "type": "text",
+     "text": "La valeur d'une résistance suit $\\mathcal{N}([[mu]]\\,;[[s]])$ (en Ω)."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Borne basse de l'intervalle contenant environ 95 % des résistances (Ω) ?",
+     "answer": "mu - 2*s",
+     "unit": "Ω",
+     "tolerance": 0.001,
+     "sig": 6
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Probabilité qu'une résistance soit dans $[\\mu - 3\\sigma\\,;\\mu + 3\\sigma]$ ?",
+     "answer": "0.997",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    }
+   ],
+   "hint": "μ ± 2σ ≈ 95 % ; μ ± 3σ ≈ 99,7 %.",
+   "method": "Utiliser les trois intervalles de référence.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "95 % entre [[=mu-2*s]] Ω et [[=mu+2*s]] Ω ; 99,7 % entre [[=mu-3*s]] Ω et [[=mu+3*s]] Ω."
+    }
+   ]
+  },
+  {
+   "id": "X-P1-06-b",
+   "notions": [
+    "M-P1-06"
+   ],
+   "title": "Lecture d'une loi normale",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "mu": {
+     "unit": "",
+     "values": [
+      50,
+      60
+     ]
+    },
+    "s": {
+     "unit": "",
+     "values": [
+      2,
+      5
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un temps de cycle $T$ (s) suit $\\mathcal{N}([[mu]]\\,;[[s]])$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "$P(T \\leqslant [[mu]])$ ?",
+     "answer": "0.5",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "$P(T \\geqslant [[=mu+s]])$ (environ) ?",
+     "answer": "(1 - 0.683)/2",
+     "unit": "",
+     "tolerance": 0.02,
+     "sig": 3
+    }
+   ],
+   "hint": "Symétrie de la courbe autour de μ.",
+   "method": "P(μ − σ ≤ T ≤ μ + σ) ≈ 0,683 ; le reste se partage également des deux côtés.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$P(T \\leqslant \\mu) = 0{,}5$ ; $P(T \\geqslant \\mu + \\sigma) \\approx \\dfrac{1 - 0{,}683}{2} \\approx 0{,}16$."
+    }
+   ]
+  },
+  {
+   "id": "X-P1-07-a",
+   "notions": [
+    "M-P1-07"
+   ],
+   "title": "Résistances en série",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "m1": {
+     "unit": "",
+     "values": [
+      100,
+      220
+     ]
+    },
+    "s1": {
+     "unit": "",
+     "values": [
+      2,
+      3,
+      4
+     ]
+    },
+    "m2": {
+     "unit": "",
+     "values": [
+      47,
+      100
+     ]
+    },
+    "s2": {
+     "unit": "",
+     "values": [
+      1,
+      1.5,
+      2
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Deux résistances indépendantes ont pour valeurs moyennes [[m1]] Ω et [[m2]] Ω et pour écarts types [[s1]] Ω et [[s2]] Ω. On les associe en série."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Valeur moyenne de la résistance équivalente (Ω) ?",
+     "answer": "m1 + m2",
+     "unit": "Ω",
+     "tolerance": 0.001,
+     "sig": 6
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Écart type de la résistance équivalente (Ω) ?",
+     "answer": "sqrt(s1^2 + s2^2)",
+     "unit": "Ω",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Les variances s'ajoutent.",
+   "method": "E(X + Y) = E(X) + E(Y) ; V(X + Y) = V(X) + V(Y).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Moyenne [[=m1+m2]] Ω ; écart type $\\sqrt{[[=s1^2]] + [[=s2^2]]} \\approx$ [[=sqrt(s1^2+s2^2):3]] Ω."
+    }
+   ]
+  },
+  {
+   "id": "X-P1-07-b",
+   "notions": [
+    "M-P1-07"
+   ],
+   "title": "Changement d'unité",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "m": {
+     "unit": "",
+     "values": [
+      20,
+      25,
+      30
+     ]
+    },
+    "s": {
+     "unit": "",
+     "values": [
+      1,
+      2,
+      0.5
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une température $X$ (°C) a pour moyenne [[m]] et pour écart type [[s]]. On pose $Y = 1{,}8X + 32$ (°F)."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "$E(Y)$ ?",
+     "answer": "1.8*m + 32",
+     "unit": "",
+     "tolerance": 0.005,
+     "sig": 4
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "$\\sigma(Y)$ ?",
+     "answer": "1.8*s",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "E(aX + b) = aE(X) + b ; σ(aX + b) = |a|σ(X).",
+   "method": "La constante ajoutée ne change pas la dispersion.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$E(Y) = 1{,}8 \\times [[m]] + 32 =$ [[=1.8*m+32:4]] ; $\\sigma(Y) = 1{,}8 \\times [[s]] =$ [[=1.8*s:3]]."
+    }
+   ]
+  },
+  {
+   "id": "X-P1-08-a",
+   "notions": [
+    "M-P1-08"
+   ],
+   "title": "Moyenne de mesures",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "s": {
+     "unit": "",
+     "values": [
+      0.5,
+      1,
+      2
+     ]
+    },
+    "n": {
+     "unit": "",
+     "values": [
+      4,
+      16,
+      25,
+      100
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On fait [[n]] mesures indépendantes d'une tension, chacune d'écart type [[s]] V, et on calcule leur moyenne."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Écart type de la moyenne (V) ?",
+     "answer": "s/sqrt(n)",
+     "unit": "V",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Pour diviser par 2 l'écart type de la moyenne, il faut :",
+     "choices": [
+      "multiplier par 4 le nombre de mesures",
+      "doubler le nombre de mesures",
+      "diviser par 2 le nombre de mesures"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "σ/√n.",
+   "method": "Théorème de la limite centrée : la moyenne a pour écart type σ/√n.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\dfrac{[[s]]}{\\sqrt{[[n]]}} =$ [[=s/sqrt(n):3|V]] ; diviser par 2 demande $\\sqrt{n}$ doublé, donc $n$ multiplié par 4."
+    }
+   ]
+  },
+  {
+   "id": "X-P1-08-b",
+   "notions": [
+    "M-P1-08"
+   ],
+   "title": "Loi approchée d'une moyenne",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "mu": {
+     "unit": "",
+     "values": [
+      10,
+      12
+     ]
+    },
+    "s": {
+     "unit": "",
+     "values": [
+      3,
+      4
+     ]
+    },
+    "n": {
+     "unit": "",
+     "values": [
+      36,
+      64
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Des durées indépendantes ont pour moyenne [[mu]] min et écart type [[s]] min. On observe la moyenne $\\overline{X}$ de [[n]] durées."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Espérance de $\\overline{X}$ ?",
+     "answer": "mu",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Écart type de $\\overline{X}$ ?",
+     "answer": "s/sqrt(n)",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "X̄ ≈ N(μ ; σ/√n).",
+   "method": "Appliquer le théorème de la limite centrée.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\overline{X} \\approx \\mathcal{N}\\left([[mu]]\\,;\\dfrac{[[s]]}{\\sqrt{[[n]]}}\\right)$, d'écart type [[=s/sqrt(n):3]] min."
+    }
+   ]
+  },
+  {
+   "id": "X-AL-01-a",
+   "notions": [
+    "M-AL-01"
+   ],
+   "title": "Tableau d'états",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "a": {
+     "unit": "",
+     "min": 1,
+     "max": 9,
+     "step": 1
+    },
+    "b": {
+     "unit": "",
+     "min": 1,
+     "max": 9,
+     "step": 1
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On exécute :\n- `x = [[a]]`\n- `y = [[b]]`\n- `x = x + y`\n- `y = x - y`\n- `x = x - y`"
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Valeur finale de `x` ?",
+     "answer": "b",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 6
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Valeur finale de `y` ?",
+     "answer": "a",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 6
+    }
+   ],
+   "hint": "Fais un tableau avec une ligne par instruction.",
+   "method": "Suivre l'état de la mémoire pas à pas.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "x = [[=a+b]], puis y = [[=a+b]] − [[b]] = [[a]], puis x = [[=a+b]] − [[a]] = [[b]] : les valeurs ont été échangées."
+    }
+   ]
+  },
+  {
+   "id": "X-AL-01-b",
+   "notions": [
+    "M-AL-01"
+   ],
+   "title": "Types de variables",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On écrit `U = 230.0`, `n = 3`, `nom = \"pompe\"`, `L = [1, 2, 3]`."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Type de `U` :",
+     "choices": [
+      "réel (float)",
+      "entier (int)",
+      "chaîne (str)"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Valeur de `7 // 2` en Python :",
+     "choices": [
+      "3",
+      "3.5",
+      "4"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Type de `L` :",
+     "choices": [
+      "liste (list)",
+      "chaîne (str)",
+      "booléen (bool)"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "La virgule décimale (point en Python) indique un réel.",
+   "method": "// est la division entière.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "`230.0` est un réel ; `7 // 2 = 3` ; `[1, 2, 3]` est une liste."
+    }
+   ]
+  },
+  {
+   "id": "X-AL-02-a",
+   "notions": [
+    "M-AL-02"
+   ],
+   "title": "Boucle bornée",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "n": {
+     "unit": "",
+     "min": 3,
+     "max": 12,
+     "step": 1
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On exécute :\n- `s = 0`\n- `for k in range([[n]]):`\n-     `s = s + k`"
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Valeur finale de `s` ?",
+     "answer": "n*(n-1)/2",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 6
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Combien de tours fait la boucle ?",
+     "answer": "n",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 6
+    }
+   ],
+   "hint": "range(n) donne 0, 1, …, n − 1.",
+   "method": "s = 0 + 1 + … + (n − 1).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "La boucle fait [[n]] tours (k de 0 à [[=n-1]]) : s = [[=n*(n-1)/2]]."
+    }
+   ]
+  },
+  {
+   "id": "X-AL-02-b",
+   "notions": [
+    "M-AL-02"
+   ],
+   "title": "Boucle non bornée",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "T0": {
+     "unit": "",
+     "values": [
+      60,
+      70,
+      80
+     ]
+    },
+    "d": {
+     "unit": "",
+     "values": [
+      2,
+      5
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un moteur refroidit de [[d]] °C par minute :\n- `T = [[T0]]`\n- `m = 0`\n- `while T > 40:`\n-     `T = T - [[d]]`\n-     `m = m + 1`"
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Valeur finale de `m` ?",
+     "answer": "round((T0 - 40)/d + 0.4999)",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 6
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Cette boucle est :",
+     "choices": [
+      "non bornée (while)",
+      "bornée (for)",
+      "une fonction"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "On s'arrête dès que T ≤ 40.",
+   "method": "Compter les soustractions nécessaires pour passer sous 40.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Il faut [[=round((T0-40)/d+0.4999)]] tours pour que T descende à 40 °C ou moins."
+    }
+   ]
+  },
+  {
+   "id": "X-AL-03-a",
+   "notions": [
+    "M-AL-03"
+   ],
+   "title": "Appel de fonction",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "U": {
+     "unit": "",
+     "values": [
+      230,
+      400
+     ]
+    },
+    "I": {
+     "unit": "",
+     "values": [
+      5,
+      10,
+      16
+     ]
+    },
+    "fp": {
+     "unit": "",
+     "values": [
+      0.8,
+      0.85,
+      0.9
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "- `def puissance(U, I, fp):`\n-     `return U * I * fp`\n\nOn appelle `P = puissance([[U]], [[I]], [[fp]])`."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Valeur de `P` ?",
+     "answer": "U*I*fp",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 6
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "`U`, `I`, `fp` sont :",
+     "choices": [
+      "les arguments de la fonction",
+      "des variables globales",
+      "des bibliothèques"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "La fonction renvoie le produit de ses trois arguments.",
+   "method": "Remplacer les arguments par les valeurs de l'appel.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "P = [[U]] × [[I]] × [[fp]] = [[=U*I*fp]]."
+    }
+   ]
+  },
+  {
+   "id": "X-AL-03-b",
+   "notions": [
+    "M-AL-03"
+   ],
+   "title": "Fonction avec condition",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "I": {
+     "unit": "",
+     "values": [
+      2,
+      8,
+      12,
+      20,
+      25
+     ]
+    },
+    "Imax": {
+     "unit": "",
+     "values": [
+      10,
+      16
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "- `def etat(I, Imax):`\n-     `if I > Imax:`\n-         `return 1`\n-     `return 0`\n\nOn appelle `etat([[I]], [[Imax]])`."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Valeur renvoyée ?",
+     "answer": "gt(I, Imax)",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 6
+    }
+   ],
+   "hint": "Compare I à Imax.",
+   "method": "return arrête la fonction et renvoie la valeur.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "I = [[I]] et Imax = [[Imax]] : la fonction renvoie [[=gt(I,Imax)]]."
+    }
+   ]
+  },
+  {
+   "id": "X-AL-04-a",
+   "notions": [
+    "M-AL-04"
+   ],
+   "title": "Bibliothèques Python",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Pour tracer une courbe, on utilise :",
+     "choices": [
+      "matplotlib.pyplot",
+      "random",
+      "sqlite3"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "`math.sqrt(16)` renvoie :",
+     "choices": [
+      "4.0",
+      "256",
+      "16"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Pour vérifier un programme, le plus fiable est :",
+     "choices": [
+      "le tester sur un cas dont on connaît le résultat",
+      "le relire une fois",
+      "l'exécuter sans regarder la sortie"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "pyplot sert à dessiner.",
+   "method": "Chaque bibliothèque a un rôle : math (calcul), random (hasard), matplotlib (graphiques).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "matplotlib.pyplot trace ; `sqrt(16) = 4.0` ; un test sur un cas connu valide le programme."
+    }
+   ]
+  },
+  {
+   "id": "X-AL-04-b",
+   "notions": [
+    "M-AL-04"
+   ],
+   "title": "Échantillonner une sinusoïde",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "f": {
+     "unit": "",
+     "values": [
+      50,
+      60
+     ]
+    },
+    "N": {
+     "unit": "",
+     "values": [
+      100,
+      200,
+      400
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "`t = numpy.linspace(0, 0.1, [[N]])` crée [[N]] instants régulièrement espacés de 0 à 0,1 s (bornes comprises). On trace `sin(2*pi*[[f]]*t)`."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Écart entre deux instants (s) ?",
+     "answer": "0.1/(N - 1)",
+     "unit": "s",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Nombre de périodes affichées ?",
+     "answer": "0.1*f",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    }
+   ],
+   "hint": "N points délimitent N − 1 intervalles.",
+   "method": "Pas = durée/(N − 1) ; nombre de périodes = durée × f.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Pas : [[=0.1/(N-1)|s]] ; périodes : 0,1 × [[f]] = [[=0.1*f]]."
+    }
+   ]
+  },
+  {
+   "id": "X-AL-05-a",
+   "notions": [
+    "M-AL-05"
+   ],
+   "title": "Lire une requête SQL",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "p": {
+     "unit": "",
+     "values": [
+      3,
+      5,
+      7
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Table `moteurs` : (1, M1, 5.5 kW, atelier 2), (2, M2, 11 kW, atelier 1), (3, M3, 2.2 kW, atelier 2), (4, M4, 7.5 kW, atelier 1).\nRequête : `SELECT moteur FROM moteurs WHERE puissance_kW > [[p]];`"
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Nombre de lignes renvoyées ?",
+     "answer": "gt(5.5, p) + 1 + gt(2.2, p) + gt(7.5, p)",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 6
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Dans cette table, la colonne `id` joue le rôle de :",
+     "choices": [
+      "clé primaire",
+      "clé étrangère",
+      "requête"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Compte les puissances strictement supérieures au seuil.",
+   "method": "WHERE filtre les lignes ; la clé primaire identifie chaque ligne.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Seuil [[p]] kW : [[=gt(5.5,p)+1+gt(2.2,p)+gt(7.5,p)]] moteur(s) ; `id` est la clé primaire, `atelier_id` une clé étrangère."
+    }
+   ]
+  },
+  {
+   "id": "X-AL-05-b",
+   "notions": [
+    "M-AL-05"
+   ],
+   "title": "Écrire une requête",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Pour lister les moteurs de l'atelier 2 triés par puissance :",
+     "choices": [
+      "`SELECT moteur FROM moteurs WHERE atelier_id = 2 ORDER BY puissance_kW;`",
+      "`SELECT moteurs WHERE atelier 2 SORT puissance;`",
+      "`ORDER BY atelier_id FROM moteurs;`"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Une jointure sert à :",
+     "choices": [
+      "combiner deux tables par une clé commune",
+      "supprimer une table",
+      "trier une colonne"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Pour combiner deux conditions, on utilise :",
+     "choices": [
+      "AND ou OR",
+      "PLUS",
+      "JOIN"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "SELECT … FROM … WHERE … ORDER BY …",
+   "method": "L'ordre des clauses SQL est fixe.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "La bonne requête respecte l'ordre SELECT, FROM, WHERE, ORDER BY ; JOIN associe deux tables ; AND / OR combinent des conditions."
+    }
+   ]
+  },
+  {
+   "id": "X-TR-01-a",
+   "notions": [
+    "M-TR-01"
+   ],
+   "title": "Analyser la pertinence d'un résultat",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Un calcul donne une probabilité de 1,25. On conclut :",
+     "choices": [
+      "il y a une erreur de calcul",
+      "l'événement est presque sûr",
+      "il faut arrondir à 1"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "On trouve une résistance équivalente de 3 Ω pour deux résistances de 10 Ω en série :",
+     "choices": [
+      "le résultat est faux (en série, R éq. > chaque résistance)",
+      "le résultat est plausible",
+      "il manque l'unité"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Une tension efficace de 230 kV au secteur domestique :",
+     "choices": [
+      "est aberrante (230 V attendus)",
+      "est normale",
+      "dépend de l'heure"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Compare à un ordre de grandeur connu.",
+   "method": "Vérifier signe, unité, ordre de grandeur et cohérence physique.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Une probabilité dépasse jamais 1 ; deux 10 Ω en série font 20 Ω ; le secteur domestique est à 230 V."
+    }
+   ]
+  },
+  {
+   "id": "X-TR-01-b",
+   "notions": [
+    "M-TR-01"
+   ],
+   "title": "Modéliser une situation",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "r": {
+     "unit": "",
+     "values": [
+      2,
+      3,
+      5
+     ]
+    },
+    "V0": {
+     "unit": "",
+     "values": [
+      1000,
+      5000
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Le nombre de cycles d'un relais diminue de [[r]] % par an à partir de [[V0]] cycles par jour."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Le modèle adapté est :",
+     "choices": [
+      "$V_n = [[V0]] \\times [[=1-r/100]]^n$",
+      "$V_n = [[V0]] - [[r]]n$",
+      "$V_n = [[V0]] \\times [[r]]^n$"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Nombre de cycles par jour après 10 ans ?",
+     "answer": "V0*(1 - r/100)^10",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Une baisse de r % par an multiplie chaque année par (1 − r/100).",
+   "method": "Évolution en pourcentage constant : modèle géométrique (exponentiel).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$V_{10} = [[V0]] \\times [[=1-r/100]]^{10} \\approx$ [[=V0*(1-r/100)^10:4]] cycles par jour."
+    }
+   ]
+  },
+  {
+   "id": "X-TR-02-a",
+   "notions": [
+    "M-TR-02"
+   ],
+   "title": "Choisir l'outil",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Pour obtenir rapidement la dérivée de $x^3e^{-2x}$ :",
+     "choices": [
+      "un logiciel de calcul formel",
+      "un tableur seul",
+      "une table de logarithmes"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Pour appliquer 100 pas de la méthode d'Euler :",
+     "choices": [
+      "un tableur ou un programme Python",
+      "un calcul à la main",
+      "un rapporteur"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Pour calculer $P(X \\leqslant 3)$ avec $X \\sim \\mathcal{B}(20\\,;0{,}1)$ :",
+     "choices": [
+      "la calculatrice (loi binomiale cumulée)",
+      "un tableau de variations",
+      "la formule de Parseval"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Chaque outil a son domaine d'efficacité.",
+   "method": "Calcul formel pour les expressions, tableur/Python pour les itérations, calculatrice pour les lois de probabilité.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Calcul formel, tableur/Python, calculatrice : chaque tâche a son outil."
+    }
+   ]
+  },
+  {
+   "id": "X-TR-02-b",
+   "notions": [
+    "M-TR-02"
+   ],
+   "title": "Vérifier un résultat de logiciel",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "a": {
+     "unit": "",
+     "values": [
+      2,
+      3,
+      4
+     ]
+    },
+    "b": {
+     "unit": "",
+     "values": [
+      1,
+      2,
+      5
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un logiciel affiche $\\int_0^{[[a]]} [[b]]x\\,dx = [[=b*a^2/2]]$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Valeur obtenue à la main ?",
+     "answer": "b*a^2/2",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 6
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Le résultat du logiciel est-il cohérent ?",
+     "choices": [
+      "Oui",
+      "Non"
+     ],
+     "correct": 0,
+     "correctExpr": "1 - (1)"
+    }
+   ],
+   "hint": "Aire d'un triangle de base a et de hauteur b·a.",
+   "method": "Contrôler un résultat numérique par un calcul simple ou une estimation.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\left[\\dfrac{[[b]]}{2}x^2\\right]_0^{[[a]]} = [[=b*a^2/2]]$ : le logiciel est cohérent."
+    }
+   ]
+  }
+ ]
+}

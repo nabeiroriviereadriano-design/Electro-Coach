@@ -1,0 +1,2916 @@
+{
+ "id": "maths-vectoriel-fonctions",
+ "courses": [
+  {
+   "id": "C-CV-01",
+   "notions": [
+    "M-CV-01"
+   ],
+   "title": "Décomposer un vecteur dans une base",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Dans une base $(\\vec{i}, \\vec{j})$ du plan (ou $(\\vec{i}, \\vec{j}, \\vec{k})$ de l'espace), tout vecteur s'écrit de façon unique :"
+    },
+    {
+     "type": "formula",
+     "tex": "\\vec{u} = x\\,\\vec{i} + y\\,\\vec{j} \\;(+\\, z\\,\\vec{k})",
+     "title": "Coordonnées"
+    },
+    {
+     "type": "text",
+     "text": "Si la base est **orthonormée**, la norme vaut $\\|\\vec{u}\\| = \\sqrt{x^2 + y^2}$ (ou $\\sqrt{x^2 + y^2 + z^2}$)."
+    },
+    {
+     "type": "text",
+     "text": "Un vecteur de norme $F$ faisant l'angle $\\alpha$ avec $\\vec{i}$ a pour coordonnées $(F\\cos\\alpha\\,;\\,F\\sin\\alpha)$."
+    },
+    {
+     "type": "method",
+     "text": "Pour additionner des forces ou des vitesses : décomposer chacune sur les axes, additionner les coordonnées, puis recalculer norme et angle.",
+     "title": "Méthode : somme de vecteurs"
+    },
+    {
+     "type": "tip",
+     "text": "Même démarche que pour les vecteurs de Fresnel : la composante horizontale est la « partie réelle », la verticale la « partie imaginaire ».",
+     "title": ""
+    },
+    {
+     "type": "warning",
+     "text": "Les normes ne s'additionnent pas : deux forces de 3 N et 4 N perpendiculaires donnent une résultante de 5 N.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-CV-02",
+   "notions": [
+    "M-CV-02"
+   ],
+   "title": "Produit scalaire",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "\\vec{u}\\cdot\\vec{v} = \\|\\vec{u}\\|\\,\\|\\vec{v}\\|\\cos\\theta",
+     "title": "Avec les normes et l'angle"
+    },
+    {
+     "type": "formula",
+     "tex": "\\vec{u}\\cdot\\vec{v} = xx' + yy' \\;(+\\, zz')",
+     "title": "Avec les coordonnées (base orthonormée)"
+    },
+    {
+     "type": "formula",
+     "tex": "\\vec{u}\\cdot\\vec{v} = \\overline{OA}\\times\\overline{OH}",
+     "title": "Avec une projection orthogonale (H projeté de B sur (OA))"
+    },
+    {
+     "type": "text",
+     "text": "Deux vecteurs non nuls sont **orthogonaux** si et seulement si $\\vec{u}\\cdot\\vec{v} = 0$."
+    },
+    {
+     "type": "method",
+     "text": "Pour calculer un angle : $\\cos\\theta = \\dfrac{xx' + yy'}{\\|\\vec{u}\\|\\,\\|\\vec{v}\\|}$, puis $\\theta = \\arccos(\\ldots)$.",
+     "title": "Méthode"
+    },
+    {
+     "type": "formula",
+     "tex": "W = \\vec{F}\\cdot\\overrightarrow{AB} = F\\cdot AB\\cdot\\cos\\theta \\qquad P = \\vec{F}\\cdot\\vec{v}",
+     "title": "Application : travail et puissance d'une force"
+    },
+    {
+     "type": "text",
+     "text": "Le barycentre et le produit vectoriel ne sont pas au programme du BTS Électrotechnique."
+    }
+   ]
+  },
+  {
+   "id": "C-FV-01",
+   "notions": [
+    "M-FV-01"
+   ],
+   "title": "Fonctions de référence",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Fonction",
+       "Domaine",
+       "Sens de variation",
+       "Particularités"
+      ],
+      [
+       "$x \\mapsto ax + b$",
+       "$\\mathbb{R}$",
+       "croissante si $a > 0$",
+       "droite"
+      ],
+      [
+       "$x \\mapsto ax^2 + bx + c$",
+       "$\\mathbb{R}$",
+       "extremum en $-\\dfrac{b}{2a}$",
+       "parabole"
+      ],
+      [
+       "$x \\mapsto \\sqrt{x}$",
+       "$[0\\,;+\\infty[$",
+       "croissante",
+       "$\\sqrt{0} = 0$"
+      ],
+      [
+       "$x \\mapsto \\ln x$",
+       "$]0\\,;+\\infty[$",
+       "croissante",
+       "$\\ln 1 = 0$, $\\ln e = 1$"
+      ],
+      [
+       "$x \\mapsto e^x$",
+       "$\\mathbb{R}$",
+       "croissante",
+       "$e^0 = 1$, toujours $> 0$"
+      ],
+      [
+       "$x \\mapsto \\sin x$, $\\cos x$",
+       "$\\mathbb{R}$",
+       "périodiques ($2\\pi$)",
+       "valeurs entre −1 et 1"
+      ]
+     ]
+    },
+    {
+     "type": "formula",
+     "tex": "\\ln(ab) = \\ln a + \\ln b \\qquad e^{a+b} = e^a e^b \\qquad \\ln(e^x) = x",
+     "title": "Propriétés"
+    },
+    {
+     "type": "plot",
+     "var": "x",
+     "from": 0.05,
+     "to": 3,
+     "title": "Exponentielle, logarithme, racine carrée",
+     "xLabel": "",
+     "yLabel": "",
+     "samples": 240,
+     "curves": [
+      {
+       "expr": "exp(x)",
+       "label": "eˣ"
+      },
+      {
+       "expr": "ln(x)",
+       "label": "ln x"
+      },
+      {
+       "expr": "sqrt(x)",
+       "label": "√x"
+      }
+     ]
+    },
+    {
+     "type": "method",
+     "text": "Pour retrouver une propriété (signe, variation, valeur particulière), tracer l'allure de la courbe à la calculatrice puis vérifier par le calcul.",
+     "title": "Méthode"
+    },
+    {
+     "type": "tip",
+     "text": "La charge d'un condensateur suit une exponentielle, la loi de Faraday et les décibels font intervenir le logarithme.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-FV-02",
+   "notions": [
+    "M-FV-02"
+   ],
+   "title": "Fonctions affines et offset d'une mesure",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "y = a x + b",
+     "title": "Fonction affine"
+    },
+    {
+     "type": "text",
+     "text": "$a$ est le **coefficient directeur** (pente), $b$ l'**ordonnée à l'origine**. Entre deux points : $a = \\dfrac{y_2 - y_1}{x_2 - x_1}$."
+    },
+    {
+     "type": "text",
+     "text": "En instrumentation, un capteur linéaire donne une sortie $y = ax + b$ : $a$ est la **sensibilité**, $b$ l'**offset** (valeur de sortie quand la grandeur mesurée est nulle)."
+    },
+    {
+     "type": "text",
+     "text": "Exemple : un transmetteur de température 4–20 mA sur 0–100 °C : $I = 0{,}16\\,\\theta + 4$ (en mA). L'offset vaut 4 mA."
+    },
+    {
+     "type": "method",
+     "text": "1. Repérer deux points de la caractéristique.\n2. Calculer la pente $a$.\n3. En déduire $b = y_1 - a x_1$.\n4. Inverser si besoin : $x = (y - b)/a$.",
+     "title": "Méthode : retrouver la loi d'un capteur"
+    },
+    {
+     "type": "warning",
+     "text": "Un offset non corrigé fausse toutes les mesures d'une même valeur : c'est une erreur systématique.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-FV-03",
+   "notions": [
+    "M-FV-03"
+   ],
+   "title": "Logarithme décimal et échelles logarithmiques",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "\\log x = \\frac{\\ln x}{\\ln 10} \\qquad \\log(10^n) = n \\qquad \\log(ab) = \\log a + \\log b",
+     "title": "Logarithme décimal"
+    },
+    {
+     "type": "text",
+     "text": "Sur une **échelle logarithmique**, des distances égales correspondent à des **rapports** égaux : 1, 10, 100, 1000 sont régulièrement espacés (une **décade**)."
+    },
+    {
+     "type": "formula",
+     "tex": "G_{dB} = 20\\log|\\underline{H}| \\qquad 10\\log\\frac{P_2}{P_1}",
+     "title": "Décibels"
+    },
+    {
+     "type": "text",
+     "text": "Un gain de −3 dB correspond à $|\\underline{H}| \\approx 0{,}707$ ; −20 dB à $|\\underline{H}| = 0{,}1$."
+    },
+    {
+     "type": "method",
+     "text": "Pour placer $f = 300$ Hz sur un axe gradué en décades : $\\log 300 \\approx 2{,}48$, soit à 48 % de la décade entre 100 et 1000.",
+     "title": "Méthode"
+    },
+    {
+     "type": "tip",
+     "text": "Les diagrammes de Bode des filtres utilisent une échelle logarithmique en fréquence et un gain en décibels.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-FV-04",
+   "notions": [
+    "M-FV-04"
+   ],
+   "title": "Dérivation",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Le **nombre dérivé** $f'(a)$ est le coefficient directeur de la tangente à la courbe au point d'abscisse $a$."
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "$f(x)$",
+       "$f'(x)$"
+      ],
+      [
+       "$k$",
+       "$0$"
+      ],
+      [
+       "$x^n$",
+       "$nx^{n-1}$"
+      ],
+      [
+       "$\\sqrt{x}$",
+       "$\\dfrac{1}{2\\sqrt{x}}$"
+      ],
+      [
+       "$\\ln x$",
+       "$\\dfrac{1}{x}$"
+      ],
+      [
+       "$e^x$",
+       "$e^x$"
+      ],
+      [
+       "$\\sin x$",
+       "$\\cos x$"
+      ],
+      [
+       "$\\cos x$",
+       "$-\\sin x$"
+      ]
+     ]
+    },
+    {
+     "type": "formula",
+     "tex": "(u+v)' = u' + v' \\quad (uv)' = u'v + uv' \\quad \\left(\\frac{u}{v}\\right)' = \\frac{u'v - uv'}{v^2}",
+     "title": "Opérations"
+    },
+    {
+     "type": "formula",
+     "tex": "(u^n)' = n u' u^{n-1} \\quad (\\ln u)' = \\frac{u'}{u} \\quad (e^u)' = u' e^u",
+     "title": "Fonctions composées"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : $f(t) = 12(1 - e^{-t/\\tau})$ donne $f'(t) = \\dfrac{12}{\\tau}e^{-t/\\tau}$."
+    },
+    {
+     "type": "tip",
+     "text": "Un logiciel de calcul formel (ou la calculatrice) dérive dans tous les cas ; à la main, on se limite aux cas simples.",
+     "title": ""
+    },
+    {
+     "type": "warning",
+     "text": "$(e^{-2t})' = -2e^{-2t}$ : ne pas oublier la dérivée $u'$ de l'exposant.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-FV-05",
+   "notions": [
+    "M-FV-05"
+   ],
+   "title": "Variations, extremum, nombre de solutions",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Sur un intervalle : si $f' > 0$, $f$ est **croissante** ; si $f' < 0$, $f$ est **décroissante**. Un **extremum** se situe là où $f'$ s'annule en changeant de signe."
+    },
+    {
+     "type": "method",
+     "text": "1. Calculer $f'(x)$.\n2. Étudier son signe (factoriser).\n3. Dresser le tableau de variations.\n4. En déduire extremum, signe de $f$, nombre de solutions de $f(x) = k$.",
+     "title": "Méthode : étude de fonction"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : $P(I) = 12I - 2I^2$ (puissance utile d'un générateur). $P'(I) = 12 - 4I$ s'annule pour $I = 3$ A : la puissance est maximale, $P(3) = 18$ W."
+    },
+    {
+     "type": "tip",
+     "text": "Si $f$ est continue et strictement monotone sur $[a\\,;b]$ et que $k$ est entre $f(a)$ et $f(b)$, l'équation $f(x) = k$ a une seule solution dans $[a\\,;b]$.",
+     "title": ""
+    },
+    {
+     "type": "warning",
+     "text": "Un nombre dérivé nul ne suffit pas : il faut que $f'$ change de signe pour avoir un extremum.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-FV-06",
+   "notions": [
+    "M-FV-06"
+   ],
+   "title": "Résoudre f(x) = k de façon approchée",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Quand on ne sait pas résoudre exactement, on cherche une **valeur approchée** de la solution."
+    },
+    {
+     "type": "method",
+     "text": "Couper l'intervalle $[a\\,;b]$ en deux, garder la moitié où $f(x) - k$ change de signe, recommencer jusqu'à la précision voulue. Chaque étape divise l'erreur par 2.",
+     "title": "Dichotomie"
+    },
+    {
+     "type": "formula",
+     "tex": "x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}",
+     "title": "Méthode de Newton (pour f(x) = 0)"
+    },
+    {
+     "type": "text",
+     "text": "Le **balayage** consiste à calculer $f$ avec un pas régulier (tableur, calculatrice) pour encadrer la solution."
+    },
+    {
+     "type": "text",
+     "text": "Exemple en Python (dichotomie) :\n- `while b - a > 1e-3:`\n-     `m = (a + b) / 2`\n-     `if f(a) * f(m) <= 0: b = m`\n-     `else: a = m`"
+    },
+    {
+     "type": "tip",
+     "text": "Newton converge très vite près de la solution, la dichotomie est plus lente mais toujours sûre si $f$ est continue et change de signe.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-FV-07",
+   "notions": [
+    "M-FV-07"
+   ],
+   "title": "Limites et asymptotes",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Limite",
+       "Interprétation graphique"
+      ],
+      [
+       "$\\lim_{x\\to+\\infty} f(x) = \\ell$",
+       "asymptote horizontale $y = \\ell$"
+      ],
+      [
+       "$\\lim_{x\\to a} f(x) = \\pm\\infty$",
+       "asymptote verticale $x = a$"
+      ],
+      [
+       "$\\lim_{x\\to+\\infty} [f(x) - (ax + b)] = 0$",
+       "asymptote oblique $y = ax + b$"
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "text": "Exemple : la tension de charge $u(t) = E(1 - e^{-t/\\tau})$ tend vers $E$ : la droite $u = E$ est asymptote horizontale (régime permanent)."
+    },
+    {
+     "type": "text",
+     "text": "Exemple : $f(x) = 2x + 1 + \\dfrac{3}{x}$ a pour asymptote oblique $y = 2x + 1$ en $+\\infty$ et une asymptote verticale $x = 0$."
+    },
+    {
+     "type": "method",
+     "text": "Pour une asymptote oblique : montrer que $f(x) - (ax + b)$ tend vers 0 ; son signe donne la position de la courbe.",
+     "title": "Méthode"
+    },
+    {
+     "type": "warning",
+     "text": "Toute étude de branche infinie doit être guidée par l'énoncé : on ne devine pas l'asymptote, on la vérifie.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-FV-08",
+   "notions": [
+    "M-FV-08"
+   ],
+   "title": "Limites et opérations",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "\\lim_{x\\to+\\infty} e^{x} = +\\infty \\quad \\lim_{x\\to-\\infty} e^{x} = 0 \\quad \\lim_{x\\to+\\infty} \\ln x = +\\infty \\quad \\lim_{x\\to 0^+} \\ln x = -\\infty",
+     "title": "Limites de référence"
+    },
+    {
+     "type": "text",
+     "text": "On combine les limites par somme, produit et inverse. Les **formes indéterminées** ($\\infty - \\infty$, $0 \\times \\infty$, $\\dfrac{\\infty}{\\infty}$, $\\dfrac{0}{0}$) demandent de transformer l'écriture."
+    },
+    {
+     "type": "formula",
+     "tex": "\\lim_{x\\to+\\infty} \\frac{e^x}{x^n} = +\\infty \\qquad \\lim_{x\\to+\\infty} \\frac{\\ln x}{x} = 0",
+     "title": "Croissances comparées"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : $\\lim_{t\\to+\\infty} 5e^{-t/2} = 0$ car $-t/2 \\to -\\infty$."
+    },
+    {
+     "type": "method",
+     "text": "Pour un polynôme ou une fraction rationnelle en $\\pm\\infty$ : factoriser par le terme de plus haut degré.",
+     "title": "Méthode"
+    },
+    {
+     "type": "warning",
+     "text": "$\\dfrac{1}{0}$ n'est pas une forme indéterminée : la limite est infinie, son signe dépend du côté.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-FV-09",
+   "notions": [
+    "M-FV-09"
+   ],
+   "title": "Fractions rationnelles à coefficients complexes",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "En régime sinusoïdal, les grandeurs dépendent de $\\omega$ par des fractions rationnelles en $j\\omega$, par exemple $\\underline{H}(\\omega) = \\dfrac{1}{1 + j\\omega\\tau}$ ou $\\underline{Z}(\\omega) = R + jL\\omega$."
+    },
+    {
+     "type": "text",
+     "text": "On étudie leurs **limites quand $\\omega \\to 0$ et $\\omega \\to +\\infty$** (comportement en basse et en haute fréquence), en gardant $\\omega$ réelle."
+    },
+    {
+     "type": "formula",
+     "tex": "\\lim_{\\omega\\to+\\infty} \\frac{a_n (j\\omega)^n + \\dots}{b_m (j\\omega)^m + \\dots} = \\lim \\frac{a_n (j\\omega)^n}{b_m (j\\omega)^m}",
+     "title": "Termes de plus haut degré"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : $\\underline{H} = \\dfrac{j\\omega\\tau}{1 + j\\omega\\tau}$ : $\\underline{H} \\to 0$ quand $\\omega \\to 0$ et $\\underline{H} \\to 1$ quand $\\omega \\to +\\infty$ : filtre **passe-haut**."
+    },
+    {
+     "type": "method",
+     "text": "Basses fréquences : garder les termes de plus bas degré. Hautes fréquences : garder ceux de plus haut degré.",
+     "title": "Méthode"
+    },
+    {
+     "type": "tip",
+     "text": "Une bobine se comporte comme un fil en continu ($\\omega = 0$) et comme un interrupteur ouvert en haute fréquence ; un condensateur, l'inverse.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-FM-01",
+   "notions": [
+    "M-FM-01"
+   ],
+   "title": "Fonctions tangente et arctangente",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "\\tan x = \\frac{\\sin x}{\\cos x} \\qquad x \\neq \\frac{\\pi}{2} + k\\pi",
+     "title": "Tangente"
+    },
+    {
+     "type": "text",
+     "text": "La tangente est $\\pi$-périodique, impaire, croissante sur $\\left]-\\frac{\\pi}{2}\\,;\\frac{\\pi}{2}\\right[$, avec des asymptotes verticales en $\\pm\\frac{\\pi}{2}$."
+    },
+    {
+     "type": "formula",
+     "tex": "\\arctan : \\mathbb{R} \\to \\left]-\\frac{\\pi}{2}\\,;\\frac{\\pi}{2}\\right[ \\qquad \\tan(\\arctan x) = x",
+     "title": "Arctangente"
+    },
+    {
+     "type": "plot",
+     "var": "x",
+     "from": -8,
+     "to": 8,
+     "title": "arctan x tend vers ±π/2 ≈ ±1,57",
+     "xLabel": "",
+     "yLabel": "",
+     "samples": 240,
+     "curves": [
+      {
+       "expr": "atan(x)",
+       "label": "arctan x"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "text": "Valeurs à connaître : $\\arctan 0 = 0$, $\\arctan 1 = \\dfrac{\\pi}{4}$, $\\arctan\\sqrt{3} = \\dfrac{\\pi}{3}$."
+    },
+    {
+     "type": "tip",
+     "text": "Le déphasage d'un circuit RL série vaut $\\varphi = \\arctan\\dfrac{L\\omega}{R}$ : quand $\\omega$ augmente, $\\varphi$ tend vers 90°.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-FM-02",
+   "notions": [
+    "M-FM-02"
+   ],
+   "title": "Parité et périodicité",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "f(-x) = f(x) \\;\\text{(paire)} \\qquad f(-x) = -f(x) \\;\\text{(impaire)} \\qquad f(x + T) = f(x) \\;\\text{(T-périodique)}",
+     "title": "Définitions"
+    },
+    {
+     "type": "text",
+     "text": "Une fonction **paire** a une courbe symétrique par rapport à l'axe des ordonnées ; une fonction **impaire**, symétrique par rapport à l'origine."
+    },
+    {
+     "type": "formula",
+     "tex": "x \\mapsto f(ax + b) \\text{ est } \\frac{T}{|a|}\\text{-périodique si } f \\text{ est } T\\text{-périodique}",
+     "title": "Changement d'échelle"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : $u(t) = 325\\sin(100\\pi t)$ est impaire et périodique de période $T = \\dfrac{2\\pi}{100\\pi} = 0{,}02$ s, soit 50 Hz."
+    },
+    {
+     "type": "method",
+     "text": "Pour reconnaître parité et période sur un graphe : chercher la symétrie, puis la plus petite translation horizontale qui superpose la courbe à elle-même.",
+     "title": "Méthode"
+    },
+    {
+     "type": "tip",
+     "text": "La parité simplifie le calcul des coefficients de Fourier (moitié des termes nuls).",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-FM-03",
+   "notions": [
+    "M-FM-03"
+   ],
+   "title": "Dérivées de tan, arctan et des sinusoïdes",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "(\\tan x)' = 1 + \\tan^2 x = \\frac{1}{\\cos^2 x} \\qquad (\\arctan x)' = \\frac{1}{1 + x^2}",
+     "title": "Tangente et arctangente"
+    },
+    {
+     "type": "formula",
+     "tex": "\\left(\\sin(\\omega t + \\varphi)\\right)' = \\omega\\cos(\\omega t + \\varphi) \\qquad \\left(\\cos(\\omega t + \\varphi)\\right)' = -\\omega\\sin(\\omega t + \\varphi)",
+     "title": "Sinusoïdes"
+    },
+    {
+     "type": "formula",
+     "tex": "\\left(\\arctan u\\right)' = \\frac{u'}{1 + u^2}",
+     "title": "Composée"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : $i(t) = 2\\sqrt{2}\\sin(100\\pi t)$ ; $\\dfrac{di}{dt} = 200\\pi\\sqrt{2}\\cos(100\\pi t)$, donc pour $L = 0{,}1$ H : $u_L = L\\dfrac{di}{dt}$ a une amplitude de $20\\pi\\sqrt{2} \\approx 88{,}9$ V."
+    },
+    {
+     "type": "warning",
+     "text": "La dérivée de $\\sin(\\omega t)$ par rapport à $t$ fait apparaître le facteur $\\omega$ : $(\\sin 100\\pi t)' = 100\\pi\\cos 100\\pi t$.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-FM-04",
+   "notions": [
+    "M-FM-04"
+   ],
+   "title": "Décomposition en éléments simples",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Une fraction rationnelle comme $F(x) = \\dfrac{3x + 5}{(x+1)(x+2)}$ s'écrit comme une somme de fractions plus simples, dont la **forme est donnée** par l'énoncé :"
+    },
+    {
+     "type": "formula",
+     "tex": "\\frac{3x + 5}{(x+1)(x+2)} = \\frac{a}{x + 1} + \\frac{b}{x + 2}",
+     "title": "Forme à trouver"
+    },
+    {
+     "type": "method",
+     "text": "1. Réduire le membre de droite au même dénominateur.\n2. Identifier les numérateurs : $3x + 5 = a(x+2) + b(x+1)$.\n3. Donner des valeurs particulières : $x = -1$ donne $a = 2$ ; $x = -2$ donne $b = 1$.",
+     "title": "Méthode : identification"
+    },
+    {
+     "type": "text",
+     "text": "Vérification : $\\dfrac{2}{x+1} + \\dfrac{1}{x+2} = \\dfrac{2x + 4 + x + 1}{(x+1)(x+2)} = \\dfrac{3x + 5}{(x+1)(x+2)}$."
+    },
+    {
+     "type": "tip",
+     "text": "Cette décomposition prépare le calcul de primitives et la recherche d'originaux en transformation de Laplace ; un logiciel de calcul formel la donne dans tous les cas.",
+     "title": ""
+    }
+   ]
+  }
+ ],
+ "examples": [],
+ "exercises": [
+  {
+   "id": "X-CV-01-a",
+   "notions": [
+    "M-CV-01"
+   ],
+   "title": "Résultante de deux forces",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "F1": {
+     "unit": "",
+     "values": [
+      10,
+      20,
+      30,
+      40,
+      50
+     ]
+    },
+    "F2": {
+     "unit": "",
+     "values": [
+      10,
+      15,
+      25,
+      35
+     ]
+    },
+    "al": {
+     "unit": "",
+     "values": [
+      30,
+      45,
+      60,
+      90,
+      120
+     ]
+    }
+   },
+   "vars": {
+    "x": "F1 + F2*cos(rad(al))",
+    "y": "F2*sin(rad(al))"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Deux forces s'appliquent en un même point : $\\vec{F_1}$ horizontale de norme [[F1]] N et $\\vec{F_2}$ de norme [[F2]] N faisant un angle de [[al]]° avec $\\vec{F_1}$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Composante horizontale de la résultante (N) ?",
+     "answer": "x",
+     "unit": "N",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Composante verticale (N) ?",
+     "answer": "y",
+     "unit": "N",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Norme de la résultante (N) ?",
+     "answer": "sqrt(x^2 + y^2)",
+     "unit": "N",
+     "tolerance": 0.02,
+     "sig": 3
+    }
+   ],
+   "hint": "F₂ se décompose en (F₂ cos α ; F₂ sin α).",
+   "method": "Additionner les coordonnées, puis ‖R‖ = √(x² + y²).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$x = [[F1]] + [[F2]]\\cos [[al]]° \\approx$ [[=x:3]] N ; $y = [[F2]]\\sin [[al]]° \\approx$ [[=y:3]] N ; $\\|\\vec{R}\\| \\approx$ [[=sqrt(x^2+y^2):3]] N."
+    }
+   ]
+  },
+  {
+   "id": "X-CV-01-b",
+   "notions": [
+    "M-CV-01"
+   ],
+   "title": "Coordonnées et norme d'un vecteur",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "a": {
+     "unit": "",
+     "values": [
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ]
+    },
+    "b": {
+     "unit": "",
+     "values": [
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ]
+    },
+    "c": {
+     "unit": "",
+     "values": [
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Dans une base orthonormée de l'espace, $\\vec{u} = [[a]]\\vec{i} + ([[b]])\\vec{j} + ([[c]])\\vec{k}$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Norme de $\\vec{u}$ ?",
+     "answer": "sqrt(a^2 + b^2 + c^2)",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Deuxième coordonnée de $2\\vec{u}$ ?",
+     "answer": "2*b",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 6
+    }
+   ],
+   "hint": "‖u‖ = √(x² + y² + z²).",
+   "method": "Les coordonnées se multiplient par le scalaire ; la norme se calcule avec Pythagore.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\|\\vec{u}\\| = \\sqrt{[[=a^2]] + [[=b^2]] + [[=c^2]]} \\approx$ [[=sqrt(a^2+b^2+c^2):3]] ; $2\\vec{u}$ a pour deuxième coordonnée [[=2*b]]."
+    }
+   ]
+  },
+  {
+   "id": "X-CV-02-a",
+   "notions": [
+    "M-CV-02"
+   ],
+   "title": "Produit scalaire et angle",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "a": {
+     "unit": "",
+     "values": [
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ]
+    },
+    "b": {
+     "unit": "",
+     "values": [
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ]
+    },
+    "c": {
+     "unit": "",
+     "values": [
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ]
+    },
+    "d": {
+     "unit": "",
+     "values": [
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ]
+    }
+   },
+   "vars": {
+    "ps": "a*c + b*d",
+    "nu": "sqrt(a^2+b^2)",
+    "nv": "sqrt(c^2+d^2)"
+   },
+   "constraints": [
+    "abs(a*d - b*c) > 0"
+   ],
+   "statement": [
+    {
+     "type": "text",
+     "text": "$\\vec{u}([[a]]\\,;[[b]])$ et $\\vec{v}([[c]]\\,;[[d]])$ dans une base orthonormée."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "$\\vec{u}\\cdot\\vec{v}$ ?",
+     "answer": "ps",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 6
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Angle entre les deux vecteurs, en degrés ?",
+     "answer": "deg(acos(ps/(nu*nv)))",
+     "unit": "°",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Les vecteurs sont-ils orthogonaux ?",
+     "choices": [
+      "Oui",
+      "Non"
+     ],
+     "correct": 0,
+     "correctExpr": "1 - (eq(ps, 0))"
+    }
+   ],
+   "hint": "u·v = xx' + yy' puis cos θ = u·v / (‖u‖‖v‖).",
+   "method": "Calculer le produit scalaire avec les coordonnées et les normes, puis θ = arccos(…).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\vec{u}\\cdot\\vec{v} = [[a]]\\times[[c]] + [[b]]\\times[[d]] = [[=ps]]$ ; $\\cos\\theta = \\dfrac{[[=ps]]}{[[=nu:4]] \\times [[=nv:4]]}$, $\\theta \\approx$ [[=deg(acos(ps/(nu*nv))):3]]°."
+    }
+   ]
+  },
+  {
+   "id": "X-CV-02-b",
+   "notions": [
+    "M-CV-02"
+   ],
+   "title": "Travail d'une force",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "F": {
+     "unit": "",
+     "values": [
+      50,
+      100,
+      150,
+      200,
+      300
+     ]
+    },
+    "d": {
+     "unit": "",
+     "values": [
+      2,
+      5,
+      10,
+      20
+     ]
+    },
+    "al": {
+     "unit": "",
+     "values": [
+      0,
+      20,
+      30,
+      45,
+      60
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un chariot est tiré sur [[d]] m par une force de [[F]] N faisant un angle de [[al]]° avec le déplacement."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Travail de la force (J) ?",
+     "answer": "F*d*cos(rad(al))",
+     "unit": "J",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Puissance si le déplacement dure 8 s (W) ?",
+     "answer": "F*d*cos(rad(al))/8",
+     "unit": "W",
+     "tolerance": 0.02,
+     "sig": 3
+    }
+   ],
+   "hint": "W = F · AB · cos θ.",
+   "method": "Le travail est le produit scalaire de la force et du déplacement.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$W = [[F]] \\times [[d]] \\times \\cos [[al]]° \\approx$ [[=F*d*cos(rad(al)):3|J]] ; $P = W/t \\approx$ [[=F*d*cos(rad(al))/8:3|W]]."
+    }
+   ]
+  },
+  {
+   "id": "X-FV-01-a",
+   "notions": [
+    "M-FV-01"
+   ],
+   "title": "Propriétés des fonctions de référence",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "a": {
+     "unit": "",
+     "values": [
+      2,
+      3,
+      5,
+      10
+     ]
+    },
+    "b": {
+     "unit": "",
+     "values": [
+      2,
+      4,
+      8
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On utilise les propriétés de ln et exp."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Valeur de $\\ln([[a]]) + \\ln([[b]])$ ?",
+     "answer": "ln(a*b)",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Valeur de $e^{\\ln [[a]]}$ ?",
+     "answer": "a",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 6
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Sur $]0\\,;+\\infty[$, la fonction $\\ln$ est :",
+     "choices": [
+      "strictement croissante",
+      "strictement décroissante",
+      "constante"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "ln(ab) = ln a + ln b et e^{ln x} = x.",
+   "method": "Utiliser les propriétés algébriques du logarithme et de l'exponentielle.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\ln [[a]] + \\ln [[b]] = \\ln [[=a*b]] \\approx$ [[=ln(a*b):3]] ; $e^{\\ln [[a]]} = [[a]]$ ; ln est croissante."
+    }
+   ]
+  },
+  {
+   "id": "X-FV-01-b",
+   "notions": [
+    "M-FV-01"
+   ],
+   "title": "Lecture d'une fonction exponentielle",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "E": {
+     "unit": "",
+     "values": [
+      5,
+      10,
+      12,
+      24
+     ]
+    },
+    "tau": {
+     "unit": "",
+     "values": [
+      0.5,
+      1,
+      2,
+      5
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "La tension de charge d'un condensateur est $u(t) = [[E]](1 - e^{-t/[[tau]]})$ (en volts, $t$ en secondes)."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Valeur de $u$ à $t = 0$ ?",
+     "answer": "0",
+     "unit": "V",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Valeur de $u$ à $t = \\tau$ ?",
+     "answer": "E*(1-exp(-1))",
+     "unit": "V",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Valeur de $u$ à $t = 3\\tau$ ?",
+     "answer": "E*(1-exp(-3))",
+     "unit": "V",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "e⁰ = 1 ; e^{−1} ≈ 0,368 ; e^{−3} ≈ 0,050.",
+   "method": "Remplacer t par sa valeur et calculer l'exponentielle.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$u(0) = 0$ ; $u(\\tau) = [[E]](1 - e^{-1}) \\approx$ [[=E*(1-exp(-1)):3|V]] (63 %) ; $u(3\\tau) \\approx$ [[=E*(1-exp(-3)):3|V]] (95 %)."
+    }
+   ]
+  },
+  {
+   "id": "X-FV-02-a",
+   "notions": [
+    "M-FV-02"
+   ],
+   "title": "Loi d'un transmetteur 4–20 mA",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "Tmax": {
+     "unit": "",
+     "values": [
+      50,
+      100,
+      150,
+      200,
+      400
+     ]
+    }
+   },
+   "vars": {
+    "a": "16/Tmax"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un transmetteur de température délivre 4 mA à 0 °C et 20 mA à [[Tmax]] °C ; sa caractéristique est affine."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Sensibilité $a$ (mA/°C) ?",
+     "answer": "a",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Offset $b$ (mA) ?",
+     "answer": "4",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Température lue pour un courant de 12 mA (°C) ?",
+     "answer": "(12 - 4)/a",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "a = (20 − 4)/(Tmax − 0).",
+   "method": "I = aθ + b ; pour retrouver θ : θ = (I − b)/a.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$a = \\dfrac{16}{[[Tmax]]} =$ [[=a:3]] mA/°C ; $b = 4$ mA ; $\\theta = \\dfrac{12 - 4}{a} =$ [[=8/a:3]] °C."
+    }
+   ]
+  },
+  {
+   "id": "X-FV-02-b",
+   "notions": [
+    "M-FV-02"
+   ],
+   "title": "Corriger un offset",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "x1": {
+     "unit": "",
+     "values": [
+      1,
+      2
+     ]
+    },
+    "y1": {
+     "unit": "",
+     "values": [
+      0.55,
+      0.62,
+      0.7
+     ]
+    },
+    "x2": {
+     "unit": "",
+     "values": [
+      5,
+      8,
+      10
+     ]
+    },
+    "s": {
+     "unit": "",
+     "values": [
+      0.25,
+      0.3,
+      0.4
+     ]
+    }
+   },
+   "vars": {
+    "y2": "y1 + s*(x2 - x1)",
+    "b": "y1 - s*x1"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un capteur de pression donne [[y1]] V pour [[x1]] bar et [[=y2:4]] V pour [[x2]] bar (caractéristique affine)."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Pente $a$ (V/bar) ?",
+     "answer": "s",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Offset $b$ (V) ?",
+     "answer": "b",
+     "unit": "",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Pression mesurée quand le capteur affiche 2 V (bar) ?",
+     "answer": "(2 - b)/s",
+     "unit": "",
+     "tolerance": 0.02,
+     "sig": 3
+    }
+   ],
+   "hint": "Commence par la pente avec les deux points.",
+   "method": "a = (y₂ − y₁)/(x₂ − x₁) ; b = y₁ − a x₁ ; x = (y − b)/a.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$a = \\dfrac{[[=y2:4]] - [[y1]]}{[[x2]] - [[x1]]} =$ [[=s:3]] V/bar ; $b = [[y1]] - [[=s:3]] \\times [[x1]] =$ [[=b:3]] V ; à 2 V : $x =$ [[=(2-b)/s:3]] bar."
+    }
+   ]
+  },
+  {
+   "id": "X-FV-03-a",
+   "notions": [
+    "M-FV-03"
+   ],
+   "title": "Gains en décibels",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "H": {
+     "unit": "",
+     "values": [
+      0.1,
+      0.5,
+      0.707,
+      2,
+      10,
+      100
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Le module d'une fonction de transfert vaut $|\\underline{H}| = [[H]]$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Gain en dB ?",
+     "answer": "20*log(H)",
+     "unit": "",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Sur un axe logarithmique, 10 Hz, 100 Hz et 1000 Hz sont :",
+     "choices": [
+      "régulièrement espacés",
+      "de plus en plus espacés",
+      "confondus"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "G = 20 log|H|.",
+   "method": "Utiliser le logarithme décimal ; un rapport ×10 ajoute 20 dB.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$G = 20\\log [[H]] \\approx$ [[=20*log(H):3]] dB. Une décade = même distance sur l'axe."
+    }
+   ]
+  },
+  {
+   "id": "X-FV-03-b",
+   "notions": [
+    "M-FV-03"
+   ],
+   "title": "Logarithme décimal",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "n": {
+     "unit": "",
+     "min": -3,
+     "max": 4,
+     "step": 1
+    },
+    "a": {
+     "unit": "",
+     "values": [
+      2,
+      3,
+      5
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Calculs avec le logarithme décimal."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "$\\log(10^{[[n]]})$ ?",
+     "answer": "n",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 6
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "$\\log([[a]] \\times 10^{[[n]]})$ ?",
+     "answer": "log(a) + n",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "log(ab) = log a + log b et log(10ⁿ) = n.",
+   "method": "Décomposer le produit.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\log(10^{[[n]]}) = [[n]]$ ; $\\log([[a]] \\times 10^{[[n]]}) = \\log [[a]] + ([[n]]) \\approx$ [[=log(a)+n:3]]."
+    }
+   ]
+  },
+  {
+   "id": "X-FV-04-a",
+   "notions": [
+    "M-FV-04"
+   ],
+   "title": "Dériver une fonction de charge",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "E": {
+     "unit": "",
+     "values": [
+      5,
+      10,
+      12,
+      24
+     ]
+    },
+    "tau": {
+     "unit": "",
+     "values": [
+      0.1,
+      0.5,
+      1,
+      2
+     ]
+    },
+    "t0": {
+     "unit": "",
+     "values": [
+      0,
+      0.5,
+      1
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "$u(t) = [[E]]\\left(1 - e^{-t/[[tau]]}\\right)$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "$u'(t_0)$ pour $t_0 = [[t0]]$ s ?",
+     "answer": "E/tau*exp(-t0/tau)",
+     "unit": "",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "L'expression de $u'(t)$ est :",
+     "choices": [
+      "$\\dfrac{[[E]]}{[[tau]]}e^{-t/[[tau]]}$",
+      "$[[E]]e^{-t/[[tau]]}$",
+      "$-\\dfrac{[[E]]}{[[tau]]}e^{-t/[[tau]]}$"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "(e^u)' = u' e^u avec u = −t/τ.",
+   "method": "u'(t) = E × (1/τ) e^{−t/τ}.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$u'(t) = \\dfrac{[[E]]}{[[tau]]}e^{-t/[[tau]]}$, donc $u'([[t0]]) \\approx$ [[=E/tau*exp(-t0/tau):3]] V/s."
+    }
+   ]
+  },
+  {
+   "id": "X-FV-04-b",
+   "notions": [
+    "M-FV-04"
+   ],
+   "title": "Dérivée d'un produit et d'un quotient",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "a": {
+     "unit": "",
+     "min": 1,
+     "max": 5,
+     "step": 1
+    },
+    "b": {
+     "unit": "",
+     "min": 1,
+     "max": 5,
+     "step": 1
+    },
+    "x0": {
+     "unit": "",
+     "values": [
+      0.5,
+      1,
+      2
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On pose $f(x) = ([[a]]x + 1)\\,e^{x}$ et $g(x) = \\dfrac{x}{x + [[b]]}$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "$f'([[x0]])$ ?",
+     "answer": "(a + a*x0 + 1)*exp(x0)",
+     "unit": "",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "$g'([[x0]])$ ?",
+     "answer": "b/(x0 + b)^2",
+     "unit": "",
+     "tolerance": 0.02,
+     "sig": 3
+    }
+   ],
+   "hint": "(uv)' = u'v + uv' ; (u/v)' = (u'v − uv')/v².",
+   "method": "f'(x) = (ax + a + 1)eˣ ; g'(x) = b/(x + b)².",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$f'(x) = [[a]]e^x + ([[a]]x + 1)e^x$, d'où $f'([[x0]]) \\approx$ [[=(a+a*x0+1)*exp(x0):3]] ; $g'(x) = \\dfrac{[[b]]}{(x + [[b]])^2}$, d'où $g'([[x0]]) \\approx$ [[=b/(x0+b)^2:3]]."
+    }
+   ]
+  },
+  {
+   "id": "X-FV-05-a",
+   "notions": [
+    "M-FV-05"
+   ],
+   "title": "Puissance maximale d'un générateur",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "E": {
+     "unit": "",
+     "values": [
+      12,
+      24,
+      48
+     ]
+    },
+    "r": {
+     "unit": "",
+     "values": [
+      0.5,
+      1,
+      2,
+      4
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un générateur de f.é.m. $E = [[E]]$ V et de résistance interne $r = [[r]]\\ \\Omega$ fournit $P(I) = [[E]]I - [[r]]I^2$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Intensité qui rend $P$ maximale (A) ?",
+     "answer": "E/(2*r)",
+     "unit": "A",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Puissance maximale (W) ?",
+     "answer": "E^2/(4*r)",
+     "unit": "W",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "P'(I) = E − 2rI.",
+   "method": "Annuler la dérivée, vérifier le changement de signe, calculer P en ce point.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$P'(I) = [[E]] - [[=2*r]]I$ s'annule pour $I =$ [[=E/(2*r):3|A]] (positive avant, négative après) ; $P_{max} =$ [[=E^2/(4*r):3|W]]."
+    }
+   ]
+  },
+  {
+   "id": "X-FV-05-b",
+   "notions": [
+    "M-FV-05"
+   ],
+   "title": "Nombre de solutions d'une équation",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "k": {
+     "unit": "",
+     "values": [
+      -10,
+      -1,
+      1,
+      3,
+      10,
+      30
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "$f(x) = x^3 - 3x$ sur $\\mathbb{R}$. On étudie l'équation $f(x) = [[k]]$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Valeur du maximum local de $f$ (en $x = -1$) ?",
+     "answer": "2",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Nombre de solutions de $f(x) = [[k]]$ ?",
+     "answer": "1 + 2*lt(k, 2)*gt(k, -2)",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 6
+    }
+   ],
+   "hint": "f'(x) = 3x² − 3 s'annule en −1 et 1 ; f(−1) = 2, f(1) = −2.",
+   "method": "Tableau de variations : croissante, décroissante sur [−1 ; 1], puis croissante.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Maximum local $f(-1) = 2$, minimum local $f(1) = -2$. Si $-2 < k < 2$ : 3 solutions ; sinon 1 (pour $k = $ [[k]] : [[=1+2*lt(k,2)*gt(k,-2)]] solution(s))."
+    }
+   ]
+  },
+  {
+   "id": "X-FV-06-a",
+   "notions": [
+    "M-FV-06"
+   ],
+   "title": "Dichotomie",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "k": {
+     "unit": "",
+     "values": [
+      2,
+      3,
+      5,
+      7
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On cherche la solution de $x^2 = [[k]]$ dans $[1\\,;3]$ par dichotomie."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Milieu du premier intervalle ?",
+     "answer": "2",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Après la première étape, l'intervalle conservé est :",
+     "choices": [
+      "$[1\\,;2]$",
+      "$[2\\,;3]$"
+     ],
+     "correct": 0,
+     "correctExpr": "gt(k, 4)"
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Valeur de la solution à 0,01 près ?",
+     "answer": "sqrt(k)",
+     "unit": "",
+     "tolerance": 0.005,
+     "sig": 3
+    }
+   ],
+   "hint": "Compare f(2) = 4 − k au signe de f(1).",
+   "method": "On garde la moitié où x² − k change de signe.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\sqrt{[[k]]} \\approx$ [[=sqrt(k):4]]."
+    }
+   ]
+  },
+  {
+   "id": "X-FV-06-b",
+   "notions": [
+    "M-FV-06"
+   ],
+   "title": "Méthode de Newton",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "x0": {
+     "unit": "",
+     "values": [
+      1,
+      2,
+      3
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On applique la méthode de Newton à $f(x) = x^2 - 2$ depuis $x_0 = [[x0]]$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "$x_1$ ?",
+     "answer": "x0 - (x0^2 - 2)/(2*x0)",
+     "unit": "",
+     "tolerance": 0.002,
+     "sig": 5
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Vers quelle valeur la suite converge-t-elle ?",
+     "answer": "sqrt(2)",
+     "unit": "",
+     "tolerance": 0.002,
+     "sig": 5
+    }
+   ],
+   "hint": "x₁ = x₀ − f(x₀)/f'(x₀) avec f'(x) = 2x.",
+   "method": "xₙ₊₁ = xₙ − (xₙ² − 2)/(2xₙ).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$x_1 = [[x0]] - \\dfrac{[[=x0^2-2]]}{[[=2*x0]]} =$ [[=x0-(x0^2-2)/(2*x0):5]] ; la suite converge vers $\\sqrt{2} \\approx 1{,}4142$."
+    }
+   ]
+  },
+  {
+   "id": "X-FV-07-a",
+   "notions": [
+    "M-FV-07"
+   ],
+   "title": "Asymptotes d'une fonction",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "a": {
+     "unit": "",
+     "values": [
+      1,
+      2,
+      3
+     ]
+    },
+    "b": {
+     "unit": "",
+     "values": [
+      -2,
+      -1,
+      1,
+      2
+     ]
+    },
+    "c": {
+     "unit": "",
+     "values": [
+      1,
+      2,
+      3,
+      5
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "$f(x) = [[a]]x + ([[b]]) + \\dfrac{[[c]]}{x}$ pour $x > 0$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "En $+\\infty$, la courbe admet pour asymptote :",
+     "choices": [
+      "la droite $y = [[a]]x + ([[b]])$",
+      "la droite $y = [[c]]$",
+      "aucune asymptote"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "En 0 (à droite), la courbe admet :",
+     "choices": [
+      "une asymptote verticale $x = 0$",
+      "une asymptote horizontale $y = 0$",
+      "une tangente horizontale"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Pour $x > 0$, la courbe est :",
+     "choices": [
+      "au-dessus de son asymptote oblique",
+      "au-dessous de son asymptote oblique",
+      "sur son asymptote"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Étudie f(x) − (ax + b) = c/x.",
+   "method": "f(x) − (ax + b) tend vers 0 en +∞ et est du signe de c/x.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$f(x) - ([[a]]x + ([[b]])) = \\dfrac{[[c]]}{x} \\to 0$ : asymptote oblique. En 0⁺, $\\dfrac{[[c]]}{x} \\to +\\infty$ : asymptote verticale. $\\dfrac{[[c]]}{x} > 0$ : courbe au-dessus."
+    }
+   ]
+  },
+  {
+   "id": "X-FV-07-b",
+   "notions": [
+    "M-FV-07"
+   ],
+   "title": "Régime permanent d'une charge",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "E": {
+     "unit": "",
+     "values": [
+      5,
+      9,
+      12,
+      24,
+      48
+     ]
+    },
+    "tau": {
+     "unit": "",
+     "values": [
+      0.2,
+      1,
+      3
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "$u(t) = [[E]] - [[E]]e^{-t/[[tau]]}$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "$\\lim_{t\\to+\\infty} u(t)$ ?",
+     "answer": "E",
+     "unit": "V",
+     "tolerance": 0.001,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "La droite $u = [[E]]$ est pour la courbe :",
+     "choices": [
+      "une asymptote horizontale",
+      "une asymptote verticale",
+      "une tangente à l'origine"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "e^{−t/τ} → 0 quand t → +∞.",
+   "method": "La limite finie en +∞ donne l'asymptote horizontale (régime permanent).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$e^{-t/[[tau]]} \\to 0$ donc $u(t) \\to [[E]]$ V : asymptote horizontale."
+    }
+   ]
+  },
+  {
+   "id": "X-FV-08-a",
+   "notions": [
+    "M-FV-08"
+   ],
+   "title": "Limites de référence",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "a": {
+     "unit": "",
+     "values": [
+      2,
+      3,
+      5
+     ]
+    },
+    "b": {
+     "unit": "",
+     "values": [
+      1,
+      4,
+      10
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Déterminer les limites suivantes."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "$\\lim_{t\\to+\\infty} [[b]]e^{-t/[[a]]}$ ?",
+     "answer": "0",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "$\\lim_{x\\to+\\infty} \\dfrac{e^x}{x^{[[a]]}}$ ?",
+     "choices": [
+      "$+\\infty$",
+      "0",
+      "1"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "$\\lim_{x\\to 0^+} \\ln x$ ?",
+     "choices": [
+      "$-\\infty$",
+      "0",
+      "$+\\infty$"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Croissances comparées : l'exponentielle l'emporte sur les puissances.",
+   "method": "Utiliser les limites de référence de exp et ln.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$e^{-t/[[a]]} \\to 0$ ; $\\dfrac{e^x}{x^{[[a]]}} \\to +\\infty$ ; $\\ln x \\to -\\infty$ en $0^+$."
+    }
+   ]
+  },
+  {
+   "id": "X-FV-08-b",
+   "notions": [
+    "M-FV-08"
+   ],
+   "title": "Limite d'une fraction rationnelle",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "a": {
+     "unit": "",
+     "min": 1,
+     "max": 6,
+     "step": 1
+    },
+    "b": {
+     "unit": "",
+     "min": 1,
+     "max": 6,
+     "step": 1
+    },
+    "c": {
+     "unit": "",
+     "min": 1,
+     "max": 5,
+     "step": 1
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "$f(x) = \\dfrac{[[a]]x^2 + 1}{[[b]]x^2 + [[c]]x}$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "$\\lim_{x\\to+\\infty} f(x)$ ?",
+     "answer": "a/b",
+     "unit": "",
+     "tolerance": 0.005,
+     "sig": 4
+    }
+   ],
+   "hint": "Factorise numérateur et dénominateur par x².",
+   "method": "En ±∞, une fraction rationnelle a la limite du quotient de ses termes de plus haut degré.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$f(x) \\sim \\dfrac{[[a]]x^2}{[[b]]x^2} = \\dfrac{[[a]]}{[[b]]}$, donc la limite vaut [[=a/b:4]]."
+    }
+   ]
+  },
+  {
+   "id": "X-FV-09-a",
+   "notions": [
+    "M-FV-09"
+   ],
+   "title": "Comportement d'un filtre aux limites",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "tau": {
+     "unit": "",
+     "values": [
+      0.001,
+      0.01,
+      0.1
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "$\\underline{H}(\\omega) = \\dfrac{j\\omega\\tau}{1 + j\\omega\\tau}$ avec $\\tau = [[tau]]$ s."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "$\\lim_{\\omega\\to 0} |\\underline{H}|$ ?",
+     "answer": "0",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "$\\lim_{\\omega\\to+\\infty} |\\underline{H}|$ ?",
+     "answer": "1",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Ce filtre est un :",
+     "choices": [
+      "passe-haut",
+      "passe-bas",
+      "passe-bande"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "En basse fréquence on garde les termes de plus bas degré, en haute fréquence ceux de plus haut degré.",
+   "method": "ω → 0 : H ≈ jωτ → 0. ω → ∞ : H ≈ jωτ/(jωτ) = 1.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\underline{H} \\to 0$ en basse fréquence et $\\to 1$ en haute fréquence : filtre passe-haut."
+    }
+   ]
+  },
+  {
+   "id": "X-FV-09-b",
+   "notions": [
+    "M-FV-09"
+   ],
+   "title": "Impédance d'une bobine réelle",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "R": {
+     "unit": "",
+     "values": [
+      5,
+      10,
+      20
+     ]
+    },
+    "L": {
+     "unit": "",
+     "values": [
+      0.01,
+      0.05,
+      0.1
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "$\\underline{Z}(\\omega) = [[R]] + j[[L]]\\omega$ (en Ω)."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "$\\lim_{\\omega\\to 0} |\\underline{Z}|$ ?",
+     "answer": "R",
+     "unit": "Ω",
+     "tolerance": 0.001,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "$|\\underline{Z}|$ pour $\\omega = 1000$ rad/s ?",
+     "answer": "sqrt(R^2 + (L*1000)^2)",
+     "unit": "Ω",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Quand $\\omega \\to +\\infty$, $|\\underline{Z}|$ :",
+     "choices": [
+      "tend vers $+\\infty$",
+      "tend vers R",
+      "tend vers 0"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "|Z| = √(R² + L²ω²).",
+   "method": "En continu la bobine ne garde que sa résistance ; en haute fréquence l'inductance domine.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$|\\underline{Z}(0)| = [[R]]$ Ω ; à 1000 rad/s : $\\sqrt{[[=R^2]] + [[=(L*1000)^2]]} \\approx$ [[=sqrt(R^2+(L*1000)^2):3|Ω]] ; $|\\underline{Z}| \\to +\\infty$."
+    }
+   ]
+  },
+  {
+   "id": "X-FM-01-a",
+   "notions": [
+    "M-FM-01"
+   ],
+   "title": "Déphasage d'un circuit RL",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "R": {
+     "unit": "",
+     "values": [
+      10,
+      20,
+      50,
+      100
+     ]
+    },
+    "L": {
+     "unit": "",
+     "values": [
+      0.05,
+      0.1,
+      0.2,
+      0.5
+     ]
+    },
+    "f": {
+     "unit": "",
+     "values": [
+      50,
+      100,
+      500
+     ]
+    }
+   },
+   "vars": {
+    "w": "2*pi*f"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Dans un circuit RL série, $\\varphi = \\arctan\\dfrac{L\\omega}{R}$. On a $R = [[R]]\\ \\Omega$, $L = [[L]]$ H, $f = [[f]]$ Hz."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "$\\dfrac{L\\omega}{R}$ ?",
+     "answer": "L*w/R",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "$\\varphi$ en degrés ?",
+     "answer": "deg(atan(L*w/R))",
+     "unit": "°",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Quand la fréquence devient très grande, $\\varphi$ tend vers :",
+     "choices": [
+      "90°",
+      "0°",
+      "45°"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "arctan tend vers π/2 (90°) en +∞.",
+   "method": "Calculer le rapport, puis l'arctangente en degrés.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\dfrac{L\\omega}{R} \\approx$ [[=L*w/R:3]], $\\varphi \\approx$ [[=deg(atan(L*w/R)):3]]°. Quand $\\omega \\to \\infty$, $\\varphi \\to 90°$."
+    }
+   ]
+  },
+  {
+   "id": "X-FM-01-b",
+   "notions": [
+    "M-FM-01"
+   ],
+   "title": "Valeurs de tan et arctan",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "x": {
+     "unit": "",
+     "values": [
+      0.5,
+      1,
+      1.732,
+      2,
+      3,
+      -1
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Calculs à la calculatrice (en radians puis en degrés)."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "$\\arctan([[x]])$ en radians ?",
+     "answer": "atan(x)",
+     "unit": "",
+     "tolerance": 0.005,
+     "sig": 4
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "$\\arctan([[x]])$ en degrés ?",
+     "answer": "deg(atan(x))",
+     "unit": "°",
+     "tolerance": 0.005,
+     "sig": 4
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "$\\tan(\\arctan([[x]]))$ ?",
+     "answer": "x",
+     "unit": "",
+     "tolerance": 0.002,
+     "sig": 4
+    }
+   ],
+   "hint": "arctan est la réciproque de tan sur ]−π/2 ; π/2[.",
+   "method": "tan(arctan x) = x pour tout réel x.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\arctan [[x]] \\approx$ [[=atan(x):4]] rad ≈ [[=deg(atan(x)):4]]° et $\\tan(\\arctan [[x]]) = [[x]]$."
+    }
+   ]
+  },
+  {
+   "id": "X-FM-02-a",
+   "notions": [
+    "M-FM-02"
+   ],
+   "title": "Période d'une tension",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "f": {
+     "unit": "",
+     "values": [
+      50,
+      60,
+      100,
+      400,
+      1000
+     ]
+    },
+    "A": {
+     "unit": "",
+     "values": [
+      10,
+      100,
+      325
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "$u(t) = [[A]]\\sin(2\\pi \\times [[f]]\\,t)$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Période $T$ (s) ?",
+     "answer": "1/f",
+     "unit": "s",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "La fonction $u$ est :",
+     "choices": [
+      "impaire",
+      "paire",
+      "ni paire ni impaire"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "T = 2π/ω = 1/f ; sin(−x) = −sin x.",
+   "method": "Pour sin(ωt), T = 2π/ω.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$T = \\dfrac{1}{[[f]]} =$ [[=1/f|s]] ; $u(-t) = -u(t)$ : fonction impaire."
+    }
+   ]
+  },
+  {
+   "id": "X-FM-02-b",
+   "notions": [
+    "M-FM-02"
+   ],
+   "title": "Parité de fonctions usuelles",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "w": {
+     "unit": "",
+     "values": [
+      2,
+      3,
+      10,
+      50
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Pour chaque fonction, choisir sa parité."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "$t \\mapsto \\cos([[w]]t)$ est :",
+     "choices": [
+      "paire",
+      "impaire",
+      "ni paire ni impaire"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "$t \\mapsto t^3 - [[w]]t$ est :",
+     "choices": [
+      "impaire",
+      "paire",
+      "ni paire ni impaire"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "$t \\mapsto e^{t}$ est :",
+     "choices": [
+      "ni paire ni impaire",
+      "paire",
+      "impaire"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q4",
+     "kind": "numeric",
+     "prompt": "Période de $t \\mapsto \\cos([[w]]t)$ ?",
+     "answer": "2*pi/w",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Compare f(−t) à f(t) et à −f(t).",
+   "method": "f paire : f(−t) = f(t) ; f impaire : f(−t) = −f(t).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "cos est paire ; $(-t)^3 - [[w]](-t) = -(t^3 - [[w]]t)$ : impaire ; $e^{-t}$ n'est ni $e^t$ ni $-e^t$. Période : $\\dfrac{2\\pi}{[[w]]} \\approx$ [[=2*pi/w:3]]."
+    }
+   ]
+  },
+  {
+   "id": "X-FM-03-a",
+   "notions": [
+    "M-FM-03"
+   ],
+   "title": "Tension aux bornes d'une bobine",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "I": {
+     "unit": "",
+     "values": [
+      1,
+      2,
+      3,
+      5
+     ]
+    },
+    "L": {
+     "unit": "",
+     "values": [
+      0.05,
+      0.1,
+      0.2
+     ]
+    },
+    "f": {
+     "unit": "",
+     "values": [
+      50,
+      60
+     ]
+    }
+   },
+   "vars": {
+    "w": "2*pi*f"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "$i(t) = [[I]]\\sqrt{2}\\sin(\\omega t)$ avec $f = [[f]]$ Hz traverse une bobine $L = [[L]]$ H. On a $u_L = L\\dfrac{di}{dt}$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Amplitude de $\\dfrac{di}{dt}$ (A/s) ?",
+     "answer": "I*sqrt(2)*w",
+     "unit": "",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Amplitude de $u_L$ (V) ?",
+     "answer": "L*I*sqrt(2)*w",
+     "unit": "V",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "$u_L(t)$ est proportionnelle à :",
+     "choices": [
+      "$\\cos(\\omega t)$",
+      "$\\sin(\\omega t)$",
+      "$-\\cos(\\omega t)$"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "(sin ωt)' = ω cos ωt.",
+   "method": "di/dt = I√2 ω cos(ωt), puis multiplier par L.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\dfrac{di}{dt} = [[I]]\\sqrt{2}\\,\\omega\\cos(\\omega t)$, amplitude [[=I*sqrt(2)*w:3]] A/s ; $u_L$ a pour amplitude [[=L*I*sqrt(2)*w:3|V]]."
+    }
+   ]
+  },
+  {
+   "id": "X-FM-03-b",
+   "notions": [
+    "M-FM-03"
+   ],
+   "title": "Dérivée de arctan(u)",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "a": {
+     "unit": "",
+     "values": [
+      2,
+      3,
+      5
+     ]
+    },
+    "x0": {
+     "unit": "",
+     "values": [
+      0,
+      0.5,
+      1,
+      2
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "$f(x) = \\arctan([[a]]x)$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "$f'([[x0]])$ ?",
+     "answer": "a/(1 + (a*x0)^2)",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "$\\lim_{x\\to+\\infty} f(x)$ :",
+     "choices": [
+      "$\\dfrac{\\pi}{2}$",
+      "$+\\infty$",
+      "0"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "(arctan u)' = u'/(1 + u²).",
+   "method": "u = ax, u' = a.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$f'(x) = \\dfrac{[[a]]}{1 + [[=a^2]]x^2}$, donc $f'([[x0]]) \\approx$ [[=a/(1+(a*x0)^2):3]] ; $f(x) \\to \\pi/2$."
+    }
+   ]
+  },
+  {
+   "id": "X-FM-04-a",
+   "notions": [
+    "M-FM-04"
+   ],
+   "title": "Décomposer une fraction rationnelle",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "p": {
+     "unit": "",
+     "min": 1,
+     "max": 4,
+     "step": 1
+    },
+    "q": {
+     "unit": "",
+     "values": [
+      2,
+      3,
+      4,
+      5
+     ]
+    },
+    "a": {
+     "unit": "",
+     "min": -4,
+     "max": 5,
+     "step": 1
+    },
+    "b": {
+     "unit": "",
+     "min": -4,
+     "max": 5,
+     "step": 1
+    }
+   },
+   "vars": {},
+   "constraints": [
+    "p != q",
+    "abs(a) + abs(b) > 0"
+   ],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On admet que $\\dfrac{([[a]] + [[b]])x + [[a]]\\times[[q]] + [[b]]\\times[[p]]}{(x + [[p]])(x + [[q]])} = \\dfrac{\\alpha}{x + [[p]]} + \\dfrac{\\beta}{x + [[q]]}$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "$\\alpha$ ?",
+     "answer": "a",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 6
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "$\\beta$ ?",
+     "answer": "b",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 6
+    }
+   ],
+   "hint": "Multiplie par (x + p) puis remplace x par −p.",
+   "method": "Identification : α(x + q) + β(x + p) = numérateur, puis valeurs particulières x = −p et x = −q.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "En $x = -[[p]]$ : $\\alpha([[q]] - [[p]]) = $ numérateur, d'où $\\alpha = [[a]]$ ; en $x = -[[q]]$ : $\\beta = [[b]]$."
+    }
+   ]
+  },
+  {
+   "id": "X-FM-04-b",
+   "notions": [
+    "M-FM-04"
+   ],
+   "title": "Vérifier une décomposition",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "a": {
+     "unit": "",
+     "min": 1,
+     "max": 5,
+     "step": 1
+    },
+    "b": {
+     "unit": "",
+     "min": 1,
+     "max": 5,
+     "step": 1
+    },
+    "x0": {
+     "unit": "",
+     "values": [
+      1,
+      2,
+      3
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On considère $\\dfrac{[[a]]}{x + 1} + \\dfrac{[[b]]}{x + 2}$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Coefficient de $x$ du numérateur après réduction ?",
+     "answer": "a + b",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 6
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Valeur de l'expression en $x = [[x0]]$ ?",
+     "answer": "a/(x0+1) + b/(x0+2)",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Réduis au même dénominateur (x + 1)(x + 2).",
+   "method": "a(x + 2) + b(x + 1) = (a + b)x + 2a + b.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Numérateur : $([[a]] + [[b]])x + [[=2*a+b]]$ ; valeur en $x = [[x0]]$ : [[=a/(x0+1)+b/(x0+2):3]]."
+    }
+   ]
+  }
+ ]
+}

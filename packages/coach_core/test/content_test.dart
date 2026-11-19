@@ -144,9 +144,13 @@ void main() {
     test('notion suivante conseillée', () {
       final parcours = Parcours.fromJson({'defaults': {'Énergie et électricité': 1}});
       final p = ProgressState();
-      expect(p.nextNotion(lib, parcours)!.id, 'M-NC-01');
-      p.boxes['M-NC-01'] = 3;
-      expect(p.nextNotion(lib, parcours)!.id, 'M-NC-02');
+      final first = p.nextNotion(lib, parcours)!;
+      expect(lib.hasContent(first.id), isTrue);
+      expect(parcours.yearOf(first), 1);
+      p.boxes[first.id] = 3;
+      final second = p.nextNotion(lib, parcours)!;
+      expect(second.id, isNot(first.id));
+      expect(lib.hasContent(second.id), isTrue);
     });
   });
 }

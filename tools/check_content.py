@@ -346,6 +346,12 @@ def main():
                 for c in b.get("curves", []):
                     try:
                         parse(c["expr"])
+                        if not templates:
+                            a0, a1 = float(b.get("from", 0)), float(b.get("to", 1))
+                            for k in range(21):
+                                t = a0 + (a1 - a0) * k / 20
+                                if not finite(evaluate(c["expr"], {b.get("var", "t"): complex(t)})):
+                                    raise ExprError(f"non définie en {t}")
                     except ExprError as e:
                         errors.append(f"{where} : courbe {e}")
             if b.get("type") == "circuit" and not b.get("parts"):

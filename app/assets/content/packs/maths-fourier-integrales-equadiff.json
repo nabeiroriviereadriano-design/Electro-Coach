@@ -1,0 +1,2706 @@
+{
+ "id": "maths-fourier-integrales-equadiff",
+ "courses": [
+  {
+   "id": "C-SF-01",
+   "notions": [
+    "M-SF-01"
+   ],
+   "title": "Séries numériques : géométriques et de Riemann",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Une **série** est une « somme infinie » $\\sum_{n \\geqslant 0} u_n$ : on calcule les sommes partielles $S_N = u_0 + \\dots + u_N$. Si $S_N$ a une limite finie $S$, la série **converge** et $S$ est sa somme."
+    },
+    {
+     "type": "formula",
+     "tex": "\\sum_{n=0}^{+\\infty} q^n = \\frac{1}{1 - q} \\quad \\text{si } |q| < 1",
+     "title": "Série géométrique"
+    },
+    {
+     "type": "formula",
+     "tex": "\\sum_{n \\geqslant 1} \\frac{1}{n^\\alpha} \\text{ converge si et seulement si } \\alpha > 1",
+     "title": "Série de Riemann (admis)"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : $1 + \\dfrac{1}{2} + \\dfrac{1}{4} + \\dfrac{1}{8} + \\dots = \\dfrac{1}{1 - 1/2} = 2$. La série $\\sum \\dfrac{1}{n}$ (harmonique) diverge, $\\sum \\dfrac{1}{n^2}$ converge."
+    },
+    {
+     "type": "tip",
+     "text": "Le calcul numérique (tableur, Python) permet de conjecturer ces résultats en observant les sommes partielles.",
+     "title": ""
+    },
+    {
+     "type": "warning",
+     "text": "Toute théorie générale des séries numériques est hors programme.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-SF-02",
+   "notions": [
+    "M-SF-02"
+   ],
+   "title": "Signaux périodiques continus par morceaux",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Un signal $f$ est **T-périodique** si $f(t + T) = f(t)$. Il est **continu par morceaux** s'il est formé de morceaux continus séparés par un nombre fini de sauts sur une période (créneau, dents de scie…)."
+    },
+    {
+     "type": "plot",
+     "var": "t",
+     "from": 0,
+     "to": 2,
+     "title": "Créneau de période 1 s",
+     "xLabel": "",
+     "yLabel": "",
+     "samples": 400,
+     "curves": [
+      {
+       "expr": "5*(2*gt(sin(2*pi*t), 0) - 1)",
+       "label": "créneau ±5 V"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "text": "Pour l'étudier, on écrit son expression **sur une période** (ou une demi-période en cas de parité) et on repère sa parité."
+    },
+    {
+     "type": "method",
+     "text": "1. Lire la période $T$ sur le graphe.\n2. Repérer la parité (symétrie par rapport à l'axe vertical ou à l'origine).\n3. Écrire $f(t)$ morceau par morceau sur $[0\\,;T[$ ou $[-T/2\\,;T/2[$.",
+     "title": "Méthode"
+    },
+    {
+     "type": "tip",
+     "text": "Les courants absorbés par les redresseurs et les variateurs sont des signaux périodiques non sinusoïdaux : la décomposition de Fourier mesure leurs harmoniques.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-SF-03",
+   "notions": [
+    "M-SF-03"
+   ],
+   "title": "Coefficients de Fourier",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "À un signal $T$-périodique ($\\omega = \\dfrac{2\\pi}{T}$) on associe la série de Fourier :"
+    },
+    {
+     "type": "formula",
+     "tex": "f(t) \\sim a_0 + \\sum_{n\\geqslant 1} \\left(a_n\\cos n\\omega t + b_n\\sin n\\omega t\\right)",
+     "title": "Série de Fourier"
+    },
+    {
+     "type": "formula",
+     "tex": "a_0 = \\frac{1}{T}\\int_0^T f(t)\\,dt \\quad a_n = \\frac{2}{T}\\int_0^T f(t)\\cos(n\\omega t)\\,dt \\quad b_n = \\frac{2}{T}\\int_0^T f(t)\\sin(n\\omega t)\\,dt",
+     "title": "Coefficients"
+    },
+    {
+     "type": "text",
+     "text": "$a_0$ est la **valeur moyenne** ; le terme de rang 1 est le **fondamental**, les suivants sont les **harmoniques**. L'amplitude de l'harmonique $n$ vaut $A_n = \\sqrt{a_n^2 + b_n^2}$."
+    },
+    {
+     "type": "text",
+     "text": "Exemple : créneau impair d'amplitude $E$ : $b_n = \\dfrac{4E}{n\\pi}$ pour $n$ impair, $0$ pour $n$ pair, $a_n = 0$."
+    },
+    {
+     "type": "method",
+     "text": "Intégrer morceau par morceau sur une période ; un logiciel de calcul formel donne les coefficients dans tous les cas.",
+     "title": "Méthode"
+    },
+    {
+     "type": "tip",
+     "text": "Le **spectre** est le diagramme des amplitudes $A_n$ en fonction de la fréquence $nf$.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-SF-04",
+   "notions": [
+    "M-SF-04"
+   ],
+   "title": "Fonctions paires ou impaires",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "f \\text{ paire} \\Rightarrow b_n = 0, \\quad a_n = \\frac{4}{T}\\int_0^{T/2} f(t)\\cos(n\\omega t)\\,dt",
+     "title": "Signal pair"
+    },
+    {
+     "type": "formula",
+     "tex": "f \\text{ impaire} \\Rightarrow a_0 = a_n = 0, \\quad b_n = \\frac{4}{T}\\int_0^{T/2} f(t)\\sin(n\\omega t)\\,dt",
+     "title": "Signal impair"
+    },
+    {
+     "type": "text",
+     "text": "On peut souvent se ramener à un signal pair ou impair en choisissant bien l'origine des temps (comme en électrotechnique où l'on prend la tension comme référence)."
+    },
+    {
+     "type": "tip",
+     "text": "Un signal ayant la symétrie de demi-onde ($f(t + T/2) = -f(t)$, comme le créneau) n'a que des harmoniques **impairs**.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-SF-05",
+   "notions": [
+    "M-SF-05"
+   ],
+   "title": "Convergence : sommes partielles",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Si $f$ est de classe $C^1$ par morceaux (**conditions de Dirichlet**), la série de Fourier converge vers $f(t)$ en tout point de continuité, et vers la moyenne des limites à gauche et à droite en un saut."
+    },
+    {
+     "type": "plot",
+     "var": "t",
+     "from": 0,
+     "to": 1,
+     "title": "Sommes partielles d'un créneau d'amplitude 1",
+     "xLabel": "",
+     "yLabel": "",
+     "samples": 240,
+     "curves": [
+      {
+       "expr": "4/pi*(sin(2*pi*t) + sin(6*pi*t)/3 + sin(10*pi*t)/5)",
+       "label": "somme jusqu'au rang 5"
+      },
+      {
+       "expr": "4/pi*sin(2*pi*t)",
+       "label": "fondamental"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "text": "Plus on ajoute d'harmoniques, plus la somme partielle ressemble au signal (avec de petites oscillations près des sauts)."
+    },
+    {
+     "type": "warning",
+     "text": "Toute étude théorique de la convergence est hors programme : dans les cas étudiés, les conditions sont toujours remplies.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-SF-06",
+   "notions": [
+    "M-SF-06"
+   ],
+   "title": "Formule de Parseval et valeur efficace",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "\\frac{1}{T}\\int_0^T f^2(t)\\,dt = a_0^2 + \\frac{1}{2}\\sum_{n\\geqslant1}\\left(a_n^2 + b_n^2\\right)",
+     "title": "Formule de Parseval"
+    },
+    {
+     "type": "text",
+     "text": "Le membre de gauche est le **carré de la valeur efficace** : $F_{eff}^2 = a_0^2 + \\sum F_n^2$ où $F_n = \\dfrac{\\sqrt{a_n^2+b_n^2}}{\\sqrt 2}$ est la valeur efficace de l'harmonique $n$."
+    },
+    {
+     "type": "formula",
+     "tex": "F_{eff} = \\sqrt{F_0^2 + F_1^2 + F_2^2 + \\dots}",
+     "title": "En électrotechnique"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : un courant de fondamental 10 A et d'harmonique 3 de 3 A (valeurs efficaces) a pour valeur efficace $\\sqrt{100 + 9} \\approx 10{,}4$ A."
+    },
+    {
+     "type": "tip",
+     "text": "C'est le principe des appareils « TRMS » (vraie valeur efficace) et du calcul du taux de distorsion harmonique.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-CI-01",
+   "notions": [
+    "M-CI-01"
+   ],
+   "title": "Primitives",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "$F$ est une **primitive** de $f$ sur un intervalle si $F' = f$. Deux primitives diffèrent d'une constante."
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "$f(x)$",
+       "Une primitive $F(x)$"
+      ],
+      [
+       "$x^n$ ($n \\neq -1$)",
+       "$\\dfrac{x^{n+1}}{n+1}$"
+      ],
+      [
+       "$\\dfrac{1}{x}$ ($x > 0$)",
+       "$\\ln x$"
+      ],
+      [
+       "$e^{x}$",
+       "$e^{x}$"
+      ],
+      [
+       "$\\cos(\\omega t + \\varphi)$",
+       "$\\dfrac{1}{\\omega}\\sin(\\omega t + \\varphi)$"
+      ],
+      [
+       "$\\sin(\\omega t + \\varphi)$",
+       "$-\\dfrac{1}{\\omega}\\cos(\\omega t + \\varphi)$"
+      ]
+     ]
+    },
+    {
+     "type": "formula",
+     "tex": "u'u^n \\to \\frac{u^{n+1}}{n+1} \\qquad \\frac{u'}{u} \\to \\ln u \\ (u > 0) \\qquad u'e^u \\to e^u",
+     "title": "Formes composées"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : une primitive de $e^{-2t}$ est $-\\dfrac{1}{2}e^{-2t}$ ; une primitive de $\\dfrac{2x}{x^2 + 1}$ est $\\ln(x^2 + 1)$."
+    },
+    {
+     "type": "method",
+     "text": "Toujours vérifier une primitive en la dérivant.",
+     "title": "Méthode"
+    }
+   ]
+  },
+  {
+   "id": "C-CI-02",
+   "notions": [
+    "M-CI-02"
+   ],
+   "title": "Intégrale",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "\\int_a^b f(x)\\,dx = F(b) - F(a) = \\big[F(x)\\big]_a^b",
+     "title": "Définition (F primitive de f)"
+    },
+    {
+     "type": "formula",
+     "tex": "\\int_a^c f = \\int_a^b f + \\int_b^c f \\qquad \\int_a^b (\\alpha f + \\beta g) = \\alpha\\int_a^b f + \\beta\\int_a^b g",
+     "title": "Chasles et linéarité"
+    },
+    {
+     "type": "text",
+     "text": "**Positivité** : si $f \\geqslant 0$ sur $[a\\,;b]$ ($a \\leqslant b$), alors $\\int_a^b f \\geqslant 0$."
+    },
+    {
+     "type": "text",
+     "text": "Exemple : $\\int_0^2 (3x^2 + 1)\\,dx = [x^3 + x]_0^2 = 10$."
+    },
+    {
+     "type": "tip",
+     "text": "L'énergie consommée pendant une durée est l'intégrale de la puissance : $W = \\int_0^T p(t)\\,dt$.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-CI-03",
+   "notions": [
+    "M-CI-03"
+   ],
+   "title": "Calcul d'aires",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "\\mathcal{A} = \\int_a^b \\big(g(x) - f(x)\\big)\\,dx \\quad \\text{si } f \\leqslant g \\text{ sur } [a\\,;b]",
+     "title": "Aire entre deux courbes (unités d'aire)"
+    },
+    {
+     "type": "text",
+     "text": "Si $f \\geqslant 0$, l'aire sous la courbe est $\\int_a^b f(x)\\,dx$. Si $f \\leqslant 0$, l'aire vaut $-\\int_a^b f(x)\\,dx$."
+    },
+    {
+     "type": "method",
+     "text": "1. Déterminer quelle courbe est au-dessus (étudier le signe de $g - f$).\n2. Intégrer la différence.\n3. Multiplier par l'aire de l'unité graphique si besoin.",
+     "title": "Méthode"
+    },
+    {
+     "type": "warning",
+     "text": "Une intégrale peut être négative ; une aire, jamais.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-CI-04",
+   "notions": [
+    "M-CI-04"
+   ],
+   "title": "Approximation d'une intégrale",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Quand on ne connaît pas de primitive, on approche l'intégrale en découpant $[a\\,;b]$ en $n$ intervalles de largeur $h = \\dfrac{b-a}{n}$."
+    },
+    {
+     "type": "formula",
+     "tex": "\\int_a^b f \\approx h\\sum_{k=0}^{n-1} f\\!\\left(a + (k + \\tfrac12)h\\right)",
+     "title": "Point milieu"
+    },
+    {
+     "type": "formula",
+     "tex": "\\int_a^b f \\approx h\\left[\\frac{f(a) + f(b)}{2} + \\sum_{k=1}^{n-1} f(a + kh)\\right]",
+     "title": "Trapèzes"
+    },
+    {
+     "type": "text",
+     "text": "**Monte-Carlo** : tirer au hasard de nombreux points dans un rectangle contenant la courbe ; la proportion de points sous la courbe, multipliée par l'aire du rectangle, approche l'intégrale."
+    },
+    {
+     "type": "text",
+     "text": "En Python :\n- `s = 0`\n- `for k in range(n): s += f(a + (k + 0.5) * h)`\n- `print(s * h)`"
+    },
+    {
+     "type": "tip",
+     "text": "Les oscilloscopes et analyseurs calculent ainsi valeurs moyennes et efficaces à partir d'échantillons.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-CI-05",
+   "notions": [
+    "M-CI-05"
+   ],
+   "title": "Valeur moyenne et valeur efficace",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "\\overline{f} = \\frac{1}{b - a}\\int_a^b f(x)\\,dx",
+     "title": "Valeur moyenne"
+    },
+    {
+     "type": "formula",
+     "tex": "F_{eff} = \\sqrt{\\frac{1}{T}\\int_0^T f^2(t)\\,dt}",
+     "title": "Valeur efficace d'un signal T-périodique"
+    },
+    {
+     "type": "text",
+     "text": "Exemples : la valeur moyenne de $\\sin$ sur une période est nulle ; la valeur efficace de $U_m\\sin(\\omega t)$ vaut $\\dfrac{U_m}{\\sqrt2}$."
+    },
+    {
+     "type": "text",
+     "text": "Pour un signal en créneau de 0 à $E$ avec un rapport cyclique $\\alpha$ : moyenne $\\alpha E$, efficace $E\\sqrt{\\alpha}$."
+    },
+    {
+     "type": "tip",
+     "text": "Autres usages : centre d'inertie, moment d'inertie, énergie moyenne transférée.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-CI-06",
+   "notions": [
+    "M-CI-06"
+   ],
+   "title": "Intégration par parties",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "\\int_a^b u(x)v'(x)\\,dx = \\big[u(x)v(x)\\big]_a^b - \\int_a^b u'(x)v(x)\\,dx",
+     "title": "Formule"
+    },
+    {
+     "type": "method",
+     "text": "Choisir $u$ facile à dériver (polynôme) et $v'$ facile à intégrer (exponentielle, sinus).",
+     "title": "Choix de u et v'"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : $\\int_0^1 x e^x\\,dx$ avec $u = x$, $v' = e^x$ : $[xe^x]_0^1 - \\int_0^1 e^x\\,dx = e - (e - 1) = 1$."
+    },
+    {
+     "type": "tip",
+     "text": "Utile pour les coefficients de Fourier d'un signal en rampe (dents de scie).",
+     "title": ""
+    },
+    {
+     "type": "warning",
+     "text": "Ne pas oublier le signe « − » devant la seconde intégrale.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-ED-01",
+   "notions": [
+    "M-ED-01"
+   ],
+   "title": "Équations différentielles linéaires du premier ordre",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "a\\,y' + b\\,y = c(t)",
+     "title": "Forme (a, b constantes réelles)"
+    },
+    {
+     "type": "formula",
+     "tex": "y_0(t) = K e^{-\\frac{b}{a}t}",
+     "title": "Solutions de l'équation sans second membre"
+    },
+    {
+     "type": "text",
+     "text": "Les solutions sont $y = y_0 + y_p$ où $y_p$ est une **solution particulière** (indiquée par l'énoncé : constante si $c$ est constant…). La constante $K$ se trouve avec la **condition initiale**."
+    },
+    {
+     "type": "text",
+     "text": "Exemple : charge d'un condensateur $RC\\,u' + u = E$, $u(0) = 0$ : $u(t) = E\\left(1 - e^{-t/(RC)}\\right)$, avec $\\tau = RC$."
+    },
+    {
+     "type": "tip",
+     "text": "Écritures équivalentes : $y' + 2y = 4$, $\\dfrac{dy}{dt} + 2y = 4$, $y'(t) + 2y(t) = 4$.",
+     "title": ""
+    },
+    {
+     "type": "warning",
+     "text": "La condition initiale s'applique à la solution générale complète ($y_0 + y_p$), pas à $y_0$ seule.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-ED-02",
+   "notions": [
+    "M-ED-02"
+   ],
+   "title": "Méthode d'Euler",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Pour une équation $y' = F(t, y)$ avec $y(t_0) = y_0$, on approche la courbe par des petits segments de pas $h$ :"
+    },
+    {
+     "type": "formula",
+     "tex": "t_{n+1} = t_n + h \\qquad y_{n+1} = y_n + h\\,F(t_n, y_n)",
+     "title": "Méthode d'Euler"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : $y' = -2y$, $y(0) = 1$, $h = 0{,}1$ : $y_1 = 1 - 0{,}2 = 0{,}8$ ; $y_2 = 0{,}8 - 0{,}16 = 0{,}64$ (valeur exacte $e^{-0{,}4} \\approx 0{,}670$)."
+    },
+    {
+     "type": "text",
+     "text": "En Python :\n- `t, y = 0, 1`\n- `for k in range(n): y = y + h * F(t, y); t = t + h`"
+    },
+    {
+     "type": "tip",
+     "text": "Plus le pas est petit, meilleure est l'approximation (mais plus il faut de calculs).",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-ED-04",
+   "notions": [
+    "M-ED-04"
+   ],
+   "title": "Équation caractéristique",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Pour $ay'' + by' + cy = 0$, on cherche des solutions $e^{rt}$ : on obtient l'**équation caractéristique** $ar^2 + br + c = 0$."
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Discriminant",
+       "Racines",
+       "Solutions"
+      ],
+      [
+       "$\\Delta > 0$",
+       "$r_1$, $r_2$ réelles",
+       "$C_1e^{r_1t} + C_2e^{r_2t}$"
+      ],
+      [
+       "$\\Delta = 0$",
+       "$r$ double",
+       "$(C_1 + C_2t)e^{rt}$"
+      ],
+      [
+       "$\\Delta < 0$",
+       "$\\alpha \\pm j\\beta$",
+       "$e^{\\alpha t}(C_1\\cos\\beta t + C_2\\sin\\beta t)$"
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "text": "On se limite à l'écriture algébrique des complexes (somme, produit, conjugué) et à la résolution des équations du second degré à coefficients réels."
+    }
+   ]
+  },
+  {
+   "id": "C-ED-05",
+   "notions": [
+    "M-ED-05"
+   ],
+   "title": "Équations du second ordre à coefficients constants",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "a\\,y'' + b\\,y' + c\\,y = d(t)",
+     "title": "Forme (d polynôme, exponentielle, sinus ou cosinus)"
+    },
+    {
+     "type": "text",
+     "text": "Solution générale = solution de l'équation sans second membre (voir l'équation caractéristique) + solution particulière (indiquée par l'énoncé). Deux conditions initiales ($y(0)$, $y'(0)$) fixent $C_1$ et $C_2$."
+    },
+    {
+     "type": "text",
+     "text": "Exemple RLC série en décharge : $LC\\,u'' + RC\\,u' + u = 0$. Si $\\Delta < 0$, le régime est **pseudo-périodique** (oscillations amorties) ; si $\\Delta > 0$, **apériodique**."
+    },
+    {
+     "type": "formula",
+     "tex": "\\omega_0 = \\frac{1}{\\sqrt{LC}} \\qquad T_0 = 2\\pi\\sqrt{LC}",
+     "title": "Pulsation propre"
+    },
+    {
+     "type": "method",
+     "text": "1. Équation caractéristique et racines.\n2. Solution générale de l'équation homogène.\n3. Ajouter la solution particulière donnée.\n4. Utiliser $y(0)$ et $y'(0)$ pour trouver $C_1$, $C_2$.",
+     "title": "Méthode"
+    },
+    {
+     "type": "tip",
+     "text": "Un logiciel de calcul formel résout dans tous les cas et permet d'observer l'influence de R sur l'amortissement.",
+     "title": ""
+    }
+   ]
+  }
+ ],
+ "examples": [],
+ "exercises": [
+  {
+   "id": "X-SF-01-a",
+   "notions": [
+    "M-SF-01"
+   ],
+   "title": "Somme d'une série géométrique",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "q": {
+     "unit": "",
+     "values": [
+      0.2,
+      0.25,
+      0.5,
+      0.8,
+      0.9,
+      -0.5
+     ]
+    },
+    "a": {
+     "unit": "",
+     "values": [
+      1,
+      2,
+      5,
+      10
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On considère la série $\\sum_{n\\geqslant 0} [[a]] \\times ([[q]])^n$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "La série converge-t-elle ?",
+     "choices": [
+      "Oui",
+      "Non"
+     ],
+     "correct": 0,
+     "correctExpr": "1 - (lt(abs(q), 1))"
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Sa somme ?",
+     "answer": "a/(1 - q)",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Série géométrique de raison q : converge si |q| < 1, somme a/(1 − q).",
+   "method": "Reconnaître la raison q puis appliquer la formule.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$|q| = [[=abs(q)]] < 1$ : la série converge vers $\\dfrac{[[a]]}{1 - ([[q]])} \\approx$ [[=a/(1-q):3]]."
+    }
+   ]
+  },
+  {
+   "id": "X-SF-01-b",
+   "notions": [
+    "M-SF-01"
+   ],
+   "title": "Séries de Riemann",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "al": {
+     "unit": "",
+     "values": [
+      0.5,
+      1,
+      1.5,
+      2,
+      3
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On considère $\\sum_{n\\geqslant1} \\dfrac{1}{n^{[[al]]}}$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Cette série converge-t-elle ?",
+     "choices": [
+      "Oui",
+      "Non"
+     ],
+     "correct": 0,
+     "correctExpr": "1 - (gt(al, 1))"
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Valeur de la somme partielle $S_3 = 1 + \\dfrac{1}{2^{\\alpha}} + \\dfrac{1}{3^{\\alpha}}$ ?",
+     "answer": "1 + 1/2^al + 1/3^al",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Riemann : convergence si et seulement si α > 1.",
+   "method": "Comparer l'exposant à 1.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\alpha = [[al]]$ ; $S_3 \\approx$ [[=1+1/2^al+1/3^al:3]]. La série converge seulement si $\\alpha > 1$."
+    }
+   ]
+  },
+  {
+   "id": "X-SF-02-a",
+   "notions": [
+    "M-SF-02"
+   ],
+   "title": "Lire un signal périodique",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "T": {
+     "unit": "",
+     "values": [
+      0.01,
+      0.02,
+      0.004
+     ]
+    },
+    "E": {
+     "unit": "",
+     "values": [
+      5,
+      10,
+      12,
+      24
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une tension en créneau vaut +[[E]] V sur la première moitié de chaque période et −[[E]] V sur la seconde ; sa période est $T =$ [[T]] s."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Fréquence (Hz) ?",
+     "answer": "1/T",
+     "unit": "Hz",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "En plaçant l'origine au début d'un palier positif, ce signal est :",
+     "choices": [
+      "impair",
+      "pair",
+      "ni pair ni impair"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Valeur moyenne (V) ?",
+     "answer": "0",
+     "unit": "V",
+     "tolerance": 0.001,
+     "sig": 3
+    }
+   ],
+   "hint": "f = 1/T ; deux paliers opposés de même durée.",
+   "method": "Lire la période, chercher la symétrie, calculer la moyenne sur une période.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$f =$ [[=1/T|Hz]] ; le créneau ±[[E]] V est impair (symétrique par rapport à l'origine) et de moyenne nulle."
+    }
+   ]
+  },
+  {
+   "id": "X-SF-02-b",
+   "notions": [
+    "M-SF-02"
+   ],
+   "title": "Expression sur une période",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "E": {
+     "unit": "",
+     "values": [
+      2,
+      5,
+      10
+     ]
+    },
+    "T": {
+     "unit": "",
+     "values": [
+      1,
+      2,
+      4
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un signal en dents de scie vaut $f(t) = \\dfrac{[[E]]}{[[T]]}t$ pour $0 \\leqslant t < [[T]]$ et il est $[[T]]$-périodique."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Valeur de $f(0{,}5\\,T)$ ?",
+     "answer": "E/2",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Valeur de $f([[T]] + 0{,}25\\,T)$ ?",
+     "answer": "E/4",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Ce signal est :",
+     "choices": [
+      "ni pair ni impair",
+      "pair",
+      "impair"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Par périodicité, f(T + x) = f(x).",
+   "method": "Ramener t dans [0 ; T[ puis appliquer l'expression.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$f(0{,}5T) = [[E]]/2$ ; $f(T + 0{,}25T) = f(0{,}25T) = [[E]]/4$. Rampe de 0 à [[E]] : aucune symétrie."
+    }
+   ]
+  },
+  {
+   "id": "X-SF-03-a",
+   "notions": [
+    "M-SF-03"
+   ],
+   "title": "Harmoniques d'un créneau",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "E": {
+     "unit": "",
+     "values": [
+      5,
+      10,
+      12,
+      24,
+      48
+     ]
+    },
+    "n": {
+     "unit": "",
+     "values": [
+      1,
+      3,
+      5,
+      7
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un créneau impair d'amplitude $E = [[E]]$ V a pour coefficients $b_n = \\dfrac{4E}{n\\pi}$ ($n$ impair), $a_n = 0$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Amplitude du fondamental $b_1$ (V) ?",
+     "answer": "4*E/pi",
+     "unit": "V",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Amplitude de l'harmonique de rang [[n]] (V) ?",
+     "answer": "4*E/(n*pi)",
+     "unit": "V",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Valeur de $b_2$ ?",
+     "answer": "0",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    }
+   ],
+   "hint": "Les harmoniques pairs d'un créneau sont nuls.",
+   "method": "Remplacer n dans la formule.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$b_1 = \\dfrac{4 \\times [[E]]}{\\pi} \\approx$ [[=4*E/pi:3|V]] ; $b_{[[n]]} \\approx$ [[=4*E/(n*pi):3|V]] ; $b_2 = 0$."
+    }
+   ]
+  },
+  {
+   "id": "X-SF-03-b",
+   "notions": [
+    "M-SF-03"
+   ],
+   "title": "Valeur moyenne d'un signal",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "E": {
+     "unit": "",
+     "values": [
+      5,
+      10,
+      20
+     ]
+    },
+    "al": {
+     "unit": "",
+     "values": [
+      0.2,
+      0.25,
+      0.4,
+      0.5,
+      0.75
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un signal vaut [[E]] V pendant une fraction [[al]] de la période et 0 V le reste du temps."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Coefficient $a_0$ (V) ?",
+     "answer": "al*E",
+     "unit": "V",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "a₀ est la valeur moyenne sur une période.",
+   "method": "a₀ = (1/T)∫f = (αT × E)/T.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$a_0 = \\dfrac{1}{T} \\times [[al]]T \\times [[E]] =$ [[=al*E:3|V]]."
+    }
+   ]
+  },
+  {
+   "id": "X-SF-04-a",
+   "notions": [
+    "M-SF-04"
+   ],
+   "title": "Coefficients nuls par parité",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On s'intéresse à la parité de signaux périodiques."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Pour un signal pair :",
+     "choices": [
+      "tous les $b_n$ sont nuls",
+      "tous les $a_n$ sont nuls",
+      "$a_0$ est forcément nul"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Pour un signal impair :",
+     "choices": [
+      "$a_0$ et tous les $a_n$ sont nuls",
+      "tous les $b_n$ sont nuls",
+      "seuls les harmoniques pairs sont nuls"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Un créneau symétrique ($f(t + T/2) = -f(t)$) ne contient que :",
+     "choices": [
+      "des harmoniques impairs",
+      "des harmoniques pairs",
+      "une composante continue"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "cos est pair, sin est impair.",
+   "method": "Le produit d'une fonction paire par sin est impair : son intégrale sur une période est nulle.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Signal pair : $b_n = 0$. Signal impair : $a_0 = a_n = 0$. Symétrie de demi-onde : uniquement des harmoniques impairs."
+    }
+   ]
+  },
+  {
+   "id": "X-SF-04-b",
+   "notions": [
+    "M-SF-04"
+   ],
+   "title": "Signal pair : coefficients en cosinus",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "E": {
+     "unit": "",
+     "values": [
+      2,
+      5,
+      10
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un signal pair a pour série $f(t) \\sim [[E]] + \\dfrac{8}{\\pi^2}\\left(\\cos \\omega t + \\dfrac{\\cos 3\\omega t}{9} + \\dots\\right)$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Valeur moyenne de $f$ ?",
+     "answer": "E",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Coefficient $a_1$ ?",
+     "answer": "8/pi^2",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Coefficient $b_1$ ?",
+     "answer": "0",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    }
+   ],
+   "hint": "Un signal pair n'a que des cosinus.",
+   "method": "a₀ est le terme constant ; les bₙ sont nuls.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$a_0 = [[E]]$, $a_1 = \\dfrac{8}{\\pi^2} \\approx 0{,}811$, $b_1 = 0$."
+    }
+   ]
+  },
+  {
+   "id": "X-SF-05-a",
+   "notions": [
+    "M-SF-05"
+   ],
+   "title": "Valeur de la série en un saut",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "E": {
+     "unit": "",
+     "values": [
+      5,
+      10,
+      12
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un créneau vaut +[[E]] juste après $t = 0$ et −[[E]] juste avant (saut en 0). Il vérifie les conditions de Dirichlet."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Vers quelle valeur converge sa série de Fourier en $t = 0$ ?",
+     "answer": "0",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Vers quelle valeur converge-t-elle en $t = T/4$ (palier positif) ?",
+     "answer": "E",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    }
+   ],
+   "hint": "En un saut : moyenne des limites à gauche et à droite.",
+   "method": "Point de continuité : f(t) ; saut : (f(t⁻) + f(t⁺))/2.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "En 0 : $\\dfrac{[[E]] + (-[[E]])}{2} = 0$ ; en $T/4$ : [[E]]."
+    }
+   ]
+  },
+  {
+   "id": "X-SF-05-b",
+   "notions": [
+    "M-SF-05"
+   ],
+   "title": "Somme partielle d'un créneau",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "E": {
+     "unit": "",
+     "values": [
+      1,
+      5,
+      10
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Pour un créneau d'amplitude [[E]], $S_3(t) = \\dfrac{4 \\times [[E]]}{\\pi}\\left(\\sin\\omega t + \\dfrac{\\sin 3\\omega t}{3}\\right)$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Valeur de $S_3$ au milieu du palier ($\\omega t = \\pi/2$) ?",
+     "answer": "4*E/pi*(1 - 1/3)",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "En ajoutant des harmoniques, la somme partielle :",
+     "choices": [
+      "se rapproche du créneau",
+      "s'en éloigne",
+      "reste une sinusoïde pure"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "sin(π/2) = 1 et sin(3π/2) = −1.",
+   "method": "Remplacer ωt par π/2.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$S_3 = \\dfrac{4\\times[[E]]}{\\pi}\\left(1 - \\dfrac13\\right) \\approx$ [[=4*E/pi*(2/3):3]] (la valeur exacte est [[E]])."
+    }
+   ]
+  },
+  {
+   "id": "X-SF-06-a",
+   "notions": [
+    "M-SF-06"
+   ],
+   "title": "Valeur efficace d'un courant déformé",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "I1": {
+     "unit": "",
+     "values": [
+      5,
+      8,
+      10,
+      16,
+      20
+     ]
+    },
+    "I3": {
+     "unit": "",
+     "values": [
+      1,
+      2,
+      3,
+      4
+     ]
+    },
+    "I5": {
+     "unit": "",
+     "values": [
+      0.5,
+      1,
+      1.5,
+      2
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un courant contient un fondamental de [[I1]] A, un harmonique 3 de [[I3]] A et un harmonique 5 de [[I5]] A (valeurs efficaces), sans composante continue."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Valeur efficace du courant (A) ?",
+     "answer": "sqrt(I1^2 + I3^2 + I5^2)",
+     "unit": "A",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Parseval : I² = I₁² + I₃² + I₅².",
+   "method": "Additionner les carrés des valeurs efficaces des harmoniques.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$I = \\sqrt{[[=I1^2]] + [[=I3^2]] + [[=I5^2]]} \\approx$ [[=sqrt(I1^2+I3^2+I5^2):3|A]]."
+    }
+   ]
+  },
+  {
+   "id": "X-SF-06-b",
+   "notions": [
+    "M-SF-06"
+   ],
+   "title": "Parseval avec les coefficients",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "a0": {
+     "unit": "",
+     "values": [
+      0,
+      1,
+      2,
+      5
+     ]
+    },
+    "b1": {
+     "unit": "",
+     "values": [
+      4,
+      6,
+      10
+     ]
+    },
+    "b3": {
+     "unit": "",
+     "values": [
+      1,
+      2,
+      3
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un signal a pour série $f(t) = [[a0]] + [[b1]]\\sin\\omega t + [[b3]]\\sin 3\\omega t$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Valeur efficace ?",
+     "answer": "sqrt(a0^2 + (b1^2 + b3^2)/2)",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "F² = a₀² + ½ Σ(aₙ² + bₙ²).",
+   "method": "Appliquer la formule de Parseval.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$F_{eff} = \\sqrt{[[=a0^2]] + \\dfrac{[[=b1^2]] + [[=b3^2]]}{2}} \\approx$ [[=sqrt(a0^2+(b1^2+b3^2)/2):3]]."
+    }
+   ]
+  },
+  {
+   "id": "X-CI-01-a",
+   "notions": [
+    "M-CI-01"
+   ],
+   "title": "Primitives usuelles",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "a": {
+     "unit": "",
+     "values": [
+      2,
+      3,
+      4,
+      5
+     ]
+    },
+    "k": {
+     "unit": "",
+     "values": [
+      2,
+      3,
+      5
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On cherche une primitive $F$ de $f(x) = [[a]]x^{[[k]]} + e^{-x}$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Une primitive de $[[a]]x^{[[k]]}$ est :",
+     "choices": [
+      "$\\dfrac{[[a]]}{[[=k+1]]}x^{[[=k+1]]}$",
+      "$[[=a*k]]x^{[[=k-1]]}$",
+      "$[[a]]x^{[[=k+1]]}$"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Une primitive de $e^{-x}$ est :",
+     "choices": [
+      "$-e^{-x}$",
+      "$e^{-x}$",
+      "$-xe^{-x}$"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Valeur de $F(1) - F(0)$ ?",
+     "answer": "a/(k+1) + 1 - exp(-1)",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "xⁿ → xⁿ⁺¹/(n+1) ; e^{−x} → −e^{−x}.",
+   "method": "Primitive terme à terme, puis vérification par dérivation.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$F(x) = \\dfrac{[[a]]}{[[=k+1]]}x^{[[=k+1]]} - e^{-x}$ ; $F(1) - F(0) = \\dfrac{[[a]]}{[[=k+1]]} - e^{-1} + 1 \\approx$ [[=a/(k+1)+1-exp(-1):3]]."
+    }
+   ]
+  },
+  {
+   "id": "X-CI-01-b",
+   "notions": [
+    "M-CI-01"
+   ],
+   "title": "Primitive d'une sinusoïde",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "A": {
+     "unit": "",
+     "values": [
+      2,
+      5,
+      10
+     ]
+    },
+    "w": {
+     "unit": "",
+     "values": [
+      2,
+      10,
+      100
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "$f(t) = [[A]]\\cos([[w]]t)$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Une primitive de $f$ est :",
+     "choices": [
+      "$\\dfrac{[[A]]}{[[w]]}\\sin([[w]]t)$",
+      "$[[=A*w]]\\sin([[w]]t)$",
+      "$-\\dfrac{[[A]]}{[[w]]}\\sin([[w]]t)$"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "$F(t)$ pour $t = \\dfrac{\\pi}{2 \\times [[w]]}$ (avec $F(0) = 0$) ?",
+     "answer": "A/w",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "(sin ωt)' = ω cos ωt.",
+   "method": "cos(ωt) → (1/ω) sin(ωt).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$F(t) = \\dfrac{[[A]]}{[[w]]}\\sin([[w]]t)$ ; en $t = \\dfrac{\\pi}{2\\times[[w]]}$ : $\\sin = 1$, donc $F =$ [[=A/w:3]]."
+    }
+   ]
+  },
+  {
+   "id": "X-CI-02-a",
+   "notions": [
+    "M-CI-02"
+   ],
+   "title": "Calculer une intégrale",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "a": {
+     "unit": "",
+     "min": 1,
+     "max": 5,
+     "step": 1
+    },
+    "b": {
+     "unit": "",
+     "min": 0,
+     "max": 6,
+     "step": 1
+    },
+    "B": {
+     "unit": "",
+     "min": 1,
+     "max": 4,
+     "step": 1
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Calculer $I = \\int_0^{[[B]]} ([[a]]x^2 + [[b]])\\,dx$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "$I$ ?",
+     "answer": "a*B^3/3 + b*B",
+     "unit": "",
+     "tolerance": 0.005,
+     "sig": 5
+    }
+   ],
+   "hint": "Une primitive est (a/3)x³ + bx.",
+   "method": "I = F(B) − F(0).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$I = \\left[\\dfrac{[[a]]}{3}x^3 + [[b]]x\\right]_0^{[[B]]} =$ [[=a*B^3/3+b*B:4]]."
+    }
+   ]
+  },
+  {
+   "id": "X-CI-02-b",
+   "notions": [
+    "M-CI-02"
+   ],
+   "title": "Énergie consommée",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "P0": {
+     "unit": "",
+     "values": [
+      500,
+      1000,
+      2000
+     ]
+    },
+    "tau": {
+     "unit": "",
+     "values": [
+      10,
+      20,
+      60
+     ]
+    },
+    "T": {
+     "unit": "",
+     "values": [
+      30,
+      60,
+      120
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Au démarrage, une machine absorbe $p(t) = [[P0]]\\,e^{-t/[[tau]]}$ (W, $t$ en s). On cherche l'énergie absorbée entre 0 et [[T]] s."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Énergie $W = \\int_0^{T} p(t)\\,dt$ (J) ?",
+     "answer": "P0*tau*(1 - exp(-T/tau))",
+     "unit": "J",
+     "tolerance": 0.02,
+     "sig": 3
+    }
+   ],
+   "hint": "Une primitive de e^{−t/τ} est −τ e^{−t/τ}.",
+   "method": "W = [−P₀ τ e^{−t/τ}] de 0 à T.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$W = [[P0]] \\times [[tau]](1 - e^{-[[T]]/[[tau]]}) \\approx$ [[=P0*tau*(1-exp(-T/tau)):3|J]]."
+    }
+   ]
+  },
+  {
+   "id": "X-CI-03-a",
+   "notions": [
+    "M-CI-03"
+   ],
+   "title": "Aire entre deux courbes",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "a": {
+     "unit": "",
+     "values": [
+      1,
+      2,
+      3,
+      4
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Sur $[0\\,;[[a]]]$, on considère $f(x) = x$ et $g(x) = [[a]]x - x^2 + x$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Aire du domaine entre les deux courbes (u.a.) ?",
+     "answer": "a^3/6",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "g(x) − f(x) = ax − x² ≥ 0 sur [0 ; a].",
+   "method": "A = ∫₀ᵃ (ax − x²) dx = a³/2 − a³/3.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\mathcal{A} = \\int_0^{[[a]]} ([[a]]x - x^2)\\,dx = \\dfrac{[[a]]^3}{2} - \\dfrac{[[a]]^3}{3} =$ [[=a^3/6:3]] u.a."
+    }
+   ]
+  },
+  {
+   "id": "X-CI-03-b",
+   "notions": [
+    "M-CI-03"
+   ],
+   "title": "Aire sous une courbe négative",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "b": {
+     "unit": "",
+     "min": 1,
+     "max": 4,
+     "step": 1
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "$f(x) = x^2 - [[=b^2]]$ est négative sur $[0\\,;[[b]]]$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "$\\int_0^{[[b]]} f(x)\\,dx$ ?",
+     "answer": "b^3/3 - b^3",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Aire du domaine compris entre la courbe et l'axe des abscisses ?",
+     "answer": "2*b^3/3",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "L'aire est l'opposé de l'intégrale quand f ≤ 0.",
+   "method": "A = −∫ f.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\int_0^{[[b]]} f = \\dfrac{[[b]]^3}{3} - [[=b^3]] =$ [[=b^3/3-b^3:3]] ; aire = [[=2*b^3/3:3]] u.a."
+    }
+   ]
+  },
+  {
+   "id": "X-CI-04-a",
+   "notions": [
+    "M-CI-04"
+   ],
+   "title": "Méthode des trapèzes",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "n": {
+     "unit": "",
+     "values": [
+      2,
+      4
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On approche $I = \\int_0^1 x^2\\,dx$ par la méthode des trapèzes avec $n = [[n]]$ intervalles."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Pas $h$ ?",
+     "answer": "1/n",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Valeur approchée de $I$ ?",
+     "answer": "1/n*((0 + 1)/2 + (eq(n,2)*0.25 + eq(n,4)*(0.0625 + 0.25 + 0.5625)))",
+     "unit": "",
+     "tolerance": 0.002,
+     "sig": 5
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Valeur exacte de $I$ ?",
+     "answer": "1/3",
+     "unit": "",
+     "tolerance": 0.002,
+     "sig": 5
+    }
+   ],
+   "hint": "Trapèzes : h[(f(0) + f(1))/2 + somme des valeurs intermédiaires].",
+   "method": "Calculer les valeurs de x² aux points intermédiaires.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Avec $h = [[=1/n]]$, on trouve [[=1/n*(0.5+eq(n,2)*0.25+eq(n,4)*(0.0625+0.25+0.5625)):4]] (valeur exacte 1/3 ≈ 0,3333) : la méthode surestime ici."
+    }
+   ]
+  },
+  {
+   "id": "X-CI-04-b",
+   "notions": [
+    "M-CI-04"
+   ],
+   "title": "Méthode du point milieu",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "n": {
+     "unit": "",
+     "values": [
+      1,
+      2
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On approche $\\int_0^2 x^3\\,dx$ par la méthode du point milieu avec $n = [[n]]$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Valeur approchée ?",
+     "answer": "eq(n,1)*2*1 + eq(n,2)*1*(0.125 + 3.375)",
+     "unit": "",
+     "tolerance": 0.002,
+     "sig": 5
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Valeur exacte ?",
+     "answer": "4",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    }
+   ],
+   "hint": "Point milieu : h × Σ f(milieux).",
+   "method": "Milieux : 1 si n = 1 ; 0,5 et 1,5 si n = 2.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Approximation : [[=eq(n,1)*2+eq(n,2)*3.5:4]] ; valeur exacte $\\left[\\dfrac{x^4}{4}\\right]_0^2 = 4$."
+    }
+   ]
+  },
+  {
+   "id": "X-CI-05-a",
+   "notions": [
+    "M-CI-05"
+   ],
+   "title": "Valeurs moyenne et efficace d'un signal rectangulaire",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "E": {
+     "unit": "",
+     "values": [
+      12,
+      24,
+      48,
+      100
+     ]
+    },
+    "al": {
+     "unit": "",
+     "values": [
+      0.2,
+      0.25,
+      0.4,
+      0.5,
+      0.6,
+      0.75,
+      0.8
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un hacheur délivre une tension qui vaut [[E]] V pendant $\\alpha T$ et 0 V pendant le reste de la période ($\\alpha = [[al]]$)."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Valeur moyenne (V) ?",
+     "answer": "al*E",
+     "unit": "V",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Valeur efficace (V) ?",
+     "answer": "E*sqrt(al)",
+     "unit": "V",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Moyenne : (1/T)∫u ; efficace : √((1/T)∫u²).",
+   "method": "Sur une période, u vaut E pendant αT : moyenne αE, carré moyen αE².",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\overline{u} = [[al]] \\times [[E]] =$ [[=al*E:3|V]] ; $U = [[E]]\\sqrt{[[al]]} \\approx$ [[=E*sqrt(al):3|V]]."
+    }
+   ]
+  },
+  {
+   "id": "X-CI-05-b",
+   "notions": [
+    "M-CI-05"
+   ],
+   "title": "Valeur efficace d'une sinusoïde",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "Um": {
+     "unit": "",
+     "values": [
+      10,
+      100,
+      325,
+      400,
+      565
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "$u(t) = [[Um]]\\sin(\\omega t)$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Valeur moyenne sur une période (V) ?",
+     "answer": "0",
+     "unit": "V",
+     "tolerance": 0.001,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Valeur efficace (V) ?",
+     "answer": "Um/sqrt(2)",
+     "unit": "V",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "La moyenne de sin² sur une période vaut 1/2.",
+   "method": "U = Um/√2.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Moyenne nulle ; $U = \\dfrac{[[Um]]}{\\sqrt 2} \\approx$ [[=Um/sqrt(2):3|V]]."
+    }
+   ]
+  },
+  {
+   "id": "X-CI-06-a",
+   "notions": [
+    "M-CI-06"
+   ],
+   "title": "Intégration par parties",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "a": {
+     "unit": "",
+     "values": [
+      1,
+      2,
+      3
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Calculer $I = \\int_0^{1} x\\,e^{[[a]]x}\\,dx$ par parties."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Choix judicieux :",
+     "choices": [
+      "$u = x$, $v' = e^{[[a]]x}$",
+      "$u = e^{[[a]]x}$, $v' = x$",
+      "$u = x\\,e^{[[a]]x}$, $v' = 1$"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "$I$ ?",
+     "answer": "exp(a)/a - (exp(a) - 1)/a^2",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "v = e^{ax}/a.",
+   "method": "I = [x e^{ax}/a]₀¹ − ∫₀¹ e^{ax}/a dx.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$I = \\dfrac{e^{[[a]]}}{[[a]]} - \\dfrac{e^{[[a]]} - 1}{[[=a^2]]} \\approx$ [[=exp(a)/a-(exp(a)-1)/a^2:3]]."
+    }
+   ]
+  },
+  {
+   "id": "X-CI-06-b",
+   "notions": [
+    "M-CI-06"
+   ],
+   "title": "Coefficient de Fourier d'une rampe",
+   "difficulty": 3,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Pour la rampe $f(t) = t$ sur $]-\\pi\\,;\\pi[$ ($2\\pi$-périodique, impaire), $b_n = \\dfrac{2}{\\pi}\\int_0^{\\pi} t\\sin(nt)\\,dt$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "$b_1$ (avec une intégration par parties) ?",
+     "answer": "2",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "$b_2$ ?",
+     "answer": "-1",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    }
+   ],
+   "hint": "u = t, v' = sin(nt) ; on trouve bₙ = 2(−1)ⁿ⁺¹/n.",
+   "method": "∫₀^π t sin(nt) dt = [−t cos(nt)/n]₀^π + ∫ cos(nt)/n dt = −π cos(nπ)/n.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$b_n = \\dfrac{2}{\\pi} \\times \\dfrac{-\\pi\\cos(n\\pi)}{n} = \\dfrac{2(-1)^{n+1}}{n}$ : $b_1 = 2$, $b_2 = -1$."
+    }
+   ]
+  },
+  {
+   "id": "X-ED-01-a",
+   "notions": [
+    "M-ED-01"
+   ],
+   "title": "Charge d'un condensateur",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "R": {
+     "unit": "Ω",
+     "values": [
+      1000,
+      2200,
+      4700,
+      10000
+     ]
+    },
+    "C": {
+     "unit": "F",
+     "values": [
+      0.0001,
+      0.00022,
+      0.00047
+     ]
+    },
+    "E": {
+     "unit": "V",
+     "values": [
+      5,
+      12,
+      24
+     ]
+    }
+   },
+   "vars": {
+    "tau": "R*C"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Le condensateur d'un circuit RC série vérifie $RC\\,u'(t) + u(t) = E$ avec $u(0) = 0$, $R =$ [[R]], $C =$ [[C]], $E =$ [[E]]."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Constante de temps $\\tau = RC$ (s) ?",
+     "answer": "tau",
+     "unit": "s",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Tension $u$ à $t = 2\\tau$ (V) ?",
+     "answer": "E*(1 - exp(-2))",
+     "unit": "V",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Durée pour atteindre 95 % de E (s) ?",
+     "answer": "3*tau",
+     "unit": "s",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "u(t) = E(1 − e^{−t/τ}).",
+   "method": "Solution générale K e^{−t/τ} + E ; u(0) = 0 donne K = −E.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\tau =$ [[=tau|s]] ; $u(2\\tau) = [[E]](1 - e^{-2}) \\approx$ [[=E*(1-exp(-2)):3|V]] ; 95 % atteints à $3\\tau \\approx$ [[=3*tau:3|s]]."
+    }
+   ]
+  },
+  {
+   "id": "X-ED-01-b",
+   "notions": [
+    "M-ED-01"
+   ],
+   "title": "Loi de refroidissement",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "k": {
+     "unit": "",
+     "values": [
+      0.05,
+      0.1,
+      0.2
+     ]
+    },
+    "Ta": {
+     "unit": "",
+     "values": [
+      20,
+      25
+     ]
+    },
+    "T0": {
+     "unit": "",
+     "values": [
+      80,
+      90,
+      100
+     ]
+    },
+    "t": {
+     "unit": "",
+     "values": [
+      5,
+      10,
+      20
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "La température $\\theta$ (°C) d'un moteur arrêté vérifie $\\theta' + [[k]]\\theta = [[k]] \\times [[Ta]]$, avec $\\theta(0) = [[T0]]$ ($t$ en min)."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Solution particulière constante ?",
+     "answer": "Ta",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Température à $t = [[t]]$ min (°C) ?",
+     "answer": "Ta + (T0 - Ta)*exp(-k*t)",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Une solution constante θₚ vérifie k θₚ = k Ta.",
+   "method": "θ(t) = Ta + (θ₀ − Ta) e^{−kt}.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\theta(t) = [[Ta]] + [[=T0-Ta]]e^{-[[k]]t}$ ; à $t = [[t]]$ : [[=Ta+(T0-Ta)*exp(-k*t):3]] °C."
+    }
+   ]
+  },
+  {
+   "id": "X-ED-02-a",
+   "notions": [
+    "M-ED-02"
+   ],
+   "title": "Méthode d'Euler, deux pas",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "a": {
+     "unit": "",
+     "values": [
+      1,
+      2,
+      3
+     ]
+    },
+    "h": {
+     "unit": "",
+     "values": [
+      0.1,
+      0.2
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On résout $y' = -[[a]]y$, $y(0) = 1$, par la méthode d'Euler avec le pas $h = [[h]]$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "$y_1$ ?",
+     "answer": "1 - a*h",
+     "unit": "",
+     "tolerance": 0.002,
+     "sig": 5
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "$y_2$ ?",
+     "answer": "(1 - a*h)^2",
+     "unit": "",
+     "tolerance": 0.002,
+     "sig": 5
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Valeur exacte $y(2h)$ ?",
+     "answer": "exp(-2*a*h)",
+     "unit": "",
+     "tolerance": 0.002,
+     "sig": 5
+    }
+   ],
+   "hint": "yₙ₊₁ = yₙ + h × (−a yₙ).",
+   "method": "Chaque pas multiplie y par (1 − ah).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$y_1 = 1 - [[a]] \\times [[h]] =$ [[=1-a*h:4]] ; $y_2 =$ [[=(1-a*h)^2:4]] ; valeur exacte $e^{-[[=2*a*h]]} \\approx$ [[=exp(-2*a*h):4]]."
+    }
+   ]
+  },
+  {
+   "id": "X-ED-02-b",
+   "notions": [
+    "M-ED-02"
+   ],
+   "title": "Euler pour une charge RC",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "E": {
+     "unit": "",
+     "values": [
+      10,
+      12
+     ]
+    },
+    "tau": {
+     "unit": "",
+     "values": [
+      1,
+      2
+     ]
+    },
+    "h": {
+     "unit": "",
+     "values": [
+      0.1,
+      0.5
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "$u' = \\dfrac{[[E]] - u}{[[tau]]}$, $u(0) = 0$. Pas d'Euler $h = [[h]]$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "$u_1$ ?",
+     "answer": "h*E/tau",
+     "unit": "",
+     "tolerance": 0.002,
+     "sig": 5
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Pour améliorer la précision, il faut :",
+     "choices": [
+      "diminuer le pas h",
+      "augmenter le pas h",
+      "changer la condition initiale"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "u₁ = u₀ + h × (E − u₀)/τ.",
+   "method": "Appliquer une fois la formule d'Euler.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$u_1 = 0 + [[h]] \\times \\dfrac{[[E]]}{[[tau]]} =$ [[=h*E/tau:4]]."
+    }
+   ]
+  },
+  {
+   "id": "X-ED-04-a",
+   "notions": [
+    "M-ED-04"
+   ],
+   "title": "Racines de l'équation caractéristique",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "b": {
+     "unit": "",
+     "values": [
+      1,
+      2,
+      4,
+      6
+     ]
+    },
+    "c": {
+     "unit": "",
+     "values": [
+      5,
+      10,
+      13,
+      25
+     ]
+    }
+   },
+   "vars": {
+    "D": "b^2 - 4*c"
+   },
+   "constraints": [
+    "D < 0"
+   ],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On étudie $y'' + [[b]]y' + [[c]]y = 0$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Discriminant de l'équation caractéristique ?",
+     "answer": "D",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 6
+    },
+    {
+     "id": "q2",
+     "kind": "complex",
+     "prompt": "Racine de partie imaginaire positive ?",
+     "answer": "(-b + j*sqrt(-D))/2",
+     "tolerance": 0.01,
+     "sig": 3,
+     "polar": false
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Les solutions sont de la forme :",
+     "choices": [
+      "$e^{\\alpha t}(C_1\\cos\\beta t + C_2\\sin\\beta t)$",
+      "$C_1e^{r_1t} + C_2e^{r_2t}$",
+      "$(C_1 + C_2t)e^{rt}$"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "r² + br + c = 0.",
+   "method": "Δ < 0 : racines α ± jβ, solutions oscillantes amorties.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\Delta = [[=b^2]] - [[=4*c]] = [[=D]]$ ; $r = \\dfrac{-[[b]] \\pm j\\sqrt{[[=-D]]}}{2} \\approx$ [[=(-b+j*sqrt(-D))/2:3]] et son conjugué."
+    }
+   ]
+  },
+  {
+   "id": "X-ED-04-b",
+   "notions": [
+    "M-ED-04"
+   ],
+   "title": "Racines réelles",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "r1": {
+     "unit": "",
+     "min": -5,
+     "max": -1,
+     "step": 1
+    },
+    "r2": {
+     "unit": "",
+     "min": -6,
+     "max": -1,
+     "step": 1
+    }
+   },
+   "vars": {
+    "b": "-(r1 + r2)",
+    "c": "r1*r2"
+   },
+   "constraints": [
+    "r1 != r2"
+   ],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On étudie $y'' + [[=b]]y' + [[=c]]y = 0$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Discriminant ?",
+     "answer": "b^2 - 4*c",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 6
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Plus grande racine ?",
+     "answer": "max(r1, r2)",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 6
+    }
+   ],
+   "hint": "Δ > 0 : deux racines réelles.",
+   "method": "r = (−b ± √Δ)/2.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\Delta = [[=b^2-4*c]]$ ; racines [[r1]] et [[r2]]."
+    }
+   ]
+  },
+  {
+   "id": "X-ED-05-a",
+   "notions": [
+    "M-ED-05"
+   ],
+   "title": "Circuit RLC en régime libre",
+   "difficulty": 3,
+   "validated": false,
+   "params": {
+    "L": {
+     "unit": "",
+     "values": [
+      0.01,
+      0.05,
+      0.1
+     ]
+    },
+    "C": {
+     "unit": "",
+     "values": [
+      1e-05,
+      4.7e-05,
+      0.0001
+     ]
+    },
+    "R": {
+     "unit": "",
+     "values": [
+      2,
+      5,
+      10,
+      20
+     ]
+    }
+   },
+   "vars": {
+    "w0": "1/sqrt(L*C)",
+    "D": "(R*C)^2 - 4*L*C"
+   },
+   "constraints": [
+    "D < 0"
+   ],
+   "statement": [
+    {
+     "type": "text",
+     "text": "La tension aux bornes du condensateur d'un circuit RLC série vérifie $LC\\,u'' + RC\\,u' + u = 0$ avec $L = [[L]]$ H, $C = [[C]]$ F, $R = [[R]]\\ \\Omega$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Pulsation propre $\\omega_0$ (rad/s) ?",
+     "answer": "w0",
+     "unit": "rad/s",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Le régime est :",
+     "choices": [
+      "pseudo-périodique (oscillations amorties)",
+      "apériodique",
+      "critique"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Partie réelle des racines (s⁻¹) ?",
+     "answer": "-R/(2*L)",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Équation caractéristique : LC r² + RC r + 1 = 0.",
+   "method": "Δ = (RC)² − 4LC < 0 : racines −R/(2L) ± jβ.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\omega_0 = \\dfrac{1}{\\sqrt{LC}} \\approx$ [[=w0:3|rad/s]] ; $\\Delta < 0$ : régime pseudo-périodique ; partie réelle $-\\dfrac{R}{2L} =$ [[=-R/(2*L):3]] s⁻¹."
+    }
+   ]
+  },
+  {
+   "id": "X-ED-05-b",
+   "notions": [
+    "M-ED-05"
+   ],
+   "title": "Second ordre avec conditions initiales",
+   "difficulty": 3,
+   "validated": false,
+   "params": {
+    "w": {
+     "unit": "",
+     "values": [
+      2,
+      3,
+      4,
+      5
+     ]
+    },
+    "y0": {
+     "unit": "",
+     "values": [
+      1,
+      2,
+      3
+     ]
+    },
+    "v0": {
+     "unit": "",
+     "values": [
+      0,
+      2,
+      4,
+      6
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Résoudre $y'' + [[=w^2]]y = 0$ avec $y(0) = [[y0]]$ et $y'(0) = [[v0]]$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "$C_1$ dans $y = C_1\\cos [[w]]t + C_2\\sin [[w]]t$ ?",
+     "answer": "y0",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "$C_2$ ?",
+     "answer": "v0/w",
+     "unit": "",
+     "tolerance": 0.005,
+     "sig": 4
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "$y(1)$ ?",
+     "answer": "y0*cos(w) + v0/w*sin(w)",
+     "unit": "",
+     "tolerance": 0.02,
+     "sig": 3
+    }
+   ],
+   "hint": "r² + ω² = 0 donne r = ± jω.",
+   "method": "y(0) = C₁ ; y'(0) = ω C₂.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$C_1 = [[y0]]$, $C_2 = \\dfrac{[[v0]]}{[[w]]} \\approx$ [[=v0/w:3]] ; $y(1) \\approx$ [[=y0*cos(w)+v0/w*sin(w):3]]."
+    }
+   ]
+  }
+ ]
+}

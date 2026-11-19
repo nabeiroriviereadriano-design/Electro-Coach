@@ -79,7 +79,15 @@ List<Issue> validate(Library lib, {int seeds = 50}) {
         } else {
           for (final c in curves) {
             try {
-              parseExpr((c as Map)['expr'] as String);
+              final e = parseExpr((c as Map)['expr'] as String);
+              if (!templatesAllowed) {
+                // courbe d'un cours : doit se calculer sans paramètre
+                final a = plotBound(b.data['from'], const {}) ?? 0, z = plotBound(b.data['to'], const {}) ?? 1;
+                final v = (b.data['var'] ?? 't') as String;
+                for (var k = 0; k <= 20; k++) {
+                  if (!e.eval({v: Complex(a + (z - a) * k / 20)}).isFinite) throw ExprError('valeur non définie');
+                }
+              }
             } on ExprError catch (e) {
               issues.add(Issue(where, 'courbe illisible : ${e.message}'));
             }

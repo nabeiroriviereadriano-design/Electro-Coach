@@ -2,6 +2,8 @@
  "packs": [
   "packs/demo-complexes-impedances.json",
   "packs/maths-calcul-numeration.json",
-  "packs/maths-nombres-complexes.json"
+  "packs/maths-nombres-complexes.json",
+  "packs/maths-vectoriel-fonctions.json",
+  "packs/maths-fourier-integrales-equadiff.json"
  ]
 }

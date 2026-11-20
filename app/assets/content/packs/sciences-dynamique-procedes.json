@@ -1,0 +1,2188 @@
+{
+ "id": "sciences-dynamique-procedes",
+ "courses": [
+  {
+   "id": "C-DY-01",
+   "notions": [
+    "S-DY-01"
+   ],
+   "title": "Modéliser un système du premier ordre",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "On écrit l'équation d'un système à partir des lois physiques. De nombreux systèmes (circuit RC, RL, moteur à courant continu, four, cuve) conduisent à une équation différentielle du premier ordre."
+    },
+    {
+     "type": "formula",
+     "tex": "\\tau\\,\\frac{ds}{dt} + s = K\\,e",
+     "title": "Forme canonique (e : entrée, s : sortie)"
+    },
+    {
+     "type": "text",
+     "text": "$\\tau$ est la **constante de temps** (s), $K$ le **gain statique**. Exemples : RC : $\\tau = RC$, $K = 1$ ; RL : $\\tau = L/R$ ; moteur entraînant une inertie avec frottement visqueux $f$ : $\\tau = J/f$."
+    },
+    {
+     "type": "text",
+     "text": "Exemple : $RC\\,\\dfrac{du_C}{dt} + u_C = E$ avec $R = 10$ kΩ, $C = 100$ µF : $\\tau = 1$ s, $K = 1$."
+    },
+    {
+     "type": "method",
+     "text": "1. Écrire la loi physique (mailles, PFD, bilan thermique).\n2. Mettre sous la forme τ ds/dt + s = K e.\n3. Identifier τ et K.",
+     "title": "Méthode"
+    }
+   ]
+  },
+  {
+   "id": "C-DY-02",
+   "notions": [
+    "S-DY-02"
+   ],
+   "title": "Stabilité et régime permanent",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Un système est **stable** si, soumis à une entrée bornée, sa sortie reste bornée et tend vers une valeur finie. Pour un premier ordre, il est stable si $\\tau > 0$."
+    },
+    {
+     "type": "formula",
+     "tex": "s(t) = K E\\,(1 - e^{-t/\\tau}) \\qquad s_\\infty = K E",
+     "title": "Solution pour un échelon E depuis s(0) = 0"
+    },
+    {
+     "type": "text",
+     "text": "La solution est la somme d'un **régime transitoire** (le terme exponentiel, qui s'éteint) et d'un **régime permanent** ($KE$). Le régime permanent se trouve directement en annulant la dérivée dans l'équation."
+    },
+    {
+     "type": "text",
+     "text": "Interprétation : un four chauffé par une puissance constante atteint une température d'équilibre quand les pertes égalent la puissance fournie."
+    }
+   ]
+  },
+  {
+   "id": "C-DY-03",
+   "notions": [
+    "S-DY-03"
+   ],
+   "title": "Réponse à un échelon et temps de réponse",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "plot",
+     "var": "t",
+     "from": 0,
+     "to": 6,
+     "title": "Réponses indicielles",
+     "xLabel": "",
+     "yLabel": "",
+     "samples": 240,
+     "curves": [
+      {
+       "expr": "1 - exp(-t)",
+       "label": "premier ordre (τ = 1 s)"
+      },
+      {
+       "expr": "1 - exp(-t)*(cos(3*t) + sin(3*t)/3)",
+       "label": "second ordre oscillant"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "text": "La **réponse indicielle** (à un échelon) permet de distinguer : premier ordre (pas d'oscillation, tangente à l'origine non nulle), second ordre amorti ou oscillant (dépassement), système intégrateur (sortie qui croît sans fin), retard pur."
+    },
+    {
+     "type": "formula",
+     "tex": "s(\\tau) = 0{,}63\\,s_\\infty \\qquad t_{5\\%} = 3\\tau",
+     "title": "Premier ordre"
+    },
+    {
+     "type": "text",
+     "text": "Le **temps de réponse à 5 %** est l'instant à partir duquel la sortie reste dans ±5 % de sa valeur finale. Pour un premier ordre, il vaut $3\\tau$."
+    },
+    {
+     "type": "tip",
+     "text": "La tangente à l'origine coupe l'asymptote finale à $t = \\tau$.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-DY-04",
+   "notions": [
+    "S-DY-04"
+   ],
+   "title": "Identification : premier ordre et modèle de Broïda",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "À partir d'un relevé de réponse indicielle : $K = \\Delta s/\\Delta e$ ; $\\tau$ est le temps pour atteindre 63 % de la variation."
+    },
+    {
+     "type": "text",
+     "text": "Beaucoup de procédés réels (four, échangeur) présentent un démarrage lent. On les modélise par un **premier ordre avec retard** (modèle de Broïda) : gain $K$, constante de temps $T$, retard $\\tau$."
+    },
+    {
+     "type": "formula",
+     "tex": "T = 5{,}5\\,(t_2 - t_1) \\qquad \\tau = 2{,}8\\,t_1 - 1{,}8\\,t_2",
+     "title": "Méthode de Broïda (t₁ : 28 %, t₂ : 40 % de la variation)"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : $t_1 = 20$ s, $t_2 = 26$ s : constante de temps $T = 5{,}5 \\times 6 = 33$ s ; retard $\\tau = 2{,}8 \\times 20 - 1{,}8 \\times 26 = 9{,}2$ s."
+    },
+    {
+     "type": "warning",
+     "text": "Selon les ouvrages, les lettres T et τ sont parfois inversées : vérifier toujours la convention du sujet.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-DY-05",
+   "notions": [
+    "S-DY-05"
+   ],
+   "title": "Caractéristique statique et point de fonctionnement",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "La **caractéristique statique** relie, en régime permanent, la sortie à l'entrée : $s = f(e)$. On la relève point par point en attendant la stabilisation à chaque essai."
+    },
+    {
+     "type": "text",
+     "text": "Sa pente locale donne le **gain statique** autour du point de fonctionnement. Si elle est courbe, le gain dépend du point choisi."
+    },
+    {
+     "type": "text",
+     "text": "Une **perturbation** (charge supplémentaire, température extérieure, débit de soutirage) déplace la caractéristique : pour la même entrée, la sortie change. C'est ce qui justifie une régulation."
+    },
+    {
+     "type": "text",
+     "text": "Exemple : un four donne 200 °C pour 40 % de puissance ; porte ouverte (perturbation), il ne donne plus que 170 °C à 40 %."
+    }
+   ]
+  },
+  {
+   "id": "C-PR-01",
+   "notions": [
+    "S-PR-01"
+   ],
+   "title": "Chaîne de mesure",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Le **capteur** convertit la grandeur physique en grandeur électrique ; le **transmetteur** la met en forme en un **signal normalisé** transmissible à distance."
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Signal",
+       "Plage"
+      ],
+      [
+       "courant",
+       "4-20 mA (le plus répandu, 0-20 mA)"
+      ],
+      [
+       "tension",
+       "0-10 V"
+      ],
+      [
+       "numérique",
+       "bus de terrain (Modbus, Profinet, IO-Link)"
+      ]
+     ]
+    },
+    {
+     "type": "formula",
+     "tex": "x = x_{min} + \\frac{I - 4}{16}(x_{max} - x_{min})",
+     "title": "Conversion d'un signal 4-20 mA"
+    },
+    {
+     "type": "formula",
+     "tex": "q = \\frac{\\text{pleine échelle}}{2^n} \\qquad N = 2^n \\;\\text{niveaux}",
+     "title": "CAN de n bits"
+    },
+    {
+     "type": "text",
+     "text": "Le 4-20 mA détecte une rupture de ligne (courant nul) et n'est pas sensible aux chutes de tension dans les câbles. La **fréquence d'échantillonnage** d'un CAN doit être suffisante (au moins deux fois la fréquence la plus élevée du signal)."
+    }
+   ]
+  },
+  {
+   "id": "C-PR-02",
+   "notions": [
+    "S-PR-02"
+   ],
+   "title": "Temps de réponse et précision d'un capteur",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Le **temps de réponse** d'un capteur est mesuré en lui appliquant un échelon de la grandeur (par exemple plonger une sonde dans un bain chaud) et en relevant le temps pour atteindre 95 % (ou 63 %) de la variation."
+    },
+    {
+     "type": "text",
+     "text": "La **précision** constructeur est donnée en % de l'étendue de mesure, en % de la lecture, ou en valeur absolue. Exemple : transmetteur 0-10 bar à ±0,5 % de l'étendue → ±0,05 bar sur toute la plage."
+    },
+    {
+     "type": "method",
+     "text": "Pour une incertitude-type à partir d'une précision ±a donnée sans plus d'information : $u = a/\\sqrt3$.",
+     "title": "Exploiter une précision"
+    },
+    {
+     "type": "warning",
+     "text": "Une erreur exprimée en % de l'étendue pèse beaucoup plus en bas d'échelle qu'en haut.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-PR-03",
+   "notions": [
+    "S-PR-03"
+   ],
+   "title": "Régulation et asservissement : structure",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Dans une **boucle fermée**, on mesure la grandeur réglée, on la compare à la **consigne** et le **régulateur** agit sur l'**actionneur** (vanne, variateur, gradateur) pour annuler l'écart, malgré les **perturbations**."
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Élément",
+       "Rôle"
+      ],
+      [
+       "consigne w",
+       "valeur souhaitée"
+      ],
+      [
+       "mesure x",
+       "image de la grandeur réglée"
+      ],
+      [
+       "écart ε = w − x",
+       "calculé par le comparateur"
+      ],
+      [
+       "commande y",
+       "sortie du régulateur vers l'actionneur"
+      ],
+      [
+       "procédé",
+       "système physique réglé"
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "text": "En **chaîne ouverte**, on commande sans mesurer : aucune correction des perturbations. On parle de **régulation** quand la consigne est fixe et qu'on rejette des perturbations, d'**asservissement** quand la sortie doit suivre une consigne variable."
+    },
+    {
+     "type": "tip",
+     "text": "Exemple de régulation : température d'une chambre froide ; d'asservissement : position d'un axe.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-PR-04",
+   "notions": [
+    "S-PR-04"
+   ],
+   "title": "Critères de performance",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Critère",
+       "Mesure après un échelon de consigne"
+      ],
+      [
+       "stabilité",
+       "la sortie se stabilise"
+      ],
+      [
+       "précision",
+       "écart statique (consigne − mesure en régime permanent)"
+      ],
+      [
+       "rapidité",
+       "temps de réponse à 5 %"
+      ],
+      [
+       "amortissement",
+       "premier dépassement $D_1$ (%)"
+      ]
+     ]
+    },
+    {
+     "type": "formula",
+     "tex": "D_1 = \\frac{s_{max} - s_\\infty}{s_\\infty - s_0} \\times 100",
+     "title": "Premier dépassement"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : consigne passée de 50 à 60 °C, la mesure monte à 62 °C puis se stabilise à 59,5 °C : écart statique 0,5 °C, $D_1 = 2{,}5/9{,}5 \\approx 26\\ \\%$."
+    },
+    {
+     "type": "warning",
+     "text": "Ces critères sont souvent contradictoires : un réglage plus rapide est en général moins amorti.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-PR-05",
+   "notions": [
+    "S-PR-05"
+   ],
+   "title": "Comportement des procédés",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "On caractérise un procédé en **boucle ouverte** (régulateur en manuel) : on donne un échelon à la commande et on observe la mesure."
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Comportement",
+       "Réponse à un échelon"
+      ],
+      [
+       "stable (naturellement)",
+       "se stabilise à une nouvelle valeur : $K = \\Delta x/\\Delta y$"
+      ],
+      [
+       "intégrateur (instable)",
+       "la mesure évolue en rampe (niveau d'une cuve avec pompe de vidange à débit fixe)"
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "text": "Pour un procédé stable, on identifie un modèle de Broïda (gain, retard, constante de temps), qui sert ensuite au réglage du régulateur. On relève aussi la **caractéristique statique** et l'effet d'une perturbation."
+    },
+    {
+     "type": "text",
+     "text": "Le rapport retard/constante de temps indique la difficulté de réglage : plus le retard est grand devant la constante de temps, plus il faut un réglage prudent."
+    }
+   ]
+  },
+  {
+   "id": "C-PR-06",
+   "notions": [
+    "S-PR-06"
+   ],
+   "title": "Régulation tout ou rien",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Le régulateur TOR ne connaît que deux états : marche ou arrêt. **À un seuil**, il commute à chaque passage de la consigne (usure rapide). **À deux seuils** (hystérésis), il enclenche sous le seuil bas et déclenche au-dessus du seuil haut."
+    },
+    {
+     "type": "plot",
+     "var": "t",
+     "from": 0,
+     "to": 20,
+     "title": "Régulation TOR à deux seuils (oscillation entretenue)",
+     "xLabel": "",
+     "yLabel": "",
+     "samples": 240,
+     "curves": [
+      {
+       "expr": "20 + 2*sin(2*pi*t/10)",
+       "label": "température"
+      },
+      {
+       "expr": "21",
+       "label": "seuil haut"
+      },
+      {
+       "expr": "19",
+       "label": "seuil bas"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "text": "La grandeur réglée **oscille** en permanence autour de la consigne ; l'amplitude dépend du différentiel et de l'inertie du procédé. C'est la régulation des thermostats, pressostats, chambres froides."
+    },
+    {
+     "type": "tip",
+     "text": "Un différentiel plus large réduit le nombre de démarrages du compresseur ou du moteur, mais augmente l'amplitude des oscillations.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-PR-07",
+   "notions": [
+    "S-PR-07"
+   ],
+   "title": "Régulateur PID",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "y = K_p\\left(\\varepsilon + \\frac{1}{T_i}\\int \\varepsilon\\,dt + T_d\\frac{d\\varepsilon}{dt}\\right)",
+     "title": "PID (structure mixte)"
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Action",
+       "Effet"
+      ],
+      [
+       "P (gain Kp)",
+       "réaction proportionnelle à l'écart ; plus Kp est grand, plus c'est rapide mais moins stable ; laisse un écart statique sur un procédé stable"
+      ],
+      [
+       "I (temps Ti)",
+       "annule l'écart statique ; trop d'intégrale (Ti petit) rend oscillant"
+      ],
+      [
+       "D (temps Td)",
+       "anticipe en réagissant à la vitesse de variation ; sensible au bruit"
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "text": "**Sens d'action** : si une augmentation de la commande fait augmenter la mesure (procédé direct), le régulateur doit être **inverse** (la commande diminue quand la mesure dépasse la consigne), et réciproquement. Exemple : chauffage → régulateur inverse ; refroidissement → régulateur direct."
+    },
+    {
+     "type": "method",
+     "text": "Réglage indicatif à partir du modèle de Broïda (gain K, constante de temps T, retard τ) ou par essais successifs : régler P seul jusqu'à une réponse peu oscillante, puis ajouter I pour supprimer l'écart, enfin D si nécessaire.",
+     "title": "Réglage"
+    }
+   ]
+  },
+  {
+   "id": "C-PR-08",
+   "notions": [
+    "S-PR-08"
+   ],
+   "title": "L'automate programmable dans une boucle",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Dans une installation, la boucle de régulation est souvent réalisée par un **automate programmable** : ses **entrées analogiques** (4-20 mA, 0-10 V) reçoivent la mesure ; un **bloc PID** calcule la commande ; une **sortie analogique** pilote l'actionneur (variateur, vanne), ou une **sortie TOR** commande un contacteur."
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Partie",
+       "Rôle dans la boucle"
+      ],
+      [
+       "alimentation",
+       "fournit l'énergie au processeur et aux cartes"
+      ],
+      [
+       "processeur (CPU)",
+       "exécute le cycle : lecture des entrées → calcul → écriture des sorties"
+      ],
+      [
+       "cartes d'entrées/sorties",
+       "interface avec capteurs et actionneurs ; conversion analogique-numérique"
+      ],
+      [
+       "communication",
+       "liaison avec la supervision et les autres équipements"
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "text": "Le **temps de cycle** de l'automate joue le rôle de période d'échantillonnage : il doit être petit devant la constante de temps du procédé."
+    },
+    {
+     "type": "tip",
+     "text": "Seule la structure est traitée ici ; la programmation des automates relève d'autres enseignements.",
+     "title": ""
+    }
+   ]
+  }
+ ],
+ "examples": [],
+ "exercises": [
+  {
+   "id": "X-DY-01-a",
+   "notions": [
+    "S-DY-01"
+   ],
+   "title": "Identifier τ et K d'un circuit RC",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "R": {
+     "unit": "Ω",
+     "values": [
+      1000.0,
+      10000.0,
+      47000.0
+     ]
+    },
+    "C": {
+     "unit": "F",
+     "values": [
+      1e-05,
+      0.0001,
+      0.00047
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un condensateur $C =$ [[C]] se charge à travers $R =$ [[R]] sous une tension $E$ : $RC\\,\\dfrac{du_C}{dt} + u_C = E$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Constante de temps (s) ?",
+     "answer": "R*C",
+     "unit": "s",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Gain statique K ?",
+     "answer": "1",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    }
+   ],
+   "hint": "Forme τ ds/dt + s = K e.",
+   "method": "Identifier les coefficients.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\tau = RC =$ [[=R*C|s]] ; $K = 1$."
+    }
+   ]
+  },
+  {
+   "id": "X-DY-01-b",
+   "notions": [
+    "S-DY-01"
+   ],
+   "title": "Équation d'un moteur",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "J": {
+     "unit": "",
+     "values": [
+      0.01,
+      0.05,
+      0.1
+     ]
+    },
+    "f": {
+     "unit": "",
+     "values": [
+      0.001,
+      0.005,
+      0.01
+     ]
+    },
+    "Tm": {
+     "unit": "",
+     "values": [
+      1,
+      2,
+      5
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un rotor d'inertie $J =$ [[J]] kg·m², soumis à un frottement visqueux $f\\Omega$ ($f =$ [[f]] N·m·s/rad), reçoit un couple moteur constant $T_m =$ [[Tm]] N·m : $J\\dfrac{d\\Omega}{dt} = T_m - f\\Omega$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Constante de temps (s) ?",
+     "answer": "J/f",
+     "unit": "s",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Vitesse finale (rad/s) ?",
+     "answer": "Tm/f",
+     "unit": "rad/s",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Diviser par f : (J/f) dΩ/dt + Ω = Tm/f.",
+   "method": "Mise sous forme canonique.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\tau = J/f =$ [[=J/f|s]] ; $\\Omega_\\infty = T_m/f =$ [[=Tm/f|rad/s]]."
+    }
+   ]
+  },
+  {
+   "id": "X-DY-02-a",
+   "notions": [
+    "S-DY-02"
+   ],
+   "title": "Régime permanent d'un four",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "P": {
+     "unit": "",
+     "values": [
+      1000,
+      2000,
+      5000
+     ]
+    },
+    "G": {
+     "unit": "",
+     "values": [
+      5,
+      10,
+      20
+     ]
+    },
+    "te": {
+     "unit": "",
+     "values": [
+      15,
+      20
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un four reçoit [[P]] W et perd $G(\\theta - \\theta_e)$ W vers l'extérieur ($G =$ [[G]] W/K, $\\theta_e =$ [[te]] °C)."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Température en régime permanent (°C) ?",
+     "answer": "te + P/G",
+     "unit": "",
+     "tolerance": 0.005,
+     "sig": 3
+    }
+   ],
+   "hint": "En régime permanent, la dérivée est nulle : pertes = puissance fournie.",
+   "method": "Annuler la dérivée.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\theta_\\infty = \\theta_e + P/G = [[=te+P/G]]$ °C."
+    }
+   ]
+  },
+  {
+   "id": "X-DY-02-b",
+   "notions": [
+    "S-DY-02"
+   ],
+   "title": "Stabilité",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "tau": {
+     "unit": "",
+     "values": [
+      2,
+      5,
+      -3,
+      10
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un système obéit à $[[tau]]\\,\\dfrac{ds}{dt} + s = 2e$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Est-il stable ?",
+     "choices": [
+      "Oui",
+      "Non"
+     ],
+     "correct": 0,
+     "correctExpr": "1 - (gt(tau, 0))"
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Le régime transitoire est :",
+     "choices": [
+      "le terme qui s'éteint avec le temps",
+      "la valeur finale",
+      "l'entrée"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Stable si τ > 0.",
+   "method": "Signe de la constante de temps.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Stable si $\\tau > 0$ ; le transitoire est le terme exponentiel qui disparaît."
+    }
+   ]
+  },
+  {
+   "id": "X-DY-03-a",
+   "notions": [
+    "S-DY-03"
+   ],
+   "title": "Réponse d'un premier ordre",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "K": {
+     "unit": "",
+     "values": [
+      1,
+      2,
+      5
+     ]
+    },
+    "E": {
+     "unit": "",
+     "values": [
+      10,
+      20
+     ]
+    },
+    "tau": {
+     "unit": "",
+     "values": [
+      0.5,
+      2,
+      10
+     ]
+    },
+    "k": {
+     "unit": "",
+     "values": [
+      1,
+      2,
+      3
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un premier ordre ($K =$ [[K]], $\\tau =$ [[tau]] s) reçoit un échelon $E =$ [[E]] à $t = 0$, sortie initialement nulle."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Valeur finale ?",
+     "answer": "K*E",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Sortie à t = [[k]]τ ?",
+     "answer": "K*E*(1 - exp(-k))",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Temps de réponse à 5 % (s) ?",
+     "answer": "3*tau",
+     "unit": "s",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "s(t) = KE(1 − e^(−t/τ)).",
+   "method": "Solution de l'équation du premier ordre.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$s_\\infty = [[=K*E]]$ ; $s([[k]]\\tau) \\approx$ [[=K*E*(1-exp(-k)):3]] ; $t_{5\\%} = 3\\tau =$ [[=3*tau|s]]."
+    }
+   ]
+  },
+  {
+   "id": "X-DY-03-b",
+   "notions": [
+    "S-DY-03"
+   ],
+   "title": "Reconnaître une réponse",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Une réponse sans dépassement, à tangente à l'origine non nulle, est typique d'un :",
+     "choices": [
+      "premier ordre",
+      "second ordre oscillant",
+      "intégrateur"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Une sortie qui croît en rampe sans se stabiliser indique un système :",
+     "choices": [
+      "intégrateur",
+      "du premier ordre stable",
+      "à retard pur"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Pour un premier ordre, à t = τ la sortie a atteint :",
+     "choices": [
+      "63 % de sa variation",
+      "95 %",
+      "50 %"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Formes caractéristiques des réponses indicielles.",
+   "method": "Classer les réponses.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Premier ordre ; intégrateur ; 63 % à t = τ."
+    }
+   ]
+  },
+  {
+   "id": "X-DY-04-a",
+   "notions": [
+    "S-DY-04"
+   ],
+   "title": "Identifier un premier ordre",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "dy": {
+     "unit": "",
+     "values": [
+      10,
+      20
+     ]
+    },
+    "dx": {
+     "unit": "",
+     "values": [
+      15,
+      30,
+      50
+     ]
+    },
+    "t63": {
+     "unit": "",
+     "values": [
+      12,
+      30,
+      60
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un échelon de commande de [[dy]] % provoque une variation finale de la mesure de [[dx]] °C ; la mesure atteint 63 % de cette variation au bout de [[t63]] s."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Gain statique (°C/%) ?",
+     "answer": "dx/dy",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Constante de temps (s) ?",
+     "answer": "t63",
+     "unit": "s",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "K = Δx/Δy ; τ = t à 63 %.",
+   "method": "Lecture d'un relevé de premier ordre.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$K = [[dx]]/[[dy]] =$ [[=dx/dy:3]] °C/% ; $\\tau = [[t63]]$ s."
+    }
+   ]
+  },
+  {
+   "id": "X-DY-04-b",
+   "notions": [
+    "S-DY-04"
+   ],
+   "title": "Méthode de Broïda",
+   "difficulty": 3,
+   "validated": false,
+   "params": {
+    "t1": {
+     "unit": "",
+     "values": [
+      20,
+      30,
+      40
+     ]
+    },
+    "d": {
+     "unit": "",
+     "values": [
+      5,
+      8,
+      10
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Sur un relevé, la mesure atteint 28 % de sa variation à $t_1 =$ [[t1]] s et 40 % à $t_2 =$ [[=t1+d]] s."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Constante de temps T = 5,5(t₂ − t₁) (s) ?",
+     "answer": "5.5*d",
+     "unit": "s",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Retard τ = 2,8 t₁ − 1,8 t₂ (s) ?",
+     "answer": "2.8*t1 - 1.8*(t1 + d)",
+     "unit": "s",
+     "tolerance": 0.02,
+     "sig": 3
+    }
+   ],
+   "hint": "Appliquer les formules de Broïda.",
+   "method": "Modèle à retard.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$T = 5{,}5 \\times [[d]] =$ [[=5.5*d]] s ; $\\tau = 2{,}8 \\times [[t1]] - 1{,}8 \\times [[=t1+d]] =$ [[=2.8*t1-1.8*(t1+d):3]] s."
+    }
+   ]
+  },
+  {
+   "id": "X-DY-05-a",
+   "notions": [
+    "S-DY-05"
+   ],
+   "title": "Gain d'une caractéristique statique",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "y1": {
+     "unit": "",
+     "values": [
+      20,
+      30
+     ]
+    },
+    "x1": {
+     "unit": "",
+     "values": [
+      100,
+      150
+     ]
+    },
+    "y2": {
+     "unit": "",
+     "values": [
+      50,
+      60
+     ]
+    },
+    "x2": {
+     "unit": "",
+     "values": [
+      220,
+      300
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "En régime permanent, un four donne [[x1]] °C pour [[y1]] % de puissance et [[x2]] °C pour [[y2]] %."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Gain statique moyen entre ces deux points (°C/%) ?",
+     "answer": "(x2 - x1)/(y2 - y1)",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Pente de la caractéristique.",
+   "method": "Δx/Δy.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$K = \\dfrac{[[x2]] - [[x1]]}{[[y2]] - [[y1]]} \\approx$ [[=(x2-x1)/(y2-y1):3]] °C/%."
+    }
+   ]
+  },
+  {
+   "id": "X-DY-05-b",
+   "notions": [
+    "S-DY-05"
+   ],
+   "title": "Effet d'une perturbation",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "x": {
+     "unit": "",
+     "values": [
+      200,
+      250
+     ]
+    },
+    "d": {
+     "unit": "",
+     "values": [
+      20,
+      30,
+      40
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Pour une commande fixe, un four atteint [[x]] °C. On ouvre la porte : il se stabilise à [[=x-d]] °C."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Déplacement du point de fonctionnement (°C) ?",
+     "answer": "d",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Pour retrouver [[x]] °C malgré la perturbation, il faut :",
+     "choices": [
+      "une régulation en boucle fermée",
+      "une chaîne ouverte",
+      "couper le chauffage"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Perturbation = déplacement de la caractéristique.",
+   "method": "Comparer les deux régimes permanents.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "La sortie a baissé de [[d]] °C ; seule une boucle fermée corrige automatiquement."
+    }
+   ]
+  },
+  {
+   "id": "X-PR-01-a",
+   "notions": [
+    "S-PR-01"
+   ],
+   "title": "Signal 4-20 mA",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "xmax": {
+     "unit": "",
+     "values": [
+      10,
+      16,
+      100,
+      200
+     ]
+    },
+    "I": {
+     "unit": "",
+     "values": [
+      6,
+      8,
+      12,
+      16,
+      20
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un transmetteur 0-[[xmax]] (unité de la grandeur) délivre un signal 4-20 mA. On mesure [[I]] mA."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Valeur de la grandeur ?",
+     "answer": "(I - 4)/16*xmax",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Un courant de 0 mA indique :",
+     "choices": [
+      "une rupture de ligne",
+      "la valeur minimale",
+      "la valeur maximale"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "x = (I − 4)/16 × étendue.",
+   "method": "Conversion linéaire 4-20 mA.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$x = \\dfrac{[[I]] - 4}{16} \\times [[xmax]] =$ [[=(I-4)/16*xmax:3]] ; 0 mA = fil coupé."
+    }
+   ]
+  },
+  {
+   "id": "X-PR-01-b",
+   "notions": [
+    "S-PR-01"
+   ],
+   "title": "Résolution d'un CAN",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "n": {
+     "unit": "",
+     "values": [
+      8,
+      10,
+      12,
+      16
+     ]
+    },
+    "V": {
+     "unit": "",
+     "values": [
+      5,
+      10
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un convertisseur analogique-numérique de [[n]] bits a une pleine échelle de [[V]] V."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Nombre de niveaux ?",
+     "answer": "2^n",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 6
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Quantum (mV) ?",
+     "answer": "V/2^n*1000",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "q = PE/2ⁿ.",
+   "method": "Caractéristiques d'un CAN.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$2^{[[n]]} = [[=2^n]]$ niveaux ; $q \\approx$ [[=V/2^n*1000:3]] mV."
+    }
+   ]
+  },
+  {
+   "id": "X-PR-02-a",
+   "notions": [
+    "S-PR-02"
+   ],
+   "title": "Précision d'un transmetteur",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "E": {
+     "unit": "",
+     "values": [
+      10,
+      16,
+      100
+     ]
+    },
+    "p": {
+     "unit": "",
+     "values": [
+      0.25,
+      0.5,
+      1
+     ]
+    },
+    "x": {
+     "unit": "",
+     "values": [
+      2,
+      5,
+      8
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [
+    "x < E"
+   ],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un transmetteur 0-[[E]] bar a une précision de ±[[p]] % de l'étendue. Il indique [[x]] bar."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Erreur maximale (bar) ?",
+     "answer": "p/100*E",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Erreur relative sur cette lecture (%) ?",
+     "answer": "p*E/x",
+     "unit": "%",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Erreur = p % × étendue, identique sur toute la plage.",
+   "method": "Précision en % de l'étendue.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\pm$[[=p/100*E:3]] bar, soit [[=p*E/x:3]] % de la lecture."
+    }
+   ]
+  },
+  {
+   "id": "X-PR-02-b",
+   "notions": [
+    "S-PR-02"
+   ],
+   "title": "Temps de réponse d'une sonde",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "tau": {
+     "unit": "",
+     "values": [
+      2,
+      5,
+      10,
+      30
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une sonde de température se comporte comme un premier ordre de constante de temps [[tau]] s. On la plonge dans un bain chaud."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Temps de réponse à 95 % (s) ?",
+     "answer": "3*tau",
+     "unit": "s",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Incertitude-type si la précision est ±0,3 °C (°C) ?",
+     "answer": "0.3/sqrt(3)",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "t₉₅ = 3τ ; u = a/√3.",
+   "method": "Premier ordre et loi rectangulaire.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$t_{95} = [[=3*tau]]$ s ; $u = 0{,}3/\\sqrt3 \\approx 0{,}17$ °C."
+    }
+   ]
+  },
+  {
+   "id": "X-PR-03-a",
+   "notions": [
+    "S-PR-03"
+   ],
+   "title": "Éléments d'une boucle",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Dans la régulation de température d'une chambre froide, l'actionneur est :",
+     "choices": [
+      "le compresseur (ou sa vanne)",
+      "la sonde de température",
+      "la consigne"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "L'écart calculé par le régulateur est :",
+     "choices": [
+      "consigne − mesure",
+      "mesure × consigne",
+      "commande − mesure"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Une chaîne ouverte :",
+     "choices": [
+      "ne corrige pas les perturbations",
+      "mesure la sortie",
+      "est toujours plus précise"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Boucle : mesure, comparaison, correction, action.",
+   "method": "Schéma fonctionnel d'une boucle.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Actionneur : compresseur ; ε = w − x ; la chaîne ouverte ne voit pas les perturbations."
+    }
+   ]
+  },
+  {
+   "id": "X-PR-03-b",
+   "notions": [
+    "S-PR-03"
+   ],
+   "title": "Régulation ou asservissement ?",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Maintenir une pression constante malgré la consommation :",
+     "choices": [
+      "régulation",
+      "asservissement"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Faire suivre à un axe une trajectoire de position :",
+     "choices": [
+      "asservissement",
+      "régulation"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "La grandeur qui entre dans le procédé et qu'on ne maîtrise pas est :",
+     "choices": [
+      "une perturbation",
+      "la consigne",
+      "la commande"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Consigne fixe = régulation.",
+   "method": "Vocabulaire.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Pression constante : régulation ; suivi de trajectoire : asservissement ; perturbation."
+    }
+   ]
+  },
+  {
+   "id": "X-PR-04-a",
+   "notions": [
+    "S-PR-04"
+   ],
+   "title": "Exploiter une réponse",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "w0": {
+     "unit": "",
+     "values": [
+      40,
+      50
+     ]
+    },
+    "dw": {
+     "unit": "",
+     "values": [
+      10,
+      20
+     ]
+    },
+    "e": {
+     "unit": "",
+     "values": [
+      0,
+      0.5,
+      1
+     ]
+    },
+    "D": {
+     "unit": "",
+     "values": [
+      1,
+      2,
+      3
+     ]
+    }
+   },
+   "vars": {
+    "sf": "w0 + dw - e"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "La consigne passe de [[w0]] à [[=w0+dw]] °C. La mesure monte jusqu'à [[=w0+dw-e+D]] °C puis se stabilise à [[=w0+dw-e]] °C."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Écart statique (°C) ?",
+     "answer": "e",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Premier dépassement, en % ?",
+     "answer": "100*D/(dw - e)",
+     "unit": "%",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "D₁ = (max − final)/(final − initial).",
+   "method": "Critères de performance.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Écart statique : [[e]] °C ; $D_1 = \\dfrac{[[D]]}{[[=dw-e]]} \\approx$ [[=100*D/(dw-e):3]] %."
+    }
+   ]
+  },
+  {
+   "id": "X-PR-04-b",
+   "notions": [
+    "S-PR-04"
+   ],
+   "title": "Compromis rapidité-stabilité",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Augmenter fortement le gain d'un régulateur P rend la boucle :",
+     "choices": [
+      "plus rapide mais moins stable",
+      "plus lente et plus stable",
+      "inchangée"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Le temps de réponse mesure :",
+     "choices": [
+      "la rapidité",
+      "la précision",
+      "l'amortissement"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Le premier dépassement mesure :",
+     "choices": [
+      "l'amortissement",
+      "la précision",
+      "le gain du capteur"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Les critères sont souvent contradictoires.",
+   "method": "Associer critère et mesure.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Plus de gain : plus rapide, moins stable ; t₅% = rapidité ; D₁ = amortissement."
+    }
+   ]
+  },
+  {
+   "id": "X-PR-05-a",
+   "notions": [
+    "S-PR-05"
+   ],
+   "title": "Procédé stable ou intégrateur",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Le niveau d'une cuve vidée par une pompe à débit fixe, après un échelon de débit d'entrée, :",
+     "choices": [
+      "évolue en rampe (intégrateur)",
+      "se stabilise",
+      "oscille"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "La température d'un four après un échelon de puissance :",
+     "choices": [
+      "se stabilise (procédé stable)",
+      "croît indéfiniment",
+      "reste constante"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "On caractérise un procédé :",
+     "choices": [
+      "en boucle ouverte, régulateur en manuel",
+      "en boucle fermée seulement",
+      "sans mesure"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Intégrateur : pas d'équilibre naturel.",
+   "method": "Réponse en boucle ouverte.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Cuve : intégrateur ; four : stable ; essai en boucle ouverte."
+    }
+   ]
+  },
+  {
+   "id": "X-PR-05-b",
+   "notions": [
+    "S-PR-05"
+   ],
+   "title": "Gain d'un procédé",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "dy": {
+     "unit": "",
+     "values": [
+      5,
+      10,
+      20
+     ]
+    },
+    "dx": {
+     "unit": "",
+     "values": [
+      0.5,
+      1,
+      2
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Régulateur en manuel, la commande d'une vanne passe de 40 % à [[=40+dy]] % ; la pression se stabilise [[dx]] bar plus haut."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Gain statique (bar/%) ?",
+     "answer": "dx/dy",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "K = Δx/Δy.",
+   "method": "Identification du gain.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$K = [[dx]]/[[dy]] =$ [[=dx/dy:3]] bar/%."
+    }
+   ]
+  },
+  {
+   "id": "X-PR-06-a",
+   "notions": [
+    "S-PR-06"
+   ],
+   "title": "Thermostat à deux seuils",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "w": {
+     "unit": "",
+     "values": [
+      4,
+      19,
+      20,
+      60
+     ]
+    },
+    "d": {
+     "unit": "",
+     "values": [
+      1,
+      2,
+      4
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un régulateur TOR de chauffage a une consigne de [[w]] °C et un différentiel total de [[d]] °C centré sur la consigne."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Seuil d'enclenchement du chauffage (°C) ?",
+     "answer": "w - d/2",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Seuil de déclenchement (°C) ?",
+     "answer": "w + d/2",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Élargir le différentiel :",
+     "choices": [
+      "réduit le nombre de démarrages",
+      "supprime les oscillations",
+      "augmente les démarrages"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Seuils = consigne ± différentiel/2.",
+   "method": "Régulation TOR avec hystérésis.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Marche sous [[=w-d/2]] °C, arrêt au-dessus de [[=w+d/2]] °C ; un différentiel plus large espace les démarrages."
+    }
+   ]
+  },
+  {
+   "id": "X-PR-06-b",
+   "notions": [
+    "S-PR-06"
+   ],
+   "title": "Comportement d'une régulation TOR",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "En régulation TOR, la grandeur réglée :",
+     "choices": [
+      "oscille en permanence autour de la consigne",
+      "se stabilise exactement",
+      "diverge"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Un TOR à un seuil a pour inconvénient :",
+     "choices": [
+      "des commutations très fréquentes",
+      "une erreur statique énorme",
+      "l'absence d'actionneur"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Un pressostat de compresseur est un régulateur :",
+     "choices": [
+      "tout ou rien",
+      "PID",
+      "proportionnel"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Deux états seulement.",
+   "method": "Propriétés de la régulation TOR.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Oscillation entretenue ; un seul seuil = commutations rapides ; pressostat = TOR."
+    }
+   ]
+  },
+  {
+   "id": "X-PR-07-a",
+   "notions": [
+    "S-PR-07"
+   ],
+   "title": "Sens d'action du régulateur",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Régulation de température d'un four par sa puissance de chauffe : le régulateur doit être",
+     "choices": [
+      "inverse",
+      "direct"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Régulation de température d'une chambre froide par la vitesse du compresseur : le régulateur doit être",
+     "choices": [
+      "direct",
+      "inverse"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Un procédé est dit direct quand :",
+     "choices": [
+      "une hausse de la commande fait monter la mesure",
+      "une hausse de la commande fait baisser la mesure",
+      "la mesure ne dépend pas de la commande"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Chauffage : plus de commande → plus de température (procédé direct) → régulateur inverse.",
+   "method": "Le régulateur agit en sens opposé du procédé pour corriger l'écart.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Four : procédé direct → régulateur inverse ; froid : procédé inverse → régulateur direct."
+    }
+   ]
+  },
+  {
+   "id": "X-PR-07-b",
+   "notions": [
+    "S-PR-07"
+   ],
+   "title": "Rôle des actions PID",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "Kp": {
+     "unit": "",
+     "values": [
+      1,
+      2,
+      4
+     ]
+    },
+    "e": {
+     "unit": "",
+     "values": [
+      2,
+      5,
+      10
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un régulateur proportionnel de gain [[Kp]] voit un écart de [[e]] %."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Variation de commande due à l'action P (%) ?",
+     "answer": "Kp*e",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "L'action qui annule l'écart statique est :",
+     "choices": [
+      "l'action intégrale",
+      "l'action dérivée",
+      "l'action proportionnelle seule"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "L'action dérivée est déconseillée si :",
+     "choices": [
+      "la mesure est très bruitée",
+      "le procédé est lent",
+      "l'écart est nul"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "y = Kp ε pour l'action P.",
+   "method": "Effets des actions P, I, D.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\Delta y = [[Kp]] \\times [[e]] = [[=Kp*e]]$ % ; l'intégrale annule l'écart ; la dérivée amplifie le bruit."
+    }
+   ]
+  },
+  {
+   "id": "X-PR-08-a",
+   "notions": [
+    "S-PR-08"
+   ],
+   "title": "Structure d'un automate",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "La mesure 4-20 mA d'un capteur arrive sur :",
+     "choices": [
+      "une entrée analogique",
+      "une sortie TOR",
+      "l'alimentation"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Le cycle d'un automate est :",
+     "choices": [
+      "lecture des entrées → traitement → écriture des sorties",
+      "écriture → lecture → arrêt",
+      "aléatoire"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "La consigne de vitesse envoyée à un variateur passe par :",
+     "choices": [
+      "une sortie analogique (ou un bus)",
+      "une entrée TOR",
+      "la batterie de sauvegarde"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Entrées = capteurs, sorties = actionneurs.",
+   "method": "Structure matérielle de l'automate.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Entrée analogique ; cycle lecture-traitement-écriture ; sortie analogique ou bus vers le variateur."
+    }
+   ]
+  },
+  {
+   "id": "X-PR-08-b",
+   "notions": [
+    "S-PR-08"
+   ],
+   "title": "Temps de cycle et constante de temps",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "tc": {
+     "unit": "",
+     "values": [
+      10,
+      20,
+      50
+     ]
+    },
+    "tau": {
+     "unit": "",
+     "values": [
+      0.1,
+      1,
+      30
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un automate a un temps de cycle de [[tc]] ms ; le procédé a une constante de temps de [[tau]] s."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Rapport constante de temps / temps de cycle ?",
+     "answer": "tau*1000/tc",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Le temps de cycle est-il au moins 10 fois plus petit que la constante de temps ?",
+     "choices": [
+      "Oui",
+      "Non"
+     ],
+     "correct": 0,
+     "correctExpr": "1 - (gt(tau*1000/tc, 9.99))"
+    }
+   ],
+   "hint": "Le temps de cycle joue le rôle de période d'échantillonnage.",
+   "method": "Comparer les deux durées.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Rapport : [[=tau*1000/tc:3]] ; il faut un cycle petit devant τ pour une régulation correcte."
+    }
+   ]
+  }
+ ]
+}

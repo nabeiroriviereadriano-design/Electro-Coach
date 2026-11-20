@@ -1,0 +1,2434 @@
+{
+ "id": "sciences-em-modulation",
+ "courses": [
+  {
+   "id": "C-EM-01",
+   "notions": [
+    "S-EM-01"
+   ],
+   "title": "Champ électrique et rigidité diélectrique",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "E = \\frac{U}{d}",
+     "title": "Champ entre deux plaques parallèles (V/m)"
+    },
+    {
+     "type": "text",
+     "text": "Le **champ électrique** $\\vec E$ existe autour de charges électriques ; il est orienté vers les potentiels décroissants. Entre deux conducteurs plans séparés de $d$ et soumis à $U$, il est uniforme."
+    },
+    {
+     "type": "text",
+     "text": "La **rigidité diélectrique** est le champ maximal qu'un isolant supporte avant qu'un arc ne le traverse (claquage). Air sec : ≈ 3 kV/mm ; huile de transformateur : ≈ 10 à 15 kV/mm ; PVC : ≈ 20 à 40 kV/mm."
+    },
+    {
+     "type": "text",
+     "text": "La **foudre** est un claquage de l'air entre un nuage chargé et le sol ; l'arc à l'ouverture d'un contact apparaît quand le champ entre les contacts dépasse la rigidité de l'air."
+    },
+    {
+     "type": "warning",
+     "text": "Les distances d'isolement des appareillages haute tension découlent directement de la rigidité diélectrique de l'air.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-EM-02",
+   "notions": [
+    "S-EM-02"
+   ],
+   "title": "Champ magnétique",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Le **champ magnétique** $\\vec B$ (en teslas, T) est créé par les aimants et par les courants électriques. On le représente par des **lignes de champ**, tangentes à $\\vec B$, qui sortent du pôle nord et rentrent par le pôle sud."
+    },
+    {
+     "type": "formula",
+     "tex": "B = \\mu_0 \\frac{N I}{\\ell} \\qquad \\mu_0 = 4\\pi \\times 10^{-7}\\ \\mathrm{H/m}",
+     "title": "Solénoïde long"
+    },
+    {
+     "type": "formula",
+     "tex": "B = \\frac{\\mu_0 I}{2\\pi r}",
+     "title": "Fil rectiligne"
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Source",
+       "Ordre de grandeur"
+      ],
+      [
+       "champ terrestre",
+       "≈ 50 µT"
+      ],
+      [
+       "aimant de frigo",
+       "≈ 5 mT"
+      ],
+      [
+       "entrefer de moteur",
+       "≈ 1 T"
+      ],
+      [
+       "IRM",
+       "1,5 à 3 T"
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "text": "Mise en évidence : boussole, limaille de fer, sonde à effet Hall (teslamètre)."
+    },
+    {
+     "type": "tip",
+     "text": "Le sens du champ créé par un courant se trouve avec la règle de la main droite (ou du tire-bouchon).",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-EM-03",
+   "notions": [
+    "S-EM-03"
+   ],
+   "title": "Ferromagnétisme et hystérésis",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Les matériaux **ferromagnétiques** (fer, nickel, cobalt et leurs alliages, ferrites) canalisent et renforcent fortement le champ magnétique."
+    },
+    {
+     "type": "formula",
+     "tex": "B = \\mu_0 \\mu_r H",
+     "title": "Relation B(H) hors saturation ; μr de 1000 à 10 000 pour les tôles"
+    },
+    {
+     "type": "text",
+     "text": "Le **cycle d'hystérésis** $B(H)$ montre : le champ **rémanent** $B_r$ (ce qui reste quand $H = 0$), l'excitation **coercitive** $H_c$ (ce qu'il faut pour annuler $B$), et la **saturation** (B n'augmente presque plus)."
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Matériau",
+       "Cycle",
+       "Usage"
+      ],
+      [
+       "doux (fer-silicium, ferrite)",
+       "étroit, $H_c$ faible",
+       "transformateurs, moteurs"
+      ],
+      [
+       "dur (NdFeB, ferrite dure)",
+       "large, $B_r$ et $H_c$ élevés",
+       "aimants permanents"
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "text": "Parcourir le cycle consomme de l'énergie : ce sont les **pertes par hystérésis**, partie des **pertes fer**, proportionnelles à la fréquence et à l'aire du cycle."
+    },
+    {
+     "type": "warning",
+     "text": "Un transformateur ou un moteur saturé absorbe un courant magnétisant très élevé et déformé.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-EM-04",
+   "notions": [
+    "S-EM-04"
+   ],
+   "title": "Induction électromagnétique",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "\\Phi = B\\,S\\cos\\theta \\qquad e = -\\frac{d\\Phi}{dt}",
+     "title": "Flux et loi de Faraday"
+    },
+    {
+     "type": "text",
+     "text": "Une f.é.m. apparaît dans un circuit dès que le flux qui le traverse **varie** : aimant qui bouge, courant variable, circuit qui tourne. Elle est d'autant plus grande que la variation est rapide, que le champ est fort et que le nombre de spires est grand ($e = -N\\,d\\Phi/dt$)."
+    },
+    {
+     "type": "text",
+     "text": "**Loi de Lenz** : le courant induit s'oppose, par ses effets, à la cause qui lui a donné naissance (signe −)."
+    },
+    {
+     "type": "text",
+     "text": "Les **courants de Foucault** sont induits dans les masses métalliques soumises à un champ variable ; ils les échauffent. On les réduit en feuilletant les circuits magnétiques (tôles isolées) ; on les exploite dans les plaques à induction et les freins de poids lourds."
+    },
+    {
+     "type": "text",
+     "text": "Exemple : une bobine de 200 spires voit son flux passer de 0 à 5 mWb en 10 ms : $|e| = 200 \\times 0{,}005/0{,}01 = 100$ V."
+    }
+   ]
+  },
+  {
+   "id": "C-EM-05",
+   "notions": [
+    "S-EM-05"
+   ],
+   "title": "Repères historiques",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Date",
+       "Découverte"
+      ],
+      [
+       "1820",
+       "Ørsted : un courant dévie une boussole"
+      ],
+      [
+       "1820-1825",
+       "Ampère : forces entre courants, électrodynamique"
+      ],
+      [
+       "1831",
+       "Faraday : induction électromagnétique"
+      ],
+      [
+       "1834",
+       "Lenz : sens du courant induit"
+      ],
+      [
+       "1865",
+       "Maxwell : équations unifiant électricité, magnétisme et lumière"
+      ],
+      [
+       "1888",
+       "Hertz : production d'ondes électromagnétiques ; Tesla : moteur à champ tournant"
+      ]
+     ]
+    },
+    {
+     "type": "tip",
+     "text": "Ces découvertes ont conduit en moins d'un siècle aux génératrices, transformateurs, moteurs et à la radio.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-MO-01",
+   "notions": [
+    "S-MO-01"
+   ],
+   "title": "Fonctions de conversion",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Conversion",
+       "Nom",
+       "Exemple"
+      ],
+      [
+       "alternatif → continu",
+       "redresseur",
+       "chargeur de batterie"
+      ],
+      [
+       "continu → continu",
+       "hacheur",
+       "variateur de MCC, alim de LED"
+      ],
+      [
+       "continu → alternatif",
+       "onduleur",
+       "onduleur PV, sortie de variateur"
+      ],
+      [
+       "alternatif → alternatif",
+       "gradateur, cycloconvertisseur",
+       "variateur de lumière"
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "text": "Un convertisseur est **réversible** s'il peut faire transiter la puissance dans les deux sens (par exemple pour freiner une machine en renvoyant l'énergie au réseau)."
+    },
+    {
+     "type": "formula",
+     "tex": "P_{entrée} = P_{sortie}",
+     "title": "Convertisseur parfait (sans pertes)"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : un hacheur parfait alimenté sous 48 V fournit 24 V et 10 A : $P = 240$ W, donc il absorbe $240/48 = 5$ A en entrée."
+    },
+    {
+     "type": "warning",
+     "text": "La puissance se conserve, pas la tension ni le courant.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-MO-02",
+   "notions": [
+    "S-MO-02"
+   ],
+   "title": "Interrupteurs statiques",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Un interrupteur électronique est soit **fermé** (passant : tension nulle, courant quelconque), soit **ouvert** (bloqué : courant nul)."
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Commande",
+       "Composants"
+      ],
+      [
+       "non commandé",
+       "diode"
+      ],
+      [
+       "commandé à l'amorçage",
+       "thyristor"
+      ],
+      [
+       "commandé à l'amorçage et au blocage",
+       "transistor bipolaire, MOSFET, IGBT"
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "text": "**Diode idéale** : passante si on cherche à faire passer un courant de l'anode vers la cathode ($i > 0$, $u = 0$), bloquée si $u_{AK} < 0$ ($i = 0$). Une diode réelle a une tension de seuil d'environ 0,7 V (silicium)."
+    },
+    {
+     "type": "tip",
+     "text": "L'IGBT est l'interrupteur des variateurs de vitesse industriels.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-MO-03",
+   "notions": [
+    "S-MO-03"
+   ],
+   "title": "Pont de Graëtz et hacheur série",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Le **pont de Graëtz** (4 diodes en monophasé, 6 en triphasé) redresse l'alternatif. En monophasé, la tension de sortie sur charge résistive vaut $|v|$."
+    },
+    {
+     "type": "formula",
+     "tex": "\\langle u\\rangle = \\frac{2V\\sqrt2}{\\pi} \\;\\text{(mono)} \\qquad \\langle u\\rangle = \\frac{3U\\sqrt2}{\\pi} \\;\\text{(tri)}",
+     "title": "Valeur moyenne en sortie"
+    },
+    {
+     "type": "plot",
+     "var": "t",
+     "from": 0,
+     "to": 0.04,
+     "title": "Pont de Graëtz monophasé",
+     "xLabel": "",
+     "yLabel": "",
+     "samples": 240,
+     "curves": [
+      {
+       "expr": "abs(325*sin(100*pi*t))",
+       "label": "u redressée"
+      },
+      {
+       "expr": "325*sin(100*pi*t)",
+       "label": "v réseau"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "text": "Le **hacheur série** (abaisseur) découpe une tension continue $E$ à la fréquence $f$ ; le transistor conduit pendant $\\alpha T$."
+    },
+    {
+     "type": "formula",
+     "tex": "\\langle u\\rangle = \\alpha E",
+     "title": "Hacheur série (α : rapport cyclique)"
+    },
+    {
+     "type": "text",
+     "text": "Ces deux convertisseurs sont **non réversibles** : les diodes n'autorisent le courant que dans un sens, donc la puissance ne peut aller que de la source vers la charge."
+    }
+   ]
+  },
+  {
+   "id": "C-MO-04",
+   "notions": [
+    "S-MO-04"
+   ],
+   "title": "Analyse des signaux des convertisseurs",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "\\tau = \\frac{u_{max} - u_{min}}{2\\langle u\\rangle}",
+     "title": "Taux d'ondulation (une définition courante)"
+    },
+    {
+     "type": "text",
+     "text": "En sortie d'un redresseur ou d'un hacheur, la grandeur utile est **continue** (valeur moyenne) mais présente une **ondulation**. Côté alternatif, le courant absorbé contient des harmoniques, mesurés par le **THD**."
+    },
+    {
+     "type": "text",
+     "text": "Les **signaux de commande** (créneaux de rapport cyclique α, impulsions de gâchette, MLI) ne transportent pas d'énergie ; ils pilotent les interrupteurs."
+    },
+    {
+     "type": "method",
+     "text": "À l'oscilloscope : mode DC pour la valeur moyenne, mode AC pour isoler l'ondulation ; à l'analyseur, lire le spectre et le THD.",
+     "title": "Méthode"
+    }
+   ]
+  },
+  {
+   "id": "C-MO-05",
+   "notions": [
+    "S-MO-05"
+   ],
+   "title": "Transformateur : principe, plaque, pertes",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Deux enroulements sur un même circuit magnétique feuilleté : la tension alternative au primaire crée un flux variable qui induit une tension au secondaire. Il ne fonctionne **qu'en alternatif**."
+    },
+    {
+     "type": "formula",
+     "tex": "m = \\frac{U_{20}}{U_1} \\approx \\frac{N_2}{N_1} \\qquad \\frac{I_2}{I_1} \\approx \\frac{1}{m}",
+     "title": "Rapport de transformation"
+    },
+    {
+     "type": "text",
+     "text": "Plaque : puissance apparente nominale $S_n$ (kVA), tensions $U_1$ / $U_{20}$, fréquence, couplage, tension de court-circuit $u_{cc}$ (%)."
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Essai",
+       "Mesure",
+       "Donne"
+      ],
+      [
+       "à vide (U₁ nominale, secondaire ouvert)",
+       "$P_{10}$",
+       "pertes fer $P_f$ et $m$"
+      ],
+      [
+       "en court-circuit (I₂ nominal, U₁ réduite)",
+       "$P_{1cc}$",
+       "pertes cuivre $P_J$"
+      ]
+     ]
+    },
+    {
+     "type": "formula",
+     "tex": "\\eta = \\frac{P_2}{P_2 + P_f + P_J}",
+     "title": "Rendement"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : $S_n = 100$ kVA, $P_f = 300$ W, $P_J = 1500$ W, charge nominale à cos φ = 0,8 : $P_2 = 80$ kW, $\\eta = 80/81{,}8 \\approx 97{,}8\\ \\%$."
+    }
+   ]
+  },
+  {
+   "id": "C-MO-06",
+   "notions": [
+    "S-MO-06"
+   ],
+   "title": "Modèle de Kapp et chute de tension",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Vu du secondaire, le transformateur se comporte comme une source de tension $U_{20}$ en série avec une résistance $R_s$ et une réactance $X_s$ (modèle de Kapp)."
+    },
+    {
+     "type": "formula",
+     "tex": "R_s = \\frac{P_{1cc}}{I_{2cc}^2} \\qquad Z_s = \\frac{m\\,U_{1cc}}{I_{2cc}} \\qquad X_s = \\sqrt{Z_s^2 - R_s^2}",
+     "title": "Paramètres depuis l'essai en court-circuit"
+    },
+    {
+     "type": "formula",
+     "tex": "\\Delta U = U_{20} - U_2 \\approx R_s I_2\\cos\\varphi_2 + X_s I_2\\sin\\varphi_2",
+     "title": "Formule approchée"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : $R_s = 0{,}02$ Ω, $X_s = 0{,}05$ Ω, $I_2 = 200$ A, cos φ = 0,8 : $\\Delta U \\approx 3{,}2 + 6 = 9{,}2$ V."
+    },
+    {
+     "type": "tip",
+     "text": "Pour une charge capacitive (sin φ < 0), la chute de tension peut devenir négative : la tension remonte.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-MO-07",
+   "notions": [
+    "S-MO-07"
+   ],
+   "title": "Transformateur triphasé : couplages et indice horaire",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Les enroulements sont couplés en étoile (Y, y), triangle (D, d) ou zigzag (z). La majuscule désigne la haute tension, la minuscule la basse tension."
+    },
+    {
+     "type": "text",
+     "text": "L'**indice horaire** $I_h$ donne le déphasage entre tensions HT et BT homologues, par pas de 30° : déphasage $= I_h \\times 30°$. Exemple : Dyn11 → BT en avance de 330° (soit en avance de 30°), neutre sorti côté BT."
+    },
+    {
+     "type": "formula",
+     "tex": "m = \\frac{U_{BT}}{U_{HT}} \\quad\\text{(tensions composées à vide)}",
+     "title": "Rapport en triphasé"
+    },
+    {
+     "type": "text",
+     "text": "**Mise en parallèle** : même rapport de transformation, même indice horaire (ou compatibles), tensions de court-circuit voisines, et même ordre des phases."
+    },
+    {
+     "type": "tip",
+     "text": "Le Dyn11 est le couplage standard des postes HTA/BT de distribution.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-MO-08",
+   "notions": [
+    "S-MO-08"
+   ],
+   "title": "Association de convertisseurs : variateur de vitesse",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Un variateur pour moteur asynchrone associe : **redresseur** (réseau → bus continu) + **condensateur de bus** (lisse la tension et fournit l'énergie instantanée) + **onduleur** MLI (bus → moteur à fréquence variable)."
+    },
+    {
+     "type": "text",
+     "text": "Au freinage, le moteur fonctionne en génératrice : l'énergie remonte vers le bus. Le redresseur à diodes n'étant pas réversible, la tension du bus monte ; un **hacheur de freinage** dissipe alors l'énergie dans une **résistance de freinage**."
+    },
+    {
+     "type": "formula",
+     "tex": "R \\le \\frac{U_{bus}^2}{P_{freinage}}",
+     "title": "Choix de la résistance (le hacheur la branche sous la tension de bus)"
+    },
+    {
+     "type": "formula",
+     "tex": "W = \\frac12 J(\\Omega_1^2 - \\Omega_2^2)",
+     "title": "Énergie à dissiper au ralentissement"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : bus à 700 V, freinage de 10 kW : $R \\le 700^2/10\\,000 = 49$ Ω."
+    }
+   ]
+  },
+  {
+   "id": "C-MO-09",
+   "notions": [
+    "S-MO-09"
+   ],
+   "title": "Lignes de distribution",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Une ligne se modélise par une résistance $R$ et une inductance $L$ en série (réactance $X = L\\omega$). Elle provoque des **pertes Joule** et une **chute de tension**."
+    },
+    {
+     "type": "formula",
+     "tex": "P_{pertes} = 3RI^2 \\qquad I = \\frac{P}{\\sqrt3\\,U\\cos\\varphi}",
+     "title": "Triphasé"
+    },
+    {
+     "type": "text",
+     "text": "À puissance transportée donnée, le courant est inversement proportionnel à la tension, et les pertes au **carré** de ce courant. Multiplier la tension par 10 divise les pertes par 100 : c'est pourquoi on transporte en haute tension (400 kV) et on distribue en basse tension grâce aux transformateurs."
+    },
+    {
+     "type": "formula",
+     "tex": "\\Delta U \\approx \\sqrt3\\,I\\,(R\\cos\\varphi + X\\sin\\varphi)",
+     "title": "Chute de tension (composée)"
+    }
+   ]
+  }
+ ],
+ "examples": [],
+ "exercises": [
+  {
+   "id": "X-EM-01-a",
+   "notions": [
+    "S-EM-01"
+   ],
+   "title": "Champ entre deux électrodes",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "U": {
+     "unit": "",
+     "values": [
+      1000,
+      5000,
+      10000,
+      20000
+     ]
+    },
+    "d": {
+     "unit": "",
+     "values": [
+      2,
+      5,
+      10,
+      20
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Deux électrodes planes distantes de [[d]] mm sont soumises à [[U]] V."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Champ électrique (kV/mm) ?",
+     "answer": "U/1000/d",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "L'air (rigidité ≈ 3 kV/mm) risque-t-il de claquer ?",
+     "choices": [
+      "Oui",
+      "Non"
+     ],
+     "correct": 0,
+     "correctExpr": "1 - (gt(U/1000/d, 3))"
+    }
+   ],
+   "hint": "E = U/d.",
+   "method": "Comparer le champ à la rigidité diélectrique.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$E = [[U]]/[[d]] =$ [[=U/1000/d:3]] kV/mm, à comparer à 3 kV/mm."
+    }
+   ]
+  },
+  {
+   "id": "X-EM-01-b",
+   "notions": [
+    "S-EM-01"
+   ],
+   "title": "Distance d'isolement",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "U": {
+     "unit": "",
+     "values": [
+      20,
+      63,
+      90
+     ]
+    },
+    "k": {
+     "unit": "",
+     "values": [
+      3,
+      10
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On veut isoler [[U]] kV avec un isolant de rigidité [[k]] kV/mm, en prenant un coefficient de sécurité de 3."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Épaisseur minimale sans sécurité (mm) ?",
+     "answer": "U/k",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Épaisseur avec le coefficient de sécurité (mm) ?",
+     "answer": "3*U/k",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "d = U/E_max.",
+   "method": "Inverser E = U/d.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$d = [[U]]/[[k]] \\approx$ [[=U/k:3]] mm ; avec sécurité : [[=3*U/k:3]] mm."
+    }
+   ]
+  },
+  {
+   "id": "X-EM-02-a",
+   "notions": [
+    "S-EM-02"
+   ],
+   "title": "Champ d'un solénoïde",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "N": {
+     "unit": "",
+     "values": [
+      200,
+      500,
+      1000
+     ]
+    },
+    "I": {
+     "unit": "",
+     "values": [
+      0.5,
+      1,
+      2,
+      5
+     ]
+    },
+    "l": {
+     "unit": "",
+     "values": [
+      0.1,
+      0.2,
+      0.5
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un solénoïde de [[N]] spires et de longueur [[l]] m est parcouru par [[I]] A ($\\mu_0 = 4\\pi \\times 10^{-7}$ H/m)."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Champ au centre (mT) ?",
+     "answer": "4*pi*1e-7*N*I/l*1000",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Si on double le courant, le champ :",
+     "choices": [
+      "double",
+      "est divisé par 2",
+      "est multiplié par 4"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "B = μ₀NI/ℓ.",
+   "method": "Formule du solénoïde long.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$B = 4\\pi\\times10^{-7} \\times \\dfrac{[[N]] \\times [[I]]}{[[l]]} \\approx$ [[=4*pi*1e-7*N*I/l*1000:3]] mT ; B est proportionnel à I."
+    }
+   ]
+  },
+  {
+   "id": "X-EM-02-b",
+   "notions": [
+    "S-EM-02"
+   ],
+   "title": "Champ près d'un câble",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "I": {
+     "unit": "",
+     "values": [
+      100,
+      400,
+      1000
+     ]
+    },
+    "r": {
+     "unit": "",
+     "values": [
+      0.1,
+      0.5,
+      1,
+      2
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un câble rectiligne transporte [[I]] A."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Champ à [[r]] m du câble (µT) ?",
+     "answer": "2e-7*I/r*1e6",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Les lignes de champ autour d'un fil rectiligne sont :",
+     "choices": [
+      "des cercles centrés sur le fil",
+      "des droites parallèles au fil",
+      "des droites radiales"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "B = μ₀I/(2πr) = 2 × 10⁻⁷ I/r.",
+   "method": "Champ d'un fil, comparé au champ terrestre (50 µT).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$B = \\dfrac{\\mu_0 I}{2\\pi r} \\approx$ [[=2e-7*I/r*1e6:3]] µT ; lignes circulaires."
+    }
+   ]
+  },
+  {
+   "id": "X-EM-03-a",
+   "notions": [
+    "S-EM-03"
+   ],
+   "title": "Lire un cycle d'hystérésis",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Pour un transformateur, on choisit un matériau :",
+     "choices": [
+      "doux (cycle étroit)",
+      "dur (cycle large)",
+      "non magnétique"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Le champ rémanent est la valeur de B quand :",
+     "choices": [
+      "H = 0",
+      "B = 0",
+      "H est maximal"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Les pertes par hystérésis sont liées à :",
+     "choices": [
+      "l'aire du cycle",
+      "la longueur du fil",
+      "la tension continue"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q4",
+     "kind": "choice",
+     "prompt": "Un aimant permanent est fait d'un matériau :",
+     "choices": [
+      "dur",
+      "doux",
+      "diamagnétique"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Doux : facile à aimanter et désaimanter.",
+   "method": "Associer forme du cycle et usage.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Transformateur : doux ; Br à H = 0 ; pertes ∝ aire du cycle ; aimant : matériau dur."
+    }
+   ]
+  },
+  {
+   "id": "X-EM-03-b",
+   "notions": [
+    "S-EM-03"
+   ],
+   "title": "Perméabilité et pertes fer",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "H": {
+     "unit": "",
+     "values": [
+      100,
+      200,
+      400
+     ]
+    },
+    "mur": {
+     "unit": "",
+     "values": [
+      2000,
+      4000,
+      5000
+     ]
+    },
+    "f1": {
+     "unit": "",
+     "values": [
+      50
+     ]
+    },
+    "Ph": {
+     "unit": "",
+     "values": [
+      100,
+      200,
+      300
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une tôle a une perméabilité relative $\\mu_r =$ [[mur]] (hors saturation). Un transformateur a [[Ph]] W de pertes par hystérésis à 50 Hz."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Champ B pour H = [[H]] A/m (T) ?",
+     "answer": "4*pi*1e-7*mur*H",
+     "unit": "T",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Pertes par hystérésis à 60 Hz, même B (W) ?",
+     "answer": "Ph*60/50",
+     "unit": "W",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "B = μ₀μr H ; pertes par hystérésis ∝ f.",
+   "method": "Relation B(H) linéaire et proportionnalité à la fréquence.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$B \\approx$ [[=4*pi*1e-7*mur*H:3|T]] ; à 60 Hz : [[=Ph*1.2:3|W]]."
+    }
+   ]
+  },
+  {
+   "id": "X-EM-04-a",
+   "notions": [
+    "S-EM-04"
+   ],
+   "title": "Loi de Faraday",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "N": {
+     "unit": "",
+     "values": [
+      50,
+      100,
+      200,
+      500
+     ]
+    },
+    "dPhi": {
+     "unit": "",
+     "values": [
+      1,
+      2,
+      5,
+      10
+     ]
+    },
+    "dt": {
+     "unit": "",
+     "values": [
+      5,
+      10,
+      20,
+      50
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Le flux à travers chacune des [[N]] spires d'une bobine varie de [[dPhi]] mWb en [[dt]] ms."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Valeur absolue de la f.é.m. induite (V) ?",
+     "answer": "N*dPhi/dt",
+     "unit": "V",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Si la variation est deux fois plus rapide, la f.é.m. :",
+     "choices": [
+      "double",
+      "reste la même",
+      "est divisée par deux"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "|e| = N ΔΦ/Δt.",
+   "method": "Loi de Faraday.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$|e| = [[N]] \\times \\dfrac{[[dPhi]] \\times 10^{-3}}{[[dt]] \\times 10^{-3}} =$ [[=N*dPhi/dt:3|V]]."
+    }
+   ]
+  },
+  {
+   "id": "X-EM-04-b",
+   "notions": [
+    "S-EM-04"
+   ],
+   "title": "Lenz et courants de Foucault",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "On feuillette les circuits magnétiques pour :",
+     "choices": [
+      "réduire les courants de Foucault",
+      "augmenter le champ",
+      "réduire la masse de cuivre"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Le courant induit dans une spire où l'on approche un aimant :",
+     "choices": [
+      "s'oppose à l'approche de l'aimant",
+      "attire l'aimant",
+      "est nul"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Une plaque à induction chauffe la casserole grâce :",
+     "choices": [
+      "aux courants de Foucault",
+      "à la conduction depuis une résistance",
+      "au rayonnement infrarouge"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Lenz : opposition à la cause.",
+   "method": "Applications de l'induction.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Tôles isolées → moins de courants de Foucault ; le courant induit s'oppose à la cause ; la plaque induit des courants dans le fond de la casserole."
+    }
+   ]
+  },
+  {
+   "id": "X-EM-05-a",
+   "notions": [
+    "S-EM-05"
+   ],
+   "title": "Qui a découvert quoi ?",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "L'induction électromagnétique (1831) est due à :",
+     "choices": [
+      "Faraday",
+      "Ørsted",
+      "Maxwell"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "La déviation d'une boussole par un courant (1820) est due à :",
+     "choices": [
+      "Ørsted",
+      "Hertz",
+      "Lenz"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Les équations unifiant électricité et magnétisme sont dues à :",
+     "choices": [
+      "Maxwell",
+      "Ampère",
+      "Tesla"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Ordre : Ørsted, Ampère, Faraday, Lenz, Maxwell, Hertz.",
+   "method": "Repères historiques.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Faraday (1831), Ørsted (1820), Maxwell (1865)."
+    }
+   ]
+  },
+  {
+   "id": "X-EM-05-b",
+   "notions": [
+    "S-EM-05"
+   ],
+   "title": "Chronologie",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Quelle découverte est la plus ancienne ?",
+     "choices": [
+      "l'effet d'un courant sur une boussole",
+      "les ondes hertziennes",
+      "le moteur à champ tournant"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Hertz a montré expérimentalement :",
+     "choices": [
+      "l'existence des ondes électromagnétiques",
+      "la loi de Lenz",
+      "le ferromagnétisme"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "La loi qui donne le sens du courant induit porte le nom de :",
+     "choices": [
+      "Lenz",
+      "Faraday",
+      "Ohm"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Ørsted 1820, Hertz 1888.",
+   "method": "Repères historiques.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Ørsted (1820) précède Hertz et Tesla (fin du XIXᵉ siècle) ; Hertz : ondes ; Lenz : sens du courant induit."
+    }
+   ]
+  },
+  {
+   "id": "X-MO-01-a",
+   "notions": [
+    "S-MO-01"
+   ],
+   "title": "Nommer le convertisseur",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Continu → alternatif :",
+     "choices": [
+      "onduleur",
+      "redresseur",
+      "hacheur"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Alternatif → continu :",
+     "choices": [
+      "redresseur",
+      "onduleur",
+      "gradateur"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Continu → continu réglable :",
+     "choices": [
+      "hacheur",
+      "onduleur",
+      "transformateur"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q4",
+     "kind": "choice",
+     "prompt": "Un convertisseur réversible permet :",
+     "choices": [
+      "le transfert de puissance dans les deux sens",
+      "de doubler la tension",
+      "de supprimer les pertes"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Nom = fonction réalisée.",
+   "method": "Vocabulaire des convertisseurs.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Onduleur, redresseur, hacheur ; réversible = puissance dans les deux sens."
+    }
+   ]
+  },
+  {
+   "id": "X-MO-01-b",
+   "notions": [
+    "S-MO-01"
+   ],
+   "title": "Bilan d'un convertisseur parfait",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "E": {
+     "unit": "",
+     "values": [
+      24,
+      48,
+      400
+     ]
+    },
+    "U": {
+     "unit": "",
+     "values": [
+      12,
+      18
+     ]
+    },
+    "I": {
+     "unit": "",
+     "values": [
+      5,
+      10,
+      20
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un convertisseur parfait alimenté sous [[E]] V délivre [[U]] V et [[I]] A."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Puissance de sortie (W) ?",
+     "answer": "U*I",
+     "unit": "W",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Courant absorbé en entrée (A) ?",
+     "answer": "U*I/E",
+     "unit": "A",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "P entrée = P sortie.",
+   "method": "Conservation de la puissance.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$P = [[U]] \\times [[I]] = [[=U*I]]$ W ; $I_e = P/E \\approx$ [[=U*I/E:3|A]]."
+    }
+   ]
+  },
+  {
+   "id": "X-MO-02-a",
+   "notions": [
+    "S-MO-02"
+   ],
+   "title": "État d'une diode",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "u": {
+     "unit": "",
+     "values": [
+      -12,
+      -5,
+      0.7,
+      2
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On impose $u_{AK} = [[u]]$ V à une diode réelle au silicium (seuil 0,7 V)."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "La diode peut-elle conduire ?",
+     "choices": [
+      "Oui",
+      "Non"
+     ],
+     "correct": 0,
+     "correctExpr": "1 - (gt(u, 0.6))"
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Une diode est un interrupteur :",
+     "choices": [
+      "non commandé",
+      "commandé à l'amorçage",
+      "entièrement commandé"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Conduction si u_AK atteint le seuil.",
+   "method": "Caractéristique de la diode.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "La diode conduit dès que $u_{AK}$ atteint environ 0,7 V ; sinon elle est bloquée. C'est un interrupteur non commandé."
+    }
+   ]
+  },
+  {
+   "id": "X-MO-02-b",
+   "notions": [
+    "S-MO-02"
+   ],
+   "title": "Classer les interrupteurs",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Le thyristor est :",
+     "choices": [
+      "commandé à l'amorçage seulement",
+      "non commandé",
+      "commandé à l'amorçage et au blocage"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "L'IGBT est :",
+     "choices": [
+      "commandé à l'amorçage et au blocage",
+      "non commandé",
+      "commandé au blocage seulement"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Un interrupteur idéal fermé a :",
+     "choices": [
+      "une tension nulle à ses bornes",
+      "un courant nul",
+      "une résistance infinie"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Le thyristor ne se bloque que quand son courant s'annule.",
+   "method": "Types d'interrupteurs.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Thyristor : amorçage commandé ; IGBT : entièrement commandé ; fermé = tension nulle."
+    }
+   ]
+  },
+  {
+   "id": "X-MO-03-a",
+   "notions": [
+    "S-MO-03"
+   ],
+   "title": "Pont de Graëtz monophasé",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "V": {
+     "unit": "",
+     "values": [
+      12,
+      24,
+      230
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un pont de Graëtz monophasé parfait est alimenté sous [[V]] V efficaces et débite sur une résistance."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Tension maximale en sortie (V) ?",
+     "answer": "V*sqrt(2)",
+     "unit": "V",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Valeur moyenne de la tension de sortie (V) ?",
+     "answer": "2*V*sqrt(2)/pi",
+     "unit": "V",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Ce pont est non réversible car :",
+     "choices": [
+      "les diodes n'autorisent qu'un sens de courant",
+      "il a quatre composants",
+      "il fonctionne en alternatif"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "⟨u⟩ = 2V√2/π.",
+   "method": "Redressement double alternance.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$U_{max} \\approx$ [[=V*sqrt(2):3|V]] ; $\\langle u\\rangle \\approx$ [[=2*V*sqrt(2)/pi:3|V]]."
+    }
+   ]
+  },
+  {
+   "id": "X-MO-03-b",
+   "notions": [
+    "S-MO-03"
+   ],
+   "title": "Hacheur série",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "E": {
+     "unit": "",
+     "values": [
+      24,
+      48,
+      220,
+      300
+     ]
+    },
+    "a": {
+     "unit": "",
+     "values": [
+      0.25,
+      0.4,
+      0.5,
+      0.75
+     ]
+    },
+    "f": {
+     "unit": "",
+     "values": [
+      1,
+      5,
+      20
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un hacheur série est alimenté sous [[E]] V, rapport cyclique α = [[a]], fréquence [[f]] kHz."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Valeur moyenne de la tension de sortie (V) ?",
+     "answer": "a*E",
+     "unit": "V",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Durée de conduction du transistor (µs) ?",
+     "answer": "a*1000/f",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "⟨u⟩ = αE ; T = 1/f.",
+   "method": "Rapport cyclique × période.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\langle u\\rangle = [[a]] \\times [[E]] =$ [[=a*E|V]] ; $t_{on} = \\alpha T \\approx$ [[=a*1000/f:3]] µs."
+    }
+   ]
+  },
+  {
+   "id": "X-MO-04-a",
+   "notions": [
+    "S-MO-04"
+   ],
+   "title": "Taux d'ondulation",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "um": {
+     "unit": "",
+     "values": [
+      11,
+      23,
+      45
+     ]
+    },
+    "d": {
+     "unit": "",
+     "values": [
+      0.5,
+      1,
+      2
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une tension redressée et filtrée oscille entre [[um]] V et [[=um+d]] V."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Valeur moyenne approchée (V) ?",
+     "answer": "um + d/2",
+     "unit": "V",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Taux d'ondulation τ = (umax − umin)/(2⟨u⟩), en % ?",
+     "answer": "100*d/(2*(um + d/2))",
+     "unit": "%",
+     "tolerance": 0.02,
+     "sig": 3
+    }
+   ],
+   "hint": "Moyenne ≈ milieu entre min et max.",
+   "method": "Appliquer la définition.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\langle u\\rangle \\approx$ [[=um+d/2:3|V]] ; $\\tau \\approx$ [[=100*d/(2*(um+d/2)):3]] %."
+    }
+   ]
+  },
+  {
+   "id": "X-MO-04-b",
+   "notions": [
+    "S-MO-04"
+   ],
+   "title": "Identifier les signaux",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Le créneau 0-15 V appliqué sur la grille d'un IGBT est :",
+     "choices": [
+      "un signal de commande",
+      "un signal de puissance",
+      "une tension de bus"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Pour isoler l'ondulation à l'oscilloscope, on utilise le couplage :",
+     "choices": [
+      "AC",
+      "DC",
+      "GND"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Le courant absorbé par un redresseur à condensateur est caractérisé par :",
+     "choices": [
+      "son THD",
+      "son rapport cyclique",
+      "son indice horaire"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "La commande ne transporte pas d'énergie.",
+   "method": "Distinguer puissance et commande.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Signal de commande ; couplage AC ; THD du courant côté réseau."
+    }
+   ]
+  },
+  {
+   "id": "X-MO-05-a",
+   "notions": [
+    "S-MO-05"
+   ],
+   "title": "Rapport de transformation",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "U1": {
+     "unit": "",
+     "values": [
+      230,
+      400,
+      20000
+     ]
+    },
+    "U20": {
+     "unit": "",
+     "values": [
+      12,
+      24,
+      230,
+      410
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [
+    "U20 < U1"
+   ],
+   "statement": [
+    {
+     "type": "text",
+     "text": "À vide, un transformateur alimenté sous [[U1]] V délivre [[U20]] V."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Rapport de transformation m ?",
+     "answer": "U20/U1",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Courant primaire si le secondaire débite 10 A (transformateur parfait) (A) ?",
+     "answer": "10*U20/U1",
+     "unit": "A",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "m = U₂₀/U₁ ; I₁ = m I₂.",
+   "method": "Le courant varie à l'inverse de la tension.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$m \\approx$ [[=U20/U1:3]] ; $I_1 = m I_2 \\approx$ [[=10*U20/U1:3|A]]."
+    }
+   ]
+  },
+  {
+   "id": "X-MO-05-b",
+   "notions": [
+    "S-MO-05"
+   ],
+   "title": "Rendement d'après les essais",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "Sn": {
+     "unit": "",
+     "values": [
+      50,
+      100,
+      160,
+      250
+     ]
+    },
+    "Pf": {
+     "unit": "",
+     "values": [
+      200,
+      300,
+      450
+     ]
+    },
+    "Pj": {
+     "unit": "",
+     "values": [
+      1000,
+      1500,
+      2500
+     ]
+    },
+    "fp": {
+     "unit": "",
+     "values": [
+      0.8,
+      0.9,
+      1
+     ]
+    }
+   },
+   "vars": {
+    "P2": "Sn*1000*fp"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un transformateur de [[Sn]] kVA a donné : essai à vide [[Pf]] W, essai en court-circuit au courant nominal [[Pj]] W. Il débite sa puissance nominale avec cos φ = [[fp]]."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Puissance active fournie (W) ?",
+     "answer": "P2",
+     "unit": "W",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Rendement, en % ?",
+     "answer": "100*P2/(P2 + Pf + Pj)",
+     "unit": "%",
+     "tolerance": 0.005,
+     "sig": 3
+    }
+   ],
+   "hint": "Essai à vide → pertes fer ; court-circuit → pertes cuivre.",
+   "method": "η = P₂/(P₂ + P_f + P_J).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$P_2 =$ [[=P2|W]] ; $\\eta \\approx$ [[=100*P2/(P2+Pf+Pj):4]] %."
+    }
+   ]
+  },
+  {
+   "id": "X-MO-06-a",
+   "notions": [
+    "S-MO-06"
+   ],
+   "title": "Chute de tension (formule approchée)",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "Rs": {
+     "unit": "",
+     "values": [
+      0.01,
+      0.02,
+      0.05
+     ]
+    },
+    "Xs": {
+     "unit": "",
+     "values": [
+      0.03,
+      0.05,
+      0.08
+     ]
+    },
+    "I": {
+     "unit": "",
+     "values": [
+      100,
+      200,
+      300
+     ]
+    },
+    "fp": {
+     "unit": "",
+     "values": [
+      0.8,
+      0.9,
+      1
+     ]
+    },
+    "U20": {
+     "unit": "",
+     "values": [
+      410
+     ]
+    }
+   },
+   "vars": {
+    "dU": "Rs*I*fp + Xs*I*sqrt(1 - fp^2)"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Modèle de Kapp ramené au secondaire (par phase) : $U_{20} =$ [[U20]] V, $R_s =$ [[Rs]] Ω, $X_s =$ [[Xs]] Ω. Charge inductive : [[I]] A, cos φ = [[fp]]."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Chute de tension (V) ?",
+     "answer": "dU",
+     "unit": "V",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Tension en charge (V) ?",
+     "answer": "U20 - dU",
+     "unit": "V",
+     "tolerance": 0.005,
+     "sig": 3
+    }
+   ],
+   "hint": "ΔU ≈ R_s I cos φ + X_s I sin φ.",
+   "method": "Formule approchée de Kapp.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\Delta U \\approx$ [[=dU:3|V]] ; $U_2 \\approx$ [[=U20-dU:4|V]]."
+    }
+   ]
+  },
+  {
+   "id": "X-MO-06-b",
+   "notions": [
+    "S-MO-06"
+   ],
+   "title": "Paramètres de Kapp",
+   "difficulty": 3,
+   "validated": false,
+   "params": {
+    "P1cc": {
+     "unit": "",
+     "values": [
+      400,
+      800,
+      1200
+     ]
+    },
+    "I2": {
+     "unit": "",
+     "values": [
+      50,
+      100,
+      150
+     ]
+    },
+    "Zs": {
+     "unit": "",
+     "values": [
+      0.08,
+      0.1,
+      0.15
+     ]
+    }
+   },
+   "vars": {
+    "Rs": "P1cc/I2^2"
+   },
+   "constraints": [
+    "P1cc/I2^2 < Zs"
+   ],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Essai en court-circuit : $P_{1cc} =$ [[P1cc]] W pour $I_{2cc} =$ [[I2]] A ; on en déduit $Z_s =$ [[Zs]] Ω."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Résistance $R_s$ (Ω) ?",
+     "answer": "Rs",
+     "unit": "Ω",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Réactance $X_s$ (Ω) ?",
+     "answer": "sqrt(Zs^2 - Rs^2)",
+     "unit": "Ω",
+     "tolerance": 0.02,
+     "sig": 3
+    }
+   ],
+   "hint": "R_s = P₁cc/I₂cc² ; X_s = √(Z_s² − R_s²).",
+   "method": "Exploiter l'essai en court-circuit.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$R_s = [[P1cc]]/[[=I2^2]] \\approx$ [[=Rs:3|Ω]] ; $X_s \\approx$ [[=sqrt(Zs^2-Rs^2):3|Ω]]."
+    }
+   ]
+  },
+  {
+   "id": "X-MO-07-a",
+   "notions": [
+    "S-MO-07"
+   ],
+   "title": "Indice horaire",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "h": {
+     "unit": "",
+     "values": [
+      0,
+      5,
+      6,
+      11
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un transformateur triphasé a un indice horaire [[h]]."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Déphasage correspondant (°) ?",
+     "answer": "30*h",
+     "unit": "°",
+     "tolerance": 0.001,
+     "sig": 3
+    }
+   ],
+   "hint": "Chaque heure vaut 30°.",
+   "method": "Déphasage = I_h × 30°.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$[[h]] \\times 30 = [[=30*h]]°$."
+    }
+   ]
+  },
+  {
+   "id": "X-MO-07-b",
+   "notions": [
+    "S-MO-07"
+   ],
+   "title": "Couplages et mise en parallèle",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Dans « Dyn11 », le « n » signifie :",
+     "choices": [
+      "neutre sorti côté basse tension",
+      "nombre de spires",
+      "non couplé"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Pour mettre deux transformateurs en parallèle, il faut notamment :",
+     "choices": [
+      "le même indice horaire",
+      "la même puissance",
+      "le même constructeur"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Dans « Yz », l'enroulement basse tension est couplé :",
+     "choices": [
+      "en zigzag",
+      "en triangle",
+      "en étoile"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Majuscule = HT, minuscule = BT.",
+   "method": "Lecture d'un symbole de couplage.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "n : neutre BT sorti ; même indice horaire, même rapport et u_cc voisines ; z : zigzag."
+    }
+   ]
+  },
+  {
+   "id": "X-MO-08-a",
+   "notions": [
+    "S-MO-08"
+   ],
+   "title": "Dimensionner une résistance de freinage",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "Ub": {
+     "unit": "",
+     "values": [
+      560,
+      650,
+      750
+     ]
+    },
+    "P": {
+     "unit": "",
+     "values": [
+      5000,
+      10000,
+      20000
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Le bus continu d'un variateur est régulé à [[Ub]] V pendant le freinage ; la puissance à dissiper vaut [[P]] W."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Valeur maximale de la résistance (Ω) ?",
+     "answer": "Ub^2/P",
+     "unit": "Ω",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Le condensateur de bus sert à :",
+     "choices": [
+      "lisser la tension continue et fournir l'énergie instantanée",
+      "redresser la tension",
+      "freiner le moteur"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "P = U²/R.",
+   "method": "La résistance est branchée sous la tension de bus.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$R \\le [[Ub]]^2/[[P]] \\approx$ [[=Ub^2/P:3|Ω]]."
+    }
+   ]
+  },
+  {
+   "id": "X-MO-08-b",
+   "notions": [
+    "S-MO-08"
+   ],
+   "title": "Énergie de freinage",
+   "difficulty": 3,
+   "validated": false,
+   "params": {
+    "J": {
+     "unit": "",
+     "values": [
+      0.5,
+      2,
+      5
+     ]
+    },
+    "n": {
+     "unit": "",
+     "values": [
+      1500,
+      3000
+     ]
+    },
+    "t": {
+     "unit": "",
+     "values": [
+      1,
+      2,
+      5
+     ]
+    }
+   },
+   "vars": {
+    "W": "0.5*J*(2*pi*n/60)^2"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une machine d'inertie totale [[J]] kg·m² est arrêtée depuis [[n]] tr/min en [[t]] s."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Énergie à dissiper (J) ?",
+     "answer": "W",
+     "unit": "J",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Puissance moyenne de freinage (W) ?",
+     "answer": "W/t",
+     "unit": "W",
+     "tolerance": 0.02,
+     "sig": 3
+    }
+   ],
+   "hint": "W = ½JΩ² ; P = W/t.",
+   "method": "Énergie cinétique à évacuer.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$W \\approx$ [[=W:3|J]] ; $P \\approx$ [[=W/t:3|W]]."
+    }
+   ]
+  },
+  {
+   "id": "X-MO-09-a",
+   "notions": [
+    "S-MO-09"
+   ],
+   "title": "Pertes en ligne",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "P": {
+     "unit": "",
+     "values": [
+      100,
+      500,
+      1000
+     ]
+    },
+    "U": {
+     "unit": "",
+     "values": [
+      400,
+      20000
+     ]
+    },
+    "R": {
+     "unit": "",
+     "values": [
+      0.05,
+      0.2,
+      1
+     ]
+    }
+   },
+   "vars": {
+    "I": "P*1000/(sqrt(3)*U)"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une ligne triphasée de résistance [[R]] Ω par conducteur transporte [[P]] kW sous [[U]] V (cos φ = 1)."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Courant de ligne (A) ?",
+     "answer": "I",
+     "unit": "A",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Pertes Joule (W) ?",
+     "answer": "3*R*I^2",
+     "unit": "W",
+     "tolerance": 0.02,
+     "sig": 3
+    }
+   ],
+   "hint": "I = P/(√3 U) ; pertes = 3RI².",
+   "method": "Calcul du courant puis des pertes.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$I \\approx$ [[=I:3|A]] ; pertes $\\approx$ [[=3*R*I^2:3|W]]."
+    }
+   ]
+  },
+  {
+   "id": "X-MO-09-b",
+   "notions": [
+    "S-MO-09"
+   ],
+   "title": "Intérêt de la haute tension",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "k": {
+     "unit": "",
+     "values": [
+      2,
+      5,
+      10,
+      20
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "À puissance transportée et ligne identiques, on multiplie la tension par [[k]]."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Par combien le courant est-il divisé ?",
+     "answer": "k",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Par combien les pertes Joule sont-elles divisées ?",
+     "answer": "k^2",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    }
+   ],
+   "hint": "Pertes ∝ I² ∝ 1/U².",
+   "method": "Proportionnalités.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Courant divisé par [[k]], pertes divisées par [[=k^2]]."
+    }
+   ]
+  }
+ ]
+}

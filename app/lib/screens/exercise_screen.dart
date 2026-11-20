@@ -187,6 +187,7 @@ class _ExerciseScreenState extends State<ExerciseScreen> {
 /// Carte d'une question : saisie ou QCM, verdict, réponse attendue.
 class QuestionCard extends StatelessWidget {
   const QuestionCard({
+    super.key,
     required this.index,
     required this.question,
     required this.inst,

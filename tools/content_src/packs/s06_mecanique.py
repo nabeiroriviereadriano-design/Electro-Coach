@@ -196,7 +196,7 @@ exercises = [
        params={"H": P(values=[20, 50, 100, 400]), "Q": P(values=[0.5, 1, 2, 10]), "eta": P(values=[0.85, 0.9])},
        statement=[T("Une turbine reçoit [[Q]] m³/s d'eau sous une chute de [[H]] m, rendement [[eta]].")],
        questions=[num("q1", "Puissance utile (W) ?", "eta*1000*9.81*H*Q", unit="W", tol=0.01),
-                  {**mcq("q2", "Type de turbine adapté :", "Pelton", "Francis", "Kaplan"), "correctExpr": "gt(H, 200)"}],
+                  {**mcq("q2", "Type de turbine adapté :", "Pelton", "Francis", "Kaplan"), "correctExpr": "lt(H, 200)*(1 + lt(H, 30))"}],
        hint="P = ηρgHQ ; Pelton pour les hautes chutes.",
        method="Puissance hydraulique et choix technologique.",
        solution=[T("$P \\approx$ [[=eta*1000*9.81*H*Q:3|W]]. Pelton : hautes chutes ; Francis : moyennes ; Kaplan : basses.")]),

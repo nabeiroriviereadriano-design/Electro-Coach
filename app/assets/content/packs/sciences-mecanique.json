@@ -1510,7 +1510,7 @@
       "Kaplan"
      ],
      "correct": 0,
-     "correctExpr": "gt(H, 200)"
+     "correctExpr": "lt(H, 200)*(1 + lt(H, 30))"
     }
    ],
    "hint": "P = ηρgHQ ; Pelton pour les hautes chutes.",

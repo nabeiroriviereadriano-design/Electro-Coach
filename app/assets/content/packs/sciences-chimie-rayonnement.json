@@ -1,0 +1,1520 @@
+{
+ "id": "sciences-chimie-rayonnement",
+ "courses": [
+  {
+   "id": "C-CH-01",
+   "notions": [
+    "S-CH-01"
+   ],
+   "title": "Piles, accumulateurs, piles à combustible",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Une **pile** convertit de l'énergie chimique en énergie électrique par une réaction d'**oxydoréduction** : à l'**anode** (borne −) a lieu une oxydation qui libère des électrons ; ils circulent dans le circuit extérieur jusqu'à la **cathode** (borne +) où a lieu une réduction. Un **électrolyte** assure le passage des ions entre les électrodes."
+    },
+    {
+     "type": "text",
+     "text": "Un **accumulateur** est une pile **rechargeable** : en charge, un générateur extérieur force la réaction inverse."
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Technologie",
+       "Tension d'un élément",
+       "Énergie massique",
+       "Usage"
+      ],
+      [
+       "plomb-acide",
+       "2 V",
+       "30 à 40 Wh/kg",
+       "démarrage, onduleurs"
+      ],
+      [
+       "NiMH",
+       "1,2 V",
+       "60 à 100 Wh/kg",
+       "outillage, hybrides"
+      ],
+      [
+       "lithium-ion",
+       "3,6 à 3,7 V",
+       "150 à 270 Wh/kg",
+       "téléphones, véhicules électriques"
+      ],
+      [
+       "LiFePO₄",
+       "3,2 V",
+       "90 à 160 Wh/kg",
+       "stockage stationnaire"
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "text": "La **pile à combustible** est alimentée en continu en dihydrogène et en dioxygène ; elle produit de l'électricité, de la chaleur et de l'eau. Élément : ≈ 0,7 V en charge."
+    },
+    {
+     "type": "tip",
+     "text": "Les évolutions visent l'énergie massique, le nombre de cycles, la sécurité et la réduction des métaux critiques (cobalt).",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-CH-02",
+   "notions": [
+    "S-CH-02"
+   ],
+   "title": "Batterie d'accumulateurs : utilisation",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "E = U\\,Q \\qquad t = \\frac{Q}{I}",
+     "title": "Énergie stockée et autonomie (Q en Ah)"
+    },
+    {
+     "type": "text",
+     "text": "Des éléments en **série** additionnent leurs tensions ; en **parallèle**, leurs capacités."
+    },
+    {
+     "type": "text",
+     "text": "Charge : énergie électrique → chimique ; décharge : chimique → électrique. Le **rendement** d'un cycle (énergie restituée / énergie de charge) vaut environ 80 % pour le plomb, plus de 90 % pour le lithium."
+    },
+    {
+     "type": "text",
+     "text": "Bonnes pratiques : éviter les décharges profondes (en particulier pour le plomb), respecter le courant de charge et les seuils de tension (gestion par un **BMS** en lithium), ventiler les locaux de batteries au plomb (dégagement d'hydrogène), éviter les températures extrêmes."
+    },
+    {
+     "type": "text",
+     "text": "Exemple : batterie 48 V, 200 Ah (9,6 kWh), décharge autorisée 80 %, consommation 1,2 kW : autonomie $9{,}6 \\times 0{,}8/1{,}2 = 6{,}4$ h."
+    },
+    {
+     "type": "warning",
+     "text": "La capacité réelle diminue aux forts courants de décharge et au froid.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-CH-03",
+   "notions": [
+    "S-CH-03"
+   ],
+   "title": "Combustion",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Une combustion est une réaction **exothermique** entre un **combustible** et un **comburant** (le dioxygène de l'air) : l'énergie chimique des réactifs diminue, l'énergie libérée apparaît sous forme de chaleur."
+    },
+    {
+     "type": "formula",
+     "tex": "\\mathrm{CH_4 + 2\\,O_2 \\to CO_2 + 2\\,H_2O}",
+     "title": "Combustion complète du méthane"
+    },
+    {
+     "type": "formula",
+     "tex": "Q = m \\times PCI \\qquad \\eta = \\frac{Q_{utile}}{m \\times PCI}",
+     "title": "Énergie libérée et rendement"
+    },
+    {
+     "type": "text",
+     "text": "Le **pouvoir calorifique inférieur** (PCI) suppose l'eau produite à l'état de vapeur ; le **supérieur** (PCS) récupère aussi la chaleur de condensation (chaudières à condensation). Ordres de grandeur du PCI : gaz naturel ≈ 50 MJ/kg (≈ 10 kWh/m³), gazole ≈ 43 MJ/kg, bois sec ≈ 15 MJ/kg, dihydrogène ≈ 120 MJ/kg."
+    },
+    {
+     "type": "warning",
+     "text": "Une combustion incomplète produit du **monoxyde de carbone**, gaz inodore et mortel : ventilation et détecteurs obligatoires.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-RA-01",
+   "notions": [
+    "S-RA-01"
+   ],
+   "title": "Onde électromagnétique et photon",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Un rayonnement électromagnétique se modélise de deux façons complémentaires : comme une **onde** (propagation, interférences) ou comme un flux de **photons** (échanges d'énergie avec la matière)."
+    },
+    {
+     "type": "text",
+     "text": "L'onde est l'association d'un **champ électrique** et d'un **champ magnétique** perpendiculaires entre eux et à la direction de propagation, qui oscillent en phase. Elle se propage dans le vide à $c = 3{,}00 \\times 10^8$ m/s."
+    },
+    {
+     "type": "text",
+     "text": "La puissance transportée par unité de surface (W/m²) augmente avec l'amplitude des champs (elle est proportionnelle au carré du champ)."
+    },
+    {
+     "type": "tip",
+     "text": "Le rayonnement solaire au sol vaut environ 1000 W/m² par ciel clair.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-RA-02",
+   "notions": [
+    "S-RA-02"
+   ],
+   "title": "Domaines spectraux",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "\\lambda = \\frac{c}{f}",
+     "title": "Longueur d'onde dans le vide"
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Domaine",
+       "Longueur d'onde",
+       "Usage"
+      ],
+      [
+       "rayons X, γ",
+       "< 10 nm",
+       "radiographie"
+      ],
+      [
+       "ultraviolet",
+       "10 à 400 nm",
+       "stérilisation"
+      ],
+      [
+       "visible",
+       "400 (violet) à 800 nm (rouge)",
+       "éclairage"
+      ],
+      [
+       "infrarouge",
+       "800 nm à 1 mm",
+       "chauffage, thermographie, télécommande"
+      ],
+      [
+       "micro-ondes",
+       "1 mm à 30 cm",
+       "four, Wi-Fi 2,4 GHz, radar"
+      ],
+      [
+       "ondes radio",
+       "> 30 cm",
+       "radio, réseau 50 Hz (λ = 6000 km)"
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "text": "Exemple : le Wi-Fi à 2,4 GHz a une longueur d'onde de $3\\times10^8/2{,}4\\times10^9 = 12{,}5$ cm."
+    }
+   ]
+  },
+  {
+   "id": "C-RA-03",
+   "notions": [
+    "S-RA-03"
+   ],
+   "title": "Énergie d'un photon et raies spectrales",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "E = h\\,f = \\frac{h\\,c}{\\lambda} \\qquad h = 6{,}63 \\times 10^{-34}\\ \\mathrm{J\\cdot s}",
+     "title": "Énergie d'un photon"
+    },
+    {
+     "type": "formula",
+     "tex": "1\\ \\mathrm{eV} = 1{,}6 \\times 10^{-19}\\ \\mathrm{J}",
+     "title": "Électronvolt"
+    },
+    {
+     "type": "text",
+     "text": "Les atomes ont des niveaux d'énergie **quantifiés**. Un atome excité qui redescend d'un niveau $E_2$ à $E_1$ émet un photon d'énergie $E_2 - E_1$, donc d'une longueur d'onde précise : c'est une **raie** du spectre. Inversement, il absorbe uniquement les photons d'énergie égale à un écart entre niveaux."
+    },
+    {
+     "type": "text",
+     "text": "Exemple : un photon de 600 nm a une énergie de $6{,}63\\times10^{-34} \\times 3\\times10^8 / 600\\times10^{-9} \\approx 3{,}3\\times10^{-19}$ J ≈ 2,07 eV."
+    }
+   ]
+  },
+  {
+   "id": "C-RA-04",
+   "notions": [
+    "S-RA-04"
+   ],
+   "title": "Sources lumineuses",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Source",
+       "Principe",
+       "Spectre"
+      ],
+      [
+       "incandescence, halogène",
+       "filament chauffé",
+       "continu"
+      ],
+      [
+       "lampe à décharge (sodium, fluorescente)",
+       "gaz excité par une décharge",
+       "raies (+ poudres fluorescentes)"
+      ],
+      [
+       "LED",
+       "recombinaison électron-trou dans un semi-conducteur",
+       "bande étroite ou large (LED blanche à luminophore)"
+      ]
+     ]
+    },
+    {
+     "type": "formula",
+     "tex": "\\lambda_{max} \\times T = 2{,}90 \\times 10^{-3}\\ \\mathrm{m\\cdot K}",
+     "title": "Loi de Wien (corps chaud)"
+    },
+    {
+     "type": "text",
+     "text": "Plus un corps est chaud, plus son maximum d'émission se décale vers le bleu. La **température de couleur** (K) caractérise la teinte d'une lumière blanche : 2700 K « chaud », 4000 K neutre, 6500 K « froid »."
+    },
+    {
+     "type": "warning",
+     "text": "Risques optiques : UV (peau, yeux), lumière bleue intense des LED (rétine), lasers. Respecter les classes de risque et les protections.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-RA-05",
+   "notions": [
+    "S-RA-05"
+   ],
+   "title": "Photométrie",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Grandeur",
+       "Unité",
+       "Sens"
+      ],
+      [
+       "puissance électrique",
+       "W",
+       "consommée par la source"
+      ],
+      [
+       "flux lumineux Φ",
+       "lumen (lm)",
+       "lumière émise, pondérée par la sensibilité de l'œil"
+      ],
+      [
+       "éclairement E",
+       "lux (lx = lm/m²)",
+       "lumière reçue par une surface"
+      ]
+     ]
+    },
+    {
+     "type": "formula",
+     "tex": "\\eta_{lum} = \\frac{\\Phi}{P} \\;(\\mathrm{lm/W}) \\qquad E = \\frac{\\Phi}{S}",
+     "title": "Efficacité lumineuse et éclairement moyen"
+    },
+    {
+     "type": "text",
+     "text": "L'œil est le plus sensible vers 555 nm (vert-jaune). Efficacités typiques : incandescence 10 à 15 lm/W, fluorescente 60 à 100 lm/W, LED 100 à 200 lm/W."
+    },
+    {
+     "type": "text",
+     "text": "L'**IRC** (indice de rendu des couleurs, sur 100) indique la fidélité des couleurs éclairées. Le **luxmètre** mesure l'éclairement ; un bureau demande environ 500 lx."
+    },
+    {
+     "type": "text",
+     "text": "Exemple : 10 luminaires de 4000 lm dans un local de 80 m² avec un facteur d'utilisation de 0,6 : $E = 0{,}6 \\times 40\\,000/80 = 300$ lx."
+    }
+   ]
+  },
+  {
+   "id": "C-RA-06",
+   "notions": [
+    "S-RA-06"
+   ],
+   "title": "Énergie solaire et photovoltaïque",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "On exploite le soleil en **thermique** (capteurs qui chauffent un fluide), en **thermodynamique** (concentration pour produire de la vapeur) et en **photovoltaïque** (conversion directe en électricité)."
+    },
+    {
+     "type": "text",
+     "text": "Une **cellule photovoltaïque** est une jonction semi-conductrice : chaque photon d'énergie suffisante libère un électron. Une cellule silicium fournit environ 0,5 à 0,6 V ; on les associe en série dans un module. La caractéristique I(U) présente un **point de puissance maximale** (MPP) que l'onduleur recherche."
+    },
+    {
+     "type": "formula",
+     "tex": "\\eta = \\frac{P_{électrique}}{G \\times S}",
+     "title": "Rendement d'un panneau (G : éclairement solaire en W/m², mesuré au solarimètre)"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : panneau de 1,7 m² qui fournit 340 W sous 1000 W/m² : $\\eta = 20\\ \\%$. La puissance **crête** (Wc) est donnée dans les conditions standard (1000 W/m², 25 °C)."
+    },
+    {
+     "type": "warning",
+     "text": "Le rendement baisse quand la température des cellules augmente (≈ −0,4 %/°C).",
+     "title": ""
+    }
+   ]
+  }
+ ],
+ "examples": [],
+ "exercises": [
+  {
+   "id": "X-CH-01-a",
+   "notions": [
+    "S-CH-01"
+   ],
+   "title": "Fonctionnement d'une pile",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "À l'anode d'une pile en fonctionnement se produit :",
+     "choices": [
+      "une oxydation",
+      "une réduction",
+      "une combustion"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Les électrons circulent dans le circuit extérieur :",
+     "choices": [
+      "de la borne − vers la borne +",
+      "de la borne + vers la borne −",
+      "dans l'électrolyte"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Une pile à combustible à hydrogène rejette :",
+     "choices": [
+      "de l'eau",
+      "du CO₂",
+      "du plomb"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Anode = oxydation (perte d'électrons).",
+   "method": "Oxydoréduction dans une pile.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Oxydation à l'anode ; électrons de − vers + ; la pile à hydrogène rejette de l'eau."
+    }
+   ]
+  },
+  {
+   "id": "X-CH-01-b",
+   "notions": [
+    "S-CH-01"
+   ],
+   "title": "Assemblage d'éléments",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "Ue": {
+     "unit": "",
+     "values": [
+      2,
+      3.2,
+      3.7
+     ]
+    },
+    "U": {
+     "unit": "",
+     "values": [
+      12,
+      24,
+      48
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On veut une batterie d'environ [[U]] V avec des éléments de [[Ue]] V."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Nombre d'éléments en série (arrondi à l'entier le plus proche) ?",
+     "answer": "round(U/Ue)",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Technologie à la meilleure énergie massique :",
+     "choices": [
+      "lithium-ion",
+      "plomb-acide",
+      "NiMH"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Tensions en série : elles s'ajoutent.",
+   "method": "n = U/U_élément.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$n \\approx [[U]]/[[Ue]] \\approx [[=round(U/Ue)]]$ éléments ; le lithium-ion a la meilleure énergie massique."
+    }
+   ]
+  },
+  {
+   "id": "X-CH-02-a",
+   "notions": [
+    "S-CH-02"
+   ],
+   "title": "Autonomie d'une batterie",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "U": {
+     "unit": "",
+     "values": [
+      12,
+      24,
+      48
+     ]
+    },
+    "Q": {
+     "unit": "",
+     "values": [
+      100,
+      200,
+      300
+     ]
+    },
+    "d": {
+     "unit": "",
+     "values": [
+      0.5,
+      0.8
+     ]
+    },
+    "P": {
+     "unit": "",
+     "values": [
+      300,
+      600,
+      1200
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une batterie [[U]] V – [[Q]] Ah peut être déchargée à [[d]] de sa capacité. Elle alimente une charge de [[P]] W (convertisseur supposé parfait)."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Énergie stockée (Wh) ?",
+     "answer": "U*Q",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Autonomie (h) ?",
+     "answer": "U*Q*d/P",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "E = UQ ; t = E utilisable / P.",
+   "method": "Énergie utilisable divisée par la puissance.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$E = [[U]] \\times [[Q]] =$ [[=U*Q]] Wh ; autonomie $\\approx$ [[=U*Q*d/P:3]] h."
+    }
+   ]
+  },
+  {
+   "id": "X-CH-02-b",
+   "notions": [
+    "S-CH-02"
+   ],
+   "title": "Charge d'une batterie",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "Q": {
+     "unit": "",
+     "values": [
+      50,
+      100,
+      200
+     ]
+    },
+    "I": {
+     "unit": "",
+     "values": [
+      10,
+      20
+     ]
+    },
+    "eta": {
+     "unit": "",
+     "values": [
+      0.8,
+      0.9
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On recharge complètement une batterie de [[Q]] Ah sous un courant constant de [[I]] A ; rendement en charge [[eta]] (en ampères-heures)."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Durée de charge (h) ?",
+     "answer": "Q/(I*eta)",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Pendant la charge, l'énergie est convertie :",
+     "choices": [
+      "d'électrique en chimique",
+      "de chimique en électrique",
+      "de thermique en chimique"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Il faut fournir Q/η ampères-heures.",
+   "method": "t = Q/(ηI).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$t = \\dfrac{[[Q]]}{[[eta]] \\times [[I]]} \\approx$ [[=Q/(I*eta):3]] h."
+    }
+   ]
+  },
+  {
+   "id": "X-CH-03-a",
+   "notions": [
+    "S-CH-03"
+   ],
+   "title": "Énergie d'une combustion",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "m": {
+     "unit": "",
+     "values": [
+      1,
+      5,
+      10,
+      20
+     ]
+    },
+    "pci": {
+     "unit": "",
+     "values": [
+      15,
+      43,
+      50
+     ]
+    },
+    "eta": {
+     "unit": "",
+     "values": [
+      0.7,
+      0.85,
+      0.9
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On brûle [[m]] kg d'un combustible de PCI [[pci]] MJ/kg dans une chaudière de rendement [[eta]]."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Énergie libérée (MJ) ?",
+     "answer": "m*pci",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Énergie utile en kWh ?",
+     "answer": "m*pci*eta/3.6",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Q = m PCI ; 1 kWh = 3,6 MJ.",
+   "method": "Énergie libérée × rendement.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$Q = [[=m*pci]]$ MJ ; utile : [[=m*pci*eta/3.6:3]] kWh."
+    }
+   ]
+  },
+  {
+   "id": "X-CH-03-b",
+   "notions": [
+    "S-CH-03"
+   ],
+   "title": "Sécurité et vocabulaire",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Le comburant d'une combustion dans l'air est :",
+     "choices": [
+      "le dioxygène",
+      "le méthane",
+      "le diazote"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Une combustion incomplète peut produire :",
+     "choices": [
+      "du monoxyde de carbone",
+      "de l'hydrogène pur",
+      "de l'ozone"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Une chaudière à condensation récupère en plus :",
+     "choices": [
+      "la chaleur de condensation de la vapeur d'eau",
+      "le CO₂",
+      "l'énergie nucléaire"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "PCS − PCI = chaleur de condensation.",
+   "method": "Combustion et sécurité.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Dioxygène ; CO mortel ; la condensation récupère l'écart entre PCS et PCI."
+    }
+   ]
+  },
+  {
+   "id": "X-RA-01-a",
+   "notions": [
+    "S-RA-01"
+   ],
+   "title": "Structure d'une onde électromagnétique",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Une onde électromagnétique associe :",
+     "choices": [
+      "un champ électrique et un champ magnétique",
+      "deux champs électriques",
+      "une pression et une vitesse"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Dans le vide, elle se propage à :",
+     "choices": [
+      "3 × 10⁸ m/s",
+      "340 m/s",
+      "3 × 10⁵ m/s"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Le modèle du photon explique surtout :",
+     "choices": [
+      "les échanges d'énergie avec la matière",
+      "la réflexion sur un miroir",
+      "le son"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Modèle ondulatoire et corpusculaire.",
+   "method": "Les deux modèles du rayonnement.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Champs E et B ; c = 3 × 10⁸ m/s ; photons pour les échanges d'énergie."
+    }
+   ]
+  },
+  {
+   "id": "X-RA-01-b",
+   "notions": [
+    "S-RA-01"
+   ],
+   "title": "Puissance surfacique",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "G": {
+     "unit": "",
+     "values": [
+      500,
+      800,
+      1000
+     ]
+    },
+    "S": {
+     "unit": "",
+     "values": [
+      1,
+      1.7,
+      10
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Le rayonnement solaire reçu vaut [[G]] W/m² sur une surface de [[S]] m² perpendiculaire."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Puissance reçue (W) ?",
+     "answer": "G*S",
+     "unit": "W",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Si l'amplitude du champ électrique double, la puissance surfacique :",
+     "choices": [
+      "est multipliée par 4",
+      "double",
+      "ne change pas"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "P = G × S ; puissance ∝ E².",
+   "method": "Puissance surfacique.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$P = [[G]] \\times [[S]] =$ [[=G*S|W]] ; proportionnelle au carré du champ."
+    }
+   ]
+  },
+  {
+   "id": "X-RA-02-a",
+   "notions": [
+    "S-RA-02"
+   ],
+   "title": "Longueur d'onde",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "f": {
+     "unit": "Hz",
+     "values": [
+      50,
+      100000000.0,
+      2400000000.0,
+      500000000000000.0
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une onde électromagnétique a une fréquence de [[f]]."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Longueur d'onde dans le vide (m) ?",
+     "answer": "3e8/f",
+     "unit": "m",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "λ = c/f.",
+   "method": "Relation fondamentale.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\lambda = 3\\times10^8/f =$ [[=3e8/f|m]]."
+    }
+   ]
+  },
+  {
+   "id": "X-RA-02-b",
+   "notions": [
+    "S-RA-02"
+   ],
+   "title": "Domaines spectraux",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "l": {
+     "unit": "",
+     "values": [
+      300,
+      550,
+      1500,
+      10000
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un rayonnement a une longueur d'onde de [[l]] nm."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Domaine :",
+     "choices": [
+      "ultraviolet",
+      "visible",
+      "infrarouge"
+     ],
+     "correct": 0,
+     "correctExpr": "gt(l, 400) + gt(l, 800)"
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Fréquence (Hz) ?",
+     "answer": "3e8/(l*1e-9)",
+     "unit": "Hz",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Visible : 400 à 800 nm.",
+   "method": "Situer sur l'échelle des longueurs d'onde.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "UV sous 400 nm, visible de 400 à 800 nm, infrarouge au-delà ; $f = c/\\lambda \\approx$ [[=3e8/(l*1e-9)|Hz]]."
+    }
+   ]
+  },
+  {
+   "id": "X-RA-03-a",
+   "notions": [
+    "S-RA-03"
+   ],
+   "title": "Énergie d'un photon",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "l": {
+     "unit": "",
+     "values": [
+      400,
+      500,
+      600,
+      700,
+      1000
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un photon a une longueur d'onde de [[l]] nm ($h = 6{,}63 \\times 10^{-34}$ J·s ; $c = 3 \\times 10^8$ m/s)."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Énergie (J) ?",
+     "answer": "6.63e-34*3e8/(l*1e-9)",
+     "unit": "J",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "En eV ?",
+     "answer": "6.63e-34*3e8/(l*1e-9)/1.6e-19",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "E = hc/λ.",
+   "method": "Relation de Planck-Einstein.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$E \\approx$ [[=6.63e-34*3e8/(l*1e-9):3|J]] ≈ [[=6.63e-34*3e8/(l*1e-9)/1.6e-19:3]] eV."
+    }
+   ]
+  },
+  {
+   "id": "X-RA-03-b",
+   "notions": [
+    "S-RA-03"
+   ],
+   "title": "Raie d'émission",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "dE": {
+     "unit": "",
+     "values": [
+      1.8,
+      2.1,
+      2.5,
+      3
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un atome passe d'un niveau d'énergie à un niveau inférieur situé [[dE]] eV plus bas."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Longueur d'onde du photon émis (nm) ?",
+     "answer": "6.63e-34*3e8/(dE*1.6e-19)*1e9",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Le spectre d'un gaz excité est :",
+     "choices": [
+      "un spectre de raies",
+      "un spectre continu",
+      "vide"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "λ = hc/ΔE.",
+   "method": "Un écart d'énergie donne une raie précise.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\lambda = \\dfrac{hc}{\\Delta E} \\approx$ [[=6.63e-34*3e8/(dE*1.6e-19)*1e9:3]] nm."
+    }
+   ]
+  },
+  {
+   "id": "X-RA-04-a",
+   "notions": [
+    "S-RA-04"
+   ],
+   "title": "Loi de Wien",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "T": {
+     "unit": "",
+     "values": [
+      2700,
+      3000,
+      5800,
+      6500
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un corps chaud a une température de [[T]] K."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Longueur d'onde du maximum d'émission (nm) ?",
+     "answer": "2.9e-3/T*1e9",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "λmax T = 2,90 × 10⁻³ m·K.",
+   "method": "Loi de Wien.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\lambda_{max} = \\dfrac{2{,}90\\times10^{-3}}{[[T]]} \\approx$ [[=2.9e-3/T*1e9:3]] nm."
+    }
+   ]
+  },
+  {
+   "id": "X-RA-04-b",
+   "notions": [
+    "S-RA-04"
+   ],
+   "title": "Choisir une source",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Une lampe à incandescence a un spectre :",
+     "choices": [
+      "continu",
+      "de raies",
+      "uniquement ultraviolet"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Une lumière de 2700 K est perçue comme :",
+     "choices": [
+      "chaude (jaune-orangé)",
+      "froide (bleutée)",
+      "invisible"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Un risque spécifique des LED de forte puissance est :",
+     "choices": [
+      "la lumière bleue sur la rétine",
+      "les rayons X",
+      "le monoxyde de carbone"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Basse température de couleur = teinte chaude.",
+   "method": "Caractéristiques des sources.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Spectre continu ; 2700 K = teinte chaude ; risque lié à la lumière bleue."
+    }
+   ]
+  },
+  {
+   "id": "X-RA-05-a",
+   "notions": [
+    "S-RA-05"
+   ],
+   "title": "Efficacité lumineuse",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "Phi": {
+     "unit": "",
+     "values": [
+      800,
+      1500,
+      4000
+     ]
+    },
+    "P": {
+     "unit": "",
+     "values": [
+      8,
+      12,
+      30,
+      60
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une lampe de [[P]] W émet [[Phi]] lm."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Efficacité lumineuse (lm/W) ?",
+     "answer": "Phi/P",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "η = Φ/P.",
+   "method": "Flux divisé par puissance.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\eta = [[Phi]]/[[P]] \\approx$ [[=Phi/P:3]] lm/W."
+    }
+   ]
+  },
+  {
+   "id": "X-RA-05-b",
+   "notions": [
+    "S-RA-05"
+   ],
+   "title": "Éclairement d'un local",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "N": {
+     "unit": "",
+     "values": [
+      6,
+      10,
+      16
+     ]
+    },
+    "Phi": {
+     "unit": "",
+     "values": [
+      3000,
+      4000,
+      5000
+     ]
+    },
+    "S": {
+     "unit": "",
+     "values": [
+      40,
+      80,
+      120
+     ]
+    },
+    "u": {
+     "unit": "",
+     "values": [
+      0.5,
+      0.6,
+      0.7
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un local de [[S]] m² est équipé de [[N]] luminaires de [[Phi]] lm ; facteur d'utilisation [[u]]."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Éclairement moyen (lx) ?",
+     "answer": "u*N*Phi/S",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Convient-il pour un bureau (500 lx) ?",
+     "choices": [
+      "Oui",
+      "Non"
+     ],
+     "correct": 0,
+     "correctExpr": "1 - (gt(u*N*Phi/S, 499))"
+    }
+   ],
+   "hint": "E = u N Φ/S.",
+   "method": "Flux utile reçu par surface.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$E = \\dfrac{[[u]] \\times [[N]] \\times [[Phi]]}{[[S]]} \\approx$ [[=u*N*Phi/S:3]] lx."
+    }
+   ]
+  },
+  {
+   "id": "X-RA-06-a",
+   "notions": [
+    "S-RA-06"
+   ],
+   "title": "Rendement d'un panneau",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "S": {
+     "unit": "",
+     "values": [
+      1.6,
+      1.7,
+      2
+     ]
+    },
+    "G": {
+     "unit": "",
+     "values": [
+      600,
+      800,
+      1000
+     ]
+    },
+    "P": {
+     "unit": "",
+     "values": [
+      200,
+      250,
+      300
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [
+    "P/(G*S) < 0.24"
+   ],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un solarimètre indique [[G]] W/m² ; un panneau de [[S]] m² fournit alors [[P]] W."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Puissance solaire reçue (W) ?",
+     "answer": "G*S",
+     "unit": "W",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Rendement, en % ?",
+     "answer": "100*P/(G*S)",
+     "unit": "%",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "η = P/(G S).",
+   "method": "Bilan de puissance du panneau.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Reçue : [[=G*S|W]] ; $\\eta \\approx$ [[=100*P/(G*S):3]] %."
+    }
+   ]
+  },
+  {
+   "id": "X-RA-06-b",
+   "notions": [
+    "S-RA-06"
+   ],
+   "title": "Production photovoltaïque",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "N": {
+     "unit": "",
+     "values": [
+      10,
+      12,
+      20
+     ]
+    },
+    "Pc": {
+     "unit": "",
+     "values": [
+      375,
+      400,
+      425
+     ]
+    },
+    "h": {
+     "unit": "",
+     "values": [
+      1000,
+      1200,
+      1400
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une installation comporte [[N]] panneaux de [[Pc]] Wc. Le site reçoit l'équivalent de [[h]] heures de plein soleil par an."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Puissance crête totale (kWc) ?",
+     "answer": "N*Pc/1000",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Production annuelle estimée avec un facteur de performance de 0,8 (kWh) ?",
+     "answer": "N*Pc/1000*h*0.8",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Quand la température des cellules augmente, le rendement :",
+     "choices": [
+      "diminue",
+      "augmente",
+      "ne change pas"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "E = Pc × heures × PR.",
+   "method": "Puissance crête × ensoleillement × pertes.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$P_c =$ [[=N*Pc/1000:3]] kWc ; $E \\approx$ [[=N*Pc/1000*h*0.8:4]] kWh ; le rendement baisse avec la chaleur."
+    }
+   ]
+  }
+ ]
+}

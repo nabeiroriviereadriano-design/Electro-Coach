@@ -11,6 +11,7 @@
   "packs/sciences-electricite.json",
   "packs/sciences-em-modulation.json",
   "packs/sciences-qualite-machines.json",
-  "packs/sciences-mecanique.json"
+  "packs/sciences-mecanique.json",
+  "packs/sciences-chimie-rayonnement.json"
  ]
 }

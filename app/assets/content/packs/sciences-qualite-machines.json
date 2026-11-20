@@ -1,0 +1,1927 @@
+{
+ "id": "sciences-qualite-machines",
+ "courses": [
+  {
+   "id": "C-QE-01",
+   "notions": [
+    "S-QE-01"
+   ],
+   "title": "Pourquoi optimiser le facteur de puissance",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "f_p = \\frac{P}{S} \\qquad I = \\frac{P}{\\sqrt3\\,U\\,f_p}",
+     "title": "Triphasé"
+    },
+    {
+     "type": "text",
+     "text": "À puissance active donnée, un mauvais facteur de puissance **augmente le courant** : câbles, transformateurs et protections doivent être surdimensionnés, les pertes Joule et les chutes de tension augmentent. Le fournisseur facture l'énergie réactive au-delà d'un seuil (tan φ > 0,4 en France pour les tarifs concernés)."
+    },
+    {
+     "type": "text",
+     "text": "Deux leviers : réduire le **déphasage du fondamental** (compensation de l'énergie réactive) et réduire les **harmoniques** (filtrage), car $f_p = \\cos\\varphi_1 \\times \\dfrac{I_1}{I}$."
+    },
+    {
+     "type": "text",
+     "text": "Exemple : 100 kW sous 400 V : avec $f_p = 0{,}7$, $I \\approx 206$ A ; avec $f_p = 0{,}95$, $I \\approx 152$ A, soit des pertes réduites de 46 %."
+    }
+   ]
+  },
+  {
+   "id": "C-QE-02",
+   "notions": [
+    "S-QE-02"
+   ],
+   "title": "Compensation de l'énergie réactive",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "Q_C = P(\\tan\\varphi - \\tan\\varphi')",
+     "title": "Puissance réactive à fournir par la batterie"
+    },
+    {
+     "type": "formula",
+     "tex": "C_\\Delta = \\frac{Q_C}{3\\,U^2\\omega} \\qquad C_Y = \\frac{Q_C}{3\\,V^2\\omega} = 3C_\\Delta",
+     "title": "Capacité par branche (triangle ou étoile)"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : 100 kW, cos φ = 0,75 → 0,95, 400 V, 50 Hz : $Q_C = 100(0{,}882 - 0{,}329) = 55{,}3$ kvar ; en triangle $C = 55\\,300/(3 \\times 400^2 \\times 314) \\approx 367$ µF."
+    },
+    {
+     "type": "text",
+     "text": "Une **machine synchrone** surexcitée fournit de l'énergie réactive : en augmentant son courant d'excitation, on peut relever le facteur de puissance d'une installation (compensateur synchrone)."
+    },
+    {
+     "type": "tip",
+     "text": "Le couplage triangle demande trois fois moins de capacité que l'étoile pour le même effet.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-QE-03",
+   "notions": [
+    "S-QE-03"
+   ],
+   "title": "Filtrage des harmoniques en alternatif",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "On part du **spectre** du courant pour fixer le **gabarit** : quels rangs atténuer, et de combien, pour respecter un THD admissible."
+    },
+    {
+     "type": "formula",
+     "tex": "f_0 = \\frac{1}{2\\pi\\sqrt{LC}}",
+     "title": "Accord d'un filtre LC série (piège)"
+    },
+    {
+     "type": "text",
+     "text": "Un filtre LC série accordé sur un rang (250 Hz pour l'harmonique 5) présente une impédance quasi nulle à cette fréquence : il absorbe l'harmonique, qui ne remonte plus vers le réseau."
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Solution",
+       "Principe"
+      ],
+      [
+       "inductance de ligne (self amont)",
+       "lisse le courant absorbé, réduit les harmoniques d'un variateur"
+      ],
+      [
+       "filtre passif LC",
+       "court-circuite un rang précis"
+      ],
+      [
+       "filtre actif",
+       "injecte en temps réel des courants opposés aux harmoniques"
+      ],
+      [
+       "transformateur Dy ou Yz",
+       "piège les harmoniques de rang 3 (circulent dans le triangle)"
+      ]
+     ]
+    },
+    {
+     "type": "warning",
+     "text": "Un filtre mal accordé peut entrer en résonance avec le réseau et amplifier un harmonique.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-QE-04",
+   "notions": [
+    "S-QE-04"
+   ],
+   "title": "Filtrage en continu",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "En sortie d'un redresseur ou d'un hacheur, filtrer revient à **supprimer les harmoniques** de la grandeur continue (son ondulation)."
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Élément",
+       "Branchement",
+       "Lisse"
+      ],
+      [
+       "bobine",
+       "en série",
+       "le courant"
+      ],
+      [
+       "condensateur",
+       "en parallèle",
+       "la tension"
+      ]
+     ]
+    },
+    {
+     "type": "formula",
+     "tex": "\\Delta i \\approx \\frac{E}{4Lf} \\qquad \\Delta u \\approx \\frac{I}{Cf}",
+     "title": "Ondulations crête à crête (hacheur série au pire cas ; redresseur simple alternance)"
+    },
+    {
+     "type": "text",
+     "text": "Plus $L$, $C$ ou la fréquence de découpage sont grands, plus l'ondulation est faible."
+    }
+   ]
+  },
+  {
+   "id": "C-QE-05",
+   "notions": [
+    "S-QE-05"
+   ],
+   "title": "Compatibilité électromagnétique",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "La **CEM** est l'aptitude d'un appareil à fonctionner correctement dans son environnement électromagnétique **sans perturber** les autres. La **susceptibilité** est sa sensibilité aux perturbations reçues."
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Perturbation",
+       "Exemples de sources"
+      ],
+      [
+       "conduites",
+       "variateurs, alimentations à découpage (harmoniques, parasites HF dans les câbles)"
+      ],
+      [
+       "rayonnées",
+       "émetteurs radio, téléphones, fronts raides des IGBT"
+      ],
+      [
+       "décharges électrostatiques",
+       "opérateur chargé touchant une carte électronique"
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "text": "Effets : mesures faussées, redémarrages intempestifs, destruction de composants. Solutions : blindage et câbles blindés reliés à la masse, filtres CEM, séparation des câbles de puissance et de signal, plan de masse."
+    },
+    {
+     "type": "tip",
+     "text": "Les exigences figurent dans les normes de la série CEI/EN 61000 et, pour les variateurs, dans l'EN 61800-3.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-MA-01",
+   "notions": [
+    "S-CV-01"
+   ],
+   "title": "Machines tournantes : constitution et quadrants",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Une machine tournante produit un couple par **interaction de deux champs magnétiques** : celui de l'**inducteur** (qui crée le champ) et celui de l'**induit** (siège des f.é.m. et des courants de puissance)."
+    },
+    {
+     "type": "text",
+     "text": "Elle est **réversible** : en **moteur** elle convertit l'électrique en mécanique ; en **génératrice** le mécanique en électrique."
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Quadrant",
+       "Vitesse",
+       "Couple",
+       "Fonctionnement"
+      ],
+      [
+       "1",
+       "+",
+       "+",
+       "moteur, marche avant"
+      ],
+      [
+       "2",
+       "+",
+       "−",
+       "génératrice (freinage), marche avant"
+      ],
+      [
+       "3",
+       "−",
+       "−",
+       "moteur, marche arrière"
+      ],
+      [
+       "4",
+       "−",
+       "+",
+       "génératrice, marche arrière"
+      ]
+     ]
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Machine",
+       "Inducteur",
+       "Usage"
+      ],
+      [
+       "MCC",
+       "stator (aimants ou bobines)",
+       "variation de vitesse historique"
+      ],
+      [
+       "asynchrone",
+       "stator (champ tournant)",
+       "industrie (≈ 80 % des moteurs)"
+      ],
+      [
+       "synchrone",
+       "rotor (aimants ou excitation)",
+       "alternateurs, servomoteurs"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C-MA-02",
+   "notions": [
+    "S-CV-02"
+   ],
+   "title": "Plaque signalétique",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "La plaque donne les grandeurs **nominales** (régime pour lequel la machine est conçue) : puissance **utile** (mécanique pour un moteur), tensions et couplage, courant, vitesse, facteur de puissance, rendement, fréquence, service, classe d'isolation, indice de protection."
+    },
+    {
+     "type": "text",
+     "text": "Exemple : 4 kW ; 230 Δ / 400 Y V ; 14,6 / 8,4 A ; 1440 tr/min ; cos φ = 0,82 ; 50 Hz."
+    },
+    {
+     "type": "formula",
+     "tex": "C_n = \\frac{P_n}{\\Omega_n} \\qquad \\eta = \\frac{P_n}{\\sqrt3\\,U I\\cos\\varphi}",
+     "title": "Exploitations"
+    },
+    {
+     "type": "text",
+     "text": "Ici : $C_n = 4000/(2\\pi \\times 1440/60) \\approx 26{,}5$ N·m ; $\\eta = 4000/(\\sqrt3 \\times 400 \\times 8{,}4 \\times 0{,}82) \\approx 83{,}8\\ \\%$ ; vitesse de synchronisme 1500 tr/min → 4 pôles."
+    },
+    {
+     "type": "warning",
+     "text": "La puissance de plaque d'un moteur est la puissance **mécanique utile**, pas la puissance absorbée.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-MA-03",
+   "notions": [
+    "S-CV-03"
+   ],
+   "title": "Pertes et rendement",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Pertes",
+       "Cause"
+      ],
+      [
+       "Joule",
+       "résistance des enroulements ($RI^2$)"
+      ],
+      [
+       "fer",
+       "hystérésis et courants de Foucault dans le circuit magnétique"
+      ],
+      [
+       "mécaniques",
+       "frottements des paliers, ventilation"
+      ]
+     ]
+    },
+    {
+     "type": "formula",
+     "tex": "P_u = P_a - P_J - P_f - P_m \\qquad \\eta = \\frac{P_u}{P_a}",
+     "title": "Bilan"
+    },
+    {
+     "type": "text",
+     "text": "Les **essais** séparent les pertes : la mesure de la résistance donne $P_J$ ; un essai à vide (couple utile nul) donne les **pertes constantes** $P_f + P_m$."
+    },
+    {
+     "type": "method",
+     "text": "1. Puissance absorbée mesurée.\n2. Retirer les pertes Joule (stator, et rotor pour l'asynchrone).\n3. Retirer les pertes constantes de l'essai à vide.\n4. η = Pu/Pa.",
+     "title": "Méthode des pertes séparées"
+    }
+   ]
+  },
+  {
+   "id": "C-MA-04",
+   "notions": [
+    "S-CV-04"
+   ],
+   "title": "Machine à courant continu à excitation indépendante",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "E = k\\,\\Omega \\qquad T_{em} = k\\,I \\qquad U = E + RI",
+     "title": "Modèle (flux constant)"
+    },
+    {
+     "type": "text",
+     "text": "La vitesse est pratiquement proportionnelle à la tension d'induit : on règle la vitesse avec un hacheur. Le couple est proportionnel au courant : on le limite en limitant le courant."
+    },
+    {
+     "type": "text",
+     "text": "Exemple : $k = 2$ V·s/rad, $R = 0{,}5$ Ω, $U = 220$ V, couple résistant 20 N·m : $I = 10$ A, $E = 215$ V, $\\Omega = 107{,}5$ rad/s (1027 tr/min)."
+    },
+    {
+     "type": "method",
+     "text": "Point de fonctionnement : couple moteur = couple résistant donne $I$ ; puis $E = U - RI$ et $\\Omega = E/k$.",
+     "title": "Méthode"
+    },
+    {
+     "type": "tip",
+     "text": "En génératrice ou en freinage, $E > U$ et le courant s'inverse.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-MA-05",
+   "notions": [
+    "S-CV-05"
+   ],
+   "title": "Machine asynchrone : caractéristique mécanique",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "n_s = \\frac{60f}{p} \\qquad g = \\frac{n_s - n}{n_s}",
+     "title": "Vitesse de synchronisme et glissement (p : paires de pôles)"
+    },
+    {
+     "type": "text",
+     "text": "La caractéristique $T(n)$ présente un **couple de démarrage** (à $n = 0$), un **couple maximal**, puis une zone utile quasi linéaire près de $n_s$, où le couple est nul au synchronisme."
+    },
+    {
+     "type": "formula",
+     "tex": "T \\approx T_n \\frac{n_s - n}{n_s - n_n}",
+     "title": "Zone utile assimilée à une droite"
+    },
+    {
+     "type": "text",
+     "text": "Le **point de fonctionnement** est l'intersection avec la caractéristique de la charge. Au-dessus de $n_s$ (charge entraînante), la machine fonctionne en **génératrice**."
+    },
+    {
+     "type": "text",
+     "text": "Exemple : 4 pôles, 50 Hz : $n_s = 1500$ tr/min ; à 1440 tr/min, $g = 4\\ \\%$."
+    }
+   ]
+  },
+  {
+   "id": "C-MA-06",
+   "notions": [
+    "S-CV-06"
+   ],
+   "title": "Commande à U/f constant et variateurs",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Pour faire varier la vitesse, le variateur change la **fréquence** ; il change la tension dans la même proportion (**U/f constant**) pour garder le flux constant. La caractéristique mécanique se **translate** alors parallèlement à elle-même."
+    },
+    {
+     "type": "formula",
+     "tex": "\\Delta n = n_s - n \\;\\text{reste le même pour un couple donné}",
+     "title": "Translation à U/f constant"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : à 50 Hz, $n_s = 1500$, $n = 1450$ tr/min sous couple nominal ; à 30 Hz, $n_s = 900$ et $n \\approx 850$ tr/min sous le même couple."
+    },
+    {
+     "type": "text",
+     "text": "Au-delà de 50 Hz, la tension ne peut plus augmenter : on travaille à **puissance constante** (défluxage), le couple disponible diminue. La **commande vectorielle** contrôle séparément flux et couple pour un couple précis à basse vitesse."
+    },
+    {
+     "type": "tip",
+     "text": "Sur les documents constructeur, repérer la zone à couple constant (0-50 Hz) et la zone à puissance constante (> 50 Hz).",
+     "title": ""
+    }
+   ]
+  }
+ ],
+ "examples": [],
+ "exercises": [
+  {
+   "id": "X-QE-01-a",
+   "notions": [
+    "S-QE-01"
+   ],
+   "title": "Courant et facteur de puissance",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "P": {
+     "unit": "",
+     "values": [
+      50,
+      100,
+      200
+     ]
+    },
+    "f1": {
+     "unit": "",
+     "values": [
+      0.6,
+      0.7,
+      0.75
+     ]
+    },
+    "f2": {
+     "unit": "",
+     "values": [
+      0.93,
+      0.95,
+      1
+     ]
+    }
+   },
+   "vars": {
+    "I1": "P*1000/(sqrt(3)*400*f1)",
+    "I2": "P*1000/(sqrt(3)*400*f2)"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une installation 400 V triphasée absorbe [[P]] kW. On relève son facteur de puissance de [[f1]] à [[f2]]."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Courant avant (A) ?",
+     "answer": "I1",
+     "unit": "A",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Courant après (A) ?",
+     "answer": "I2",
+     "unit": "A",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Réduction des pertes Joule, en % ?",
+     "answer": "100*(1 - (I2/I1)^2)",
+     "unit": "%",
+     "tolerance": 0.02,
+     "sig": 3
+    }
+   ],
+   "hint": "Pertes ∝ I².",
+   "method": "I = P/(√3 U fp).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$I_1 \\approx$ [[=I1:3|A]], $I_2 \\approx$ [[=I2:3|A]] ; pertes réduites de [[=100*(1-(I2/I1)^2):3]] %."
+    }
+   ]
+  },
+  {
+   "id": "X-QE-01-b",
+   "notions": [
+    "S-QE-01"
+   ],
+   "title": "Leviers d'amélioration",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Une batterie de condensateurs améliore le fp en agissant sur :",
+     "choices": [
+      "le déphasage du fondamental",
+      "les harmoniques",
+      "la fréquence du réseau"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Un filtre d'harmoniques améliore le fp en agissant sur :",
+     "choices": [
+      "la déformation du courant",
+      "le déphasage du fondamental",
+      "la tension"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Un mauvais fp entraîne :",
+     "choices": [
+      "un courant plus élevé pour la même puissance active",
+      "une baisse du courant",
+      "une baisse des pertes"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "fp = cos φ₁ × I₁/I.",
+   "method": "Deux leviers : déphasage et harmoniques.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Condensateurs : déphasage ; filtre : harmoniques ; fp faible → courant plus fort."
+    }
+   ]
+  },
+  {
+   "id": "X-QE-02-a",
+   "notions": [
+    "S-QE-02"
+   ],
+   "title": "Dimensionner une batterie de condensateurs",
+   "difficulty": 3,
+   "validated": false,
+   "params": {
+    "P": {
+     "unit": "",
+     "values": [
+      50,
+      80,
+      100,
+      150
+     ]
+    },
+    "f1": {
+     "unit": "",
+     "values": [
+      0.7,
+      0.75,
+      0.8
+     ]
+    },
+    "f2": {
+     "unit": "",
+     "values": [
+      0.93,
+      0.95
+     ]
+    }
+   },
+   "vars": {
+    "Qc": "P*1000*(tan(acos(f1)) - tan(acos(f2)))"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une installation 400 V, 50 Hz absorbe [[P]] kW avec cos φ = [[f1]]. On veut cos φ' = [[f2]] avec une batterie couplée en triangle."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Puissance réactive de la batterie (var) ?",
+     "answer": "Qc",
+     "unit": "var",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Capacité par branche (µF) ?",
+     "answer": "Qc/(3*400^2*100*pi)*1e6",
+     "unit": "",
+     "tolerance": 0.02,
+     "sig": 3
+    }
+   ],
+   "hint": "Q_C = P(tan φ − tan φ') ; C = Q_C/(3U²ω).",
+   "method": "Différence de puissance réactive, puis capacité en triangle.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$Q_C \\approx$ [[=Qc:3|var]] ; $C \\approx$ [[=Qc/(3*400^2*100*pi)*1e6:3]] µF par branche."
+    }
+   ]
+  },
+  {
+   "id": "X-QE-02-b",
+   "notions": [
+    "S-QE-02"
+   ],
+   "title": "Étoile ou triangle",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "Qc": {
+     "unit": "",
+     "values": [
+      10,
+      20,
+      50
+     ]
+    },
+    "U": {
+     "unit": "",
+     "values": [
+      400
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une batterie doit fournir [[Qc]] kvar sur un réseau [[U]] V, 50 Hz."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Capacité par branche en triangle (µF) ?",
+     "answer": "Qc*1000/(3*U^2*100*pi)*1e6",
+     "unit": "",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Capacité par branche en étoile (µF) ?",
+     "answer": "Qc*1000/(3*(U/sqrt(3))^2*100*pi)*1e6",
+     "unit": "",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Une machine synchrone surexcitée :",
+     "choices": [
+      "fournit de l'énergie réactive",
+      "absorbe de l'énergie réactive",
+      "ne change rien"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "En étoile, chaque condensateur voit V = U/√3.",
+   "method": "C = Q/(3 × tension² × ω).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Triangle : [[=Qc*1000/(3*U^2*100*pi)*1e6:3]] µF ; étoile : trois fois plus. Surexcitée, la machine synchrone fournit du réactif."
+    }
+   ]
+  },
+  {
+   "id": "X-QE-03-a",
+   "notions": [
+    "S-QE-03"
+   ],
+   "title": "Accorder un filtre LC",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "n": {
+     "unit": "",
+     "values": [
+      5,
+      7,
+      11
+     ]
+    },
+    "C": {
+     "unit": "F",
+     "values": [
+      5e-05,
+      0.0001,
+      0.0002
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On veut un filtre LC série accordé sur l'harmonique [[n]] d'un réseau 50 Hz, avec un condensateur de [[C]]."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Fréquence d'accord (Hz) ?",
+     "answer": "50*n",
+     "unit": "Hz",
+     "tolerance": 0.001,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Inductance nécessaire (mH) ?",
+     "answer": "1000/((2*pi*50*n)^2*C)",
+     "unit": "",
+     "tolerance": 0.02,
+     "sig": 3
+    }
+   ],
+   "hint": "L = 1/((2πf₀)²C).",
+   "method": "Inverser la formule d'accord.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$f_0 = [[=50*n]]$ Hz ; $L = \\dfrac{1}{(2\\pi f_0)^2 C} \\approx$ [[=1000/((2*pi*50*n)^2*C):3]] mH."
+    }
+   ]
+  },
+  {
+   "id": "X-QE-03-b",
+   "notions": [
+    "S-QE-03"
+   ],
+   "title": "Choisir une solution de filtrage",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Les harmoniques de rang 3 d'un réseau BT peuvent être piégés par :",
+     "choices": [
+      "un transformateur Dyn ou Yz",
+      "une batterie de condensateurs",
+      "un disjoncteur"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Une solution qui injecte des courants opposés aux harmoniques est :",
+     "choices": [
+      "le filtre actif",
+      "le filtre LC passif",
+      "l'inductance de ligne"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Pour fixer le gabarit d'un filtre, on s'appuie sur :",
+     "choices": [
+      "le spectre du courant",
+      "la plaque du moteur",
+      "la section des câbles"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Rang 3 : circulation dans le triangle.",
+   "method": "Associer solution et principe.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Dy/Yz pour le rang 3 ; filtre actif ; gabarit d'après le spectre."
+    }
+   ]
+  },
+  {
+   "id": "X-QE-04-a",
+   "notions": [
+    "S-QE-04"
+   ],
+   "title": "Lisser le courant d'un hacheur",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "E": {
+     "unit": "",
+     "values": [
+      48,
+      220,
+      300
+     ]
+    },
+    "f": {
+     "unit": "",
+     "values": [
+      5,
+      10,
+      20
+     ]
+    },
+    "di": {
+     "unit": "",
+     "values": [
+      0.5,
+      1,
+      2
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un hacheur série est alimenté sous [[E]] V à [[f]] kHz. On veut une ondulation de courant d'au plus [[di]] A (pire cas α = 0,5)."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Inductance minimale (mH) ?",
+     "answer": "E/(4*f*1000*di)*1000",
+     "unit": "",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Si on double la fréquence, l'inductance nécessaire :",
+     "choices": [
+      "est divisée par deux",
+      "double",
+      "ne change pas"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Δi ≈ E/(4Lf).",
+   "method": "Inverser la formule de l'ondulation.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$L \\ge \\dfrac{[[E]]}{4 \\times [[f]]\\,000 \\times [[di]]} \\approx$ [[=E/(4*f*1000*di)*1000:3]] mH."
+    }
+   ]
+  },
+  {
+   "id": "X-QE-04-b",
+   "notions": [
+    "S-QE-04"
+   ],
+   "title": "Bobine ou condensateur ?",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Pour lisser une tension, on place :",
+     "choices": [
+      "un condensateur en parallèle",
+      "une bobine en parallèle",
+      "un condensateur en série"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Pour lisser un courant, on place :",
+     "choices": [
+      "une bobine en série",
+      "un condensateur en série",
+      "une résistance en parallèle"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Filtrer une grandeur continue revient à :",
+     "choices": [
+      "supprimer ses harmoniques",
+      "supprimer sa valeur moyenne",
+      "augmenter sa fréquence"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Bobine : courant ; condensateur : tension.",
+   "method": "Rôles des éléments de filtrage.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Condensateur en parallèle pour la tension, bobine en série pour le courant ; on supprime les harmoniques."
+    }
+   ]
+  },
+  {
+   "id": "X-QE-05-a",
+   "notions": [
+    "S-QE-05"
+   ],
+   "title": "Types de perturbations",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Un parasite HF transmis par le câble d'alimentation est une perturbation :",
+     "choices": [
+      "conduite",
+      "rayonnée",
+      "électrostatique"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Un talkie-walkie près d'un automate crée une perturbation :",
+     "choices": [
+      "rayonnée",
+      "conduite",
+      "thermique"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "La susceptibilité d'un appareil est :",
+     "choices": [
+      "sa sensibilité aux perturbations reçues",
+      "sa capacité à perturber",
+      "sa puissance"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Conduit = par les fils ; rayonné = par l'air.",
+   "method": "Classer les perturbations.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Conduite, rayonnée ; la susceptibilité mesure la sensibilité aux perturbations reçues."
+    }
+   ]
+  },
+  {
+   "id": "X-QE-05-b",
+   "notions": [
+    "S-QE-05"
+   ],
+   "title": "Bonnes pratiques CEM",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Le câble moteur d'un variateur doit être :",
+     "choices": [
+      "blindé, blindage relié à la masse",
+      "le plus long possible",
+      "posé contre les câbles de capteurs"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Pour protéger une carte des décharges électrostatiques, l'opérateur :",
+     "choices": [
+      "porte un bracelet relié à la terre",
+      "porte des gants en laine",
+      "travaille sur moquette"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "La série de normes de référence en CEM est :",
+     "choices": [
+      "CEI/EN 61000",
+      "NF C 15-100 seule",
+      "ISO 9001"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Séparer puissance et signaux.",
+   "method": "Mesures de protection CEM.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Câble blindé à la masse, bracelet antistatique, normes 61000."
+    }
+   ]
+  },
+  {
+   "id": "X-MA-01-a",
+   "notions": [
+    "S-CV-01"
+   ],
+   "title": "Quadrants de fonctionnement",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "s": {
+     "unit": "",
+     "values": [
+      1,
+      -1
+     ]
+    },
+    "c": {
+     "unit": "",
+     "values": [
+      1,
+      -1
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une machine tourne avec une vitesse de signe [[=s]] et un couple de signe [[=c]] (même convention)."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Fonctionne-t-elle en moteur ?",
+     "choices": [
+      "Oui",
+      "Non"
+     ],
+     "correct": 0,
+     "correctExpr": "1 - (gt(s*c, 0))"
+    }
+   ],
+   "hint": "Moteur : couple et vitesse de même signe.",
+   "method": "Puissance mécanique P = TΩ > 0 en moteur.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Moteur si $T\\Omega > 0$ (quadrants 1 et 3), génératrice sinon (quadrants 2 et 4)."
+    }
+   ]
+  },
+  {
+   "id": "X-MA-01-b",
+   "notions": [
+    "S-CV-01"
+   ],
+   "title": "Induit et inducteur",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "L'inducteur d'une machine :",
+     "choices": [
+      "crée le champ magnétique",
+      "reçoit la puissance mécanique",
+      "est toujours un aimant"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Dans un alternateur de centrale, l'inducteur est :",
+     "choices": [
+      "au rotor",
+      "au stator",
+      "absent"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Une machine qui freine une charge en renvoyant de l'énergie fonctionne :",
+     "choices": [
+      "en génératrice",
+      "en moteur",
+      "à vide"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Le couple vient de l'interaction de deux champs.",
+   "method": "Constitution des machines.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "L'inducteur crée le champ ; il est au rotor de l'alternateur ; au freinage, la machine est génératrice."
+    }
+   ]
+  },
+  {
+   "id": "X-MA-02-a",
+   "notions": [
+    "S-CV-02"
+   ],
+   "title": "Exploiter une plaque",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "Pn": {
+     "unit": "",
+     "values": [
+      1.5,
+      4,
+      7.5,
+      11
+     ]
+    },
+    "n": {
+     "unit": "",
+     "values": [
+      1420,
+      1440,
+      1460
+     ]
+    },
+    "I": {
+     "unit": "",
+     "values": [
+      3.5,
+      8.4,
+      15,
+      21
+     ]
+    },
+    "fp": {
+     "unit": "",
+     "values": [
+      0.8,
+      0.82,
+      0.85
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [
+    "Pn*1000/(sqrt(3)*400*I*fp) < 0.97",
+    "Pn*1000/(sqrt(3)*400*I*fp) > 0.6"
+   ],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Plaque d'un moteur asynchrone : [[Pn]] kW ; 400 V Y ; [[I]] A ; [[n]] tr/min ; cos φ = [[fp]] ; 50 Hz."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Couple nominal (N·m) ?",
+     "answer": "Pn*1000/(2*pi*n/60)",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Rendement, en % ?",
+     "answer": "100*Pn*1000/(sqrt(3)*400*I*fp)",
+     "unit": "%",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Nombre de pôles ?",
+     "answer": "4",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    }
+   ],
+   "hint": "Pn est la puissance utile ; ns = 1500 tr/min juste au-dessus de n.",
+   "method": "C = P/Ω ; η = Pu/Pa ; ns = 60f/p.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$C_n \\approx$ [[=Pn*1000/(2*pi*n/60):3]] N·m ; $\\eta \\approx$ [[=100*Pn*1000/(sqrt(3)*400*I*fp):3]] % ; $n_s = 1500$ tr/min → 2 paires, 4 pôles."
+    }
+   ]
+  },
+  {
+   "id": "X-MA-02-b",
+   "notions": [
+    "S-CV-02"
+   ],
+   "title": "Lire les tensions de plaque",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "« 230 Δ / 400 Y » sur un réseau 400 V entre phases : on couple en",
+     "choices": [
+      "étoile",
+      "triangle"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "La puissance indiquée sur la plaque d'un moteur est :",
+     "choices": [
+      "la puissance mécanique utile",
+      "la puissance électrique absorbée",
+      "la puissance apparente"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "IP55 indique :",
+     "choices": [
+      "le degré de protection contre poussières et eau",
+      "la classe d'isolation",
+      "le rendement"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Chaque enroulement supporte 230 V.",
+   "method": "Lecture de plaque.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Étoile sur 400 V ; puissance utile ; IP = indice de protection."
+    }
+   ]
+  },
+  {
+   "id": "X-MA-03-a",
+   "notions": [
+    "S-CV-03"
+   ],
+   "title": "Bilan de puissance d'un moteur",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "Pa": {
+     "unit": "",
+     "values": [
+      5000,
+      8000,
+      12000
+     ]
+    },
+    "Pj": {
+     "unit": "",
+     "values": [
+      300,
+      500,
+      700
+     ]
+    },
+    "Pc": {
+     "unit": "",
+     "values": [
+      200,
+      300,
+      400
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un moteur absorbe [[Pa]] W. Pertes Joule : [[Pj]] W ; pertes constantes (fer + mécaniques, d'après l'essai à vide) : [[Pc]] W."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Puissance utile (W) ?",
+     "answer": "Pa - Pj - Pc",
+     "unit": "W",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Rendement, en % ?",
+     "answer": "100*(Pa - Pj - Pc)/Pa",
+     "unit": "%",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Pu = Pa − pertes.",
+   "method": "Méthode des pertes séparées.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$P_u = [[=Pa-Pj-Pc]]$ W ; $\\eta \\approx$ [[=100*(Pa-Pj-Pc)/Pa:3]] %."
+    }
+   ]
+  },
+  {
+   "id": "X-MA-03-b",
+   "notions": [
+    "S-CV-03"
+   ],
+   "title": "Origine des pertes",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Les pertes fer sont dues :",
+     "choices": [
+      "à l'hystérésis et aux courants de Foucault",
+      "aux frottements",
+      "à la résistance des fils"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "L'essai à vide d'un moteur permet de mesurer :",
+     "choices": [
+      "les pertes constantes",
+      "les pertes Joule en charge",
+      "le couple nominal"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Les pertes mécaniques proviennent :",
+     "choices": [
+      "des frottements et de la ventilation",
+      "du champ magnétique",
+      "du réseau"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Trois familles de pertes.",
+   "method": "Associer pertes et causes.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Fer : hystérésis + Foucault ; essai à vide : pertes constantes ; mécaniques : frottements et ventilation."
+    }
+   ]
+  },
+  {
+   "id": "X-MA-04-a",
+   "notions": [
+    "S-CV-04"
+   ],
+   "title": "Point de fonctionnement d'une MCC",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "k": {
+     "unit": "",
+     "values": [
+      1,
+      1.5,
+      2
+     ]
+    },
+    "R": {
+     "unit": "",
+     "values": [
+      0.2,
+      0.5,
+      1
+     ]
+    },
+    "U": {
+     "unit": "",
+     "values": [
+      110,
+      220,
+      240
+     ]
+    },
+    "Tr": {
+     "unit": "",
+     "values": [
+      10,
+      20,
+      30
+     ]
+    }
+   },
+   "vars": {
+    "I": "Tr/k",
+    "W": "(U - R*Tr/k)/k"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une MCC à excitation indépendante ($k =$ [[k]] V·s/rad, $R =$ [[R]] Ω) est alimentée sous [[U]] V et entraîne une charge de couple constant [[Tr]] N·m (pertes négligées)."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Courant d'induit (A) ?",
+     "answer": "I",
+     "unit": "A",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Vitesse (tr/min) ?",
+     "answer": "W*60/(2*pi)",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "T = kI ; U = kΩ + RI.",
+   "method": "Équilibre des couples, puis équation électrique.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$I = [[Tr]]/[[k]] =$ [[=I:3|A]] ; $\\Omega = (U - RI)/k \\approx$ [[=W:3|rad/s]], soit [[=W*60/(2*pi):4]] tr/min."
+    }
+   ]
+  },
+  {
+   "id": "X-MA-04-b",
+   "notions": [
+    "S-CV-04"
+   ],
+   "title": "Réglage de vitesse par la tension",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "k": {
+     "unit": "",
+     "values": [
+      1.2,
+      2
+     ]
+    },
+    "R": {
+     "unit": "",
+     "values": [
+      0.5
+     ]
+    },
+    "I": {
+     "unit": "",
+     "values": [
+      10,
+      20
+     ]
+    },
+    "n": {
+     "unit": "",
+     "values": [
+      500,
+      1000,
+      1200
+     ]
+    }
+   },
+   "vars": {
+    "U": "k*2*pi*n/60 + R*I"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une MCC ($k =$ [[k]] V·s/rad, $R = 0{,}5$ Ω) doit tourner à [[n]] tr/min en absorbant [[I]] A."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "f.é.m. nécessaire (V) ?",
+     "answer": "k*2*pi*n/60",
+     "unit": "V",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Tension à appliquer (V) ?",
+     "answer": "U",
+     "unit": "V",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Rapport cyclique si le hacheur est alimenté sous 400 V ?",
+     "answer": "U/400",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "E = kΩ ; U = E + RI ; ⟨u⟩ = αE₀.",
+   "method": "Modèle de la MCC et hacheur série.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$E \\approx$ [[=k*2*pi*n/60:3|V]] ; $U \\approx$ [[=U:3|V]] ; $\\alpha \\approx$ [[=U/400:3]]."
+    }
+   ]
+  },
+  {
+   "id": "X-MA-05-a",
+   "notions": [
+    "S-CV-05"
+   ],
+   "title": "Glissement",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "p": {
+     "unit": "",
+     "values": [
+      1,
+      2,
+      3
+     ]
+    },
+    "g": {
+     "unit": "",
+     "values": [
+      0.02,
+      0.03,
+      0.04,
+      0.05
+     ]
+    }
+   },
+   "vars": {
+    "ns": "3000/p"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un moteur asynchrone à [[p]] paire(s) de pôles est alimenté en 50 Hz et a un glissement de [[g]]."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Vitesse de synchronisme (tr/min) ?",
+     "answer": "ns",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Vitesse du rotor (tr/min) ?",
+     "answer": "ns*(1 - g)",
+     "unit": "",
+     "tolerance": 0.005,
+     "sig": 3
+    }
+   ],
+   "hint": "ns = 60f/p ; n = ns(1 − g).",
+   "method": "Définition du glissement.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$n_s = [[=ns]]$ tr/min ; $n = [[=ns]](1 - [[g]]) =$ [[=ns*(1-g):4]] tr/min."
+    }
+   ]
+  },
+  {
+   "id": "X-MA-05-b",
+   "notions": [
+    "S-CV-05"
+   ],
+   "title": "Point de fonctionnement moteur-charge",
+   "difficulty": 3,
+   "validated": false,
+   "params": {
+    "Tn": {
+     "unit": "",
+     "values": [
+      20,
+      26,
+      50
+     ]
+    },
+    "nn": {
+     "unit": "",
+     "values": [
+      1440,
+      1450,
+      1460
+     ]
+    },
+    "Tr": {
+     "unit": "",
+     "values": [
+      10,
+      15,
+      18
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [
+    "Tr < Tn"
+   ],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Dans sa zone utile, la caractéristique d'un moteur (n_s = 1500 tr/min) est une droite passant par (1500 tr/min ; 0) et ([[nn]] tr/min ; [[Tn]] N·m). Il entraîne une charge de couple constant [[Tr]] N·m."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Vitesse de fonctionnement (tr/min) ?",
+     "answer": "1500 - (1500 - nn)*Tr/Tn",
+     "unit": "",
+     "tolerance": 0.002,
+     "sig": 5
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Si une charge entraînante force la machine au-dessus de 1500 tr/min, elle fonctionne :",
+     "choices": [
+      "en génératrice",
+      "en moteur",
+      "à l'arrêt"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "T = Tn (ns − n)/(ns − nn).",
+   "method": "Intersection des deux caractéristiques.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$n = 1500 - (1500 - [[nn]]) \\times \\dfrac{[[Tr]]}{[[Tn]]} \\approx$ [[=1500-(1500-nn)*Tr/Tn:4]] tr/min ; au-dessus du synchronisme : génératrice."
+    }
+   ]
+  },
+  {
+   "id": "X-MA-06-a",
+   "notions": [
+    "S-CV-06"
+   ],
+   "title": "Vitesse à U/f constant",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "f": {
+     "unit": "",
+     "values": [
+      20,
+      25,
+      30,
+      40
+     ]
+    },
+    "dn": {
+     "unit": "",
+     "values": [
+      30,
+      40,
+      50
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un moteur 4 pôles tourne à [[=1500-dn]] tr/min à 50 Hz sous un couple constant. Le variateur fonctionne à U/f constant ; on règle [[f]] Hz."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Nouvelle vitesse de synchronisme (tr/min) ?",
+     "answer": "30*f",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Nouvelle vitesse du rotor (tr/min) ?",
+     "answer": "30*f - dn",
+     "unit": "",
+     "tolerance": 0.002,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Tension à appliquer si 400 V à 50 Hz (V) ?",
+     "answer": "400*f/50",
+     "unit": "V",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "À U/f constant, la caractéristique se translate : même écart ns − n.",
+   "method": "Translation de la caractéristique.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$n_s = [[=30*f]]$ tr/min ; $n = [[=30*f-dn]]$ tr/min ; $U = [[=400*f/50]]$ V."
+    }
+   ]
+  },
+  {
+   "id": "X-MA-06-b",
+   "notions": [
+    "S-CV-06"
+   ],
+   "title": "Zones de fonctionnement d'un variateur",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Entre 0 et 50 Hz (U/f constant), le couple disponible est :",
+     "choices": [
+      "constant",
+      "proportionnel à la vitesse",
+      "nul"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Au-dessus de 50 Hz, on travaille :",
+     "choices": [
+      "à puissance constante (défluxage)",
+      "à flux croissant",
+      "à tension croissante"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "La commande vectorielle permet :",
+     "choices": [
+      "de contrôler séparément flux et couple",
+      "de supprimer le variateur",
+      "de doubler la tension"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Au-delà de 50 Hz, la tension plafonne.",
+   "method": "Lire les zones d'un variateur.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Couple constant jusqu'à 50 Hz, puissance constante au-delà ; vectoriel : flux et couple contrôlés séparément."
+    }
+   ]
+  }
+ ]
+}

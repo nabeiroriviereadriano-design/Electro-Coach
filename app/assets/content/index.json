@@ -9,6 +9,7 @@
   "packs/sciences-demarche-incertitudes.json",
   "packs/sciences-energie.json",
   "packs/sciences-electricite.json",
-  "packs/sciences-em-modulation.json"
+  "packs/sciences-em-modulation.json",
+  "packs/sciences-qualite-machines.json"
  ]
 }

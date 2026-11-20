@@ -5,6 +5,7 @@ import '../state/app_state.dart';
 import '../theme.dart';
 import '../widgets/common.dart';
 import '../widgets/update_banner.dart';
+import 'exam_screen.dart';
 import 'notion_screen.dart';
 import 'settings_screen.dart';
 import 'subjects_screen.dart';
@@ -93,6 +94,23 @@ class HomeScreen extends StatelessWidget {
           if (subject != Library.subjects.last) const SizedBox(width: 12),
         ],
       ]),
+      const SizedBox(height: 12),
+      AppCard(
+        onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const ExamHomeScreen())),
+        child: Row(children: [
+          const Icon(Icons.timer_outlined, size: 28),
+          const SizedBox(width: 14),
+          Expanded(
+            child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              const Text('Examen blanc', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 15.5)),
+              const SizedBox(height: 2),
+              Text('Sujet complet de maths ou de sciences appliquées, chronométré et noté sur 20',
+                  style: TextStyle(color: n.mid, fontSize: 13)),
+            ]),
+          ),
+          Icon(Icons.chevron_right, color: n.mid),
+        ]),
+      ),
       const SizedBox(height: 18),
       AppCard(
         onTap: () => onOpenTab(3),
@@ -101,8 +119,8 @@ class HomeScreen extends StatelessWidget {
           const SizedBox(width: 12),
           Expanded(
             child: Text(
-              'Contenu en cours de rédaction : ${lib.courses.length} cours et ${lib.exercises.length} exercices pour l\'instant. '
-              'Voir la couverture du programme.',
+              '${lib.courses.length} cours et ${lib.exercises.length} exercices couvrent le programme. '
+              'Voir la couverture et les points en attente de relecture.',
               style: TextStyle(color: n.mid, fontSize: 13),
             ),
           ),

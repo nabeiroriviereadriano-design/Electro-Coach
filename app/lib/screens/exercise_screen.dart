@@ -106,7 +106,7 @@ class _ExerciseScreenState extends State<ExerciseScreen> {
         BlockList(x.statement, render: i.render, env: i.env),
         for (final (k, q) in x.questions.indexed) ...[
           const SizedBox(height: 6),
-          _QuestionCard(
+          QuestionCard(
             index: k + 1,
             question: q,
             inst: i,
@@ -184,8 +184,9 @@ class _ExerciseScreenState extends State<ExerciseScreen> {
   }
 }
 
-class _QuestionCard extends StatelessWidget {
-  const _QuestionCard({
+/// Carte d'une question : saisie ou QCM, verdict, réponse attendue.
+class QuestionCard extends StatelessWidget {
+  const QuestionCard({
     required this.index,
     required this.question,
     required this.inst,

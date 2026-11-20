@@ -1,4 +1,5 @@
 import 'package:coach_core/coach_core.dart';
+import 'package:electro_coach/screens/exam_screen.dart';
 import 'package:electro_coach/screens/exercise_screen.dart';
 import 'package:electro_coach/screens/home_shell.dart';
 import 'package:electro_coach/screens/notion_screen.dart';
@@ -67,12 +68,83 @@ void main() {
     expect(s.progress.coursesRead, contains('C-EL-10'));
   });
 
-  testWidgets('notion sans contenu : référentiel affiché', (t) async {
+  testWidgets('notion hors programme : référentiel affiché sans cours', (t) async {
     await phone(t);
-    await t.pumpWidget(wrap(s, NotionScreen(notion: s.library.byId['S-QE-03']!)));
+    await t.pumpWidget(wrap(s, NotionScreen(notion: s.library.byId['M-CV-X1']!)));
     await t.pumpAndSettle();
     expect(find.text('Le cours de cette notion est en préparation.'), findsOneWidget);
     expect(find.text('Ce que demande le référentiel'), findsOneWidget);
+  });
+
+  testWidgets('toutes les notions au programme ont un cours qui s\'affiche', (t) async {
+    await phone(t);
+    for (final id in ['S-QE-03', 'S-PR-07', 'S-MO-06', 'S-CH-03', 'M-SF-03']) {
+      await t.pumpWidget(wrap(s, NotionScreen(notion: s.library.byId[id]!)));
+      await t.pumpAndSettle();
+      expect(find.text('Le cours de cette notion est en préparation.'), findsNothing, reason: id);
+      expect(t.takeException(), isNull, reason: id);
+    }
+  });
+
+  testWidgets('examen blanc : accueil des épreuves', (t) async {
+    await phone(t);
+    await t.pumpWidget(wrap(s, const ExamHomeScreen()));
+    await t.pumpAndSettle();
+    expect(find.text('Mathématiques'), findsOneWidget);
+    expect(find.text('Commencer l\'épreuve'), findsNWidgets(2));
+  });
+
+  testWidgets('examen blanc : copie parfaite → 20/20 enregistré', (t) async {
+    await phone(t);
+    final d = drawExam(s.library, ExamKind.maths, 7);
+    await t.pumpWidget(wrap(s, const ExamRunScreen(kind: ExamKind.maths, seed: 7, timed: false)));
+    await t.pumpAndSettle();
+    // On remplit la copie par l'état de l'écran (la liste est paresseuse).
+    final st = t.state(find.byType(ExamRunScreen)) as dynamic;
+    for (final p in d.parts) {
+      for (final q in p.exercise.questions) {
+        final key = '${p.exercise.id}/${q.id}';
+        final v = p.expected[q.id]!;
+        if (q.kind == 'choice') {
+          st.choices[key] = v.re.round();
+        } else {
+          (st.controllers[key] as TextEditingController).text = formatExpected(q, v);
+        }
+      }
+    }
+    await reveal(t, find.text('Rendre ma copie'));
+    await t.tap(find.text('Rendre ma copie'));
+    await t.pumpAndSettle();
+    await t.tap(find.text('Rendre'));
+    await t.pumpAndSettle();
+    expect(t.takeException(), isNull);
+    expect(s.examLast(ExamKind.maths), 20, reason: 'copie parfaite');
+    expect(s.examCount(ExamKind.maths), 1);
+    expect((st.score as ExamScore).on20, 20);
+  });
+
+  testWidgets('examen blanc : copie blanche → 0/20 et corrigés visibles', (t) async {
+    await phone(t);
+    await t.pumpWidget(wrap(s, const ExamRunScreen(kind: ExamKind.sciences, seed: 2, timed: false)));
+    await t.pumpAndSettle();
+    await reveal(t, find.text('Rendre ma copie'));
+    await t.tap(find.text('Rendre ma copie'));
+    await t.pumpAndSettle();
+    expect(find.textContaining('sans réponse'), findsOneWidget);
+    await t.tap(find.text('Rendre'));
+    await t.pumpAndSettle();
+    expect(s.examLast(ExamKind.sciences), 0);
+    expect(find.textContaining('Réponse attendue'), findsWidgets);
+  });
+
+  testWidgets('examen blanc chronométré : le temps défile', (t) async {
+    await phone(t);
+    await t.pumpWidget(wrap(s, const ExamRunScreen(kind: ExamKind.maths, seed: 1)));
+    await t.pump();
+    expect(find.text('2:00:00'), findsOneWidget);
+    await t.pump(const Duration(seconds: 3));
+    expect(find.text('1:59:57'), findsOneWidget);
+    await t.pumpWidget(const SizedBox());
   });
 
   testWidgets('exercice : bonnes réponses saisies → réussite enregistrée', (t) async {

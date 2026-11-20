@@ -168,6 +168,20 @@ class AppState extends ChangeNotifier {
     await _save();
   }
 
+  /// Enregistre la note d'un examen blanc (dernière, meilleure, nombre de sujets).
+  Future<void> recordExam(ExamKind kind, double mark) async {
+    final k = 'exam.${kind.name}';
+    final best = examBest(kind);
+    progress.settings['$k.last'] = '$mark';
+    progress.settings['$k.best'] = '${best == null || mark > best ? mark : best}';
+    progress.settings['$k.count'] = '${examCount(kind) + 1}';
+    await _save();
+  }
+
+  double? examLast(ExamKind kind) => double.tryParse(progress.settings['exam.${kind.name}.last'] ?? '');
+  double? examBest(ExamKind kind) => double.tryParse(progress.settings['exam.${kind.name}.best'] ?? '');
+  int examCount(ExamKind kind) => int.tryParse(progress.settings['exam.${kind.name}.count'] ?? '') ?? 0;
+
   Future<void> markRead(Course c) async {
     if (progress.coursesRead.contains(c.id)) return;
     progress.markCourseRead(c);
@@ -176,7 +190,7 @@ class AppState extends ChangeNotifier {
 
   Future<void> resetProgress() async {
     final keep = Map<String, int>.from(progress.yearOverrides);
-    final settings = Map<String, String>.from(progress.settings);
+    final settings = Map<String, String>.from(progress.settings)..removeWhere((k, _) => k.startsWith('exam.'));
     final y = progress.year;
     progress = ProgressState()
       ..year = y

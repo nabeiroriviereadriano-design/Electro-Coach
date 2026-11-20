@@ -1,6 +1,7 @@
 // Captures d'écran de l'interface réelle (polices, icônes et formules chargées),
 // générées en CI : flutter test --update-goldens screenshot_test/
 import 'package:coach_core/coach_core.dart';
+import 'package:electro_coach/screens/exam_screen.dart';
 import 'package:electro_coach/screens/exercise_screen.dart';
 import 'package:electro_coach/screens/home_shell.dart';
 import 'package:electro_coach/screens/notion_screen.dart';
@@ -67,4 +68,15 @@ void main() {
   testWidgets('08-reglages', (t) => shot(t, '08-reglages', phone, const SettingsScreen(), s));
   testWidgets('09-windows-cours', (t) => shot(t, '09-windows-cours', desktop, NotionScreen(notion: s.library.byId['S-EL-10']!), s));
   testWidgets('10-accueil-clair', (t) => shot(t, '10-accueil-clair', phone, const HomeShell(), s, b: Brightness.light));
+  testWidgets('11-examen-blanc', (t) => shot(t, '11-examen-blanc', phone, const ExamHomeScreen(), s));
+  testWidgets('12-examen-sujet', (t) => shot(t, '12-examen-sujet', phone, const ExamRunScreen(kind: ExamKind.sciences, seed: 4, timed: false), s));
+  testWidgets('13-examen-corrige', (t) => shot(t, '13-examen-corrige', phone, const ExamRunScreen(kind: ExamKind.maths, seed: 4, timed: false), s,
+          before: (t) async {
+        await reveal(t, find.text('Rendre ma copie'));
+        await t.tap(find.text('Rendre ma copie'));
+        await t.pumpAndSettle();
+        await t.tap(find.text('Rendre'));
+        await t.pumpAndSettle();
+        await t.drag(find.byType(ListView).first, const Offset(0, 30000));
+      }));
 }

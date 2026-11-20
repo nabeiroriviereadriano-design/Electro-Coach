@@ -1,0 +1,1899 @@
+{
+ "id": "problemes-2e-annee",
+ "courses": [],
+ "examples": [],
+ "exercises": [
+  {
+   "id": "PB-M-01",
+   "notions": [
+    "M-NC-01",
+    "M-NC-04",
+    "M-FM-01",
+    "M-FV-05"
+   ],
+   "title": "Problème — Circuit RLC série et résonance",
+   "difficulty": 3,
+   "validated": false,
+   "params": {
+    "R": {
+     "unit": "",
+     "values": [
+      10,
+      20,
+      50
+     ]
+    },
+    "L": {
+     "unit": "",
+     "values": [
+      0.1,
+      0.2,
+      0.5
+     ]
+    },
+    "C": {
+     "unit": "F",
+     "values": [
+      1e-05,
+      2.2e-05,
+      4.7e-05
+     ]
+    },
+    "f": {
+     "unit": "",
+     "values": [
+      50,
+      60,
+      100
+     ]
+    }
+   },
+   "vars": {
+    "w": "2*pi*f",
+    "X": "L*2*pi*f - 1/(C*2*pi*f)",
+    "Z": "R + j*(L*2*pi*f - 1/(C*2*pi*f))"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un circuit comprend en série une résistance $R =$ [[R]] Ω, une bobine $L =$ [[L]] H et un condensateur $C =$ [[C]]. Il est alimenté par une tension sinusoïdale de valeur efficace 230 V et de fréquence $f =$ [[f]] Hz."
+    },
+    {
+     "type": "text",
+     "text": "On note $\\underline{Z} = R + j\\left(L\\omega - \\dfrac{1}{C\\omega}\\right)$ son impédance complexe."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Pulsation ω (rad/s) ?",
+     "answer": "w",
+     "unit": "rad/s",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "complex",
+     "prompt": "Impédance complexe $\\underline{Z}$ (forme algébrique) ?",
+     "answer": "Z",
+     "tolerance": 0.02,
+     "sig": 3,
+     "polar": false
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Module de $\\underline{Z}$ (Ω) ?",
+     "answer": "abs(Z)",
+     "unit": "Ω",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q4",
+     "kind": "numeric",
+     "prompt": "Argument de $\\underline{Z}$ en degrés ?",
+     "answer": "deg(arg(Z))",
+     "unit": "°",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q5",
+     "kind": "numeric",
+     "prompt": "Valeur efficace du courant (A) ?",
+     "answer": "230/abs(Z)",
+     "unit": "A",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q6",
+     "kind": "numeric",
+     "prompt": "Fréquence de résonance $f_0 = \\dfrac{1}{2\\pi\\sqrt{LC}}$ (Hz) ?",
+     "answer": "1/(2*pi*sqrt(L*C))",
+     "unit": "Hz",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Calcule d'abord Lω et 1/(Cω).",
+   "method": "1. ω = 2πf.\n2. Partie imaginaire X = Lω − 1/(Cω).\n3. Module √(R² + X²), argument arctan(X/R).\n4. I = U/|Z|.\n5. À la résonance, X = 0.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\omega \\approx$ [[=w:4|rad/s]] ; $X \\approx$ [[=X:3]] Ω, d'où $\\underline Z \\approx$ [[=Z:3]]."
+    },
+    {
+     "type": "text",
+     "text": "$|\\underline Z| \\approx$ [[=abs(Z):3|Ω]], argument ≈ [[=deg(arg(Z)):3]]° ; $I \\approx$ [[=230/abs(Z):3|A]]."
+    },
+    {
+     "type": "text",
+     "text": "Résonance quand $LC\\omega^2 = 1$ : $f_0 \\approx$ [[=1/(2*pi*sqrt(L*C)):3|Hz]], où $|\\underline Z| = R$ est minimal."
+    }
+   ]
+  },
+  {
+   "id": "PB-M-02",
+   "notions": [
+    "M-ED-01",
+    "M-FV-04",
+    "M-FV-01",
+    "M-CI-05"
+   ],
+   "title": "Problème — Charge d'un condensateur de bus",
+   "difficulty": 3,
+   "validated": false,
+   "params": {
+    "R": {
+     "unit": "",
+     "values": [
+      47,
+      100,
+      220
+     ]
+    },
+    "C": {
+     "unit": "F",
+     "values": [
+      0.001,
+      0.0022,
+      0.0047
+     ]
+    },
+    "E": {
+     "unit": "",
+     "values": [
+      325,
+      540,
+      565
+     ]
+    },
+    "k": {
+     "unit": "",
+     "values": [
+      0.8,
+      0.9,
+      0.95
+     ]
+    }
+   },
+   "vars": {
+    "tau": "R*C"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "À la mise sous tension d'un variateur, le condensateur de bus $C =$ [[C]] se charge à travers une résistance de précharge $R =$ [[R]] Ω sous une tension $E =$ [[E]] V. La tension $u$ (en V) aux bornes du condensateur vérifie, avec $u(0) = 0$ :"
+    },
+    {
+     "type": "formula",
+     "tex": "RC\\,u'(t) + u(t) = E",
+     "title": ""
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Constante de temps τ = RC (s) ?",
+     "answer": "tau",
+     "unit": "s",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "La solution est $u(t) = E(1 - e^{-t/\\tau})$. Valeur de $u$ à $t = \\tau$ (V) ?",
+     "answer": "E*(1 - exp(-1))",
+     "unit": "V",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Valeur de $u'(0)$ (V/s) ?",
+     "answer": "E/tau",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q4",
+     "kind": "numeric",
+     "prompt": "Instant où $u$ atteint [[k]]E : $t = -\\tau\\ln(1 - [[k]])$ (s) ?",
+     "answer": "-tau*ln(1 - k)",
+     "unit": "s",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q5",
+     "kind": "numeric",
+     "prompt": "Énergie stockée en fin de charge, $\\frac12 CE^2$ (J) ?",
+     "answer": "0.5*C*E^2",
+     "unit": "J",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "u'(t) = (E/τ) e^(−t/τ).",
+   "method": "1. Identifier τ.\n2. Remplacer t par τ.\n3. Dériver.\n4. Résoudre E(1 − e^(−t/τ)) = kE avec ln.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\tau = RC \\approx$ [[=tau:3|s]] ; $u(\\tau) = E(1 - e^{-1}) \\approx$ [[=E*(1-exp(-1)):3|V]] ; $u'(0) = E/\\tau \\approx$ [[=E/tau:3]] V/s."
+    },
+    {
+     "type": "text",
+     "text": "$1 - e^{-t/\\tau} = [[k]] \\Rightarrow t = -\\tau\\ln(1 - [[k]]) \\approx$ [[=-tau*ln(1-k):3|s]] ; énergie : [[=0.5*C*E^2:3|J]]."
+    }
+   ]
+  },
+  {
+   "id": "PB-M-03",
+   "notions": [
+    "M-SF-03",
+    "M-SF-04",
+    "M-SF-06",
+    "M-SF-01"
+   ],
+   "title": "Problème — Spectre d'une tension en créneau",
+   "difficulty": 3,
+   "validated": false,
+   "params": {
+    "A": {
+     "unit": "",
+     "values": [
+      10,
+      24,
+      48,
+      100
+     ]
+    },
+    "f": {
+     "unit": "",
+     "values": [
+      50,
+      100,
+      1000
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un onduleur délivre une tension $u$ impaire, de période $T = 1/f$ ($f =$ [[f]] Hz), égale à $A =$ [[A]] V sur $]0\\,;T/2[$ et à $-A$ sur $]T/2\\,;T[$."
+    },
+    {
+     "type": "text",
+     "text": "On admet que ses coefficients de Fourier sont $a_n = 0$, $b_n = \\dfrac{4A}{n\\pi}$ pour $n$ impair et $b_n = 0$ pour $n$ pair."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Pourquoi les coefficients $a_n$ sont-ils nuls ?",
+     "choices": [
+      "parce que la fonction est impaire",
+      "parce que la fonction est paire",
+      "parce que la valeur moyenne est non nulle"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Amplitude du fondamental $b_1$ (V) ?",
+     "answer": "4*A/pi",
+     "unit": "V",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Amplitude de l'harmonique 3 (V) ?",
+     "answer": "4*A/(3*pi)",
+     "unit": "V",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q4",
+     "kind": "numeric",
+     "prompt": "Fréquence de l'harmonique 5 (Hz) ?",
+     "answer": "5*f",
+     "unit": "Hz",
+     "tolerance": 0.001,
+     "sig": 3
+    },
+    {
+     "id": "q5",
+     "kind": "numeric",
+     "prompt": "Valeur efficace de $u$ (V) ?",
+     "answer": "A",
+     "unit": "V",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q6",
+     "kind": "numeric",
+     "prompt": "Valeur efficace du seul fondamental (V) ?",
+     "answer": "4*A/(pi*sqrt(2))",
+     "unit": "V",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Fonction impaire : uniquement des sinus. Pour un créneau, u² = A² partout.",
+   "method": "Symétries, puis formule des bₙ, puis Parseval : U² = Σ bₙ²/2.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Fonction impaire → $a_n = 0$. $b_1 = 4A/\\pi \\approx$ [[=4*A/pi:3|V]], $b_3 \\approx$ [[=4*A/(3*pi):3|V]], harmonique 5 à [[=5*f]] Hz."
+    },
+    {
+     "type": "text",
+     "text": "$u^2 = A^2$ donc $U = A = [[A]]$ V. Fondamental seul : $b_1/\\sqrt2 \\approx$ [[=4*A/(pi*sqrt(2)):3|V]] (soit environ 90 % de U : le reste est porté par les harmoniques)."
+    }
+   ]
+  },
+  {
+   "id": "PB-M-04",
+   "notions": [
+    "M-P1-03",
+    "M-P1-04",
+    "M-P1-01"
+   ],
+   "title": "Problème — Fiabilité d'un lot de variateurs",
+   "difficulty": 3,
+   "validated": false,
+   "params": {
+    "n": {
+     "unit": "",
+     "values": [
+      10,
+      20,
+      25
+     ]
+    },
+    "p": {
+     "unit": "",
+     "values": [
+      0.02,
+      0.05,
+      0.1
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un atelier installe [[n]] variateurs identiques. Chacun tombe en panne pendant la première année avec une probabilité $p =$ [[p]], indépendamment des autres. On note $X$ le nombre de variateurs en panne la première année."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "La loi de $X$ est :",
+     "choices": [
+      "binomiale de paramètres n = [[n]] et p = [[p]]",
+      "uniforme sur [0 ; [[n]]]",
+      "normale centrée réduite"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "$P(X = 0)$ ?",
+     "answer": "(1 - p)^n",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "$P(X = 1)$ ?",
+     "answer": "n*p*(1 - p)^(n - 1)",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q4",
+     "kind": "numeric",
+     "prompt": "$P(X \\geq 2)$ ?",
+     "answer": "1 - (1 - p)^n - n*p*(1 - p)^(n - 1)",
+     "unit": "",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q5",
+     "kind": "numeric",
+     "prompt": "Espérance de $X$ ?",
+     "answer": "n*p",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q6",
+     "kind": "numeric",
+     "prompt": "Écart type de $X$ ?",
+     "answer": "sqrt(n*p*(1 - p))",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "P(X = k) = C(n, k) pᵏ (1 − p)ⁿ⁻ᵏ.",
+   "method": "Répétition d'épreuves indépendantes à deux issues → loi binomiale ; P(X ≥ 2) = 1 − P(X = 0) − P(X = 1).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$X \\sim \\mathcal B([[n]] ; [[p]])$. $P(X = 0) \\approx$ [[=(1-p)^n:3]] ; $P(X = 1) \\approx$ [[=n*p*(1-p)^(n-1):3]] ; $P(X \\geq 2) \\approx$ [[=1-(1-p)^n-n*p*(1-p)^(n-1):3]]."
+    },
+    {
+     "type": "text",
+     "text": "$E(X) = np = [[=n*p]]$ ; $\\sigma = \\sqrt{np(1-p)} \\approx$ [[=sqrt(n*p*(1-p)):3]]."
+    }
+   ]
+  },
+  {
+   "id": "PB-M-05",
+   "notions": [
+    "M-CI-05",
+    "M-CI-01",
+    "M-CI-02",
+    "M-SF-06"
+   ],
+   "title": "Problème — Valeurs moyenne et efficace d'une tension redressée",
+   "difficulty": 3,
+   "validated": false,
+   "params": {
+    "V": {
+     "unit": "",
+     "values": [
+      12,
+      24,
+      230
+     ]
+    }
+   },
+   "vars": {
+    "Um": "V*sqrt(2)"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "La tension en sortie d'un pont de Graëtz s'écrit $u(t) = U_m|\\sin(\\omega t)|$, de période $\\pi/\\omega$, avec $U_m = [[V]]\\sqrt2$ V. On pose $\\theta = \\omega t$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "$U_m$ (V) ?",
+     "answer": "Um",
+     "unit": "V",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "$\\displaystyle\\int_0^{\\pi}\\sin\\theta\\,d\\theta$ ?",
+     "answer": "2",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Valeur moyenne $\\langle u\\rangle = \\dfrac{1}{\\pi}\\displaystyle\\int_0^{\\pi}U_m\\sin\\theta\\,d\\theta$ (V) ?",
+     "answer": "2*Um/pi",
+     "unit": "V",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q4",
+     "kind": "numeric",
+     "prompt": "$\\dfrac{1}{\\pi}\\displaystyle\\int_0^{\\pi}\\sin^2\\theta\\,d\\theta$ ?",
+     "answer": "0.5",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    },
+    {
+     "id": "q5",
+     "kind": "numeric",
+     "prompt": "Valeur efficace de $u$ (V) ?",
+     "answer": "Um/sqrt(2)",
+     "unit": "V",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q6",
+     "kind": "numeric",
+     "prompt": "Facteur de forme $U/\\langle u\\rangle$ ?",
+     "answer": "pi/(2*sqrt(2))",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "sin²θ = (1 − cos 2θ)/2.",
+   "method": "Primitive de sin : −cos. Pour la valeur efficace, linéariser sin².",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\int_0^\\pi \\sin\\theta\\,d\\theta = [-\\cos\\theta]_0^\\pi = 2$ ; $\\langle u\\rangle = 2U_m/\\pi \\approx$ [[=2*Um/pi:3|V]]."
+    },
+    {
+     "type": "text",
+     "text": "$\\frac1\\pi\\int_0^\\pi \\sin^2 = \\frac12$ donc $U = U_m/\\sqrt2 = [[V]]$ V ; facteur de forme $\\pi/(2\\sqrt2) \\approx 1{,}11$."
+    }
+   ]
+  },
+  {
+   "id": "PB-M-06",
+   "notions": [
+    "M-ED-04",
+    "M-ED-05",
+    "M-NC-02",
+    "M-FM-03"
+   ],
+   "title": "Problème — Circuit RLC en régime libre",
+   "difficulty": 3,
+   "validated": false,
+   "params": {
+    "R": {
+     "unit": "",
+     "values": [
+      2,
+      4,
+      6
+     ]
+    },
+    "L": {
+     "unit": "",
+     "values": [
+      1
+     ]
+    },
+    "C": {
+     "unit": "",
+     "values": [
+      0.1,
+      0.05,
+      0.04
+     ]
+    },
+    "U0": {
+     "unit": "",
+     "values": [
+      10,
+      20
+     ]
+    }
+   },
+   "vars": {
+    "a": "R/(2*L)",
+    "b": "sqrt(1/(L*C) - (R/(2*L))^2)"
+   },
+   "constraints": [
+    "R^2 < 4*L/C"
+   ],
+   "statement": [
+    {
+     "type": "text",
+     "text": "La tension $u$ aux bornes du condensateur d'un circuit RLC série en régime libre ($R =$ [[R]] Ω, $L =$ [[L]] H, $C =$ [[C]] F) vérifie :"
+    },
+    {
+     "type": "formula",
+     "tex": "LC\\,u'' + RC\\,u' + u = 0",
+     "title": ""
+    },
+    {
+     "type": "text",
+     "text": "avec $u(0) = [[U0]]$ V et $u'(0) = 0$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Discriminant de l'équation caractéristique $LCr^2 + RCr + 1 = 0$ ?",
+     "answer": "(R*C)^2 - 4*L*C",
+     "unit": "",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Le régime est :",
+     "choices": [
+      "pseudo-périodique (oscillations amorties)",
+      "apériodique",
+      "critique"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Partie réelle des racines, $-\\alpha$ ?",
+     "answer": "-a",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q4",
+     "kind": "numeric",
+     "prompt": "Partie imaginaire positive des racines, $\\beta$ (rad/s) ?",
+     "answer": "b",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q5",
+     "kind": "numeric",
+     "prompt": "Pseudo-période $2\\pi/\\beta$ (s) ?",
+     "answer": "2*pi/b",
+     "unit": "s",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q6",
+     "kind": "numeric",
+     "prompt": "La solution est $u = e^{-\\alpha t}(A\\cos\\beta t + B\\sin\\beta t)$ avec $A = [[U0]]$. Valeur de $B = \\alpha A/\\beta$ ?",
+     "answer": "a*U0/b",
+     "unit": "",
+     "tolerance": 0.02,
+     "sig": 3
+    }
+   ],
+   "hint": "Δ < 0 → racines complexes −α ± jβ.",
+   "method": "1. Équation caractéristique.\n2. Signe du discriminant.\n3. Racines complexes conjuguées.\n4. Conditions initiales.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\Delta = (RC)^2 - 4LC \\approx$ [[=(R*C)^2-4*L*C:3]] < 0 : racines $-\\alpha \\pm j\\beta$ avec $\\alpha =$ [[=a:3]] et $\\beta \\approx$ [[=b:3]] rad/s."
+    },
+    {
+     "type": "text",
+     "text": "Pseudo-période ≈ [[=2*pi/b:3|s]] ; $u'(0) = -\\alpha A + \\beta B = 0$ donne $B \\approx$ [[=a*U0/b:3]]."
+    }
+   ]
+  },
+  {
+   "id": "PB-M-07",
+   "notions": [
+    "M-P1-06",
+    "M-P1-07",
+    "M-P1-08"
+   ],
+   "title": "Problème — Contrôle qualité de résistances",
+   "difficulty": 3,
+   "validated": false,
+   "params": {
+    "m": {
+     "unit": "",
+     "values": [
+      100,
+      220,
+      470
+     ]
+    },
+    "s": {
+     "unit": "",
+     "values": [
+      1,
+      2,
+      5
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une machine fabrique des résistances dont la valeur $X$ (en Ω) suit une loi normale de moyenne $\\mu =$ [[m]] et d'écart type $\\sigma =$ [[s]]. On rappelle : $P(\\mu - \\sigma \\le X \\le \\mu + \\sigma) \\approx 0{,}683$, $P(\\mu - 2\\sigma \\le X \\le \\mu + 2\\sigma) \\approx 0{,}954$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Probabilité qu'une résistance soit comprise entre [[=m-2*s]] et [[=m+2*s]] Ω ?",
+     "answer": "0.954",
+     "unit": "",
+     "tolerance": 0.002,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Probabilité qu'elle dépasse [[=m+s]] Ω ?",
+     "answer": "(1 - 0.683)/2",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "On monte deux résistances en série, indépendantes. Espérance de la somme (Ω) ?",
+     "answer": "2*m",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    },
+    {
+     "id": "q4",
+     "kind": "numeric",
+     "prompt": "Écart type de la somme (Ω) ?",
+     "answer": "s*sqrt(2)",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q5",
+     "kind": "numeric",
+     "prompt": "Écart type de la moyenne d'un échantillon de 25 résistances (Ω) ?",
+     "answer": "s/5",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Variances des variables indépendantes : elles s'additionnent.",
+   "method": "Intervalles de référence de la loi normale ; V(X + Y) = V(X) + V(Y) ; écart type de la moyenne σ/√n.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$P \\approx 0{,}954$ ; au-delà de μ + σ : $(1 - 0{,}683)/2 \\approx 0{,}159$."
+    },
+    {
+     "type": "text",
+     "text": "Somme : $E = [[=2*m]]$ Ω, $\\sigma = [[s]]\\sqrt2 \\approx$ [[=s*sqrt(2):3]] Ω ; moyenne de 25 : $\\sigma/5 =$ [[=s/5:3]] Ω."
+    }
+   ]
+  },
+  {
+   "id": "PB-M-08",
+   "notions": [
+    "M-CI-04",
+    "M-AL-02",
+    "M-FV-06",
+    "M-ED-02"
+   ],
+   "title": "Problème — Méthodes numériques",
+   "difficulty": 3,
+   "validated": false,
+   "params": {
+    "k": {
+     "unit": "",
+     "values": [
+      2,
+      3,
+      5
+     ]
+    },
+    "h": {
+     "unit": "",
+     "values": [
+      0.1,
+      0.2,
+      0.5
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On étudie $f(x) = x^2 - [[k]]$ sur $[1\\,;3]$, puis l'équation différentielle $y' = -y$, $y(0) = 1$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Racine exacte de $f$ sur $[1\\,;3]$ ?",
+     "answer": "sqrt(k)",
+     "unit": "",
+     "tolerance": 0.002,
+     "sig": 4
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Après deux étapes de dichotomie partant de $[1\\,;3]$, longueur de l'intervalle ?",
+     "answer": "0.5",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Méthode d'Euler de pas [[h]] : valeur approchée de $y(h)$ ?",
+     "answer": "1 - h",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    },
+    {
+     "id": "q4",
+     "kind": "numeric",
+     "prompt": "Valeur approchée de $y(2h)$ par Euler ?",
+     "answer": "(1 - h)^2",
+     "unit": "",
+     "tolerance": 0.005,
+     "sig": 3
+    },
+    {
+     "id": "q5",
+     "kind": "numeric",
+     "prompt": "Valeur exacte $y(2h) = e^{-2h}$ ?",
+     "answer": "exp(-2*h)",
+     "unit": "",
+     "tolerance": 0.005,
+     "sig": 3
+    },
+    {
+     "id": "q6",
+     "kind": "numeric",
+     "prompt": "Méthode des trapèzes avec un seul trapèze : approximation de $\\displaystyle\\int_1^3 x^2\\,dx$ ?",
+     "answer": "(1 + 9)",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    }
+   ],
+   "hint": "Euler : y(n+1) = yₙ + h·yₙ' = yₙ(1 − h).",
+   "method": "Chaque étape de dichotomie divise l'intervalle par 2 ; trapèze : (b − a)(f(a) + f(b))/2.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Racine $\\sqrt{[[k]]} \\approx$ [[=sqrt(k):4]] ; intervalle de longueur 2 → 1 → 0,5."
+    },
+    {
+     "type": "text",
+     "text": "Euler : $y_1 = 1 - [[h]]$, $y_2 = (1 - [[h]])^2 \\approx$ [[=(1-h)^2:3]], contre $e^{-2h} \\approx$ [[=exp(-2*h):3]] ; trapèze : $2 \\times (1 + 9)/2 = 10$ (valeur exacte 26/3 ≈ 8,67)."
+    }
+   ]
+  },
+  {
+   "id": "PB-S-01",
+   "notions": [
+    "S-EL-14",
+    "S-QE-02",
+    "S-MO-09",
+    "S-EL-11"
+   ],
+   "title": "Problème — Installation d'un atelier",
+   "difficulty": 3,
+   "validated": false,
+   "params": {
+    "P1": {
+     "unit": "",
+     "values": [
+      15000,
+      22000,
+      30000
+     ]
+    },
+    "fp1": {
+     "unit": "",
+     "values": [
+      0.78,
+      0.82
+     ]
+    },
+    "P2": {
+     "unit": "",
+     "values": [
+      6000,
+      9000
+     ]
+    },
+    "R": {
+     "unit": "",
+     "values": [
+      0.05,
+      0.1
+     ]
+    }
+   },
+   "vars": {
+    "Q1": "P1*tan(acos(fp1))",
+    "P": "P1 + P2",
+    "S": "sqrt((P1+P2)^2 + (P1*tan(acos(fp1)))^2)",
+    "I": "sqrt((P1+P2)^2 + (P1*tan(acos(fp1)))^2)/(sqrt(3)*400)",
+    "Qc": "P1*tan(acos(fp1)) - (P1+P2)*tan(acos(0.95))"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un atelier alimenté en 400 V triphasé, 50 Hz comprend des moteurs (puissance absorbée totale [[P1]] W, cos φ = [[fp1]]) et des fours résistifs ([[P2]] W). La ligne qui l'alimente a une résistance de [[R]] Ω par conducteur."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Puissance active totale (W) ?",
+     "answer": "P",
+     "unit": "W",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Puissance réactive totale (var) ?",
+     "answer": "Q1",
+     "unit": "var",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Courant de ligne (A) ?",
+     "answer": "I",
+     "unit": "A",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q4",
+     "kind": "numeric",
+     "prompt": "Pertes dans la ligne (W) ?",
+     "answer": "3*R*I^2",
+     "unit": "W",
+     "tolerance": 0.03,
+     "sig": 3
+    },
+    {
+     "id": "q5",
+     "kind": "numeric",
+     "prompt": "Puissance réactive d'une batterie de condensateurs pour obtenir cos φ = 0,95 (var) ?",
+     "answer": "Qc",
+     "unit": "var",
+     "tolerance": 0.03,
+     "sig": 3
+    },
+    {
+     "id": "q6",
+     "kind": "numeric",
+     "prompt": "Capacité par branche en triangle (µF) ?",
+     "answer": "Qc/(3*400^2*100*pi)*1e6",
+     "unit": "",
+     "tolerance": 0.03,
+     "sig": 3
+    }
+   ],
+   "hint": "Méthode de Boucherot : on additionne les P et les Q.",
+   "method": "1. P et Q totales.\n2. S, puis I = S/(√3 U).\n3. Pertes 3RI².\n4. Qc = Q − P tan φ'.\n5. C = Qc/(3U²ω).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$P =$ [[=P:3|W]] ; $Q \\approx$ [[=Q1:3|var]] ; $S \\approx$ [[=S:3|VA]] ; $I \\approx$ [[=I:3|A]] ; pertes ≈ [[=3*R*I^2:3|W]]."
+    },
+    {
+     "type": "text",
+     "text": "$Q_C = Q - P\\tan\\varphi' \\approx$ [[=Qc:3|var]] ; $C \\approx$ [[=Qc/(3*400^2*100*pi)*1e6:3]] µF par branche."
+    }
+   ]
+  },
+  {
+   "id": "PB-S-02",
+   "notions": [
+    "S-CV-05",
+    "S-CV-06",
+    "S-ME-03",
+    "S-ME-09"
+   ],
+   "title": "Problème — Pompe centrifuge pilotée par variateur",
+   "difficulty": 3,
+   "validated": false,
+   "params": {
+    "Tn": {
+     "unit": "",
+     "values": [
+      50,
+      70,
+      100
+     ]
+    },
+    "k": {
+     "unit": "",
+     "values": [
+      0.6,
+      0.7,
+      0.8
+     ]
+    },
+    "Q": {
+     "unit": "",
+     "values": [
+      30,
+      50,
+      80
+     ]
+    },
+    "H": {
+     "unit": "",
+     "values": [
+      20,
+      30
+     ]
+    }
+   },
+   "vars": {
+    "n2": "1450*k"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un moteur asynchrone 4 pôles (n_s = 1500 tr/min à 50 Hz) entraîne une pompe centrifuge. Au point nominal : 1450 tr/min, couple [[Tn]] N·m, débit [[Q]] m³/h sous [[H]] m. Le couple d'une pompe centrifuge est proportionnel au carré de la vitesse ; son débit est proportionnel à la vitesse. On réduit la vitesse à [[k]] fois la vitesse nominale avec un variateur à U/f constant."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Puissance mécanique nominale (W) ?",
+     "answer": "Tn*2*pi*1450/60",
+     "unit": "W",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Puissance hydraulique nominale ρgHQ (W) ?",
+     "answer": "1000*9.81*H*Q/3600",
+     "unit": "W",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Nouvelle vitesse (tr/min) ?",
+     "answer": "n2",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q4",
+     "kind": "numeric",
+     "prompt": "Nouveau couple (N·m) ?",
+     "answer": "Tn*k^2",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q5",
+     "kind": "numeric",
+     "prompt": "Nouvelle puissance mécanique (W) ?",
+     "answer": "Tn*k^2*2*pi*n2/60",
+     "unit": "W",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q6",
+     "kind": "numeric",
+     "prompt": "Nouveau débit (m³/h) ?",
+     "answer": "Q*k",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "P = CΩ ; pour une pompe centrifuge, P ∝ n³.",
+   "method": "Lois de similitude des pompes : Q ∝ n, C ∝ n², P ∝ n³.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$P_n \\approx$ [[=Tn*2*pi*1450/60:3|W]] ; $P_h \\approx$ [[=1000*9.81*H*Q/3600:3|W]] (rendement de la pompe ≈ [[=1000*9.81*H*Q/3600/(Tn*2*pi*1450/60):2]])."
+    },
+    {
+     "type": "text",
+     "text": "$n = [[=n2:4]]$ tr/min ; $C \\approx$ [[=Tn*k^2:3]] N·m ; $P \\approx$ [[=Tn*k^2*2*pi*n2/60:3|W]] (×[[=k^3:2]]) ; débit [[=Q*k:3]] m³/h. Réduire la vitesse économise beaucoup d'énergie."
+    }
+   ]
+  },
+  {
+   "id": "PB-S-03",
+   "notions": [
+    "S-MO-05",
+    "S-MO-06",
+    "S-MO-07"
+   ],
+   "title": "Problème — Transformateur de poste HTA/BT",
+   "difficulty": 3,
+   "validated": false,
+   "params": {
+    "Sn": {
+     "unit": "",
+     "values": [
+      100,
+      160,
+      250
+     ]
+    },
+    "P0": {
+     "unit": "",
+     "values": [
+      300,
+      400,
+      500
+     ]
+    },
+    "Pcc": {
+     "unit": "",
+     "values": [
+      1750,
+      2350,
+      3250
+     ]
+    },
+    "fp": {
+     "unit": "",
+     "values": [
+      0.8,
+      0.9
+     ]
+    }
+   },
+   "vars": {
+    "I2": "Sn*1000/(sqrt(3)*410)",
+    "Rs": "Pcc/(3*(Sn*1000/(sqrt(3)*410))^2)",
+    "Xs": "4*Pcc/(3*(Sn*1000/(sqrt(3)*410))^2)"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un transformateur Dyn11, 20 kV / 410 V à vide, de [[Sn]] kVA, a donné : essai à vide $P_0 =$ [[P0]] W ; essai en court-circuit au courant nominal $P_{cc} =$ [[Pcc]] W. Pour le modèle de Kapp par phase (étoile équivalente côté BT), on admet $X_s = 4R_s$."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Courant secondaire nominal (A) ?",
+     "answer": "I2",
+     "unit": "A",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Rapport de transformation (tensions composées) ?",
+     "answer": "410/20000",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Résistance $R_s$ par phase (mΩ) ?",
+     "answer": "Rs*1000",
+     "unit": "",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q4",
+     "kind": "numeric",
+     "prompt": "Chute de tension simple au courant nominal, cos φ = [[fp]] inductif (V) ?",
+     "answer": "I2*(Rs*fp + Xs*sqrt(1 - fp^2))",
+     "unit": "V",
+     "tolerance": 0.03,
+     "sig": 3
+    },
+    {
+     "id": "q5",
+     "kind": "numeric",
+     "prompt": "Rendement à pleine charge, cos φ = [[fp]], en % ?",
+     "answer": "100*Sn*1000*fp/(Sn*1000*fp + P0 + Pcc)",
+     "unit": "%",
+     "tolerance": 0.005,
+     "sig": 3
+    },
+    {
+     "id": "q6",
+     "kind": "numeric",
+     "prompt": "Déphasage correspondant à l'indice horaire 11 (°) ?",
+     "answer": "330",
+     "unit": "",
+     "tolerance": 0.001,
+     "sig": 3
+    }
+   ],
+   "hint": "Pcc = 3 Rs I₂².",
+   "method": "1. I₂ = S/(√3 U₂₀).\n2. Rs depuis l'essai en court-circuit.\n3. ΔV ≈ I(Rs cos φ + Xs sin φ).\n4. η = P₂/(P₂ + P₀ + Pcc).",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$I_2 \\approx$ [[=I2:3|A]] ; $m \\approx 0{,}0205$ ; $R_s \\approx$ [[=Rs*1000:3]] mΩ, $X_s \\approx$ [[=Xs*1000:3]] mΩ."
+    },
+    {
+     "type": "text",
+     "text": "$\\Delta V \\approx$ [[=I2*(Rs*fp+Xs*sqrt(1-fp^2)):3|V]] ; $\\eta \\approx$ [[=100*Sn*1000*fp/(Sn*1000*fp+P0+Pcc):4]] % ; Dyn11 : 11 × 30° = 330°."
+    }
+   ]
+  },
+  {
+   "id": "PB-S-04",
+   "notions": [
+    "S-RA-06",
+    "S-CH-02",
+    "S-SE-02",
+    "S-TR-07"
+   ],
+   "title": "Problème — Site isolé photovoltaïque",
+   "difficulty": 3,
+   "validated": false,
+   "params": {
+    "N": {
+     "unit": "",
+     "values": [
+      6,
+      8,
+      10
+     ]
+    },
+    "Pc": {
+     "unit": "",
+     "values": [
+      400,
+      425
+     ]
+    },
+    "E": {
+     "unit": "",
+     "values": [
+      4,
+      6,
+      8
+     ]
+    },
+    "Cap": {
+     "unit": "",
+     "values": [
+      200,
+      300,
+      400
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un refuge est alimenté par [[N]] panneaux de [[Pc]] Wc et une batterie 48 V de [[Cap]] Ah, décharge autorisée 50 %. Il consomme [[E]] kWh par jour. On compte en moyenne 3,5 h équivalentes de plein soleil par jour en hiver et un rendement global de la chaîne (régulateur, batterie, onduleur) de 0,75."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Puissance crête installée (W) ?",
+     "answer": "N*Pc",
+     "unit": "W",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Énergie produite et utilisable par jour d'hiver (kWh) ?",
+     "answer": "N*Pc*3.5*0.75/1000",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "La production couvre-t-elle la consommation en hiver ?",
+     "choices": [
+      "Oui",
+      "Non"
+     ],
+     "correct": 0,
+     "correctExpr": "1 - (gt(N*Pc*3.5*0.75/1000, E))"
+    },
+    {
+     "id": "q4",
+     "kind": "numeric",
+     "prompt": "Énergie utilisable de la batterie (kWh) ?",
+     "answer": "48*Cap*0.5/1000",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q5",
+     "kind": "numeric",
+     "prompt": "Autonomie sans soleil (jours) ?",
+     "answer": "48*Cap*0.5/1000/E",
+     "unit": "",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q6",
+     "kind": "numeric",
+     "prompt": "Facteur de charge annuel si la production annuelle vaut 1100 kWh par kWc ?",
+     "answer": "1100/8760",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Énergie = Pc × heures équivalentes × rendement.",
+   "method": "Bilan énergétique journalier, puis réserve de la batterie.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$P_c = [[=N*Pc]]$ W ; production utile ≈ [[=N*Pc*3.5*0.75/1000:3]] kWh/j à comparer aux [[E]] kWh consommés."
+    },
+    {
+     "type": "text",
+     "text": "Batterie : [[=48*Cap*0.5/1000:3]] kWh utilisables, soit [[=48*Cap*0.5/1000/E:3]] jour(s) d'autonomie ; facteur de charge ≈ 0,126."
+    }
+   ]
+  },
+  {
+   "id": "PB-S-05",
+   "notions": [
+    "S-CV-04",
+    "S-MO-03",
+    "S-ME-04",
+    "S-ME-05"
+   ],
+   "title": "Problème — Treuil entraîné par une MCC",
+   "difficulty": 3,
+   "validated": false,
+   "params": {
+    "m": {
+     "unit": "",
+     "values": [
+      200,
+      300,
+      500
+     ]
+    },
+    "v": {
+     "unit": "",
+     "values": [
+      0.5,
+      1
+     ]
+    },
+    "r": {
+     "unit": "",
+     "values": [
+      0.1,
+      0.15
+     ]
+    },
+    "k": {
+     "unit": "",
+     "values": [
+      20,
+      25,
+      30
+     ]
+    }
+   },
+   "vars": {
+    "Tt": "m*9.81*r",
+    "Wt": "v/r",
+    "Tm": "m*9.81*r/k",
+    "Wm": "v/r*k",
+    "I": "m*9.81*r/k/2"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un treuil (tambour de rayon [[r]] m) soulève une charge de [[m]] kg à [[v]] m/s constante. Il est entraîné par une MCC à excitation indépendante via un réducteur de rapport $1/[[k]]$ (rendement 1). La MCC a $k_e = 2$ V·s/rad et $R = 0{,}4$ Ω ; elle est alimentée par un hacheur série sous 400 V."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Couple sur le tambour (N·m) ?",
+     "answer": "Tt",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Vitesse angulaire du moteur (rad/s) ?",
+     "answer": "Wm",
+     "unit": "rad/s",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Couple moteur (N·m) ?",
+     "answer": "Tm",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q4",
+     "kind": "numeric",
+     "prompt": "Courant d'induit (A) ?",
+     "answer": "I",
+     "unit": "A",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q5",
+     "kind": "numeric",
+     "prompt": "Tension d'induit (V) ?",
+     "answer": "2*Wm + 0.4*I",
+     "unit": "V",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q6",
+     "kind": "numeric",
+     "prompt": "Rapport cyclique du hacheur ?",
+     "answer": "(2*Wm + 0.4*I)/400",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "À vitesse constante, le couple sur le tambour équilibre le poids : T = mgr.",
+   "method": "1. Équilibre du tambour.\n2. Réducteur : Ωm = kΩt, Tm = Tt/k.\n3. MCC : I = T/kₑ, U = kₑΩ + RI.\n4. Hacheur : α = U/E.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$T_t = mgr \\approx$ [[=Tt:3]] N·m ; $\\Omega_m = k v/r =$ [[=Wm:3|rad/s]] ; $T_m \\approx$ [[=Tm:3]] N·m ; $I \\approx$ [[=I:3|A]]."
+    },
+    {
+     "type": "text",
+     "text": "$U = 2\\Omega_m + 0{,}4I \\approx$ [[=2*Wm+0.4*I:3|V]] ; $\\alpha \\approx$ [[=(2*Wm+0.4*I)/400:3]]."
+    }
+   ]
+  },
+  {
+   "id": "PB-S-06",
+   "notions": [
+    "S-DY-04",
+    "S-PR-05",
+    "S-PR-07",
+    "S-FE-06"
+   ],
+   "title": "Problème — Régulation de température d'une cuve",
+   "difficulty": 3,
+   "validated": false,
+   "params": {
+    "V": {
+     "unit": "",
+     "values": [
+      200,
+      500,
+      1000
+     ]
+    },
+    "dT": {
+     "unit": "",
+     "values": [
+      20,
+      40
+     ]
+    },
+    "Pw": {
+     "unit": "",
+     "values": [
+      9000,
+      18000,
+      24000
+     ]
+    },
+    "t1": {
+     "unit": "",
+     "values": [
+      60,
+      90,
+      120
+     ]
+    },
+    "d": {
+     "unit": "",
+     "values": [
+      30,
+      40
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [
+    "2.8*t1 - 1.8*(t1 + d) > 0"
+   ],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une cuve de [[V]] L d'eau est chauffée par une résistance de [[Pw]] W pilotée par un gradateur. En boucle ouverte, un échelon de commande de 0 à 50 % fait monter la température de [[dT]] °C en régime permanent ; la mesure atteint 28 % de sa variation à $t_1 =$ [[t1]] s et 40 % à $t_2 =$ [[=t1+d]] s."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Gain statique (°C/%) ?",
+     "answer": "dT/50",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Constante de temps de Broïda $T = 5{,}5(t_2 - t_1)$ (s) ?",
+     "answer": "5.5*d",
+     "unit": "s",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Retard $\\tau = 2{,}8t_1 - 1{,}8t_2$ (s) ?",
+     "answer": "2.8*t1 - 1.8*(t1 + d)",
+     "unit": "s",
+     "tolerance": 0.02,
+     "sig": 3
+    },
+    {
+     "id": "q4",
+     "kind": "choice",
+     "prompt": "Sens d'action du régulateur :",
+     "choices": [
+      "inverse",
+      "direct"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q5",
+     "kind": "numeric",
+     "prompt": "Énergie pour élever toute l'eau de 10 °C (kWh) ?",
+     "answer": "V*4180*10/3.6e6",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q6",
+     "kind": "numeric",
+     "prompt": "Durée minimale de cette montée à pleine puissance (min) ?",
+     "answer": "V*4180*10/Pw/60",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Plus de chauffe → plus de température : procédé direct.",
+   "method": "Identification de Broïda, sens du régulateur, puis bilan thermique ΔU = mcΔθ.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$K = [[dT]]/50 =$ [[=dT/50:3]] °C/% ; $T = [[=5.5*d]]$ s ; $\\tau \\approx$ [[=2.8*t1-1.8*(t1+d):3]] s ; régulateur inverse."
+    },
+    {
+     "type": "text",
+     "text": "$\\Delta U = [[V]] \\times 4180 \\times 10 \\approx$ [[=V*4180*10/3.6e6:3]] kWh ; durée ≥ [[=V*4180*10/Pw/60:3]] min."
+    }
+   ]
+  },
+  {
+   "id": "PB-S-07",
+   "notions": [
+    "S-EL-13",
+    "S-QE-03",
+    "S-EL-15",
+    "S-MO-04"
+   ],
+   "title": "Problème — Pollution harmonique d'un bureau",
+   "difficulty": 3,
+   "validated": false,
+   "params": {
+    "I1": {
+     "unit": "",
+     "values": [
+      20,
+      30,
+      40
+     ]
+    },
+    "r3": {
+     "unit": "",
+     "values": [
+      0.5,
+      0.7
+     ]
+    },
+    "r5": {
+     "unit": "",
+     "values": [
+      0.2,
+      0.3
+     ]
+    }
+   },
+   "vars": {
+    "I3": "I1*r3",
+    "I5": "I1*r5",
+    "I": "I1*sqrt(1 + r3^2 + r5^2)"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un étage de bureaux (ordinateurs, éclairage LED) est alimenté en 400 V triphasé avec neutre. Dans chaque phase : fondamental [[I1]] A, harmonique 3 égal à [[r3]] fois le fondamental, harmonique 5 égal à [[r5]] fois le fondamental. Le fondamental est en phase avec la tension simple."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Valeur efficace du courant de phase (A) ?",
+     "answer": "I",
+     "unit": "A",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "THD du courant, en % ?",
+     "answer": "100*sqrt(r3^2 + r5^2)",
+     "unit": "%",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Courant dans le neutre (A) ?",
+     "answer": "3*I3",
+     "unit": "A",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q4",
+     "kind": "numeric",
+     "prompt": "Puissance active totale (W) ?",
+     "answer": "3*230*I1",
+     "unit": "W",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q5",
+     "kind": "numeric",
+     "prompt": "Facteur de puissance $P/S$ ?",
+     "answer": "I1/I",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q6",
+     "kind": "numeric",
+     "prompt": "Inductance d'un filtre accordé sur l'harmonique 3 avec C = 100 µF (mH) ?",
+     "answer": "1000/((2*pi*150)^2*100e-6)",
+     "unit": "",
+     "tolerance": 0.02,
+     "sig": 3
+    }
+   ],
+   "hint": "Seul le fondamental (en phase avec la tension) transporte la puissance active.",
+   "method": "Parseval, THD, harmoniques de rang 3 dans le neutre, puis fp = P/S avec S = 3VI.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$I \\approx$ [[=I:3|A]] ; THD ≈ [[=100*sqrt(r3^2+r5^2):3]] % ; $I_N = 3I_3 =$ [[=3*I3:3|A]] (supérieur au courant de phase !)."
+    },
+    {
+     "type": "text",
+     "text": "$P = 3 \\times 230 \\times [[I1]] =$ [[=3*230*I1|W]] ; $f_p = I_1/I \\approx$ [[=I1/I:3]] ; filtre : $L \\approx$ [[=1000/((2*pi*150)^2*100e-6):3]] mH."
+    }
+   ]
+  },
+  {
+   "id": "PB-S-08",
+   "notions": [
+    "S-ME-10",
+    "S-SE-02",
+    "S-MO-09",
+    "S-MO-05"
+   ],
+   "title": "Problème — Éolienne raccordée au réseau",
+   "difficulty": 3,
+   "validated": false,
+   "params": {
+    "R": {
+     "unit": "",
+     "values": [
+      40,
+      50,
+      60
+     ]
+    },
+    "v": {
+     "unit": "",
+     "values": [
+      10,
+      12
+     ]
+    },
+    "Cp": {
+     "unit": "",
+     "values": [
+      0.42,
+      0.45
+     ]
+    },
+    "Fc": {
+     "unit": "",
+     "values": [
+      0.22,
+      0.25,
+      0.3
+     ]
+    }
+   },
+   "vars": {
+    "Pv": "0.5*1.2*pi*R^2*v^3"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une éolienne de rotor de rayon [[R]] m fonctionne sous un vent de [[v]] m/s (ρ = 1,2 kg/m³), coefficient de puissance $C_p =$ [[Cp]]. Elle est raccordée par un transformateur 690 V / 20 kV."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Puissance du vent traversant le rotor (MW) ?",
+     "answer": "Pv/1e6",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Puissance récupérée (MW) ?",
+     "answer": "Cp*Pv/1e6",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Rapport $C_p$ / limite de Betz ?",
+     "answer": "Cp*27/16",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q4",
+     "kind": "numeric",
+     "prompt": "Courant côté 20 kV pour cette puissance, cos φ = 1 (A) ?",
+     "answer": "Cp*Pv/(sqrt(3)*20000)",
+     "unit": "A",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q5",
+     "kind": "numeric",
+     "prompt": "Production annuelle avec un facteur de charge de [[Fc]], pour une puissance nominale égale à la puissance récupérée (MWh) ?",
+     "answer": "Cp*Pv/1e6*8760*Fc",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "P = ½ρπR²v³.",
+   "method": "Puissance du vent, Cp, Betz (16/27), puis transport et facteur de charge.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$P_{vent} \\approx$ [[=Pv/1e6:3]] MW ; récupérée ≈ [[=Cp*Pv/1e6:3]] MW, soit [[=Cp*27/16:3]] de la limite de Betz."
+    },
+    {
+     "type": "text",
+     "text": "$I \\approx$ [[=Cp*Pv/(sqrt(3)*20000):3|A]] ; production ≈ [[=Cp*Pv/1e6*8760*Fc:4]] MWh/an."
+    }
+   ]
+  }
+ ]
+}

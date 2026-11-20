@@ -7,6 +7,7 @@
   "packs/maths-fourier-integrales-equadiff.json",
   "packs/maths-probabilites-algorithmique.json",
   "packs/sciences-demarche-incertitudes.json",
-  "packs/sciences-energie.json"
+  "packs/sciences-energie.json",
+  "packs/sciences-electricite.json"
  ]
 }

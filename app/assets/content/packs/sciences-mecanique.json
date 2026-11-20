@@ -1,0 +1,1735 @@
+{
+ "id": "sciences-mecanique",
+ "courses": [
+  {
+   "id": "C-ME-01",
+   "notions": [
+    "S-ME-01"
+   ],
+   "title": "Cinématique et transformation de mouvement",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "v = \\frac{dx}{dt} \\qquad a = \\frac{dv}{dt} \\qquad \\Omega = \\frac{d\\theta}{dt}",
+     "title": "Translation et rotation"
+    },
+    {
+     "type": "formula",
+     "tex": "x = \\tfrac12 a t^2 + v_0 t + x_0 \\qquad v = a t + v_0",
+     "title": "Mouvement uniformément accéléré"
+    },
+    {
+     "type": "formula",
+     "tex": "v = R\\,\\Omega \\;\\text{(poulie, tambour)} \\qquad v = \\frac{p\\,n}{60} \\;\\text{(vis de pas p)}",
+     "title": "Transformation rotation → translation"
+    },
+    {
+     "type": "formula",
+     "tex": "k = \\frac{n_s}{n_e} = \\frac{d_e}{d_s} = \\frac{Z_e}{Z_s}",
+     "title": "Réducteur ou poulies-courroie"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : un tambour de rayon 0,2 m tourne à 30 rad/s : le câble monte à 6 m/s. Un moteur à 1500 tr/min avec un réducteur de rapport 1/25 entraîne l'arbre de sortie à 60 tr/min."
+    },
+    {
+     "type": "warning",
+     "text": "Convertir les tr/min en rad/s : $\\Omega = 2\\pi n/60$.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-ME-02",
+   "notions": [
+    "S-ME-02"
+   ],
+   "title": "Forces, moments et capteurs",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Une action mécanique se modélise par une **force** : point d'application, direction, sens, intensité (en newtons). Le poids vaut $P = mg$."
+    },
+    {
+     "type": "formula",
+     "tex": "M = F \\times d",
+     "title": "Moment d'une force par rapport à un axe (d : bras de levier, distance de l'axe à la droite d'action)"
+    },
+    {
+     "type": "text",
+     "text": "Un couple de serrage de 20 N·m obtenu avec une clé de 0,4 m demande une force de 50 N."
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Grandeur",
+       "Capteur"
+      ],
+      [
+       "position",
+       "codeur incrémental ou absolu, potentiomètre, capteur inductif"
+      ],
+      [
+       "vitesse",
+       "génératrice tachymétrique, codeur"
+      ],
+      [
+       "force",
+       "jauges de contrainte (pesons)"
+      ],
+      [
+       "couple",
+       "couplemètre à jauges sur l'arbre"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C-ME-03",
+   "notions": [
+    "S-ME-03"
+   ],
+   "title": "Caractéristique mécanique d'une charge",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "La **caractéristique mécanique** d'une charge est son couple résistant en fonction de la vitesse, $T_r(n)$. Elle se relève au banc avec un couplemètre (ou à partir de la puissance mesurée)."
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Charge",
+       "Couple résistant",
+       "Exemples"
+      ],
+      [
+       "couple constant",
+       "$T_r = $ cte",
+       "levage, convoyeur"
+      ],
+      [
+       "couple proportionnel à la vitesse",
+       "$T_r = an$",
+       "pompe volumétrique, frottements visqueux"
+      ],
+      [
+       "couple quadratique",
+       "$T_r = bn^2$",
+       "ventilateur, pompe centrifuge"
+      ],
+      [
+       "puissance constante",
+       "$T_r = c/n$",
+       "enrouleuse, machine-outil"
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "text": "Pour un ventilateur, réduire la vitesse de 20 % réduit le couple de 36 % et la puissance de près de 50 % : d'où l'intérêt des variateurs."
+    }
+   ]
+  },
+  {
+   "id": "C-ME-04",
+   "notions": [
+    "S-ME-04"
+   ],
+   "title": "Principe fondamental de la dynamique",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "\\sum F = m\\,a \\qquad \\sum T = J\\,\\frac{d\\Omega}{dt}",
+     "title": "Translation et rotation"
+    },
+    {
+     "type": "text",
+     "text": "En rotation, la somme des couples appliqués (moteur moins résistant) est égale au moment d'inertie fois l'accélération angulaire. En régime permanent ($\\Omega$ constante), couple moteur = couple résistant."
+    },
+    {
+     "type": "formula",
+     "tex": "T_m - T_r = J\\frac{\\Delta\\Omega}{\\Delta t}",
+     "title": "Démarrage à accélération constante"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : $J = 0{,}5$ kg·m², démarrage de 0 à 157 rad/s en 2 s contre $T_r = 10$ N·m : $T_m = 10 + 0{,}5 \\times 78{,}5 = 49{,}3$ N·m."
+    },
+    {
+     "type": "tip",
+     "text": "Le moment d'inertie ramené sur l'arbre moteur d'une charge derrière un réducteur de rapport $k$ est $J k^2$.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-ME-05",
+   "notions": [
+    "S-ME-05"
+   ],
+   "title": "Travail, énergie mécanique, puissance",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "W = F\\,d\\cos\\alpha \\qquad W = T\\,\\theta",
+     "title": "Travail d'une force et d'un couple constants"
+    },
+    {
+     "type": "formula",
+     "tex": "E_m = E_c + E_p \\qquad \\Delta E_m = W_{\\text{forces non conservatives}}",
+     "title": "Énergie mécanique"
+    },
+    {
+     "type": "text",
+     "text": "Sans frottement, l'énergie mécanique se **conserve** : une charge qui tombe convertit son énergie potentielle en énergie cinétique."
+    },
+    {
+     "type": "formula",
+     "tex": "P = F\\,v = T\\,\\Omega",
+     "title": "Puissance"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : un monte-charge élève 500 kg de 10 m en 20 s : $W = 500 \\times 9{,}81 \\times 10 \\approx 49$ kJ, $P \\approx 2{,}45$ kW (hors pertes)."
+    }
+   ]
+  },
+  {
+   "id": "C-ME-06",
+   "notions": [
+    "S-ME-06"
+   ],
+   "title": "Fluides : pression, débit, puissance hydraulique",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "text",
+     "text": "Un liquide est pratiquement **incompressible** (masse volumique constante) ; un gaz est **compressible**."
+    },
+    {
+     "type": "formula",
+     "tex": "p = \\frac{F}{S} \\qquad 1\\ \\mathrm{bar} = 10^5\\ \\mathrm{Pa}",
+     "title": "Pression"
+    },
+    {
+     "type": "text",
+     "text": "**Pression absolue** = pression relative (lue au manomètre) + pression atmosphérique (≈ 1,013 bar)."
+    },
+    {
+     "type": "formula",
+     "tex": "Q_v = v\\,S \\qquad Q_m = \\rho\\,Q_v \\qquad P_h = \\Delta p\\,Q_v",
+     "title": "Débits et puissance hydraulique"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : une pompe fournit 36 m³/h (0,01 m³/s) sous 4 bar : $P_h = 4\\times10^5 \\times 0{,}01 = 4$ kW."
+    },
+    {
+     "type": "tip",
+     "text": "Capteurs : transmetteur de pression (membrane), débitmètre électromagnétique ou à ultrasons, sonde de niveau hydrostatique.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-ME-07",
+   "notions": [
+    "S-ME-07"
+   ],
+   "title": "Statique des fluides",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "p_B - p_A = \\rho\\,g\\,(z_A - z_B)",
+     "title": "Équation fondamentale de la statique des fluides"
+    },
+    {
+     "type": "text",
+     "text": "Dans un liquide au repos, la pression augmente avec la profondeur : environ **1 bar tous les 10 m d'eau**. Elle ne dépend que de la profondeur, pas de la forme du récipient."
+    },
+    {
+     "type": "text",
+     "text": "Exemple : au fond d'une cuve de 4 m d'eau, la pression relative vaut $1000 \\times 9{,}81 \\times 4 \\approx 0{,}39$ bar. Une sonde de pression au fond mesure donc le **niveau**."
+    },
+    {
+     "type": "tip",
+     "text": "Un château d'eau de 40 m fournit environ 4 bar au robinet.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-ME-08",
+   "notions": [
+    "S-ME-08"
+   ],
+   "title": "Dynamique des fluides incompressibles",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "Q_v = v_1 S_1 = v_2 S_2",
+     "title": "Équation de continuité"
+    },
+    {
+     "type": "formula",
+     "tex": "p_1 + \\tfrac12\\rho v_1^2 + \\rho g z_1 + \\frac{P_{pompe}}{Q_v} = p_2 + \\tfrac12\\rho v_2^2 + \\rho g z_2 + \\Delta p_{pertes}",
+     "title": "Bernoulli généralisé (forme énergétique, en pression)"
+    },
+    {
+     "type": "text",
+     "text": "La **viscosité** caractérise la résistance d'un fluide à l'écoulement ; elle provoque des **pertes de charge** : régulières (le long des tuyaux, croissent avec la longueur et la vitesse) et singulières (coudes, vannes, filtres)."
+    },
+    {
+     "type": "text",
+     "text": "Exemple : un tuyau passe de 50 mm à 25 mm de diamètre ; la section est divisée par 4, la vitesse multipliée par 4."
+    },
+    {
+     "type": "warning",
+     "text": "Les pertes de charge croissent à peu près comme le carré du débit.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-ME-09",
+   "notions": [
+    "S-ME-09"
+   ],
+   "title": "Pompes et turbines",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Machine",
+       "Technologie",
+       "Domaine"
+      ],
+      [
+       "pompe centrifuge",
+       "roue à aubes",
+       "gros débits, eau, climatisation, process"
+      ],
+      [
+       "pompe volumétrique",
+       "pistons, engrenages, vis",
+       "fortes pressions, fluides visqueux, dosage"
+      ],
+      [
+       "turbine Pelton",
+       "augets, jet libre",
+       "hautes chutes"
+      ],
+      [
+       "turbine Francis",
+       "roue fermée",
+       "chutes moyennes"
+      ],
+      [
+       "turbine Kaplan",
+       "hélice à pales orientables",
+       "basses chutes, gros débits"
+      ]
+     ]
+    },
+    {
+     "type": "formula",
+     "tex": "P_h = \\rho\\,g\\,H\\,Q_v \\qquad P_{abs} = \\frac{P_h}{\\eta} \\;\\text{(pompe)} \\qquad P_u = \\eta\\,\\rho g H Q_v \\;\\text{(turbine)}",
+     "title": "Dimensionnement (H : hauteur manométrique ou chute)"
+    },
+    {
+     "type": "text",
+     "text": "Exemple : turbine sous 100 m de chute, 2 m³/s, η = 0,9 : $P \\approx 0{,}9 \\times 1000 \\times 9{,}81 \\times 100 \\times 2 \\approx 1{,}77$ MW."
+    },
+    {
+     "type": "tip",
+     "text": "Le point de fonctionnement d'une pompe est l'intersection de sa courbe H(Q) et de la courbe du réseau.",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "id": "C-ME-10",
+   "notions": [
+    "S-ME-10"
+   ],
+   "title": "Éoliennes et loi de Betz",
+   "validated": false,
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "P_{vent} = \\tfrac12\\,\\rho\\,S\\,v^3",
+     "title": "Puissance du vent traversant la surface balayée S (ρ air ≈ 1,2 kg/m³)"
+    },
+    {
+     "type": "formula",
+     "tex": "P_{max} = \\frac{16}{27}P_{vent} \\approx 0{,}59\\,P_{vent}",
+     "title": "Limite de Betz"
+    },
+    {
+     "type": "formula",
+     "tex": "P = C_p \\cdot \\tfrac12\\rho S v^3 \\qquad S = \\pi R^2",
+     "title": "Puissance récupérée (C_p : coefficient de puissance < 0,59)"
+    },
+    {
+     "type": "text",
+     "text": "La puissance varie comme le **cube** de la vitesse du vent et comme le **carré** du rayon des pales. Une éolienne réelle a $C_p \\approx 0{,}4$ à 0,5."
+    },
+    {
+     "type": "text",
+     "text": "Exemple : pales de 40 m, vent de 10 m/s : $P_{vent} = 0{,}5 \\times 1{,}2 \\times 5027 \\times 1000 \\approx 3$ MW ; avec $C_p = 0{,}45$ : 1,36 MW."
+    }
+   ]
+  }
+ ],
+ "examples": [],
+ "exercises": [
+  {
+   "id": "X-ME-01-a",
+   "notions": [
+    "S-ME-01"
+   ],
+   "title": "Tambour de levage",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "R": {
+     "unit": "",
+     "values": [
+      0.1,
+      0.15,
+      0.2,
+      0.25
+     ]
+    },
+    "n": {
+     "unit": "",
+     "values": [
+      30,
+      60,
+      100
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un tambour de rayon [[R]] m tourne à [[n]] tr/min et enroule un câble."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Vitesse angulaire (rad/s) ?",
+     "answer": "2*pi*n/60",
+     "unit": "rad/s",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Vitesse de montée du câble (m/s) ?",
+     "answer": "R*2*pi*n/60",
+     "unit": "m/s",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "v = RΩ.",
+   "method": "Convertir puis multiplier par le rayon.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\Omega \\approx$ [[=2*pi*n/60:3|rad/s]] ; $v \\approx$ [[=R*2*pi*n/60:3|m/s]]."
+    }
+   ]
+  },
+  {
+   "id": "X-ME-01-b",
+   "notions": [
+    "S-ME-01"
+   ],
+   "title": "Accélération d'un convoyeur",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "v": {
+     "unit": "",
+     "values": [
+      0.5,
+      1,
+      1.5,
+      2
+     ]
+    },
+    "t": {
+     "unit": "",
+     "values": [
+      1,
+      2,
+      4
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un convoyeur atteint [[v]] m/s en [[t]] s depuis l'arrêt, à accélération constante."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Accélération (m/s²) ?",
+     "answer": "v/t",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Distance parcourue pendant le démarrage (m) ?",
+     "answer": "v*t/2",
+     "unit": "m",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "a = v/t ; x = ½at².",
+   "method": "Mouvement uniformément accéléré.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$a = [[v]]/[[t]] =$ [[=v/t:3]] m/s² ; $x = \\frac12 a t^2 =$ [[=v*t/2:3|m]]."
+    }
+   ]
+  },
+  {
+   "id": "X-ME-02-a",
+   "notions": [
+    "S-ME-02"
+   ],
+   "title": "Moment d'une force",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "F": {
+     "unit": "",
+     "values": [
+      50,
+      100,
+      200
+     ]
+    },
+    "d": {
+     "unit": "",
+     "values": [
+      0.2,
+      0.3,
+      0.5
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On exerce une force de [[F]] N perpendiculairement à une clé, à [[d]] m de l'axe."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Moment (N·m) ?",
+     "answer": "F*d",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Force nécessaire pour le même moment avec une clé deux fois plus longue (N) ?",
+     "answer": "F/2",
+     "unit": "N",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "M = F × d.",
+   "method": "Bras de levier.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$M = [[F]] \\times [[d]] =$ [[=F*d]] N·m ; deux fois plus long → [[=F/2]] N."
+    }
+   ]
+  },
+  {
+   "id": "X-ME-02-b",
+   "notions": [
+    "S-ME-02"
+   ],
+   "title": "Choisir un capteur",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Pour mesurer la position angulaire d'un arbre :",
+     "choices": [
+      "un codeur",
+      "une jauge de contrainte",
+      "une sonde Pt100"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Un peson mesure une force grâce à :",
+     "choices": [
+      "des jauges de contrainte",
+      "un effet Hall",
+      "un thermocouple"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Une génératrice tachymétrique mesure :",
+     "choices": [
+      "une vitesse de rotation",
+      "un couple",
+      "une pression"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Associer grandeur et principe.",
+   "method": "Capteurs mécaniques.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Codeur, jauges de contrainte, tachymétrie."
+    }
+   ]
+  },
+  {
+   "id": "X-ME-03-a",
+   "notions": [
+    "S-ME-03"
+   ],
+   "title": "Charge quadratique",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "T1": {
+     "unit": "",
+     "values": [
+      20,
+      40,
+      60
+     ]
+    },
+    "k": {
+     "unit": "",
+     "values": [
+      0.5,
+      0.7,
+      0.8
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un ventilateur demande [[T1]] N·m à sa vitesse nominale. On réduit la vitesse à [[k]] fois la nominale."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Nouveau couple (N·m) ?",
+     "answer": "T1*k^2",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Rapport des puissances (nouvelle/nominale) ?",
+     "answer": "k^3",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "T ∝ n² ; P = TΩ ∝ n³.",
+   "method": "Proportionnalités d'une charge quadratique.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$T = [[T1]] \\times [[k]]^2 =$ [[=T1*k^2:3]] N·m ; $P$ multipliée par [[=k^3:3]]."
+    }
+   ]
+  },
+  {
+   "id": "X-ME-03-b",
+   "notions": [
+    "S-ME-03"
+   ],
+   "title": "Reconnaître une charge",
+   "difficulty": 1,
+   "validated": false,
+   "params": {},
+   "vars": {},
+   "constraints": [],
+   "statement": [],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "choice",
+     "prompt": "Un treuil de levage est une charge à :",
+     "choices": [
+      "couple constant",
+      "couple quadratique",
+      "puissance constante"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Une pompe centrifuge est une charge à :",
+     "choices": [
+      "couple quadratique",
+      "couple constant",
+      "couple nul"
+     ],
+     "correct": 0
+    },
+    {
+     "id": "q3",
+     "kind": "choice",
+     "prompt": "Une enrouleuse (tension de bande constante) est une charge à :",
+     "choices": [
+      "puissance constante",
+      "couple quadratique",
+      "couple constant"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "Le poids à lever ne dépend pas de la vitesse.",
+   "method": "Familles de charges.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Levage : couple constant ; pompe centrifuge : quadratique ; enrouleuse : puissance constante."
+    }
+   ]
+  },
+  {
+   "id": "X-ME-04-a",
+   "notions": [
+    "S-ME-04"
+   ],
+   "title": "Couple de démarrage",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "J": {
+     "unit": "",
+     "values": [
+      0.1,
+      0.5,
+      1,
+      2
+     ]
+    },
+    "n": {
+     "unit": "",
+     "values": [
+      1000,
+      1500,
+      3000
+     ]
+    },
+    "t": {
+     "unit": "",
+     "values": [
+      1,
+      2,
+      5
+     ]
+    },
+    "Tr": {
+     "unit": "",
+     "values": [
+      5,
+      10,
+      20
+     ]
+    }
+   },
+   "vars": {
+    "acc": "2*pi*n/60/t"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un ensemble d'inertie [[J]] kg·m² doit atteindre [[n]] tr/min en [[t]] s (accélération constante) contre un couple résistant de [[Tr]] N·m."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Accélération angulaire (rad/s²) ?",
+     "answer": "acc",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Couple moteur nécessaire (N·m) ?",
+     "answer": "Tr + J*acc",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Tm − Tr = J dΩ/dt.",
+   "method": "PFD en rotation.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\dfrac{d\\Omega}{dt} \\approx$ [[=acc:3]] rad/s² ; $T_m = [[Tr]] + [[J]] \\times$ [[=acc:3]] ≈ [[=Tr+J*acc:3]] N·m."
+    }
+   ]
+  },
+  {
+   "id": "X-ME-04-b",
+   "notions": [
+    "S-ME-04"
+   ],
+   "title": "Force de levage",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "m": {
+     "unit": "",
+     "values": [
+      100,
+      250,
+      500,
+      1000
+     ]
+    },
+    "a": {
+     "unit": "",
+     "values": [
+      0,
+      0.5,
+      1
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un câble soulève une charge de [[m]] kg avec une accélération de [[a]] m/s² vers le haut ($g = 9{,}81$ m/s²)."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Tension du câble (N) ?",
+     "answer": "m*(9.81 + a)",
+     "unit": "N",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "À vitesse constante, la tension du câble est :",
+     "choices": [
+      "égale au poids",
+      "nulle",
+      "supérieure au poids"
+     ],
+     "correct": 0
+    }
+   ],
+   "hint": "T − mg = ma.",
+   "method": "PFD en translation.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$T = m(g + a) =$ [[=m*(9.81+a):4|N]] ; à vitesse constante, $T = mg$."
+    }
+   ]
+  },
+  {
+   "id": "X-ME-05-a",
+   "notions": [
+    "S-ME-05"
+   ],
+   "title": "Monte-charge",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "m": {
+     "unit": "",
+     "values": [
+      200,
+      500,
+      800
+     ]
+    },
+    "h": {
+     "unit": "",
+     "values": [
+      5,
+      10,
+      15
+     ]
+    },
+    "t": {
+     "unit": "",
+     "values": [
+      10,
+      20,
+      30
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un monte-charge élève [[m]] kg de [[h]] m en [[t]] s à vitesse constante."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Travail du poids (J) ?",
+     "answer": "-m*9.81*h",
+     "unit": "J",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Puissance mécanique minimale (W) ?",
+     "answer": "m*9.81*h/t",
+     "unit": "W",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Le poids est résistant : son travail est négatif.",
+   "method": "W = −mgh ; P = mgh/t.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$W_P = -mgh \\approx$ [[=-m*9.81*h:4|J]] ; $P \\approx$ [[=m*9.81*h/t:3|W]]."
+    }
+   ]
+  },
+  {
+   "id": "X-ME-05-b",
+   "notions": [
+    "S-ME-05"
+   ],
+   "title": "Conservation de l'énergie mécanique",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "h": {
+     "unit": "",
+     "values": [
+      1,
+      2,
+      5,
+      10
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une charge tombe en chute libre d'une hauteur de [[h]] m sans frottement, depuis l'arrêt."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Vitesse en bas (m/s) ?",
+     "answer": "sqrt(2*9.81*h)",
+     "unit": "m/s",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Travail d'un couple de 30 N·m sur 10 tours (J) ?",
+     "answer": "30*20*pi",
+     "unit": "J",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "mgh = ½mv² ; W = Tθ avec θ en radians.",
+   "method": "Conservation de l'énergie, travail d'un couple.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$v = \\sqrt{2gh} \\approx$ [[=sqrt(2*9.81*h):3|m/s]] ; $W = 30 \\times 20\\pi \\approx$ [[=600*pi:4|J]]."
+    }
+   ]
+  },
+  {
+   "id": "X-ME-06-a",
+   "notions": [
+    "S-ME-06"
+   ],
+   "title": "Puissance hydraulique d'une pompe",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "Q": {
+     "unit": "",
+     "values": [
+      10,
+      36,
+      72,
+      100
+     ]
+    },
+    "p": {
+     "unit": "",
+     "values": [
+      2,
+      4,
+      6
+     ]
+    },
+    "eta": {
+     "unit": "",
+     "values": [
+      0.6,
+      0.7,
+      0.75
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une pompe débite [[Q]] m³/h sous une différence de pression de [[p]] bar, rendement [[eta]]."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Débit en m³/s ?",
+     "answer": "Q/3600",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Puissance hydraulique (W) ?",
+     "answer": "p*1e5*Q/3600",
+     "unit": "W",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Puissance absorbée sur l'arbre (W) ?",
+     "answer": "p*1e5*Q/3600/eta",
+     "unit": "W",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Ph = Δp Qv ; 1 bar = 10⁵ Pa.",
+   "method": "Convertir, puis appliquer.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$Q_v \\approx$ [[=Q/3600:3]] m³/s ; $P_h \\approx$ [[=p*1e5*Q/3600:3|W]] ; $P_a \\approx$ [[=p*1e5*Q/3600/eta:3|W]]."
+    }
+   ]
+  },
+  {
+   "id": "X-ME-06-b",
+   "notions": [
+    "S-ME-06"
+   ],
+   "title": "Pression absolue et vitesse",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "pr": {
+     "unit": "",
+     "values": [
+      1,
+      3,
+      6
+     ]
+    },
+    "Q": {
+     "unit": "",
+     "values": [
+      0.001,
+      0.002,
+      0.005
+     ]
+    },
+    "d": {
+     "unit": "",
+     "values": [
+      0.02,
+      0.05
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un manomètre indique [[pr]] bar (relatif). Dans un tuyau de diamètre [[d]] m circule [[Q]] m³/s."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Pression absolue (bar) ?",
+     "answer": "pr + 1.013",
+     "unit": "",
+     "tolerance": 0.005,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Vitesse moyenne du fluide (m/s) ?",
+     "answer": "Q/(pi*d^2/4)",
+     "unit": "m/s",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "p_abs = p_rel + p_atm ; v = Q/S.",
+   "method": "Définitions.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$p_{abs} \\approx$ [[=pr+1.013:4]] bar ; $v = Q/S \\approx$ [[=Q/(pi*d^2/4):3|m/s]]."
+    }
+   ]
+  },
+  {
+   "id": "X-ME-07-a",
+   "notions": [
+    "S-ME-07"
+   ],
+   "title": "Pression au fond d'une cuve",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "h": {
+     "unit": "",
+     "values": [
+      2,
+      4,
+      6,
+      10
+     ]
+    },
+    "rho": {
+     "unit": "",
+     "values": [
+      1000,
+      850,
+      1200
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une cuve contient [[h]] m d'un liquide de masse volumique [[rho]] kg/m³."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Pression relative au fond (Pa) ?",
+     "answer": "rho*9.81*h",
+     "unit": "Pa",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "En bar ?",
+     "answer": "rho*9.81*h/1e5",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Δp = ρgh.",
+   "method": "Équation fondamentale de la statique.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$p = [[rho]] \\times 9{,}81 \\times [[h]] \\approx$ [[=rho*9.81*h|Pa]] = [[=rho*9.81*h/1e5:3]] bar."
+    }
+   ]
+  },
+  {
+   "id": "X-ME-07-b",
+   "notions": [
+    "S-ME-07"
+   ],
+   "title": "Mesure de niveau",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "p": {
+     "unit": "",
+     "values": [
+      0.2,
+      0.3,
+      0.5
+     ]
+    },
+    "rho": {
+     "unit": "",
+     "values": [
+      1000,
+      900
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un capteur de pression au fond d'un réservoir indique [[p]] bar (relatif) ; le liquide a une masse volumique de [[rho]] kg/m³."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Hauteur de liquide (m) ?",
+     "answer": "p*1e5/(rho*9.81)",
+     "unit": "m",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "h = p/(ρg).",
+   "method": "Inverser la loi de la statique.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$h = \\dfrac{[[p]] \\times 10^5}{[[rho]] \\times 9{,}81} \\approx$ [[=p*1e5/(rho*9.81):3|m]]."
+    }
+   ]
+  },
+  {
+   "id": "X-ME-08-a",
+   "notions": [
+    "S-ME-08"
+   ],
+   "title": "Continuité",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "d1": {
+     "unit": "",
+     "values": [
+      50,
+      80,
+      100
+     ]
+    },
+    "k": {
+     "unit": "",
+     "values": [
+      2,
+      2.5,
+      4
+     ]
+    },
+    "v1": {
+     "unit": "",
+     "values": [
+      0.5,
+      1,
+      1.5
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Un tuyau de diamètre [[d1]] mm où l'eau circule à [[v1]] m/s se rétrécit à un diamètre [[k]] fois plus petit."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Vitesse dans la partie étroite (m/s) ?",
+     "answer": "v1*k^2",
+     "unit": "m/s",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Débit (L/s) ?",
+     "answer": "v1*pi*(d1/1000)^2/4*1000",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "v₁S₁ = v₂S₂ ; S ∝ d².",
+   "method": "Équation de continuité.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$v_2 = v_1 k^2 =$ [[=v1*k^2:3|m/s]] ; $Q \\approx$ [[=v1*pi*(d1/1000)^2/4*1000:3]] L/s."
+    }
+   ]
+  },
+  {
+   "id": "X-ME-08-b",
+   "notions": [
+    "S-ME-08"
+   ],
+   "title": "Bernoulli : pompe de relevage",
+   "difficulty": 3,
+   "validated": false,
+   "params": {
+    "z": {
+     "unit": "",
+     "values": [
+      10,
+      20,
+      30
+     ]
+    },
+    "Q": {
+     "unit": "",
+     "values": [
+      0.01,
+      0.02,
+      0.05
+     ]
+    },
+    "dp": {
+     "unit": "",
+     "values": [
+      0.2,
+      0.5
+     ]
+    }
+   },
+   "vars": {
+    "P": "(1000*9.81*z + dp*1e5)*Q"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une pompe élève de l'eau de [[z]] m entre deux bassins à l'air libre (vitesses négligeables). Débit [[Q]] m³/s ; pertes de charge [[dp]] bar."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Différence de pression à fournir (Pa) ?",
+     "answer": "1000*9.81*z + dp*1e5",
+     "unit": "Pa",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Puissance hydraulique de la pompe (W) ?",
+     "answer": "P",
+     "unit": "W",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Bernoulli : P/Q = ρg(z₂ − z₁) + Δp pertes.",
+   "method": "Bernoulli généralisé avec pompe.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$\\Delta p \\approx$ [[=1000*9.81*z+dp*1e5|Pa]] ; $P \\approx$ [[=P:3|W]]."
+    }
+   ]
+  },
+  {
+   "id": "X-ME-09-a",
+   "notions": [
+    "S-ME-09"
+   ],
+   "title": "Puissance d'une turbine",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "H": {
+     "unit": "",
+     "values": [
+      20,
+      50,
+      100,
+      400
+     ]
+    },
+    "Q": {
+     "unit": "",
+     "values": [
+      0.5,
+      1,
+      2,
+      10
+     ]
+    },
+    "eta": {
+     "unit": "",
+     "values": [
+      0.85,
+      0.9
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une turbine reçoit [[Q]] m³/s d'eau sous une chute de [[H]] m, rendement [[eta]]."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Puissance utile (W) ?",
+     "answer": "eta*1000*9.81*H*Q",
+     "unit": "W",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "choice",
+     "prompt": "Type de turbine adapté :",
+     "choices": [
+      "Pelton",
+      "Francis",
+      "Kaplan"
+     ],
+     "correct": 0,
+     "correctExpr": "gt(H, 200)"
+    }
+   ],
+   "hint": "P = ηρgHQ ; Pelton pour les hautes chutes.",
+   "method": "Puissance hydraulique et choix technologique.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$P \\approx$ [[=eta*1000*9.81*H*Q:3|W]]. Pelton : hautes chutes ; Francis : moyennes ; Kaplan : basses."
+    }
+   ]
+  },
+  {
+   "id": "X-ME-09-b",
+   "notions": [
+    "S-ME-09"
+   ],
+   "title": "Dimensionner une pompe",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "H": {
+     "unit": "",
+     "values": [
+      15,
+      30,
+      50
+     ]
+    },
+    "Q": {
+     "unit": "",
+     "values": [
+      18,
+      36,
+      54
+     ]
+    },
+    "eta": {
+     "unit": "",
+     "values": [
+      0.65,
+      0.7,
+      0.75
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On veut une pompe de [[Q]] m³/h pour une hauteur manométrique de [[H]] m, rendement [[eta]]."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Puissance hydraulique (W) ?",
+     "answer": "1000*9.81*H*Q/3600",
+     "unit": "W",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Puissance du moteur à prévoir (W) ?",
+     "answer": "1000*9.81*H*Q/3600/eta",
+     "unit": "W",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "Ph = ρgHQ ; P moteur = Ph/η.",
+   "method": "Puissance hydraulique puis rendement.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$P_h \\approx$ [[=1000*9.81*H*Q/3600:3|W]] ; $P_{moteur} \\approx$ [[=1000*9.81*H*Q/3600/eta:3|W]]."
+    }
+   ]
+  },
+  {
+   "id": "X-ME-10-a",
+   "notions": [
+    "S-ME-10"
+   ],
+   "title": "Puissance d'une éolienne",
+   "difficulty": 2,
+   "validated": false,
+   "params": {
+    "R": {
+     "unit": "",
+     "values": [
+      20,
+      40,
+      60
+     ]
+    },
+    "v": {
+     "unit": "",
+     "values": [
+      6,
+      8,
+      10,
+      12
+     ]
+    },
+    "Cp": {
+     "unit": "",
+     "values": [
+      0.4,
+      0.45
+     ]
+    }
+   },
+   "vars": {
+    "Pv": "0.5*1.2*pi*R^2*v^3"
+   },
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "Une éolienne a des pales de [[R]] m ; vent de [[v]] m/s ; ρ = 1,2 kg/m³ ; $C_p =$ [[Cp]]."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Puissance du vent (W) ?",
+     "answer": "Pv",
+     "unit": "W",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Puissance maximale selon Betz (W) ?",
+     "answer": "16/27*Pv",
+     "unit": "W",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q3",
+     "kind": "numeric",
+     "prompt": "Puissance récupérée (W) ?",
+     "answer": "Cp*Pv",
+     "unit": "W",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "P = ½ρSv³ avec S = πR².",
+   "method": "Puissance du vent, limite 16/27, coefficient Cp.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "$P_{vent} \\approx$ [[=Pv:3|W]] ; Betz : [[=16/27*Pv:3|W]] ; récupérée : [[=Cp*Pv:3|W]]."
+    }
+   ]
+  },
+  {
+   "id": "X-ME-10-b",
+   "notions": [
+    "S-ME-10"
+   ],
+   "title": "Influence du vent et des pales",
+   "difficulty": 1,
+   "validated": false,
+   "params": {
+    "k": {
+     "unit": "",
+     "values": [
+      1.2,
+      1.5,
+      2,
+      3
+     ]
+    }
+   },
+   "vars": {},
+   "constraints": [],
+   "statement": [
+    {
+     "type": "text",
+     "text": "On multiplie par [[k]] soit la vitesse du vent, soit la longueur des pales."
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "kind": "numeric",
+     "prompt": "Facteur sur la puissance si la vitesse du vent est multipliée par [[k]] ?",
+     "answer": "k^3",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    },
+    {
+     "id": "q2",
+     "kind": "numeric",
+     "prompt": "Facteur si la longueur des pales est multipliée par [[k]] ?",
+     "answer": "k^2",
+     "unit": "",
+     "tolerance": 0.01,
+     "sig": 3
+    }
+   ],
+   "hint": "P ∝ v³ et P ∝ R².",
+   "method": "Proportionnalités.",
+   "solution": [
+    {
+     "type": "text",
+     "text": "Vent : ×[[=k^3:3]] ; pales : ×[[=k^2:3]]."
+    }
+   ]
+  }
+ ]
+}
